@@ -1,0 +1,38 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+
+<suite name="Nasswallet Agent WebPortal - Super Agent" verbose="10"
+	parallel="false" thread-count="5">
+
+	<listeners>
+		<listener class-name='listeners.CustomizedEmailableReport' />
+		<listener class-name='listeners.HtmlReport' />
+	</listeners>
+
+	<parameter name="browserType" value="chrome" />
+
+	<test name="Agent Transfer">
+		<classes>
+			<class name="portals.testCases.Agent.A2ATransfer">
+				<methods>
+					<include name="a2aTranfer" />
+					<include name="verifyPerformedA2ATranferFromFromUserPassbook" />
+					<include name="verifyPerformedA2ATransferFromToUserPassbook" />
+					<include name="a2aTransferFromSideMenu" />
+					<include name="verifyPerformedA2ATransferFromSideMenuFromUserPassbook" />
+					<include name="verifyPerformedA2ATransferFromSideMenuFromToUserPassbook" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="SuperAgent Change MPIN">
+		<classes>
+			<class name="portals.testCases.Agent.SuperAgentChangeMPin">
+				<methods>
+					<include name="SuperAgent_ChangeMpinfromSideMenu" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

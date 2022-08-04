@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+<FrameworkConfiguration>
+	<Configuration>
+		<ImplicitTimeout>60</ImplicitTimeout>
+		<TestIdRegex>(TC_[\w_]+_\d+)</TestIdRegex>
+		<TestAuthorRegex>(Author:\s*\w+\s\w+)</TestAuthorRegex>
+	</Configuration>
+
+	<!-- Please choose one option from below options : 1 -> web 2 -> android 
+		3 -> IOS 4 ->pcloudy 5 ->pcloudyrunner -->
+	<MasterType>web</MasterType>
+
+	<Master>
+		<RecordVideoOfTestExecution>false</RecordVideoOfTestExecution>
+		<AutoLogDefectInJira>false</AutoLogDefectInJira>
+		<isRemoteEnable>false</isRemoteEnable>
+		<Hub>127.0.0.1</Hub>
+		<Port>4449</Port>
+		<incognito>false</incognito>
+	</Master>
+
+	<Proxy>
+		<ProxyIP>10.10.180.131</ProxyIP>
+		<ProxyPort>8090</ProxyPort>
+	</Proxy>
+
+	<QA>
+		<AgentTestData></AgentTestData>
+		<AgentUser></AgentUser>
+		<AgentPassword></AgentPassword>
+		<AgentPin></AgentPin>
+
+		<SuperAgentTestData></SuperAgentTestData>
+		<SuperAgentUser></SuperAgentUser>
+		<SuperAgentPassword></SuperAgentPassword>
+		<SuperAgentPin></SuperAgentPin>
+
+		<MerchantTestData></MerchantTestData>
+		<MerchantUser></MerchantUser>
+		<MerchantPassword></MerchantPassword>
+		<MerchantPin></MerchantPin>
+
+		<BranchTestData></BranchTestData>
+		<BranchUser></BranchUser>
+		<BranchPassword></BranchPassword>
+		<BranchPin></BranchPin>
+
+		<TellerTestData></TellerTestData>
+		<TellerUser></TellerUser>
+		<TellerPassword></TellerPassword>
+		<TellerPin></TellerPin>
+
+		<CustomerTestData></CustomerTestData>
+		<CustomerUser></CustomerUser>
+		<CustomerPassword></CustomerPassword>
+		
+		<EnterpriseTestData></EnterpriseTestData>
+		<EnterpriseUser></EnterpriseUser>
+		<EnterprisePassword></EnterprisePassword>
+		<EnterprisePin></EnterprisePin>
+
+		<AdminUser></AdminUser>
+		<AdminPassword></AdminPassword>
+	</QA>
+
+	<Dev>
+		<AgentTestData></AgentTestData>
+		<AgentUser></AgentUser>
+		<AgentPassword></AgentPassword>
+		<AgentPin></AgentPin>
+
+		<SuperAgentTestData></SuperAgentTestData>
+		<SuperAgentUser></SuperAgentUser>
+		<SuperAgentPassword></SuperAgentPassword>
+		<SuperAgentPin></SuperAgentPin>
+
+		<MerchantTestData></MerchantTestData>
+		<MerchantUser></MerchantUser>
+		<MerchantPassword></MerchantPassword>
+		<MerchantPin></MerchantPin>
+
+		<BranchTestData></BranchTestData>
+		<BranchUser></BranchUser>
+		<BranchPassword></BranchPassword>
+		<BranchPin></BranchPin>
+
+		<TellerTestData></TellerTestData>
+		<TellerUser></TellerUser>
+		<TellerPassword></TellerPassword>
+		<TellerPin></TellerPin>
+
+		<CustomerTestData></CustomerTestData>
+		<CustomerUser></CustomerUser>
+		<CustomerPassword></CustomerPassword>
+		
+		<EnterpriseTestData></EnterpriseTestData>
+		<EnterpriseUser></EnterpriseUser>
+		<EnterprisePassword></EnterprisePassword>
+		<EnterprisePin></EnterprisePin>
+		
+		<AdminUser></AdminUser>
+		<AdminPassword></AdminPassword>
+	</Dev>
+
+	<UAT>
+		<AgentTestData></AgentTestData>
+		<AgentUser>7500011003</AgentUser>
+		<AgentPassword>810403</AgentPassword>
+		<AgentPin>123654</AgentPin>
+
+		<SuperAgentTestData>UAT_SuperAgent.xls</SuperAgentTestData>
+		<SuperAgentUser>256720000001</SuperAgentUser>
+		<SuperAgentPassword>Agent@123</SuperAgentPassword>
+		<SuperAgentPin>8454</SuperAgentPin>
+
+		<CustomerTestData>UAT_Customer.xls</CustomerTestData>
+		<CustomerUser>256710000001</CustomerUser>
+		<CustomerPassword>8454</CustomerPassword>
+		<CustomerPin>8454</CustomerPin>
+		
+		
+
+		<AdminUser>shrikant.bhavsar</AdminUser>
+		<AdminPassword>$qA@123#</AdminPassword>
+	</UAT>
+
+	<URL>
+		<AgentQAUrl></AgentQAUrl>
+		<MerchantQAUrl></MerchantQAUrl>
+		<CustomerQAUrl></CustomerQAUrl>
+		<EnterpriseQAUrl>></EnterpriseQAUrl>
+		<AdminQAUrl></AdminQAUrl>
+		
+		<AgentDEVUrl></AgentDEVUrl>
+		<MerchantDEVUrl></MerchantDEVUrl>
+		<CustomerDEVUrl></CustomerDEVUrl>
+		<EnterpriseDEVUrl></EnterpriseDEVUrl>
+		<AdminDEVUrl></AdminDEVUrl>
+		
+		<CustomerUATUrl>https://uatsubscriber.lycamobile.ug/signin</CustomerUATUrl>
+		<AgentUATUrl>https://uatagent.lycamobile.ug/signin</AgentUATUrl>
+		<AdminUATUrl>https://uatadmin.lycamobile.ug/#/user/login</AdminUATUrl>
+	</URL>
+
+</FrameworkConfiguration>
