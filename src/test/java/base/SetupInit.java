@@ -100,7 +100,7 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		configuaration_folder_path = new File("configuration").getAbsolutePath() + File.separator;
 		configFilePath = configuaration_folder_path + CONFIG_FILE_NAME;
 		elasticIndex = "mobifin_5x";
-		projectName = "NassWallet";
+		projectName = "Tangereine";
 		projectVersion = "Mobifin_5.0.3";
 		logMatrics = new LogMatrics(elasticIndex, indexType);
 		suiteName = testContext.getCurrentXmlTest().getSuite().getName();

@@ -20,6 +20,10 @@ public class NavigationPage extends SetupInit {
 	public void clickOnDashboardP2POffnet() {
 		navigationPageOperations.clickOnDashboardP2POffnet(0);
 	}
+	
+	public void clickOnChangeInviteFriendsfromSideMenu() {
+		navigationPageOperations.clickOnInviteFriendsfromSideMenu(0);
+	}
 
 	/////////// tangerine ends //////////////////////// 
 	

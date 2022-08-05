@@ -21,7 +21,7 @@ public class CashOut extends SetupInit {
 		co = new CreateObject(getDriver());
 	}
 
-	@Test(dataProvider = "CashOut", dataProviderClass = TestDataImport.class)
+	@Test(dataProvider = "WithdrawCash", dataProviderClass = TestDataImport.class)
 	public void cashOut(Map<Object, Object> map) {
 		try {
 			co.datamap.putAll(map);
@@ -39,6 +39,32 @@ public class CashOut extends SetupInit {
 		}
 	}
 
+	@Test
+	public void ApprovecashOutfromSuperAgent() {
+		if (verifyMethodIsAvail(verificationData, "cashOut")) {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				co.navigationPage.clickOnLogOut();
+				pauseInSeconds(2);
+			}
+			for (Map<Object, Object> map : verificationData.get("cashOut")) {
+				co.loginPage.login(map.get(ToUserName).toString(), map.get(ToPassword).toString(), "super agent");
+				try {
+					co.datamap.putAll(map);
+					setTestParameters(co.datamap, "ApprovecashOutfromSuperAgent");
+					map.put(MethodName, "cashOut");
+					co.navigationPage.clickOnCashOut();
+					map = co.cashOutPage.cashOut(map);
+					setUseCaseVerificationData("ApprovecashOutfromSuperAgent", verificationData, map);
+					setSuccessParameters(co.datamap);
+				} catch (Exception e) {
+					setExceptionData(co, e);
+				} finally {
+					setExcecutionData(co);
+				}
+			}
+		} 
+	}
+	
 	@Test
 	public void verifyPerformedCashOutFromFromUserPassbook() {
 		if (verifyMethodIsAvail(verificationData, "cashOut")) {
@@ -81,7 +107,7 @@ public class CashOut extends SetupInit {
 		}
 	}
 
-	@Test(dataProvider = "CashOut", dataProviderClass = TestDataImport.class)
+	@Test(dataProvider = "WithdrawCash", dataProviderClass = TestDataImport.class)
 	public void cashOutFromDashboard(Map<Object, Object> map) {
 		try {
 			co.datamap.putAll(map);
@@ -141,7 +167,7 @@ public class CashOut extends SetupInit {
 		}
 	}
 
-	@Test(dataProvider = "CashOut", dataProviderClass = TestDataImport.class)
+	@Test(dataProvider = "WithdrawCash", dataProviderClass = TestDataImport.class)
 	public void cashOutFromSideMenu(Map<Object, Object> map) {
 		try {
 			co.datamap.putAll(map);

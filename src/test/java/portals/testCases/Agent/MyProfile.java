@@ -25,7 +25,7 @@ public class MyProfile extends SetupInit {
 		try {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "verifyProfileDetailsFromDashboard");
-			co.navigationPage.clickOnDashboardeMyProfile();
+			//co.navigationPage.clickOnDashboardeMyProfile();
 			co.agentProfilePage.superAgentVerifyProfileDetails(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
@@ -55,7 +55,7 @@ public class MyProfile extends SetupInit {
 		try {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "profileEditFromDashboard");
-			co.navigationPage.clickOnDashboardeMyProfile();
+			//co.navigationPage.clickOnDashboardeMyProfile();
 			if (!co.agentProfilePage.superAgentEditProfile(map)) {
 				throw new RuntimeException("Profile Edit Failed");
 			}
@@ -91,7 +91,7 @@ public class MyProfile extends SetupInit {
 		try {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "verifyAgentProfileDetailsFromDashboard");
-			co.navigationPage.clickOnDashboardeMyProfile();
+			//co.navigationPage.clickOnDashboardeMyProfile();
 			co.agentProfilePage.agentVerifyProfileDetails(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
@@ -121,7 +121,7 @@ public class MyProfile extends SetupInit {
 		try {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "agentProfileEditFromDashboard");
-			co.navigationPage.clickOnDashboardeMyProfile();
+			//co.navigationPage.clickOnDashboardeMyProfile();
 			if (!co.agentProfilePage.agentEditProfile(map)) {
 				throw new RuntimeException("Profile Edit Failed");
 			}

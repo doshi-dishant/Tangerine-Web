@@ -82,6 +82,16 @@ public class TestDataImport extends SetupInit {
 		}
 		return map;
 	}
+	
+	@DataProvider(name = "InviteFriends")
+	public static Object[][] InviteFriends() {
+		return readExcelFileTo2D(TEST_DATA, "InviteFriends");
+	}
+	
+	@DataProvider(name = "WithdrawCash")
+	public static Object[][] WithdrawCash() {
+		return readExcelFileTo2D(TEST_DATA, "WithdrawCash");
+	}
 
 	@DataProvider(name = "ChangeMpin")
 	public static Object[][] ChangeMpin() {
@@ -142,11 +152,6 @@ public class TestDataImport extends SetupInit {
 	@DataProvider(name = "EnterprisePayment")
 	public static Object[][] EnterprisePayment() {
 		return readExcelFileTo2D(TEST_DATA, "EnterprisePayment");
-	}
-
-	@DataProvider(name = "CashOut")
-	public static Object[][] CashOut() {
-		return readExcelFileTo2D(TEST_DATA, "CashOut");
 	}
 
 	@DataProvider(name = "ChangeLanguage")
