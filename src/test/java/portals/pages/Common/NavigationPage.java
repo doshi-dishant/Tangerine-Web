@@ -915,6 +915,11 @@ public class NavigationPage extends SetupInit {
 	public void clickOnCashOut() {
 		navigationPageOperations.clickOnCashOut(0);
 	}
+	
+	public void clickOntxtAgentAssistedWithdraw() {
+		navigationPageOperations.clickOntxtAgentAssistedWithdraw(0);
+	}
+	
 
 	public void clickOnContactUs() {
 		navigationPageOperations.clickOnDashboardContactUs(0);

@@ -95,16 +95,16 @@
 		<classes>
 			<class name="portals.testCases.Customer.CashOut">
 				<methods>
-					<include name="cashOut" />
-					<!-- <include name="verifyPerformedCashOutFromFromUserPassbook" /> -->
-					<include name="ApprovecashOutfromSuperAgent" />
-					<include name="verifyPerformedCashOutFromToUserPassbook" />
+					<!--<include name="cashOut" />
+					 <include name="verifyPerformedCashOutFromFromUserPassbook" /> -->
+					<include name="AgentAssistedWithdrawfromSuperAgent" />
+					<!-- <include name="verifyPerformedCashOutFromToUserPassbook" />
 					<include name="cashOutFromDashboard" />
 					<include name="verifyPerformedCashOutFromDashboardFromUserPassbook" />
 					<include name="verifyPerformedCashOutFromDashboardFromToUserPassbook" />
 					<include name="cashOutFromSideMenu" />
 					<include name="verifyPerformedCashOutFromSideMenuFromUserPassbook" />
-					<include name="verifyPerformedCashOutFromSideMenuFromToUserPassbook" />
+					<include name="verifyPerformedCashOutFromSideMenuFromToUserPassbook" /> -->
 				</methods>
 			</class>
 		</classes>

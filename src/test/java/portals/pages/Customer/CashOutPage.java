@@ -94,11 +94,11 @@ public class CashOutPage extends SetupInit {
 		return data;
 	}
 
-	public Map<Object, Object> agentCashOut(Map<Object, Object> map) {
+	public Map<Object, Object> cashOutfromAgentLogin(Map<Object, Object> map) {
 		Map<Object, Object> data = new HashMap<Object, Object>();
 		String OTPpin="";
 		dashboardPageCommon.clickOnCheckBalance(0);
-		dashboardPageCommon.enterSecretPINtocheckbalance(password, 0);
+		dashboardPageCommon.enterSecretPINtocheckbalance(pin, 0);
 		dashboardPageCommon.clickOnChkBalanceSubmitButton(0);
 		double currentBalance = Double.parseDouble(dashboardPageCommon.getMainBalance(0).trim());
 		setLogSteps(this.log, "Current Balance is: " + currentBalance);

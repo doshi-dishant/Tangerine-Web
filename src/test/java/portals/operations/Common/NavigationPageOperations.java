@@ -24,6 +24,8 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtCashOut = By.xpath("//div[text()='Withdraw Cash']");
 	public By txtMenuCashOut = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Withdraw Cash']");
 	public By txtDashCashOut = By.xpath("//a[text()='Withdraw Cash']");
+	public By txtAgentAssistedWithdraw = By.xpath("(//div[text()='Agent Assisted Withdraw'])[1]");
+	
 	///////////////  Tangerine end /////////////////////////	
 	
 	public By sideMenu = By.xpath("//*[contains(@class,'humburger') and not(@title)]//i[contains(@class,'moon-menu')]");
@@ -1620,6 +1622,15 @@ public class NavigationPageOperations extends SetupInit {
 			setLogSteps(log, "Click On WithDraw Cash");
 		} catch (Exception e) {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "WithDraw Cash");
+		}
+	}
+	
+	public void clickOntxtAgentAssistedWithdraw(int... args) {
+		try {
+			clickOnElement(txtAgentAssistedWithdraw, args);
+			setLogSteps(log, "Click On Agent Assisted Withdraw");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Agent Assisted Withdraw");
 		}
 	}
 

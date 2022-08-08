@@ -39,30 +39,27 @@ public class CashOut extends SetupInit {
 		}
 	}
 
-	@Test
-	public void ApprovecashOutfromSuperAgent() {
-		if (verifyMethodIsAvail(verificationData, "cashOut")) {
-			if (co.navigationPage.isLogoutButtonDislay(3)) {
-				co.navigationPage.clickOnLogOut();
-				pauseInSeconds(2);
-			}
-			for (Map<Object, Object> map : verificationData.get("cashOut")) {
-				co.loginPage.login(map.get(ToUserName).toString(), map.get(ToPassword).toString(), "super agent");
+	@Test(dataProvider = "WithdrawCash", dataProviderClass = TestDataImport.class)
+	public void AgentAssistedWithdrawfromSuperAgent(Map<Object, Object> map) {
+		//if (verifyMethodIsAvail(verificationData, "cashOut")) {
+			//for (Map<Object, Object> map : verificationData.get("cashOut")) {
+				co.common.webPortalLogin(map, "to", 0);
+				//co.loginPage.login(map.get(ToUserName).toString(), map.get(ToPassword).toString(), "super agent");
 				try {
 					co.datamap.putAll(map);
-					setTestParameters(co.datamap, "ApprovecashOutfromSuperAgent");
-					map.put(MethodName, "cashOut");
-					co.navigationPage.clickOnCashOut();
-					map = co.cashOutPage.cashOut(map);
-					setUseCaseVerificationData("ApprovecashOutfromSuperAgent", verificationData, map);
+					setTestParameters(co.datamap, "AgentAssistedWithdrawfromSuperAgent");
+					map.put(MethodName, "AgentAssistedWithdrawfromSuperAgent");
+					co.navigationPage.clickOntxtAgentAssistedWithdraw();
+					map = co.cashOutPage.cashOutfromAgentLogin(map);
+					setUseCaseVerificationData("AgentAssistedWithdrawfromSuperAgent", verificationData, map);
 					setSuccessParameters(co.datamap);
 				} catch (Exception e) {
 					setExceptionData(co, e);
 				} finally {
 					setExcecutionData(co);
 				}
-			}
-		} 
+			//}
+		//} 
 	}
 	
 	@Test
