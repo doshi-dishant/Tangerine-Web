@@ -7,7 +7,7 @@ import base.SetupInit;
 import utils.elasticUtils.elasticwrite;
 
 public class TermsAndConditionsOperations extends SetupInit {
-	By verifyNaviTermsConditions = By.xpath("//*[contains(@class,'graph_area')]//*[text()='Terms Of Service']");
+	By verifyNaviTermsConditions = By.xpath("//*[contains(@class,'graph_area')]//*[text()='Terms & Conditions']");
 	elasticwrite log;
 
 	public TermsAndConditionsOperations(WebDriver driver, elasticwrite log) {

@@ -194,6 +194,20 @@ public class CommonTestcases extends SetupInit {
 	}
 
 	@Test
+	public void privacyPolicyFromSideMenuProfile() {
+		try {
+			setTestParameters(co.datamap, "privacyPolicyFromSideMenuProfile");
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuePrivacyPolicyFromSettings();
+			co.privacyPolicyPage.verifyPrivacyPolicy();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	@Test
 	public void privacyPolicyFromSideMenuSettings() {
 		try {
 			setTestParameters(co.datamap, "privacyPolicyFromSideMenuSettings");
@@ -207,14 +221,13 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
-
+	
 	@Test
 	public void termsAndConditionsFromDashboardFooter() {
 		try {
 			setTestParameters(co.datamap,
 					"termsAndConditionsFromDashboardFooter");
-			co.navigationPage.clickOnSideMenuSettings();
-			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSettings();
+			co.navigationPage.clickOnDashboardeTermsAndConditions();
 			co.termsAndConditionsPage.verifyTermsAndConditions();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
@@ -225,11 +238,30 @@ public class CommonTestcases extends SetupInit {
 	}
 
 	@Test
+	public void termsAndConditionsFromSideMenuProfile() {
+		try {
+			setTestParameters(co.datamap,
+					"termsAndConditionsFromSideMenuSettings");
+			co.navigationPage.clickOnSideMenuProfile();
+			
+			co.navigationPage.clickOnSideMenueTermsAndConditionsFromProfile();
+			co.termsAndConditionsPage.verifyTermsAndConditions();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test
 	public void termsAndConditionsFromSideMenuSettings() {
 		try {
 			setTestParameters(co.datamap,
 					"termsAndConditionsFromSideMenuSettings");
-			co.navigationPage.clickOnDashboardeTermsAndConditions();
+		
+			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSettings();
+
 			co.termsAndConditionsPage.verifyTermsAndConditions();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
@@ -245,6 +277,21 @@ public class CommonTestcases extends SetupInit {
 			setTestParameters(co.datamap, "verifyChatOption");
 			co.navigationPage.clickOnChatOption();
 			co.dashboardPage.verifyChatOption();
+			co.dashboardPage.UGX_SignAvailable();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	
+	@Test
+	public void UGX_SignAvailable() {
+		try {
+			setTestParameters(co.datamap, "UGX_SignAvailable");
+			co.dashboardPage.verifyUGX_SignAvailable();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);

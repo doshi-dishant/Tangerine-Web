@@ -20,6 +20,8 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtChangeSecretWordSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Change secret word']");
 	public By txtA2ATransfer = By.xpath("//div[text()='Agent Transfer']");
 	public By txtMenuA2ATransfer = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Agent Transfer']");
+	public By txtfooterA2ATransfer = By.xpath("//*[@id='footer']//*[text()='Agent Transfer']");
+	
 	///////////////  Tangerine end /////////////////////////
 	
 	
@@ -1228,7 +1230,7 @@ public class NavigationPageOperations extends SetupInit {
 		}
 	}
 
-	public void clickOnSideMenuTermsAndConditionsFromSettings(int... args) {
+	public void clickOnSideMenuTermsAndConditionsFromProfile(int... args) {
 		try {
 			clickOnElement(txtMenuTermsAndConditions, args);
 			setLogSteps(log, "Click On Terms And Conditions");
@@ -1918,6 +1920,17 @@ public class NavigationPageOperations extends SetupInit {
 		}
 		setLogSteps(log, "Click On Agent Transfer");
 	}
+	
+	public void clickOnFooterOptionA2ATransfer(int... args) {
+		try {
+			clickOnElement(txtfooterA2ATransfer, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Agent Transfer");
+		}
+		setLogSteps(log, "Click On Agent Transfer");
+	}
+		
+	
 
 	public void clickOnCashInByAgent(int... args) {
 		try {

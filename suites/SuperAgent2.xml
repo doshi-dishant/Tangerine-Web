@@ -11,7 +11,7 @@
 
 	<parameter name="browserType" value="chrome" />
 
-	<test name="Agent Transfer">
+	<!--<test name="Agent Transfer">
 		<classes>
 			<class name="portals.testCases.Agent.A2ATransfer">
 				<methods>
@@ -34,5 +34,46 @@
 				</methods>
 			</class>
 		</classes>
+	</test>-->
+
+		<test name="Common Testcases">
+		<classes>
+			<class name="portals.testCases.Common.CommonTestcases">
+				<methods>
+					 <include name="privacyPolicyFromDashboardFooter" />
+					<include name="privacyPolicyFromSideMenuProfile" /> 
+					<include name="termsAndConditionsFromDashboardFooter" />
+					<include name="termsAndConditionsFromSideMenuProfile" />
+					<include name="logout" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	<test name="Agent Transfer">
+		<classes>
+			<class name="portals.testCases.Agent.A2ATransfer">
+				<methods>
+					<include name="a2aTranfer" />
+					<include name="verifyPerformedA2ATranferFromFromUserPassbook" />
+					<include name="verifyPerformedA2ATransferFromToUserPassbook" />
+					<include name="a2aTransferFromSideMenu" />
+					<include name="verifyPerformedA2ATransferFromSideMenuFromUserPassbook" />
+					<include name="verifyPerformedA2ATransferFromSideMenuFromToUserPassbook" />
+					<include name="a2aTranferFromFooter" />
+					<include name="verifyPerformedA2ATranferFromFootertoUserPassbook" />
+					<include name="verifyPerformedA2ATransferFromFootertoToUserPassbook" />
+				</methods>
+			</class>
+		</classes>
 	</test>
+
+	<!-- <test name="SuperAgent Change MPIN">
+		<classes>
+			<class name="portals.testCases.Agent.SuperAgentChangeMPin">
+				<methods>
+					<include name="SuperAgent_ChangeMpinfromSideMenu" />
+				</methods>
+			</class>
+		</classes>
+	</test>  -->
 </suite>

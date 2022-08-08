@@ -152,4 +152,72 @@ public class A2ATransfer extends SetupInit {
 			throw new RuntimeException("verification failed, due to operation failed");
 		}
 	}
+
+
+	@Test(dataProvider = "A2ATransfer", dataProviderClass = TestDataImport.class)
+	public void a2aTranferFromFooter(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "a2aTranferFromFooter");
+			map.put(MethodName, "a2aTransfer");
+			co.navigationPage.clickOnFooterOptionA2ATransfer();
+			map = co.a2aTransferPage.a2aTransfer(map);
+			setUseCaseVerificationData("a2aTranferFromFooter", verificationData, map);
+			setSuccessParameters(co.datamap);
+			writeVerificationFile(Utility.getJsonStringFromMap(map));
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+
+	@Test
+	public void verifyPerformedA2ATranferFromFootertoUserPassbook() {
+		if (verifyMethodIsAvail(verificationData, "a2aTranferFromFooter")) {
+			for (Map<Object, Object> map : verificationData.get("a2aTranferFromFooter")) {
+				try {
+					co.datamap.putAll(map);
+					setTestParameters(co.datamap, "verifyPerformedA2ATranferFromFootertoUserPassbook");
+					co.common.verifyTransactionInWebPortalForFromUser(map, co.dashboardPage);
+					setSuccessParameters(co.datamap);
+				} catch (Exception e) {
+					setExceptionData(co, e);
+				} finally {
+					setExcecutionData(co);
+				}
+			}
+		} else {
+			throw new RuntimeException("verification failed, due to operation failed");
+		}
+	}
+
+	@Test
+	public void verifyPerformedA2ATransferFromFootertoToUserPassbook() {
+		if (verifyMethodIsAvail(verificationData, "a2aTranferFromFooter")) {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				co.navigationPage.clickOnLogOut();
+			}
+			for (Map<Object, Object> map : verificationData.get("a2aTranferFromFooter")) {
+				co.loginPage.login(map.get(ToUserName).toString(), map.get(ToPassword).toString(), "sub agent");
+				try {
+					co.datamap.putAll(map);
+					setTestParameters(co.datamap, "verifyPerformedA2ATransferFromFootertoToUserPassbook");
+					co.common.verifyTransactionInWebPortalForToUser(map, co.dashboardPage);
+					setSuccessParameters(co.datamap);
+				} catch (Exception e) {
+					setExceptionData(co, e);
+				} finally {
+					setExcecutionData(co);
+					if (co.navigationPage.isLogoutButtonDislay(3))
+						co.navigationPage.clickOnLogOut();
+				}
+			}
+		} else {
+			throw new RuntimeException("verification failed, due to operation failed");
+		}
+	}
+
+
+
 }

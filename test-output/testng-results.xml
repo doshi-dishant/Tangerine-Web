@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="33" total="36" passed="3" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Terms And Conditions]]>
+    </line>
+    <line>
+      <![CDATA[Naviagte To Terms & Conditions Page]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Side Menu]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Terms And Conditions]]>
+    </line>
+    <line>
+      <![CDATA[Naviagte To Terms & Conditions Page]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Logout]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2022-08-05T16:12:20 IST" name="Nasswallet Agent WebPortal - Super Agent" finished-at="2022-08-05T16:14:45 IST" duration-ms="144907">
+    <groups>
+    </groups>
+    <test started-at="2022-08-05T16:12:20 IST" name="Common Testcases" finished-at="2022-08-05T16:14:45 IST" duration-ms="144907">
+      <class name="portals.testCases.Common.CommonTestcases">
+        <test-method is-config="true" signature="initializeSetupInit(java.lang.String,org.testng.ITestContext)[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:12:20 IST" name="initializeSetupInit" finished-at="2022-08-05T16:13:28 IST" duration-ms="68034" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@2d8c729f]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeSetupInit -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:13:28 IST" name="beforeMethod" finished-at="2022-08-05T16:13:41 IST" duration-ms="13304" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="termsAndConditionsFromDashboardFooter()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:13:41 IST" name="termsAndConditionsFromDashboardFooter" finished-at="2022-08-05T16:13:47 IST" duration-ms="6142" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Terms And Conditions]]>
+            </line>
+            <line>
+              <![CDATA[Naviagte To Terms & Conditions Page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- termsAndConditionsFromDashboardFooter -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:13:47 IST" name="beforeMethod" finished-at="2022-08-05T16:14:01 IST" duration-ms="13483" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:13:47 IST" name="tearDown" finished-at="2022-08-05T16:13:47 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=termsAndConditionsFromDashboardFooter status=SUCCESS method=CommonTestcases.termsAndConditionsFromDashboardFooter()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77] output=Click On Terms And Conditions]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="termsAndConditionsFromSideMenuProfile()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:14:01 IST" name="termsAndConditionsFromSideMenuProfile" finished-at="2022-08-05T16:14:12 IST" duration-ms="10964" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Side Menu]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Terms And Conditions]]>
+            </line>
+            <line>
+              <![CDATA[Naviagte To Terms & Conditions Page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- termsAndConditionsFromSideMenuProfile -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:14:12 IST" name="tearDown" finished-at="2022-08-05T16:14:12 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=termsAndConditionsFromSideMenuProfile status=SUCCESS method=CommonTestcases.termsAndConditionsFromSideMenuProfile()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77] output=Click On Side Menu]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:14:12 IST" name="beforeMethod" finished-at="2022-08-05T16:14:25 IST" duration-ms="13561" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="logout()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:14:25 IST" name="logout" finished-at="2022-08-05T16:14:44 IST" duration-ms="18895" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:14:44 IST" name="tearDown" finished-at="2022-08-05T16:14:44 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=logout status=SUCCESS method=CommonTestcases.logout()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77] output=Click On Logout]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:14:44 IST" name="closeBrowser" finished-at="2022-08-05T16:14:45 IST" duration-ms="472" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setAccessMaricesResult()[pri:0, instance:portals.testCases.Common.CommonTestcases@483f6d77]" started-at="2022-08-05T16:14:45 IST" name="setAccessMaricesResult" finished-at="2022-08-05T16:14:45 IST" duration-ms="562" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setAccessMaricesResult -->
+      </class> <!-- portals.testCases.Common.CommonTestcases -->
+    </test> <!-- Common Testcases -->
+  </suite> <!-- Nasswallet Agent WebPortal - Super Agent -->
+</testng-results>

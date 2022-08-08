@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Nasswallet Agent WebPortal - Super Agent]" guice-stage="DEVELOPMENT" verbose="10">
+  <parameter name="browserType" value="chrome"/>
+  <listeners>
+    <listener class-name="listeners.CustomizedEmailableReport"/>
+    <listener class-name="listeners.HtmlReport"/>
+  </listeners>
+  <test name="Common Testcases">
+    <classes>
+      <class name="portals.testCases.Common.CommonTestcases">
+        <methods>
+          <include name="privacyPolicyFromSideMenuSettings"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- portals.testCases.Common.CommonTestcases -->
+    </classes>
+  </test> <!-- Common Testcases -->
+</suite> <!-- Failed suite [Nasswallet Agent WebPortal - Super Agent] -->

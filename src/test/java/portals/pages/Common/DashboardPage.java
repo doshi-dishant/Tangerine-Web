@@ -127,7 +127,7 @@ public class DashboardPage extends SetupInit {
 	}
 
 	public void verifyBalanceAndPoints(Map<Object, Object> map) {
-		dashboardPageCommon.clickOnViewBalance(0);
+		dashboardPageCommon.clickOnCheckBalance(0);
 		dashboardPageCommon.getMainBalance(0);
 		dashboardPageCommon.getPointsEarn(0);
 	}
@@ -390,7 +390,7 @@ public class DashboardPage extends SetupInit {
 	}
 
 	public void bLinkTransferToBank(Map<Object, Object> map) {
-		dashboardPageCommon.clickOnViewBalance(0);
+		dashboardPageCommon.clickOnCheckBalance(0);
 		double currentBalance = Double.parseDouble(dashboardPageCommon.getMainBalance(0).trim());
 		setLogSteps(log, "Current Balance is: " + currentBalance);
 		dashboardPageCommon.selectBank(map.get(SelectBank).toString(), 0);
@@ -450,7 +450,7 @@ public class DashboardPage extends SetupInit {
 	}
 
 	public void bLinkTransferFromBank(Map<Object, Object> map) {
-		dashboardPageCommon.clickOnViewBalance(0);
+		dashboardPageCommon.clickOnCheckBalance(0);
 		double currentBalance = Double.parseDouble(dashboardPageCommon.getMainBalance(0).trim());
 		setLogSteps(log, "Current Balance is: " + currentBalance);
 		dashboardPageCommon.selectBank(map.get(SelectBank).toString(), 0);
@@ -721,7 +721,7 @@ public class DashboardPage extends SetupInit {
 	}
 
 	public void redeemSubcriberPoints(Map<Object, Object> map) {
-		dashboardPageCommon.clickOnViewBalance(0);
+		dashboardPageCommon.clickOnCheckBalance(0);
 		String beforePoint = dashboardPageCommon.getPointsEarn(0);
 		setLogSteps(log, "Current Earn Point is: " + beforePoint);
 		dashboardPageCommon.sendTextInRedemptionCode(map.get(RedemptionCode).toString(), 0);
@@ -826,6 +826,13 @@ public class DashboardPage extends SetupInit {
 
 	public void verifyChatOption() {
 		dashboardPageCommon.isChatOptionsAvailable(0);
+	}
+
+	public void verifyUGX_SignAvailable() {
+		dashboardPageCommon.UGX_textSignAvailable(0);
+		dashboardPageCommon.clickOnPassbook(0);
+		dashboardPageCommon.UGX_InPassbookSignAvailable();
+		
 	}
 
 	public void passbookVerification(String serviceName, String trnId) {

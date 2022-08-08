@@ -1,0 +1,319 @@
+<html>
+<head>
+<title>TestNG:  Agent Transfer</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Agent Transfer</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>9/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Aug 07 15:55:56 IST 2022</td>
+</tr>
+<tr><td>Total time:</td><td>1085 seconds (1085245 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='portals.testCases.Agent.A2ATransfer.verifyPerformedA2ATranferFromFromUserPassbook()'><b>verifyPerformedA2ATranferFromFromUserPassbook</b><br>Test class: portals.testCases.Agent.A2ATransfer<br/>
+<a href="#Output-264958250" onClick='toggleBox("Output-264958250", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-264958250" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-264958250">
+Click On Passbook<br/>
+Click On Filter Button<br/>
+Click On Clear Button<br/>
+Click On Filter Button<br/>
+Select Duration Filter: Last 5 Transaction<br/>
+Select Status Filter: Success<br/>
+Select Service Filter: A2A Transfer<br/>
+Click On Submit Button<br/>
+Verify Transaction Status in Passbook<br/>
+Successfully Transaction verify in From User<br/>
+Click On Logout<br/>
+</div>
+</td>
+<td></td>
+<td>60</td>
+<td>portals.testCases.Agent.A2ATransfer@6392827e</td></tr>
+<tr>
+<td title='portals.testCases.Agent.A2ATransfer.verifyPerformedA2ATransferFromFootertoToUserPassbook()'><b>verifyPerformedA2ATransferFromFootertoToUserPassbook</b><br>Test class: portals.testCases.Agent.A2ATransfer<br/>
+<a href="#Output-1979612382" onClick='toggleBox("Output-1979612382", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1979612382" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1979612382">
+Click On Logout<br/>
+Click on Sub Agent<br/>
+Enter user name: 256720000011<br/>
+Enter password: Agent@123<br/>
+Click on Login button<br/>
+Click On Passbook<br/>
+Click On Filter Button<br/>
+Click On Clear Button<br/>
+Click On Filter Button<br/>
+Select Duration Filter: Last 5 Transaction<br/>
+Select Status Filter: Success<br/>
+Click On Submit Button<br/>
+Verify Transaction Status in Passbook<br/>
+Successfully Transaction verify in To User<br/>
+Click On Logout<br/>
+</div>
+</td>
+<td></td>
+<td>88</td>
+<td>portals.testCases.Agent.A2ATransfer@6392827e</td></tr>
+<tr>
+<td title='portals.testCases.Agent.A2ATransfer.verifyPerformedA2ATransferFromToUserPassbook()'><b>verifyPerformedA2ATransferFromToUserPassbook</b><br>Test class: portals.testCases.Agent.A2ATransfer<br/>
+<a href="#Output-902604989" onClick='toggleBox("Output-902604989", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-902604989" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-902604989">
+Click On Logout<br/>
+Click on Sub Agent<br/>
+Enter user name: 256720000011<br/>
+Enter password: Agent@123<br/>
+Click on Login button<br/>
+Click On Passbook<br/>
+Click On Filter Button<br/>
+Click On Clear Button<br/>
+Click On Filter Button<br/>
+Select Duration Filter: Last 5 Transaction<br/>
+Select Status Filter: Success<br/>
+Click On Submit Button<br/>
+Verify Transaction Status in Passbook<br/>
+Successfully Transaction verify in To User<br/>
+Click On Logout<br/>
+</div>
+</td>
+<td></td>
+<td>90</td>
+<td>portals.testCases.Agent.A2ATransfer@6392827e</td></tr>
+<tr>
+<td title='portals.testCases.Agent.A2ATransfer.verifyPerformedA2ATranferFromFootertoUserPassbook()'><b>verifyPerformedA2ATranferFromFootertoUserPassbook</b><br>Test class: portals.testCases.Agent.A2ATransfer<br/>
+<a href="#Output-322155650" onClick='toggleBox("Output-322155650", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-322155650" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-322155650">
+Click On Passbook<br/>
+Click On Filter Button<br/>
+Click On Clear Button<br/>
+Click On Filter Button<br/>
+Select Duration Filter: Last 5 Transaction<br/>
+Select Status Filter: Success<br/>
+Select Service Filter: A2A Transfer<br/>
+Click On Submit Button<br/>
+Verify Transaction Status in Passbook<br/>
+Successfully Transaction verify in From User<br/>
+</div>
+</td>
+<td></td>
+<td>42</td>
+<td>portals.testCases.Agent.A2ATransfer@6392827e</td></tr>
+<tr>
+<td title='portals.testCases.Agent.A2ATransfer.a2aTransferFromSideMenu()'><b>a2aTransferFromSideMenu</b><br>Test class: portals.testCases.Agent.A2ATransfer<br>Parameters: {fromportalname=Agent, fromusertype=Super Agent, fromusername=256720000001, frompassword=Agent@123, toportalname=Agent, tousertype=Sub Agent, tousername=256720000011, topassword=Agent@123, amount=501.00, remarks=Transfer, fromsurchrge=0, fromcommission=0, tosurcharge=0, tocommission=0, methodname=a2aTransfer}<br/>
+<a href="#Output-1060393794" onClick='toggleBox("Output-1060393794", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1060393794" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1060393794">
+Click On Side Menu<br/>
+Click On Services<br/>
+Click On Agent Transfer<br/>
+Click On Check Balance<br/>
+Enter Secret PIN : 8454<br/>
+Click On Submit Button for Check Balance<br/>
+Current Balance is: 489979.0<br/>
+Enter Mobile Number : 256720000011<br/>
+Enter Amount : 501.00<br/>
+Enter Remarks:Transfer<br/>
+Enter Secret PIN : 8454<br/>
+Click On Submit Button<br/>
+Verify Mobile Number on Confirmation Screen: 256720000011<br/>
+Verify Remarks on Confirmation Screen: Transfer<br/>
+Verify Amount on Confirmation Screen: 501.00<br/>
+Click On Confirm Button<br/>
+Verify Transaction is Success<br/>
+Verify Mobile Number on Success Screen: 256720000011<br/>
+Verify Remarks on Success Screen: Transfer<br/>
+Verify Amount on Success Screen: 501.00<br/>
+Enter Secret PIN : 8454<br/>
+Click On Submit Button for Check Balance<br/>
+Updated Balance is: 489478.0<br/>
+</div>
+</td>
+<td></td>
+<td>90</td>
+<td>portals.testCases.Agent.A2ATransfer@6392827e</td></tr>
+<tr>
+<td title='portals.testCases.Agent.A2ATransfer.verifyPerformedA2ATransferFromSideMenuFromUserPassbook()'><b>verifyPerformedA2ATransferFromSideMenuFromUserPassbook</b><br>Test class: portals.testCases.Agent.A2ATransfer<br/>
+<a href="#Output-81585402" onClick='toggleBox("Output-81585402", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-81585402" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-81585402">
+Click On Passbook<br/>
+Click On Filter Button<br/>
+Click On Clear Button<br/>
+Click On Filter Button<br/>
+Select Duration Filter: Last 5 Transaction<br/>
+Select Status Filter: Success<br/>
+Select Service Filter: A2A Transfer<br/>
+Click On Submit Button<br/>
+Verify Transaction Status in Passbook<br/>
+Successfully Transaction verify in From User<br/>
+</div>
+</td>
+<td></td>
+<td>42</td>
+<td>portals.testCases.Agent.A2ATransfer@6392827e</td></tr>
+<tr>
+<td title='portals.testCases.Agent.A2ATransfer.a2aTranferFromFooter()'><b>a2aTranferFromFooter</b><br>Test class: portals.testCases.Agent.A2ATransfer<br>Parameters: {fromportalname=Agent, fromusertype=Super Agent, fromusername=256720000001, frompassword=Agent@123, toportalname=Agent, tousertype=Sub Agent, tousername=256720000011, topassword=Agent@123, amount=501.00, remarks=Transfer, fromsurchrge=0, fromcommission=0, tosurcharge=0, tocommission=0, methodname=a2aTransfer}<br/>
+<a href="#Output-1131301945" onClick='toggleBox("Output-1131301945", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1131301945" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1131301945">
+Click On Agent Transfer<br/>
+Click On Check Balance<br/>
+Enter Secret PIN : 8454<br/>
+Click On Submit Button for Check Balance<br/>
+Current Balance is: 489478.0<br/>
+Enter Mobile Number : 256720000011<br/>
+Enter Amount : 501.00<br/>
+Enter Remarks:Transfer<br/>
+Enter Secret PIN : 8454<br/>
+Click On Submit Button<br/>
+Verify Mobile Number on Confirmation Screen: 256720000011<br/>
+Verify Remarks on Confirmation Screen: Transfer<br/>
+Verify Amount on Confirmation Screen: 501.00<br/>
+Click On Confirm Button<br/>
+Verify Transaction is Success<br/>
+Verify Mobile Number on Success Screen: 256720000011<br/>
+Verify Remarks on Success Screen: Transfer<br/>
+Verify Amount on Success Screen: 501.00<br/>
+Enter Secret PIN : 8454<br/>
+Click On Submit Button for Check Balance<br/>
+Updated Balance is: 488977.0<br/>
+</div>
+</td>
+<td></td>
+<td>84</td>
+<td>portals.testCases.Agent.A2ATransfer@6392827e</td></tr>
+<tr>
+<td title='portals.testCases.Agent.A2ATransfer.a2aTranfer()'><b>a2aTranfer</b><br>Test class: portals.testCases.Agent.A2ATransfer<br>Parameters: {fromportalname=Agent, fromusertype=Super Agent, fromusername=256720000001, frompassword=Agent@123, toportalname=Agent, tousertype=Sub Agent, tousername=256720000011, topassword=Agent@123, amount=501.00, remarks=Transfer, fromsurchrge=0, fromcommission=0, tosurcharge=0, tocommission=0, methodname=a2aTransfer}<br/>
+<a href="#Output-1886526509" onClick='toggleBox("Output-1886526509", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1886526509" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1886526509">
+Click On Agent Transfer<br/>
+Click On Check Balance<br/>
+Enter Secret PIN : 8454<br/>
+Click On Submit Button for Check Balance<br/>
+Current Balance is: 490480.0<br/>
+Enter Mobile Number : 256720000011<br/>
+Enter Amount : 501.00<br/>
+Enter Remarks:Transfer<br/>
+Enter Secret PIN : 8454<br/>
+Click On Submit Button<br/>
+Verify Mobile Number on Confirmation Screen: 256720000011<br/>
+Verify Remarks on Confirmation Screen: Transfer<br/>
+Verify Amount on Confirmation Screen: 501.00<br/>
+Click On Confirm Button<br/>
+Verify Transaction is Success<br/>
+Verify Mobile Number on Success Screen: 256720000011<br/>
+Verify Remarks on Success Screen: Transfer<br/>
+Verify Amount on Success Screen: 501.00<br/>
+Enter Secret PIN : 8454<br/>
+Click On Submit Button for Check Balance<br/>
+Updated Balance is: 489979.0<br/>
+</div>
+</td>
+<td></td>
+<td>83</td>
+<td>portals.testCases.Agent.A2ATransfer@6392827e</td></tr>
+<tr>
+<td title='portals.testCases.Agent.A2ATransfer.verifyPerformedA2ATransferFromSideMenuFromToUserPassbook()'><b>verifyPerformedA2ATransferFromSideMenuFromToUserPassbook</b><br>Test class: portals.testCases.Agent.A2ATransfer<br/>
+<a href="#Output-74427408" onClick='toggleBox("Output-74427408", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-74427408" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-74427408">
+Click On Logout<br/>
+Click on Sub Agent<br/>
+Enter user name: 256720000011<br/>
+Enter password: Agent@123<br/>
+Click on Login button<br/>
+Click On Passbook<br/>
+Click On Filter Button<br/>
+Click On Clear Button<br/>
+Click On Filter Button<br/>
+Select Duration Filter: Last 5 Transaction<br/>
+Select Status Filter: Success<br/>
+Click On Submit Button<br/>
+Verify Transaction Status in Passbook<br/>
+Successfully Transaction verify in To User<br/>
+Click On Logout<br/>
+</div>
+</td>
+<td></td>
+<td>274</td>
+<td>portals.testCases.Agent.A2ATransfer@6392827e</td></tr>
+</table><p>
+</body>
+</html>

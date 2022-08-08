@@ -258,6 +258,9 @@ public class DashBoardPageOperations extends SetupInit {
 	// = 'submit']
 	By verifyNaviTermsConditions = By.xpath("//*[contains(@class,'graph_area')]//*[text()='Terms Of Service']");
 	By verifyChatOptionHeader = By.id("shortMessage");
+	By UGX_text = By.xpath("//Span[. = 'UGX']");
+	By UGX_passbook = By.xpath("//*[contains(text(),'Amount (UGX)')]");
+	
 	By successOnboardText = By.xpath("//*[contains(text(),'Successfully')]");
 	By drpOnboardUserType = By.id("frm_select_operatingEntityIDid");
 	By txtAgentName = By.id("frm_text_nameid");
@@ -987,6 +990,14 @@ public class DashBoardPageOperations extends SetupInit {
 	public void isChatOptionsAvailable(int... args) {
 		verifyVisible(verifyChatOptionHeader, args);
 		setLogSteps(log, "Chat Options Are Available");
+	}
+	public void UGX_textSignAvailable(int... args) {
+		verifyVisible(UGX_text, args);
+		setLogSteps(log, "UGX doller Sign Are Available in Dashboard");
+	}
+	public void UGX_InPassbookSignAvailable(int... args) {
+		verifyVisible(UGX_passbook, args);
+		setLogSteps(log, "UGX doller Sign Are Available in Passbook");
 	}
 
 	public String getMainBalanceAfterTransaction(int... args) {
