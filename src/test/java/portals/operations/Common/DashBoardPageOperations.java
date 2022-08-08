@@ -73,6 +73,13 @@ public class DashBoardPageOperations extends SetupInit {
 	// P2POffnetTransfer locators tangerine s
 	By txtMobileNumberp2poffnet = By.id("frm_text_mobileid");
 	// 
+	
+	// Cash Withdraw Tangereinne
+	public By verifyOTPSent = By.xpath("//*[contains(text(),'OTP sent')]");
+	public By otpPin = By.id("frm_text_otpid");
+	//
+	
+	
 		
 	public By btnConfirm = By.xpath("//*[normalize-space(text())='Confirm']//parent::button");
 	public String verifyMobileNumber = "//*[text()='Mobile Number']//following-sibling::*[text()='%s']";
@@ -270,6 +277,11 @@ public class DashBoardPageOperations extends SetupInit {
 		this.log = log;
 		this.driver = driver;
 		common = new CommonOperations(driver, log);
+	}
+	
+	public void otpPIN(String otp, int... args) {
+		sendKeys(otpPin, otp, 0);
+		setLogSteps(log, "Enter OTP: " + otp);
 	}
 
 	public void enterCurrentMPin(String currentMpin, int... args) {

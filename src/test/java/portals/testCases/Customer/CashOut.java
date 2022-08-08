@@ -21,7 +21,7 @@ public class CashOut extends SetupInit {
 		co = new CreateObject(getDriver());
 	}
 
-	@Test(dataProvider = "CashOut", dataProviderClass = TestDataImport.class)
+	@Test(dataProvider = "WithdrawCash", dataProviderClass = TestDataImport.class)
 	public void cashOut(Map<Object, Object> map) {
 		try {
 			co.datamap.putAll(map);
@@ -39,6 +39,29 @@ public class CashOut extends SetupInit {
 		}
 	}
 
+	@Test(dataProvider = "WithdrawCash", dataProviderClass = TestDataImport.class)
+	public void AgentAssistedWithdrawfromSuperAgent(Map<Object, Object> map) {
+		//if (verifyMethodIsAvail(verificationData, "cashOut")) {
+			//for (Map<Object, Object> map : verificationData.get("cashOut")) {
+				co.common.webPortalLogin(map, "to", 0);
+				//co.loginPage.login(map.get(ToUserName).toString(), map.get(ToPassword).toString(), "super agent");
+				try {
+					co.datamap.putAll(map);
+					setTestParameters(co.datamap, "AgentAssistedWithdrawfromSuperAgent");
+					map.put(MethodName, "AgentAssistedWithdrawfromSuperAgent");
+					co.navigationPage.clickOntxtAgentAssistedWithdraw();
+					map = co.cashOutPage.cashOutfromAgentLogin(map);
+					setUseCaseVerificationData("AgentAssistedWithdrawfromSuperAgent", verificationData, map);
+					setSuccessParameters(co.datamap);
+				} catch (Exception e) {
+					setExceptionData(co, e);
+				} finally {
+					setExcecutionData(co);
+				}
+			//}
+		//} 
+	}
+	
 	@Test
 	public void verifyPerformedCashOutFromFromUserPassbook() {
 		if (verifyMethodIsAvail(verificationData, "cashOut")) {
@@ -81,7 +104,7 @@ public class CashOut extends SetupInit {
 		}
 	}
 
-	@Test(dataProvider = "CashOut", dataProviderClass = TestDataImport.class)
+	@Test(dataProvider = "WithdrawCash", dataProviderClass = TestDataImport.class)
 	public void cashOutFromDashboard(Map<Object, Object> map) {
 		try {
 			co.datamap.putAll(map);
@@ -141,7 +164,7 @@ public class CashOut extends SetupInit {
 		}
 	}
 
-	@Test(dataProvider = "CashOut", dataProviderClass = TestDataImport.class)
+	@Test(dataProvider = "WithdrawCash", dataProviderClass = TestDataImport.class)
 	public void cashOutFromSideMenu(Map<Object, Object> map) {
 		try {
 			co.datamap.putAll(map);

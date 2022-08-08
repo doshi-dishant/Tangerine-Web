@@ -28,7 +28,7 @@ public class MobileTopupPage extends SetupInit {
 
 	public Map<Object, Object> mobileTopup(Map<Object, Object> map) {
 		Map<Object, Object> data = new HashMap<Object, Object>();
-		dashboardPageCommon.clickOnViewBalance(0);
+	//	dashboardPageCommon.clickOnViewBalance(0);
 		double currentBalance = Double.parseDouble(dashboardPageCommon.getMainBalance(0).trim());
 		setLogSteps(this.log, "Current Balance is: " + currentBalance);
 		double latestBalance = 0.0;

@@ -26,7 +26,7 @@ public class SuperAgentChangeMPin extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "changeMpinCustomer");
 			co.navigationPage.clickOnChangeMpinfromSideMenu();
-			co.superagentChangeMpinPage.setnewMpin(map);
+			//co.superagentChangeMpinPage.setnewMpin(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);

@@ -17,11 +17,16 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtDashP2POffnet = By.xpath("//div[text()='P2P Off Net']"); 
 	public By txtSend = By.xpath("//*[text()='Send']");
 	public By txtChangeMPINSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Change MPIN']");
+	public By txtInviteFriendsSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Invite Friends']");
 	public By txtChangeSecretWordSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Change secret word']");
 	public By txtA2ATransfer = By.xpath("//div[text()='Agent Transfer']");
 	public By txtMenuA2ATransfer = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Agent Transfer']");
-	///////////////  Tangerine end /////////////////////////
+	public By txtCashOut = By.xpath("//div[text()='Withdraw Cash']");
+	public By txtMenuCashOut = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Withdraw Cash']");
+	public By txtDashCashOut = By.xpath("//a[text()='Withdraw Cash']");
+	public By txtAgentAssistedWithdraw = By.xpath("(//div[text()='Agent Assisted Withdraw'])[1]");
 	
+	///////////////  Tangerine end /////////////////////////	
 	
 	public By sideMenu = By.xpath("//*[contains(@class,'humburger') and not(@title)]//i[contains(@class,'moon-menu')]");
 	By sideMenuServices = By.xpath("//*[@class='modal-content']//*[text()='Services']");
@@ -173,9 +178,6 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtEnterprisePayment = By.xpath("//*[text()='Enterprise Payment']");
 	public By txtMenuEnterprisePayment = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Enterprise Payment']");
 	public By txtDashEnterprisePayment = By.xpath("//a[text()='Merchant Payment']");
-	public By txtCashOut = By.xpath("//div[text()='Cash Out']");
-	public By txtMenuCashOut = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Cash Out']");
-	public By txtDashCashOut = By.xpath("//a[text()='Cash Out']");
 	public By txtMobileTopup = By.xpath("//*[text()='Mobile Top up']");
 	public By txtMenuMobileTopup = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Mobile Top up']");
 	public By txtDashMobileTopup = By.xpath("//a[text()='Top Up']");
@@ -249,6 +251,18 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtMenuAirtimeSale = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Airtime Sale']");
 	public By txtDashAirtimeSale = By.xpath("//a[text()='Airtime Sale']");
 
+
+	public void clickOnInviteFriendsfromSideMenu(int... args) {
+		try {
+			clickOnElement(sideMenu, args);
+			clickOnElement(sideMenuSettings, args);
+			clickOnElement(this.log, txtInviteFriendsSideMenu, args);
+			setLogSteps(log, "Click On Invite Friends");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Click On Invite Friends");
+		}
+	}
+	
 	public NavigationPageOperations(WebDriver driver, elasticwrite log) {
 		this.log = log;
 		this.driver = driver;
@@ -599,18 +613,18 @@ public class NavigationPageOperations extends SetupInit {
 		clickOnSideMenuServices(args);
 		try {
 			clickOnElement(sideMenucashOut, args);
-			setLogSteps(log, "Click On Cash Out");
+			setLogSteps(log, "Click On Withdraw Cash");
 		} catch (Exception e) {
-			throw new RuntimeException(CLICK_ERROR_MESSAGE + "cash out");
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Withdraw Cash");
 		}
 	}
 
 	public void clickOnDashboardCashOut(int... args) {
 		try {
 			clickOnElement(dashboardCashOut, args);
-			setLogSteps(log, "Click On Cash out");
+			setLogSteps(log, "Click On Withdraw Cash");
 		} catch (Exception e) {
-			throw new RuntimeException(CLICK_ERROR_MESSAGE + "cash out");
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Withdraw Cash");
 		}
 	}
 
@@ -1605,9 +1619,18 @@ public class NavigationPageOperations extends SetupInit {
 	public void clickOnCashOut(int... args) {
 		try {
 			clickOnElement(txtCashOut, args);
-			setLogSteps(log, "Click On CashOut");
+			setLogSteps(log, "Click On WithDraw Cash");
 		} catch (Exception e) {
-			throw new RuntimeException(CLICK_ERROR_MESSAGE + "CashOut");
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "WithDraw Cash");
+		}
+	}
+	
+	public void clickOntxtAgentAssistedWithdraw(int... args) {
+		try {
+			clickOnElement(txtAgentAssistedWithdraw, args);
+			setLogSteps(log, "Click On Agent Assisted Withdraw");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Agent Assisted Withdraw");
 		}
 	}
 

@@ -71,7 +71,7 @@
 			</class>
 		</classes>
 	</test>
--->
+
 	<test name="Change Secret Word">
 		<classes>
 			<class name="portals.testCases.Customer.ChangeSecretWord">
@@ -80,8 +80,35 @@
 				</methods>
 			</class>
 		</classes>
+	</test> 
+	<test name="Invite Freinds">
+		<classes>
+			<class name="portals.testCases.Customer.InviteFriends">
+				<methods>
+					<include name="InvitFriends" />
+					<include name="InviteFriendsfromDBNotification" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+	<test name="Cash Out">
+		<classes>
+			<class name="portals.testCases.Customer.CashOut">
+				<methods>
+					<!--<include name="cashOut" />
+					 <include name="verifyPerformedCashOutFromFromUserPassbook" /> -->
+					<include name="AgentAssistedWithdrawfromSuperAgent" />
+					<!-- <include name="verifyPerformedCashOutFromToUserPassbook" />
+					<include name="cashOutFromDashboard" />
+					<include name="verifyPerformedCashOutFromDashboardFromUserPassbook" />
+					<include name="verifyPerformedCashOutFromDashboardFromToUserPassbook" />
+					<include name="cashOutFromSideMenu" />
+					<include name="verifyPerformedCashOutFromSideMenuFromUserPassbook" />
+					<include name="verifyPerformedCashOutFromSideMenuFromToUserPassbook" /> -->
+				</methods>
+			</class>
+		</classes>
 	</test>
-	
 	<!-- 		<test name="Mobile Topup">
 		<classes>
 			<class name="portals.testCases.Customer.MobileToup">
@@ -118,25 +145,8 @@
 			</class>
 		</classes>
 	</test> -->
-	<!-- 	<test name="Cash Out">
-		<classes>
-			<class name="portals.testCases.Customer.CashOut">
-				<methods>
-					<include name="cashOut" />
-					<include name="verifyPerformedCashOutFromFromUserPassbook" />
-					<include name="verifyPerformedCashOutFromToUserPassbook" />
-					<include name="cashOutFromDashboard" />
-					<include name="verifyPerformedCashOutFromDashboardFromUserPassbook" />
-					<include
-					name="verifyPerformedCashOutFromDashboardFromToUserPassbook" />
-					<include name="cashOutFromSideMenu" />
-					<include name="verifyPerformedCashOutFromSideMenuFromUserPassbook" />
-					<include name="verifyPerformedCashOutFromSideMenuFromToUserPassbook" />
-				</methods>
-			</class>
-		</classes>
-	</test>
-	<test name="Common Testcases">
+
+	<!--	<test name="Common Testcases">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">
 				<methods>

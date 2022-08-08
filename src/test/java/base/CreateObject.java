@@ -32,6 +32,7 @@ import portals.pages.Customer.ArbelaStorePage;
 import portals.pages.Customer.CashOutPage;
 import portals.pages.Customer.ChangeMpinPage;
 import portals.pages.Customer.ChangeSecretWordPage;
+import portals.pages.Customer.InviteFriendsPage;
 import portals.pages.Customer.MobilePostpaidPage;
 import portals.pages.Customer.MobileTopupPage;
 import portals.pages.Customer.MyProfilePage;
@@ -52,6 +53,7 @@ public class CreateObject extends SetupInit {
 	public P2POffnetPage p2pOffnetPage;
 	public ChangeMpinPage changeMpinPage;
 	public ChangeSecretWordPage changesecretwordpage;
+	public InviteFriendsPage inviteFriendsPage;
 	//tangerine end //////
 	public CashOutPage cashOutPage;
 	public MobileTopupPage mobileTopupPage;
@@ -100,6 +102,7 @@ public class CreateObject extends SetupInit {
 		p2pOffnetPage = new P2POffnetPage(driver, log);
 		changeMpinPage =  new ChangeMpinPage(driver, log);
 		changesecretwordpage = new ChangeSecretWordPage(driver, log);
+		inviteFriendsPage = new InviteFriendsPage(driver, log);
 		// tangerine end //////////
 		cashOutPage = new CashOutPage(driver, log);
 		common = new CommonOperations(driver, log);
