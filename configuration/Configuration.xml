@@ -13,7 +13,7 @@
 	<Master>
 		<RecordVideoOfTestExecution>false</RecordVideoOfTestExecution>
 		<AutoLogDefectInJira>false</AutoLogDefectInJira>
-		<isRemoteEnable>true</isRemoteEnable>
+		<isRemoteEnable>false</isRemoteEnable>
 		<Hub>127.0.0.1</Hub>
 		<Port>4449</Port>
 		<incognito>false</incognito>
@@ -34,30 +34,16 @@
 		<SuperAgentUser></SuperAgentUser>
 		<SuperAgentPassword></SuperAgentPassword>
 		<SuperAgentPin></SuperAgentPin>
-
-		<MerchantTestData></MerchantTestData>
-		<MerchantUser></MerchantUser>
-		<MerchantPassword></MerchantPassword>
-		<MerchantPin></MerchantPin>
-
-		<BranchTestData></BranchTestData>
-		<BranchUser></BranchUser>
-		<BranchPassword></BranchPassword>
-		<BranchPin></BranchPin>
-
-		<TellerTestData></TellerTestData>
-		<TellerUser></TellerUser>
-		<TellerPassword></TellerPassword>
-		<TellerPin></TellerPin>
+		
+		<SubAgentTestData></SubAgentTestData>
+		<SubAgentUser></SubAgentUser>
+		<SubAgentPassword></SubAgentPassword>
+		<SubAgentPin></SubAgentPin>
 
 		<CustomerTestData></CustomerTestData>
 		<CustomerUser></CustomerUser>
 		<CustomerPassword></CustomerPassword>
-		
-		<EnterpriseTestData></EnterpriseTestData>
-		<EnterpriseUser></EnterpriseUser>
-		<EnterprisePassword></EnterprisePassword>
-		<EnterprisePin></EnterprisePin>
+		<CustomerPin></CustomerPin>
 
 		<AdminUser></AdminUser>
 		<AdminPassword></AdminPassword>
@@ -73,31 +59,17 @@
 		<SuperAgentUser></SuperAgentUser>
 		<SuperAgentPassword></SuperAgentPassword>
 		<SuperAgentPin></SuperAgentPin>
-
-		<MerchantTestData></MerchantTestData>
-		<MerchantUser></MerchantUser>
-		<MerchantPassword></MerchantPassword>
-		<MerchantPin></MerchantPin>
-
-		<BranchTestData></BranchTestData>
-		<BranchUser></BranchUser>
-		<BranchPassword></BranchPassword>
-		<BranchPin></BranchPin>
-
-		<TellerTestData></TellerTestData>
-		<TellerUser></TellerUser>
-		<TellerPassword></TellerPassword>
-		<TellerPin></TellerPin>
+		
+		<SubAgentTestData></SubAgentTestData>
+		<SubAgentUser></SubAgentUser>
+		<SubAgentPassword></SubAgentPassword>
+		<SubAgentPin></SubAgentPin>
 
 		<CustomerTestData></CustomerTestData>
 		<CustomerUser></CustomerUser>
 		<CustomerPassword></CustomerPassword>
-		
-		<EnterpriseTestData></EnterpriseTestData>
-		<EnterpriseUser></EnterpriseUser>
-		<EnterprisePassword></EnterprisePassword>
-		<EnterprisePin></EnterprisePin>
-		
+		<CustomerPin></CustomerPin>
+
 		<AdminUser></AdminUser>
 		<AdminPassword></AdminPassword>
 	</Dev>
@@ -113,12 +85,15 @@
 		<SuperAgentPassword>Agent@123</SuperAgentPassword>
 		<SuperAgentPin>8454</SuperAgentPin>
 
+		<SubAgentTestData>UAT_SuperAgent.xls</SubAgentTestData>
+		<SubAgentUser>256720000001</SubAgentUser>
+		<SubAgentPassword>Agent@123</SubAgentPassword>
+		<SubAgentPin>8454</SubAgentPin>
+
 		<CustomerTestData>UAT_Customer.xls</CustomerTestData>
 		<CustomerUser>256710000001</CustomerUser>
 		<CustomerPassword>8454</CustomerPassword>
 		<CustomerPin>8454</CustomerPin>
-		
-		
 
 		<AdminUser>shrikant.bhavsar</AdminUser>
 		<AdminPassword>$qA@123#</AdminPassword>
@@ -126,17 +101,13 @@
 
 	<URL>
 		<AgentQAUrl></AgentQAUrl>
-		<MerchantQAUrl></MerchantQAUrl>
 		<CustomerQAUrl></CustomerQAUrl>
-		<EnterpriseQAUrl>></EnterpriseQAUrl>
 		<AdminQAUrl></AdminQAUrl>
-		
+
 		<AgentDEVUrl></AgentDEVUrl>
-		<MerchantDEVUrl></MerchantDEVUrl>
 		<CustomerDEVUrl></CustomerDEVUrl>
-		<EnterpriseDEVUrl></EnterpriseDEVUrl>
 		<AdminDEVUrl></AdminDEVUrl>
-		
+
 		<CustomerUATUrl>https://uatsubscriber.lycamobile.ug/signin</CustomerUATUrl>
 		<AgentUATUrl>https://uatagent.lycamobile.ug/signin</AgentUATUrl>
 		<AdminUATUrl>https://uatadmin.lycamobile.ug/#/user/login</AdminUATUrl>
