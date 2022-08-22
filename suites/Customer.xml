@@ -21,8 +21,8 @@
 	<!--	</methods>
 			</class>
 		</classes>
-	</test> 
-	<test name="P2P Transfer">
+	</test>  -->
+<!--	<test name="P2P Transfer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
@@ -35,9 +35,6 @@
 					<include name="p2pTranferfromFooter" />
 					<include name="verifyPerformedp2pTranferFromFooterFromUserPassbook" />
 					<include name="verifyPerformedp2pTranferFromFooterToUserPassbook" />
-					<include name="p2pTranferFromSend" />
-					<include name="verifyPerformedp2pTranferFromSendFromUserPassbook" />
-					<include name="verifyPerformedp2pTranferFromSendFromToUserPassbook" />
 				</methods>
 			</class>
 		</classes>
@@ -61,6 +58,62 @@
 			</class>
 		</classes>
 	</test>
+-->
+<!--	<test name="Invite Freinds">
+		<classes>
+			<class name="portals.testCases.Customer.InviteFriends">
+				<methods>
+					<include name="InvitFriends" />
+					<include name="InviteFriendsfromDBNotification" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="P2P Transfer from Send">
+		<classes>
+			<class name="portals.testCases.Customer.P2PTransfer">
+				<methods>
+					<include name="p2pTranferFromSend" />
+					<include name="verifyPerformedp2pTranferFromSendFromUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromSendFromToUserPassbook" />
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+
+<!--
+	<test name="WithdrawCash and Agent Assisted Withdraw">
+		<classes>
+			<class name="portals.testCases.Customer.WithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromDashboard" />
+					<include name="verifyPerformedAssistedWithDrawFromDashboardToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromDashboardFromUserPassbook" />
+
+					<include name="withdrawCashAndAgentAssistedWithdrawfromFooter" />
+					<include name="verifyPerformedAssistedWithDrawFromFooterToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromFooterFromUserPassbook" />
+					
+
+					<include name="withdrawCashAndAgentAssistedWithdrawfromSideMenu" />
+					<include name="verifyPerformedAssistedWithDrawFromSideMenuToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromSideMenuFromUserPassbook" />
+					
+				</methods>
+			</class>
+		</classes>
+	</test> 
+-->
+<!--
+	<test name="Change Secret Word">
+		<classes>
+			<class name="portals.testCases.Customer.ChangeSecretWord">
+				<methods>
+					<include name="changeSecretWordCustomer" />
+				</methods>
+			</class>
+		</classes>
+	</test>
 
 	<test name="Change MPIN">
 		<classes>
@@ -70,45 +123,8 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
-
-	<test name="Change Secret Word">
-		<classes>
-			<class name="portals.testCases.Customer.ChangeSecretWord">
-				<methods>
-					<include name="changeSecretWordCustomer" />
-				</methods>
-			</class>
-		</classes>
-	</test> 
-	<test name="Invite Freinds">
-		<classes>
-			<class name="portals.testCases.Customer.InviteFriends">
-				<methods>
-					<include name="InvitFriends" />
-					<include name="InviteFriendsfromDBNotification" />
-				</methods>
-			</class>
-		</classes>
 	</test> -->
-	<test name="Cash Out">
-		<classes>
-			<class name="portals.testCases.Customer.CashOut">
-				<methods>
-					<!--<include name="cashOut" />
-					 <include name="verifyPerformedCashOutFromFromUserPassbook" /> -->
-					<include name="AgentAssistedWithdrawfromSuperAgent" />
-					<!-- <include name="verifyPerformedCashOutFromToUserPassbook" />
-					<include name="cashOutFromDashboard" />
-					<include name="verifyPerformedCashOutFromDashboardFromUserPassbook" />
-					<include name="verifyPerformedCashOutFromDashboardFromToUserPassbook" />
-					<include name="cashOutFromSideMenu" />
-					<include name="verifyPerformedCashOutFromSideMenuFromUserPassbook" />
-					<include name="verifyPerformedCashOutFromSideMenuFromToUserPassbook" /> -->
-				</methods>
-			</class>
-		</classes>
-	</test>
+
 	<!-- 		<test name="Mobile Topup">
 		<classes>
 			<class name="portals.testCases.Customer.MobileToup">
@@ -146,7 +162,7 @@
 		</classes>
 	</test> -->
 
-	<!--	<test name="Common Testcases">
+		<test name="Common Testcases">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">
 				<methods>
@@ -174,8 +190,8 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
-
+	</test> 
+<!--
 	<test name="Admin Verification">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">

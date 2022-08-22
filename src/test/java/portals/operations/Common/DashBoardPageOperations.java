@@ -38,6 +38,7 @@ public class DashBoardPageOperations extends SetupInit {
 	public By btnSubmit = By.xpath("//button[text()='SUBMIT']");
 	By btnCancel = By.xpath("//button[text()='Cancel']");
 	By txtRemark = By.id("frm_text_Remarksid");
+	By txtremark = By.id("frm_text_remarksid");
 	public By secretMpin = By.id("frm_text_transactionPinid");
 	public By secretMpintoCheckBalance = By.id("otpid");
 	// Reset MPIN locators
@@ -77,8 +78,10 @@ public class DashBoardPageOperations extends SetupInit {
 	// Cash Withdraw Tangereinne
 	public By verifyOTPSent = By.xpath("//*[contains(text(),'OTP sent')]");
 	public By otpPin = By.id("frm_text_otpid");
+	public String verifyMobileNumberSuperAgentforWithdrawCash = "//*[text()='Mobile Number']//following-sibling::*[text()='%s']";
+	public String verifyRemarksforWithdrawCash = "//*[text()='Reference']//following-sibling::*[text()='%s']";
+	public String verifyAmountforWithdrawCash = "//*[text()='Amount (UGX)']//following-sibling::*[contains(text(),'%s')]";
 	//
-	
 	
 		
 	public By btnConfirm = By.xpath("//*[normalize-space(text())='Confirm']//parent::button");
@@ -92,6 +95,8 @@ public class DashBoardPageOperations extends SetupInit {
 	public By clickOnPassbook = By.xpath("//*[contains(@class,'Passbook')]");
 	public String verifyTransactionStatus = "(//*[text()='%s']//..//parent::tr//span[contains(@class,'sucess')])[1]";
 	public By getTransactionID = By.xpath("//*[contains(@class,'text-success')]//..//div");
+	public String verifyfromCashout = "//*[@id='frm_text_toUserid' and @value='%s']";
+	public String verifyagentcashoutAmount = "//*[text()='Amount (UGX)']//following::div//label//span[text()='%s']";
 
 	// support locators
 	By drprequestType = By.id("frm_select_requestTypeid");
@@ -328,7 +333,13 @@ public class DashBoardPageOperations extends SetupInit {
 		sendKeys(txtRemark, remark, 0);
 		setLogSteps(log, "Enter Remarks : " + remark);
 	}
+	
+	public void enterRemarkfromCashout(String remark, int... args) {
+		sendKeys(txtRemark, remark, 0);
+		setLogSteps(log, "Enter Remarks : " + remark);
+	}
 
+	
 	public void enterSecretPIN(String secretPIN, int... args) {
 		sendKeys(secretMpin, secretPIN, 0);
 		setLogSteps(log, "Enter Secret PIN : " + secretPIN);
@@ -348,7 +359,7 @@ public class DashBoardPageOperations extends SetupInit {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} 
-	
+		pauseInSeconds(2);
 		clickOnElement(btnConfirm, args);
 		setLogSteps(log, "Click On Confirm Button");
 	}
@@ -520,6 +531,7 @@ public class DashBoardPageOperations extends SetupInit {
 	}
 
 	public String getMainBalance(int... args) {
+		pauseInSeconds(3);;
 		String mainBalance = getElementText(log, MAIN_BALANCE, args).trim();
 		return mainBalance.split(" ")[0];
 	}
@@ -1006,7 +1018,7 @@ public class DashBoardPageOperations extends SetupInit {
 		clickOnElement(btnrefresh, 0);
 		enterSecretPINtocheckbalance(pin, 0);
 		clickOnChkBalanceSubmitButton(0);
-		pauseInSeconds(3);
+		pauseInSeconds(4);
 		String mainBalance = getElementText(log, MAIN_BALANCE, args).trim();
 		return mainBalance.split(" ")[0];
 	}
