@@ -183,6 +183,33 @@ public class CommonOperations extends SetupInit {
 			portalLogin(portalName, user, pass, portalUserType, args);
 		}
 	}
+	
+	public void webPortalLoginforNewTab(Map<Object, Object> map, String userType, int... args) {
+		String portalName = null;
+		String user = null;
+		String pass = null;
+		String portalUserType = null;
+		if (userType.toLowerCase().equals("from")) {
+			portalName = map.get(FromPortalName).toString();
+			user = map.get(FromUserName).toString();
+			pass = map.get(FromPassword).toString();
+			portalUserType = map.get(FromUserType).toString();
+		} else if (userType.toLowerCase().equals("to")) {
+			portalName = map.get(ToPortalName).toString();
+			user = map.get(ToUserName).toString();
+			pass = map.get(ToPassword).toString();
+			portalUserType = map.get(ToUserType).toString();
+		} else if (userType.toLowerCase().equals("approver")) {
+			portalName = map.get(ApproverPortalName).toString();
+			user = map.get(ApproverUserName).toString();
+			pass = map.get(ApproverPassword).toString();
+			portalUserType = map.get(ApproverUserType).toString();
+		}
+		if (!verifyVisible(By.xpath(String.format(verifyUser, user)), 2)) {
+			portalLogin(portalName, user, pass, portalUserType, args);
+		}
+	}
+	
 
 	private void portalLogin(String portalName, String user, String pass, String portalUserType, int... args) {
 		String url = getportalURL(env, portalName);
@@ -479,6 +506,15 @@ public class CommonOperations extends SetupInit {
 		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),map.get(TransactionID).toString());
 		setLogSteps(log, "Successfully Transaction verify in From User");
 	}
+	
+	public void verifyTransactionInWebPortalForFromUser_NewTab(Map<Object, Object> map,DashboardPage dashBoardPageOperations) 
+	{
+		webPortalLoginforNewTab(map, "from", 0);
+		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),map.get(TransactionID).toString());
+		setLogSteps(log, "Successfully Transaction verify in From User");
+	}
+	
+	
 	
 	public void verifyTransactionInWebPortalForFromUserwithoutTransactionID(Map<Object, Object> map,DashboardPage dashBoardPageOperations) 
 	{

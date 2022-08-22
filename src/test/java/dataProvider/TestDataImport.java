@@ -88,7 +88,7 @@ public class TestDataImport extends SetupInit {
 		return readExcelFileTo2D(TEST_DATA, "InviteFriends");
 	}
 	
-	@DataProvider(name = "WithdrawCash")
+	@DataProvider(name = "WithdrawCash And Agent Assisted Withdraw")
 	public static Object[][] WithdrawCash() {
 		return readExcelFileTo2D(TEST_DATA, "WithdrawCash");
 	}

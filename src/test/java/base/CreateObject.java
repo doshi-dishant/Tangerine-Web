@@ -29,7 +29,7 @@ import portals.pages.Common.TermsAndConditionsPage;
 import portals.pages.Common.TransactionDetailPage;
 import portals.pages.Common.TransactionSummaryPage;
 import portals.pages.Customer.ArbelaStorePage;
-import portals.pages.Customer.CashOutPage;
+import portals.pages.Customer.WithdrawCashPage;
 import portals.pages.Customer.ChangeMpinPage;
 import portals.pages.Customer.ChangeSecretWordPage;
 import portals.pages.Customer.InviteFriendsPage;
@@ -55,7 +55,7 @@ public class CreateObject extends SetupInit {
 	public ChangeSecretWordPage changesecretwordpage;
 	public InviteFriendsPage inviteFriendsPage;
 	//tangerine end //////
-	public CashOutPage cashOutPage;
+	public WithdrawCashPage withdrawCashPage;
 	public MobileTopupPage mobileTopupPage;
 	public MPINPolicyPage mpinPolicyPage;
 	public ChangeLanguagePage changeLanguagePage;
@@ -103,8 +103,9 @@ public class CreateObject extends SetupInit {
 		changeMpinPage =  new ChangeMpinPage(driver, log);
 		changesecretwordpage = new ChangeSecretWordPage(driver, log);
 		inviteFriendsPage = new InviteFriendsPage(driver, log);
+		withdrawCashPage = new WithdrawCashPage(driver, log);
 		// tangerine end //////////
-		cashOutPage = new CashOutPage(driver, log);
+		
 		common = new CommonOperations(driver, log);
 		mobileTopupPage = new MobileTopupPage(driver, log);
 		mobilePostpaidPage = new MobilePostpaidPage(driver, log);

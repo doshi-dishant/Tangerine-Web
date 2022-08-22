@@ -24,6 +24,18 @@ public class NavigationPage extends SetupInit {
 	public void clickOnChangeInviteFriendsfromSideMenu() {
 		navigationPageOperations.clickOnInviteFriendsfromSideMenu(0);
 	}
+	
+	public void clickOnWithdrawCashFroomFooter() {
+		navigationPageOperations.clickOnWithdrawCashFromFooter(0);
+	}
+	
+	public void clickOnWithdrawCashFromSideMenu() {
+		navigationPageOperations.clickOnWithdrawCashFromSideMenu(0);
+	}
+
+	public void clickOnSideMenuCashOut() {
+		navigationPageOperations.clickOnSideMenuCashOut(0);
+	}
 
 	/////////// tangerine ends //////////////////////// 
 	
@@ -231,13 +243,7 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenuSettings(0);
 	}
 
-	public void clickOnDashboardCashOut() {
-		navigationPageOperations.clickOnDashboardCashOut(0);
-	}
-
-	public void clickOnSideMenuCashOut() {
-		navigationPageOperations.clickOnSideMenuCashOut(0);
-	}
+	
 
 	public void clickOnSideMenuServicesReceivePayment() {
 		clickOnSideMenuServices();

@@ -6,6 +6,7 @@ public interface GetExcelHeaders {
 	public String NewMpin = "newmpin";
 	public String FromSecretWord = "fromsecretword";
 	public String NewSecretWord = "newsecretword";
+	public String ToMpin = "tompin";
 	//tanereine end //////////
 	
 	public String ProfileDetails = "profiledetails";
