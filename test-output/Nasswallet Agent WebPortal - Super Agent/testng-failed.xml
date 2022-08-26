@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Nasswallet Agent WebPortal - Super Agent]" guice-stage="DEVELOPMENT" verbose="10">
   <parameter name="browserType" value="chrome"/>
   <listeners>
     <listener class-name="listeners.CustomizedEmailableReport"/>
     <listener class-name="listeners.HtmlReport"/>
   </listeners>
-  <test name="Common Testcases">
+  <test thread-count="5" name="SuperAgent Change MPIN(failed)" verbose="10">
     <classes>
-      <class name="portals.testCases.Common.CommonTestcases">
+      <class name="portals.testCases.Agent.SuperAgentChangeMPin">
         <methods>
-          <include name="privacyPolicyFromSideMenuSettings"/>
-          <include name="logout"/>
+          <include name="setAccessMaricesResult"/>
+          <include name="verifyFAQfromSideMenu"/>
+          <include name="closeBrowser"/>
+          <include name="verifyinvalidSuperAgent_ChangeMpinfromSideMenu" invocation-numbers="0"/>
+          <include name="tearDown"/>
+          <include name="initializeSetupInit"/>
+          <include name="SuperAgent_ChangeMpinfromSideMenu" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- portals.testCases.Common.CommonTestcases -->
+      </class> <!-- portals.testCases.Agent.SuperAgentChangeMPin -->
     </classes>
-  </test> <!-- Common Testcases -->
+  </test> <!-- SuperAgent Change MPIN(failed) -->
 </suite> <!-- Failed suite [Nasswallet Agent WebPortal - Super Agent] -->

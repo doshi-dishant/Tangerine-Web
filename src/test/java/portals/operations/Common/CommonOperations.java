@@ -30,6 +30,16 @@ public class CommonOperations extends SetupInit {
 	By btnSubmit = By.xpath("//button[text()='Submit']");
 	By btnCancel = By.xpath("//button[text()='Cancel']");
 	public By verifyLogo = By.xpath("//*[@class='logo-main']");
+	By verifyPasswordPolicyTitle = By.xpath("(//*[text()='Password Policy'])[1]");
+	By verifyPasswordPolicyText1 = By.xpath("(//*[text()='Password must have minimum 8 characters.'])");
+	By verifyPasswordPolicyText2 = By.xpath("(//*[text()='Password must have maximum 18 characters.'])");
+	By verifyPasswordPolicyText3 = By.xpath("(//*[text()='Password must have at least one lower case alphabet.'])");
+	By verifyPasswordPolicyText4 = By.xpath("(//*[text()='Password must have at least one upper case alphabet.'])");
+	By verifyPasswordPolicyText5 = By.xpath("(//*[text()='Password must have at least one numeric.'])");
+	By verifyPasswordPolicyText6 = By.xpath("(//*[text()='Password must have at least one special characters.'])");
+	By verifyPasswordPolicyText7 = By.xpath("(//*[text()='List of special character allowed are @,$,#,*,&'])");
+	By verifyPasswordPolicyText8 = By.xpath("//*[text()='Password Example']");
+
 	String verifyUser = "(//*[text()='%s'])[last()]";
 	By merchant = By.xpath("//*[text()='Merchant']");
 	By branch = By.xpath("//*[text()='Branch']");
@@ -486,4 +496,31 @@ public class CommonOperations extends SetupInit {
 		String date = dateformatter.format(currentDate);
 		return date;
 	}
+	public void PasswordPolicy(int... args) {
+		verifyVisible(verifyPasswordPolicyTitle, args);
+		setLogSteps(log, "Verify Password Policy Title");
+		
+		verifyVisible(verifyPasswordPolicyText1, args);
+		setLogSteps(log, "Verify text >>  Password must have minimum 8 characters ");
+		verifyVisible(verifyPasswordPolicyText2, args);
+		setLogSteps(log, "Verify text >>  Password must have maximum 18 characters ");
+		verifyVisible(verifyPasswordPolicyText3, args);
+		setLogSteps(log, "Verify text >>  Password must have at least one lower case alphabet ");
+		verifyVisible(verifyPasswordPolicyText4, args);
+		setLogSteps(log, "Verify text >>  Password must have at least one lower case alphabet ");
+		verifyVisible(verifyPasswordPolicyText5, args);
+		setLogSteps(log, "Verify text >>  Password must have at least one numeric ");
+		verifyVisible(verifyPasswordPolicyText6, args);
+		setLogSteps(log, "Verify text >> Password must have at least one special characters ");
+		verifyVisible(verifyPasswordPolicyText7, args);
+		setLogSteps(log, "Verify text >> List of special character allowed are @,$,#,*,& ");
+		verifyVisible(verifyPasswordPolicyText8, args);
+		setLogSteps(log, "Verify text >> Password Example");
+		
+		
+
+		
+		
+	}
+	
 }

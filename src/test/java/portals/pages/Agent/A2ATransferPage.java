@@ -26,6 +26,11 @@ public class A2ATransferPage extends SetupInit {
 		common = new CommonOperations(this.driver, log);
 	}
 
+	
+
+	
+	
+	
 	public Map<Object, Object> a2aTransfer(Map<Object, Object> map) {
 		Map<Object, Object> data = new HashMap<Object, Object>();
 		dashboardPageCommon.clickOnCheckBalance(0);
@@ -95,6 +100,48 @@ public class A2ATransferPage extends SetupInit {
 		data.put(TransactionFile, trnFile);
 		
 		return data;
+	}
+
+
+	public double clickOnCheckBalanceFromProfile() {
+		dashboardPageCommon.clickOnCheckBalanceFromProfile(0);
+		dashboardPageCommon.enterSecretPINtocheckbalance(pin, 0);
+		dashboardPageCommon.clickOnChkBalanceSubmitButton(0);
+		double currentBalance = Double.parseDouble(dashboardPageCommon.getMainBalance(0).trim());
+		setLogSteps(this.log, "Current Balance is: " + currentBalance);
+		return  currentBalance;		
+	}
+	
+	
+	
+	public double clickOnCheckBalance() {
+		dashboardPageCommon.clickOnCheckBalance(0);
+		dashboardPageCommon.enterSecretPINtocheckbalance(pin, 0);
+		dashboardPageCommon.clickOnChkBalanceSubmitButton(0);
+		double currentBalance = Double.parseDouble(dashboardPageCommon.getMainBalance(0).trim());
+		setLogSteps(this.log, "Current Balance is: " + currentBalance);
+		return  currentBalance;
+	}
+
+	public double clickOnCheckCommissionBalance() {
+		
+		
+		
+		dashboardPageCommon.clickOnCheckBalance(0);
+		dashboardPageCommon.enterSecretPINtocheckbalance(pin, 0);
+		dashboardPageCommon.clickOnChkBalanceSubmitButton(0);
+		double currentBalance = Double.parseDouble(dashboardPageCommon.getCommissionBalance(0).trim());
+		setLogSteps(this.log, "Current Commission Balance is: " + currentBalance);
+		return  currentBalance;
+	}
+	
+	public double clickOnCheckCommissionBalanceFromProfile() {
+		dashboardPageCommon.clickOnCheckBalanceFromProfile(0);
+		dashboardPageCommon.enterSecretPINtocheckbalance(pin, 0);
+		dashboardPageCommon.clickOnChkBalanceSubmitButton(0);
+		double currentBalance = Double.parseDouble(dashboardPageCommon.getMainBalance(0).trim());
+		setLogSteps(this.log, "Current Commission Balance is: " + currentBalance);
+		return  currentBalance;		
 	}
 
 	// public void verifyPerformedMoneyTransferInAdmin(Map<Object, Object> map) {

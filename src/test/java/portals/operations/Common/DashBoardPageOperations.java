@@ -105,9 +105,13 @@ public class DashBoardPageOperations extends SetupInit {
 	// Dash board check balance locators
 	By CHECK_BALANACE = By.xpath("//*[contains(text(),'Check Balance')]");
 	By REFRESH_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//i");
-	By viewBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')]");
+	By viewBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')][last()]");
+	By viewBalance_profile = By.xpath("(//*[contains(text(),'Check') and contains(text(),'Balance')][last()])[2]");
+	
 	By refreshBalance = By.xpath("//*[contains(text(),'Wallet Balance')]//i");
 	By MAIN_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//span");
+	By Commission_BALANCE = By.xpath("//*[contains(text(),'Commission Balance')]//span");
+	
 	By POINTS_EARN = By.xpath("//*[contains(text(),'Point') and contains(text(),'Earn')]//span");
 
 	// QR code locators
@@ -500,6 +504,14 @@ public class DashBoardPageOperations extends SetupInit {
 		}
 		setLogSteps(log, "Click On Check Balance");
 	}
+	public void clickOnCheckBalanceFromProfile(int... args) {
+		try {
+			clickOnElement(log, viewBalance_profile, 2);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "check balance");
+		}
+		setLogSteps(log, "Click On Check Balance");
+	}
 
 	public void clickOnRefreshBalance(int... args) {
 		try {
@@ -514,6 +526,11 @@ public class DashBoardPageOperations extends SetupInit {
 		String mainBalance = getElementText(log, MAIN_BALANCE, args).trim();
 		return mainBalance.split(" ")[0];
 	}
+	public String getCommissionBalance(int... args) {
+		String mainBalance = getElementText(log, Commission_BALANCE, args).trim();
+		return mainBalance.split(" ")[0];
+	}
+	
 
 	public String getPointsEarn(int... args) {
 		// setLogSteps(log, "Getting Earned points");

@@ -196,25 +196,20 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void privacyPolicyFromSideMenuProfile() {
 		try {
-			setTestParameters(co.datamap, "privacyPolicyFromSideMenuProfile");
+			co.navigationPage.clickOnSideMenu();
 			co.navigationPage.clickOnSideMenuProfile();
 			co.navigationPage.clickOnSideMenuePrivacyPolicyFromSettings();
 			co.privacyPolicyPage.verifyPrivacyPolicy();
-			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
-			setExceptionData(co, e);
 		} finally {
-			setExcecutionData(co);
 		}
 	}
 	@Test
 	public void privacyPolicyFromSideMenuSettings() {
 		try {
-			setTestParameters(co.datamap, "privacyPolicyFromSideMenuSettings");
 			co.navigationPage.clickOnSideMenuSettings();
 			co.navigationPage.clickOnSideMenuePrivacyPolicyFromSettings();
 			co.privacyPolicyPage.verifyPrivacyPolicy();
-			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
 		} finally {
@@ -225,49 +220,35 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void termsAndConditionsFromDashboardFooter() {
 		try {
-			setTestParameters(co.datamap,
-					"termsAndConditionsFromDashboardFooter");
+
 			co.navigationPage.clickOnDashboardeTermsAndConditions();
 			co.termsAndConditionsPage.verifyTermsAndConditions();
-			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
-			setExceptionData(co, e);
 		} finally {
-			setExcecutionData(co);
 		}
 	}
 
 	@Test
 	public void termsAndConditionsFromSideMenuProfile() {
 		try {
-			setTestParameters(co.datamap,
-					"termsAndConditionsFromSideMenuSettings");
+			co.navigationPage.clickOnSideMenu();
 			co.navigationPage.clickOnSideMenuProfile();
-			
 			co.navigationPage.clickOnSideMenueTermsAndConditionsFromProfile();
 			co.termsAndConditionsPage.verifyTermsAndConditions();
-			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
-			setExceptionData(co, e);
 		} finally {
-			setExcecutionData(co);
 		}
 	}
 	
 	@Test
 	public void termsAndConditionsFromSideMenuSettings() {
 		try {
-			setTestParameters(co.datamap,
-					"termsAndConditionsFromSideMenuSettings");
-		
+			
 			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSettings();
 
 			co.termsAndConditionsPage.verifyTermsAndConditions();
-			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
-			setExceptionData(co, e);
 		} finally {
-			setExcecutionData(co);
 		}
 	}
 
@@ -277,10 +258,9 @@ public class CommonTestcases extends SetupInit {
 			setTestParameters(co.datamap, "verifyChatOption");
 			co.navigationPage.clickOnChatOption();
 			co.dashboardPage.verifyChatOption();
-			co.dashboardPage.UGX_SignAvailable();
+			co.dashboardPage.verifyUGX_SignAvailable();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
-			setExceptionData(co, e);
 		} finally {
 			setExcecutionData(co);
 		}
@@ -553,6 +533,33 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
+	
+	
+	@Test
+	public void VerifyPasswordPolicyfromChangePassword() {
+		try {
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuProfileViewProfile();
+			co.navigationPage.clickOnPasswordPolicy();
+			co.common.PasswordPolicy(0);			
+		} catch (Exception e) {
+		} finally {
+			
+		}
+	}
+	
+	
+	@Test
+	public void VerifyPasswordPolicyfromDashboardFooter() {
+		try {
+			co.navigationPage.clickOnPasswordPolicy();
+			co.common.PasswordPolicy(0);			
+		} catch (Exception e) {
+		} finally {
+		}
+	}
+	
 	@Test
 	public void verifyTransactionsInAdmin() {
 		try {

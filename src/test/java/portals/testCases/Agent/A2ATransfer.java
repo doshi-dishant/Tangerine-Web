@@ -10,15 +10,20 @@ import org.testng.annotations.Test;
 import base.CreateObject;
 import base.SetupInit;
 import dataProvider.TestDataImport;
+import portals.operations.Common.DashBoardPageOperations;
 import utils.Utility;
 
 public class A2ATransfer extends SetupInit {
 	protected CreateObject co;
 	Map<String, ArrayList<Map<Object, Object>>> verificationData = new LinkedHashMap<>();
+	public static double Check_Balance;
+	public static double Check_Balance_Profile;
+	
 
 	@BeforeMethod
 	public void beforeMethod() {
 		co = new CreateObject(getDriver());
+
 	}
 
 	@Test(dataProvider = "A2ATransfer", dataProviderClass = TestDataImport.class)
@@ -39,6 +44,48 @@ public class A2ATransfer extends SetupInit {
 		}
 	}
 
+	@Test(dataProvider = "AgentAssistedDeposit", dataProviderClass = TestDataImport.class)
+	public void AgentAssistedDeposit(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "AgentAssistedDeposit");
+			map.put(MethodName, "AgentAssistedDeposit");
+			co.navigationPage.clickOnAgentAssistedDeposit();
+			map = co.a2aTransferPage.a2aTransfer(map);
+			setUseCaseVerificationData("AgentAssistedDeposit", verificationData, map);
+			setSuccessParameters(co.datamap);
+			writeVerificationFile(Utility.getJsonStringFromMap(map));
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test
+	public void verifyPerformedAgentAssistedDepositFromUserPassbook() {
+		if (verifyMethodIsAvail(verificationData, "AgentAssistedDeposit")) {
+			for (Map<Object, Object> map : verificationData.get("AgentAssistedDeposit")) {
+				try {
+					co.datamap.putAll(map);
+					setTestParameters(co.datamap, "verifyPerformedAgentAssistedDepositFromUserPassbook");
+					co.common.verifyTransactionInWebPortalForFromUser(map, co.dashboardPage);
+					setSuccessParameters(co.datamap);
+				} catch (Exception e) {
+					setExceptionData(co, e);
+				} finally {
+					setExcecutionData(co);
+					if (co.navigationPage.isLogoutButtonDislay(3))
+						co.navigationPage.clickOnLogOut();
+				}
+			}
+		} else {
+			throw new RuntimeException("verification failed, due to operation failed");
+		}
+	}
+
+	
+	
 	@Test
 	public void verifyPerformedA2ATranferFromFromUserPassbook() {
 		if (verifyMethodIsAvail(verificationData, "a2aTranfer")) {
@@ -191,6 +238,8 @@ public class A2ATransfer extends SetupInit {
 			throw new RuntimeException("verification failed, due to operation failed");
 		}
 	}
+	
+	
 
 	@Test
 	public void verifyPerformedA2ATransferFromFootertoToUserPassbook() {
@@ -209,8 +258,6 @@ public class A2ATransfer extends SetupInit {
 					setExceptionData(co, e);
 				} finally {
 					setExcecutionData(co);
-					if (co.navigationPage.isLogoutButtonDislay(3))
-						co.navigationPage.clickOnLogOut();
 				}
 			}
 		} else {
@@ -218,6 +265,66 @@ public class A2ATransfer extends SetupInit {
 		}
 	}
 
+	
+	
+	@Test
+	public void CheckBalanceFormDashboard() {
+		try {
+	
+			Check_Balance = co.a2aTransferPage.clickOnCheckBalance(); 
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			
+		}
+	}
+	
+	
+	
+	@Test
+	public void CheckCommissionBalanceFormDashboard() {
+		try {
+	
+			Check_Balance = co.a2aTransferPage.clickOnCheckCommissionBalance(); 
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			
+		}
+	}
 
+	@Test
+	public void CheckBalanceFormProfile() {
+		try {
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuProfileViewProfile();
+			Check_Balance_Profile = co.a2aTransferPage.clickOnCheckBalanceFromProfile();
+			co.navigationPage.Verifybalance(Check_Balance,Check_Balance_Profile);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			
+		}
+	}
+		
+		
+		
+	@Test
+	public void CheckCommissionBalanceFormProfile() {
+		try {
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuProfileViewProfile();
+			Check_Balance_Profile = co.a2aTransferPage.clickOnCheckBalanceFromProfile();
+			co.navigationPage.Verifybalance(Check_Balance,Check_Balance_Profile);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			
+		}
+
+	
+	}
 
 }
