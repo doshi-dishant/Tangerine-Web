@@ -18,6 +18,9 @@ public class A2ATransfer extends SetupInit {
 	Map<String, ArrayList<Map<Object, Object>>> verificationData = new LinkedHashMap<>();
 	public static double Check_Balance;
 	public static double Check_Balance_Profile;
+	public static double Check_CommissionBalance;
+	public static double CommissionBalance_Profile;
+	
 	
 
 	@BeforeMethod
@@ -285,7 +288,7 @@ public class A2ATransfer extends SetupInit {
 	public void CheckCommissionBalanceFormDashboard() {
 		try {
 	
-			Check_Balance = co.a2aTransferPage.clickOnCheckCommissionBalance(); 
+			Check_CommissionBalance = co.a2aTransferPage.clickOnCheckCommissionBalance(); 
 		} catch (Exception e) {
 			setExceptionData(co, e);
 		} finally {
@@ -316,8 +319,8 @@ public class A2ATransfer extends SetupInit {
 			co.navigationPage.clickOnSideMenu();
 			co.navigationPage.clickOnSideMenuProfile();
 			co.navigationPage.clickOnSideMenuProfileViewProfile();
-			Check_Balance_Profile = co.a2aTransferPage.clickOnCheckBalanceFromProfile();
-			co.navigationPage.Verifybalance(Check_Balance,Check_Balance_Profile);
+			CommissionBalance_Profile = co.a2aTransferPage.clickOnCheckCommissionBalanceFromProfile();
+			co.navigationPage.Verifybalance(Check_CommissionBalance,CommissionBalance_Profile);
 		} catch (Exception e) {
 			setExceptionData(co, e);
 		} finally {

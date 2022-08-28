@@ -124,9 +124,6 @@ public class A2ATransferPage extends SetupInit {
 	}
 
 	public double clickOnCheckCommissionBalance() {
-		
-		
-		
 		dashboardPageCommon.clickOnCheckBalance(0);
 		dashboardPageCommon.enterSecretPINtocheckbalance(pin, 0);
 		dashboardPageCommon.clickOnChkBalanceSubmitButton(0);
@@ -139,7 +136,7 @@ public class A2ATransferPage extends SetupInit {
 		dashboardPageCommon.clickOnCheckBalanceFromProfile(0);
 		dashboardPageCommon.enterSecretPINtocheckbalance(pin, 0);
 		dashboardPageCommon.clickOnChkBalanceSubmitButton(0);
-		double currentBalance = Double.parseDouble(dashboardPageCommon.getMainBalance(0).trim());
+		double currentBalance = Double.parseDouble(dashboardPageCommon.getCommissionBalance(0).trim());
 		setLogSteps(this.log, "Current Commission Balance is: " + currentBalance);
 		return  currentBalance;		
 	}

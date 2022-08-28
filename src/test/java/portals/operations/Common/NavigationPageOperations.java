@@ -54,6 +54,14 @@ public class NavigationPageOperations extends SetupInit {
 	By faqs = By.xpath("//*[@class='modal-content']//*[text()='FAQs']");
 	public By checkBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')]");
 	public By faqsTitle = By.xpath("//*[contains(text(),'FAQs')]");
+	public By PersonalinfoProfile  = By.xpath("//p[contains(text(),'Personal info religious worship')]");
+	public By AgentAssistedDepositicon  = By.xpath("//i[@class=\"moon-Agent-Cashin-fill-dual\"]");
+	public By AgentAssistedWithdrawicon  = By.xpath("//i[@class=\"moon-Agent-Cash-Out-fill-dual\"]");
+	public By AgentTransfericon  = By.xpath("//i[@class=\"moon-Cashout-thr-Agent\"]");
+	public By FinancialServicesicon  = By.xpath("//i[@class=\"moon-Internal-Transfer\"]");
+
+	public By DocumentinforeligiousworshipProfile  = By.xpath("//p[contains(text(),'Document info religious worship')]");
+	
 	public By qrCode = By.xpath("//*[text()='QR Code']");
 	public By passbook = By.xpath("//*[text()='Passbook']");
 	public By logOut = By.xpath("//*[@title='Logout']");
@@ -2243,5 +2251,24 @@ public class NavigationPageOperations extends SetupInit {
 		}
 		setLogSteps(log, "Click On Agent Transfer");
 		
+	}
+	
+	
+	public void clickOnPersonalinfoProfile(int args) {
+		try {
+			clickOnElement(PersonalinfoProfile, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Personal info Profile");
+		}
+		setLogSteps(log, "Click On Personal info Profile");
+	}
+	
+	public void clickOnDocumentinforeligiousworshipProfile(int args) {
+		try {
+			clickOnElement(DocumentinforeligiousworshipProfile, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Personal info Profile");
+		}
+		setLogSteps(log, "Click On Personal info Profile");
 	}
 }

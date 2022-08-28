@@ -110,8 +110,8 @@ public class DashBoardPageOperations extends SetupInit {
 	
 	By refreshBalance = By.xpath("//*[contains(text(),'Wallet Balance')]//i");
 	By MAIN_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//span");
-	By Commission_BALANCE = By.xpath("//*[contains(text(),'Commission Balance')]//span");
-	
+	By Commission_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//following-sibling::ul//span");
+
 	By POINTS_EARN = By.xpath("//*[contains(text(),'Point') and contains(text(),'Earn')]//span");
 
 	// QR code locators

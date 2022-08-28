@@ -560,6 +560,36 @@ public class CommonTestcases extends SetupInit {
 		}
 	}
 	
+	
+	
+	@Test
+	public void VerifyPersonalinforeligiousworshipFromProfile() {
+		try {
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuProfileViewProfile();
+			co.navigationPage.VerifyPersonalinfo();
+			
+		} catch (Exception e) {
+		} finally {
+		}
+	}
+	
+	
+	
+	@Test
+	public void VerifyDocumentinforeligiousworshipFromProfile() {
+		try {
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuProfileViewProfile();
+			co.navigationPage.VerifyDocumentinforeligiousworship();
+			
+		} catch (Exception e) {
+		} finally {
+		}
+	}
+	
 	@Test
 	public void verifyTransactionsInAdmin() {
 		try {
@@ -570,6 +600,16 @@ public class CommonTestcases extends SetupInit {
 			setExceptionData(co, e);
 		} finally {
 			setExcecutionData(co);
+		}
+	}
+	
+	@Test
+	public void VerifyServiceiconsdisplayedFromDashboard () {
+		try {
+			co.navigationPage.VerifyServiceiconsdisplayedFromDashboard();
+		
+		} catch (Exception e) {
+		} finally {
 		}
 	}
 }

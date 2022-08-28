@@ -6,20 +6,18 @@
     <listener class-name="listeners.CustomizedEmailableReport"/>
     <listener class-name="listeners.HtmlReport"/>
   </listeners>
-  <test thread-count="5" name="SuperAgent Change MPIN(failed)" verbose="10">
+  <test thread-count="5" name="Agent Transfer(failed)" verbose="10">
     <classes>
-      <class name="portals.testCases.Agent.SuperAgentChangeMPin">
+      <class name="portals.testCases.Agent.A2ATransfer">
         <methods>
           <include name="setAccessMaricesResult"/>
-          <include name="verifyFAQfromSideMenu"/>
           <include name="closeBrowser"/>
-          <include name="verifyinvalidSuperAgent_ChangeMpinfromSideMenu" invocation-numbers="0"/>
+          <include name="beforeMethod"/>
           <include name="tearDown"/>
           <include name="initializeSetupInit"/>
-          <include name="SuperAgent_ChangeMpinfromSideMenu" invocation-numbers="0"/>
-          <include name="beforeMethod"/>
+          <include name="CheckCommissionBalanceFormProfile"/>
         </methods>
-      </class> <!-- portals.testCases.Agent.SuperAgentChangeMPin -->
+      </class> <!-- portals.testCases.Agent.A2ATransfer -->
     </classes>
-  </test> <!-- SuperAgent Change MPIN(failed) -->
+  </test> <!-- Agent Transfer(failed) -->
 </suite> <!-- Failed suite [Nasswallet Agent WebPortal - Super Agent] -->
