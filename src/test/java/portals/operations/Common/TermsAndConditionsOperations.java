@@ -2,7 +2,6 @@ package portals.operations.Common;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import base.SetupInit;
 import utils.elasticUtils.elasticwrite;
@@ -17,7 +16,6 @@ public class TermsAndConditionsOperations extends SetupInit {
 	public TermsAndConditionsOperations(WebDriver driver, elasticwrite log) {
 		this.log = log;
 		this.driver = driver;
-		WebElement e1;
 	}
 
 	public void isNavigateToTermsConditionPage(int... args) {

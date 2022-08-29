@@ -1,0 +1,2271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="33" total="60" passed="27" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button for Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Current Commission Balance is: 2970.0]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Side Menu]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On View Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button for Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Current Commission Balance is: 2970.0]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile Details]]>
+    </line>
+    <line>
+      <![CDATA[Verify Balance for Dashboard:2970.0 and Profile:2970.0]]>
+    </line>
+    <line>
+      <![CDATA[Verify Both are Equal]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Agent Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Click On Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button for Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Current Balance is: 495959.0]]>
+    </line>
+    <line>
+      <![CDATA[Enter Mobile Number : 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Enter Amount : 501.00]]>
+    </line>
+    <line>
+      <![CDATA[Enter Remarks:Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Mobile Number on Confirmation Screen: 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Verify Remarks on Confirmation Screen: Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Verify Amount on Confirmation Screen: 501.00]]>
+    </line>
+    <line>
+      <![CDATA[Click On Confirm Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Transaction is Success]]>
+    </line>
+    <line>
+      <![CDATA[Verify Mobile Number on Success Screen: 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Verify Remarks on Success Screen: Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Verify Amount on Success Screen: 501.00]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button for Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Updated Balance is: 495458.0]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Side Menu]]>
+    </line>
+    <line>
+      <![CDATA[Click On Services]]>
+    </line>
+    <line>
+      <![CDATA[Click On Agent Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Click On Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button for Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Current Balance is: 495458.0]]>
+    </line>
+    <line>
+      <![CDATA[Enter Mobile Number : 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Enter Amount : 501.00]]>
+    </line>
+    <line>
+      <![CDATA[Enter Remarks:Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Mobile Number on Confirmation Screen: 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Verify Remarks on Confirmation Screen: Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Verify Amount on Confirmation Screen: 501.00]]>
+    </line>
+    <line>
+      <![CDATA[Click On Confirm Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Transaction is Success]]>
+    </line>
+    <line>
+      <![CDATA[Verify Mobile Number on Success Screen: 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Verify Remarks on Success Screen: Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Verify Amount on Success Screen: 501.00]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button for Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Updated Balance is: 494957.0]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Clear Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+    </line>
+    <line>
+      <![CDATA[Select Status Filter: Success]]>
+    </line>
+    <line>
+      <![CDATA[Select Service Filter: A2A Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Transaction Status in Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Transaction verify in From User]]>
+    </line>
+    <line>
+      <![CDATA[Click On Logout]]>
+    </line>
+    <line>
+      <![CDATA[Enter user name: 256720000001]]>
+    </line>
+    <line>
+      <![CDATA[Enter password: Agent@123]]>
+    </line>
+    <line>
+      <![CDATA[Click on Login button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Logout]]>
+    </line>
+    <line>
+      <![CDATA[Click on Sub Agent]]>
+    </line>
+    <line>
+      <![CDATA[Enter user name: 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Enter password: Agent@123]]>
+    </line>
+    <line>
+      <![CDATA[Click on Login button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Clear Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+    </line>
+    <line>
+      <![CDATA[Select Status Filter: Success]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Transaction Status in Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Transaction verify in To User]]>
+    </line>
+    <line>
+      <![CDATA[Click On Logout]]>
+    </line>
+    <line>
+      <![CDATA[Enter user name: 256720000001]]>
+    </line>
+    <line>
+      <![CDATA[Enter password: Agent@123]]>
+    </line>
+    <line>
+      <![CDATA[Click on Login button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Clear Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+    </line>
+    <line>
+      <![CDATA[Select Status Filter: Success]]>
+    </line>
+    <line>
+      <![CDATA[Select Service Filter: A2A Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Transaction Status in Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Transaction verify in From User]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Logout]]>
+    </line>
+    <line>
+      <![CDATA[Click on Sub Agent]]>
+    </line>
+    <line>
+      <![CDATA[Enter user name: 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Enter password: Agent@123]]>
+    </line>
+    <line>
+      <![CDATA[Click on Login button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Clear Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+    </line>
+    <line>
+      <![CDATA[Select Status Filter: Success]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Transaction Status in Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Transaction verify in To User]]>
+    </line>
+    <line>
+      <![CDATA[Click On Logout]]>
+    </line>
+    <line>
+      <![CDATA[Enter user name: 256720000001]]>
+    </line>
+    <line>
+      <![CDATA[Enter password: Agent@123]]>
+    </line>
+    <line>
+      <![CDATA[Click on Login button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Agent Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Click On Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button for Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Current Balance is: 494957.0]]>
+    </line>
+    <line>
+      <![CDATA[Enter Mobile Number : 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Enter Amount : 501.00]]>
+    </line>
+    <line>
+      <![CDATA[Enter Remarks:Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Mobile Number on Confirmation Screen: 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Verify Remarks on Confirmation Screen: Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Verify Amount on Confirmation Screen: 501.00]]>
+    </line>
+    <line>
+      <![CDATA[Click On Confirm Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Transaction is Success]]>
+    </line>
+    <line>
+      <![CDATA[Verify Mobile Number on Success Screen: 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Verify Remarks on Success Screen: Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Verify Amount on Success Screen: 501.00]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button for Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Updated Balance is: 494456.0]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button for Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Current Balance is: 494456.0]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Side Menu]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On View Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Enter Secret PIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button for Check Balance]]>
+    </line>
+    <line>
+      <![CDATA[Current Balance is: 494456.0]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile Details]]>
+    </line>
+    <line>
+      <![CDATA[Verify Balance for Dashboard:494456.0 and Profile:494456.0]]>
+    </line>
+    <line>
+      <![CDATA[Verify Both are Equal]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Clear Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+    </line>
+    <line>
+      <![CDATA[Select Status Filter: Success]]>
+    </line>
+    <line>
+      <![CDATA[Select Service Filter: A2A Transfer]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Transaction Status in Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Transaction verify in From User]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Logout]]>
+    </line>
+    <line>
+      <![CDATA[Click on Sub Agent]]>
+    </line>
+    <line>
+      <![CDATA[Enter user name: 256720000011]]>
+    </line>
+    <line>
+      <![CDATA[Enter password: Agent@123]]>
+    </line>
+    <line>
+      <![CDATA[Click on Login button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Clear Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Filter Button]]>
+    </line>
+    <line>
+      <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+    </line>
+    <line>
+      <![CDATA[Select Status Filter: Success]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[Verify Transaction Status in Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Successfully Transaction verify in To User]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Privacy Policy]]>
+    </line>
+    <line>
+      <![CDATA[Naviagte To Privacy Policy Page]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Side Menu]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Privacy Policy]]>
+    </line>
+    <line>
+      <![CDATA[Naviagte To Privacy Policy Page]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[UGX doller Sign Are Available in Dashboard]]>
+    </line>
+    <line>
+      <![CDATA[Click On Passbook]]>
+    </line>
+    <line>
+      <![CDATA[UGX doller Sign Are Available in Passbook]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Terms And Conditions]]>
+    </line>
+    <line>
+      <![CDATA[Naviagte To Terms & Conditions Page]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Side Menu]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Terms And Conditions]]>
+    </line>
+    <line>
+      <![CDATA[Naviagte To Terms & Conditions Page]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Side Menu]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On View Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Password Policy]]>
+    </line>
+    <line>
+      <![CDATA[Verify Password Policy Title]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >>  Password must have minimum 8 characters ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >>  Password must have maximum 18 characters ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >>  Password must have at least one lower case alphabet ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >>  Password must have at least one lower case alphabet ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >>  Password must have at least one numeric ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >> Password must have at least one special characters ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >> List of special character allowed are @,$,#,*,& ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >> Password Example]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Password Policy]]>
+    </line>
+    <line>
+      <![CDATA[Verify Password Policy Title]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >>  Password must have minimum 8 characters ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >>  Password must have maximum 18 characters ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >>  Password must have at least one lower case alphabet ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >>  Password must have at least one lower case alphabet ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >>  Password must have at least one numeric ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >> Password must have at least one special characters ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >> List of special character allowed are @,$,#,*,& ]]>
+    </line>
+    <line>
+      <![CDATA[Verify text >> Password Example]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Side Menu]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On View Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Personal info Profile]]>
+    </line>
+    <line>
+      <![CDATA[Verify Personal info]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Side Menu]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On View Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Personal info Profile]]>
+    </line>
+    <line>
+      <![CDATA[Verify Document info religious worship info ]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Verify Agent Assisted Deposit icon in Dashboard ]]>
+    </line>
+    <line>
+      <![CDATA[Verify Agent Assisted Withdraw icon in Dashboard ]]>
+    </line>
+    <line>
+      <![CDATA[Verify Agent Transfer icon in Dashboard ]]>
+    </line>
+    <line>
+      <![CDATA[Verify Financial Services icon in Dashboard ]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Logout]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Change Mpin with Wrong Input]]>
+    </line>
+    <line>
+      <![CDATA[Enter Current MPIN : 8454]]>
+    </line>
+    <line>
+      <![CDATA[Enter New MPIN : By.id: frm_text_transactionPinid]]>
+    </line>
+    <line>
+      <![CDATA[Enter Confirm MPIN : By.id: frm_text_confirmTransactionPinid]]>
+    </line>
+    <line>
+      <![CDATA[Click On Submit Button]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Change Mpin]]>
+    </line>
+    <line>
+      <![CDATA[Click On Home]]>
+    </line>
+    <line>
+      <![CDATA[Click On Side Menu]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On Profile]]>
+    </line>
+    <line>
+      <![CDATA[Click On FAQs]]>
+    </line>
+    <line>
+      <![CDATA[Verify Check Title]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2022-08-26T12:30:17 IST" name="Nasswallet Agent WebPortal - Super Agent" finished-at="2022-08-26T12:57:06 IST" duration-ms="1609675">
+    <groups>
+    </groups>
+    <test started-at="2022-08-26T12:30:17 IST" name="Agent Transfer" finished-at="2022-08-26T12:49:50 IST" duration-ms="1173233">
+      <class name="portals.testCases.Agent.A2ATransfer">
+        <test-method is-config="true" signature="initializeSetupInit(java.lang.String,org.testng.ITestContext)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:30:17 IST" name="initializeSetupInit" finished-at="2022-08-26T12:31:09 IST" duration-ms="52365" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@1ee841e3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeSetupInit -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:31:09 IST" name="beforeMethod" finished-at="2022-08-26T12:31:22 IST" duration-ms="13022" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="CheckCommissionBalanceFormDashboard()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:31:22 IST" name="CheckCommissionBalanceFormDashboard" finished-at="2022-08-26T12:31:33 IST" duration-ms="11326" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button for Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Current Commission Balance is: 2970.0]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CheckCommissionBalanceFormDashboard -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:31:33 IST" name="tearDown" finished-at="2022-08-26T12:31:33 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CheckCommissionBalanceFormDashboard status=SUCCESS method=A2ATransfer.CheckCommissionBalanceFormDashboard()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Check Balance]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:31:33 IST" name="beforeMethod" finished-at="2022-08-26T12:31:46 IST" duration-ms="13110" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="CheckCommissionBalanceFormProfile()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:31:46 IST" name="CheckCommissionBalanceFormProfile" finished-at="2022-08-26T12:32:07 IST" duration-ms="21005" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Side Menu]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On View Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button for Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Current Commission Balance is: 2970.0]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile Details]]>
+            </line>
+            <line>
+              <![CDATA[Verify Balance for Dashboard:2970.0 and Profile:2970.0]]>
+            </line>
+            <line>
+              <![CDATA[Verify Both are Equal]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CheckCommissionBalanceFormProfile -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:32:07 IST" name="tearDown" finished-at="2022-08-26T12:32:07 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CheckCommissionBalanceFormProfile status=SUCCESS method=A2ATransfer.CheckCommissionBalanceFormProfile()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Side Menu]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:32:08 IST" name="beforeMethod" finished-at="2022-08-26T12:32:21 IST" duration-ms="13228" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="a2aTranfer(java.util.Map)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:32:21 IST" name="a2aTranfer" data-provider="A2ATransfer" finished-at="2022-08-26T12:33:46 IST" duration-ms="85093" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{fromportalname=Agent, fromusertype=Super Agent, fromusername=256720000001, frompassword=Agent@123, toportalname=Agent, tousertype=Sub Agent, tousername=256720000011, topassword=Agent@123, amount=501.00, remarks=Transfer, fromsurchrge=0, fromcommission=0, tosurcharge=0, tocommission=0, methodname=a2aTransfer}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Agent Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Click On Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button for Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Current Balance is: 495959.0]]>
+            </line>
+            <line>
+              <![CDATA[Enter Mobile Number : 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Enter Amount : 501.00]]>
+            </line>
+            <line>
+              <![CDATA[Enter Remarks:Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Mobile Number on Confirmation Screen: 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Verify Remarks on Confirmation Screen: Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Verify Amount on Confirmation Screen: 501.00]]>
+            </line>
+            <line>
+              <![CDATA[Click On Confirm Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Transaction is Success]]>
+            </line>
+            <line>
+              <![CDATA[Verify Mobile Number on Success Screen: 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Verify Remarks on Success Screen: Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Verify Amount on Success Screen: 501.00]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button for Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Updated Balance is: 495458.0]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- a2aTranfer -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:33:46 IST" name="tearDown" finished-at="2022-08-26T12:33:46 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=a2aTranfer status=SUCCESS method=A2ATransfer.a2aTranfer(java.util.Map)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Agent Transfer]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:33:46 IST" name="beforeMethod" finished-at="2022-08-26T12:33:59 IST" duration-ms="13195" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="a2aTransferFromSideMenu(java.util.Map)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:33:59 IST" name="a2aTransferFromSideMenu" data-provider="A2ATransfer" finished-at="2022-08-26T12:35:27 IST" duration-ms="87615" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{fromportalname=Agent, fromusertype=Super Agent, fromusername=256720000001, frompassword=Agent@123, toportalname=Agent, tousertype=Sub Agent, tousername=256720000011, topassword=Agent@123, amount=501.00, remarks=Transfer, fromsurchrge=0, fromcommission=0, tosurcharge=0, tocommission=0, methodname=a2aTransfer}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Side Menu]]>
+            </line>
+            <line>
+              <![CDATA[Click On Services]]>
+            </line>
+            <line>
+              <![CDATA[Click On Agent Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Click On Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button for Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Current Balance is: 495458.0]]>
+            </line>
+            <line>
+              <![CDATA[Enter Mobile Number : 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Enter Amount : 501.00]]>
+            </line>
+            <line>
+              <![CDATA[Enter Remarks:Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Mobile Number on Confirmation Screen: 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Verify Remarks on Confirmation Screen: Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Verify Amount on Confirmation Screen: 501.00]]>
+            </line>
+            <line>
+              <![CDATA[Click On Confirm Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Transaction is Success]]>
+            </line>
+            <line>
+              <![CDATA[Verify Mobile Number on Success Screen: 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Verify Remarks on Success Screen: Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Verify Amount on Success Screen: 501.00]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button for Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Updated Balance is: 494957.0]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- a2aTransferFromSideMenu -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:35:27 IST" name="tearDown" finished-at="2022-08-26T12:35:27 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=a2aTransferFromSideMenu status=SUCCESS method=A2ATransfer.a2aTransferFromSideMenu(java.util.Map)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Side Menu]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:35:27 IST" name="beforeMethod" finished-at="2022-08-26T12:35:41 IST" duration-ms="13825" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyPerformedA2ATranferFromFromUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:35:41 IST" name="verifyPerformedA2ATranferFromFromUserPassbook" finished-at="2022-08-26T12:36:40 IST" duration-ms="59902" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Clear Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+            </line>
+            <line>
+              <![CDATA[Select Status Filter: Success]]>
+            </line>
+            <line>
+              <![CDATA[Select Service Filter: A2A Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Transaction Status in Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Successfully Transaction verify in From User]]>
+            </line>
+            <line>
+              <![CDATA[Click On Logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyPerformedA2ATranferFromFromUserPassbook -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:36:40 IST" name="tearDown" finished-at="2022-08-26T12:36:40 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPerformedA2ATranferFromFromUserPassbook status=SUCCESS method=A2ATransfer.verifyPerformedA2ATranferFromFromUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Passbook]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:36:40 IST" name="beforeMethod" finished-at="2022-08-26T12:37:12 IST" duration-ms="31741" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Enter user name: 256720000001]]>
+            </line>
+            <line>
+              <![CDATA[Enter password: Agent@123]]>
+            </line>
+            <line>
+              <![CDATA[Click on Login button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyPerformedA2ATransferFromToUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:37:12 IST" name="verifyPerformedA2ATransferFromToUserPassbook" finished-at="2022-08-26T12:38:42 IST" duration-ms="90027" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Logout]]>
+            </line>
+            <line>
+              <![CDATA[Click on Sub Agent]]>
+            </line>
+            <line>
+              <![CDATA[Enter user name: 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Enter password: Agent@123]]>
+            </line>
+            <line>
+              <![CDATA[Click on Login button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Clear Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+            </line>
+            <line>
+              <![CDATA[Select Status Filter: Success]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Transaction Status in Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Successfully Transaction verify in To User]]>
+            </line>
+            <line>
+              <![CDATA[Click On Logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyPerformedA2ATransferFromToUserPassbook -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:38:42 IST" name="beforeMethod" finished-at="2022-08-26T12:39:14 IST" duration-ms="31824" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Enter user name: 256720000001]]>
+            </line>
+            <line>
+              <![CDATA[Enter password: Agent@123]]>
+            </line>
+            <line>
+              <![CDATA[Click on Login button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:38:42 IST" name="tearDown" finished-at="2022-08-26T12:38:42 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPerformedA2ATransferFromToUserPassbook status=SUCCESS method=A2ATransfer.verifyPerformedA2ATransferFromToUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Logout]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyPerformedA2ATransferFromSideMenuFromUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:39:14 IST" name="verifyPerformedA2ATransferFromSideMenuFromUserPassbook" finished-at="2022-08-26T12:39:55 IST" duration-ms="41174" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Clear Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+            </line>
+            <line>
+              <![CDATA[Select Status Filter: Success]]>
+            </line>
+            <line>
+              <![CDATA[Select Service Filter: A2A Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Transaction Status in Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Successfully Transaction verify in From User]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyPerformedA2ATransferFromSideMenuFromUserPassbook -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:39:55 IST" name="beforeMethod" finished-at="2022-08-26T12:40:09 IST" duration-ms="13334" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:39:55 IST" name="tearDown" finished-at="2022-08-26T12:39:55 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPerformedA2ATransferFromSideMenuFromUserPassbook status=SUCCESS method=A2ATransfer.verifyPerformedA2ATransferFromSideMenuFromUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Passbook]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyPerformedA2ATransferFromSideMenuFromToUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:40:09 IST" name="verifyPerformedA2ATransferFromSideMenuFromToUserPassbook" finished-at="2022-08-26T12:41:39 IST" duration-ms="90361" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Logout]]>
+            </line>
+            <line>
+              <![CDATA[Click on Sub Agent]]>
+            </line>
+            <line>
+              <![CDATA[Enter user name: 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Enter password: Agent@123]]>
+            </line>
+            <line>
+              <![CDATA[Click on Login button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Clear Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+            </line>
+            <line>
+              <![CDATA[Select Status Filter: Success]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Transaction Status in Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Successfully Transaction verify in To User]]>
+            </line>
+            <line>
+              <![CDATA[Click On Logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyPerformedA2ATransferFromSideMenuFromToUserPassbook -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:41:39 IST" name="tearDown" finished-at="2022-08-26T12:41:39 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPerformedA2ATransferFromSideMenuFromToUserPassbook status=SUCCESS method=A2ATransfer.verifyPerformedA2ATransferFromSideMenuFromToUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Logout]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:41:39 IST" name="beforeMethod" finished-at="2022-08-26T12:42:09 IST" duration-ms="30304" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Enter user name: 256720000001]]>
+            </line>
+            <line>
+              <![CDATA[Enter password: Agent@123]]>
+            </line>
+            <line>
+              <![CDATA[Click on Login button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="a2aTranferFromFooter(java.util.Map)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:42:09 IST" name="a2aTranferFromFooter" data-provider="A2ATransfer" finished-at="2022-08-26T12:43:36 IST" duration-ms="86907" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{fromportalname=Agent, fromusertype=Super Agent, fromusername=256720000001, frompassword=Agent@123, toportalname=Agent, tousertype=Sub Agent, tousername=256720000011, topassword=Agent@123, amount=501.00, remarks=Transfer, fromsurchrge=0, fromcommission=0, tosurcharge=0, tocommission=0, methodname=a2aTransfer}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Agent Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Click On Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button for Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Current Balance is: 494957.0]]>
+            </line>
+            <line>
+              <![CDATA[Enter Mobile Number : 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Enter Amount : 501.00]]>
+            </line>
+            <line>
+              <![CDATA[Enter Remarks:Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Mobile Number on Confirmation Screen: 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Verify Remarks on Confirmation Screen: Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Verify Amount on Confirmation Screen: 501.00]]>
+            </line>
+            <line>
+              <![CDATA[Click On Confirm Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Transaction is Success]]>
+            </line>
+            <line>
+              <![CDATA[Verify Mobile Number on Success Screen: 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Verify Remarks on Success Screen: Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Verify Amount on Success Screen: 501.00]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button for Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Updated Balance is: 494456.0]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- a2aTranferFromFooter -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:43:36 IST" name="tearDown" finished-at="2022-08-26T12:43:36 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=a2aTranferFromFooter status=SUCCESS method=A2ATransfer.a2aTranferFromFooter(java.util.Map)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Agent Transfer]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:43:36 IST" name="beforeMethod" finished-at="2022-08-26T12:43:49 IST" duration-ms="13155" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="CheckBalanceFormDashboard()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:43:49 IST" name="CheckBalanceFormDashboard" finished-at="2022-08-26T12:44:01 IST" duration-ms="12054" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button for Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Current Balance is: 494456.0]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CheckBalanceFormDashboard -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:44:01 IST" name="tearDown" finished-at="2022-08-26T12:44:01 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CheckBalanceFormDashboard status=SUCCESS method=A2ATransfer.CheckBalanceFormDashboard()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Check Balance]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:44:01 IST" name="beforeMethod" finished-at="2022-08-26T12:44:15 IST" duration-ms="13151" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="CheckBalanceFormProfile()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:44:15 IST" name="CheckBalanceFormProfile" finished-at="2022-08-26T12:44:35 IST" duration-ms="20761" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Side Menu]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On View Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Enter Secret PIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button for Check Balance]]>
+            </line>
+            <line>
+              <![CDATA[Current Balance is: 494456.0]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile Details]]>
+            </line>
+            <line>
+              <![CDATA[Verify Balance for Dashboard:494456.0 and Profile:494456.0]]>
+            </line>
+            <line>
+              <![CDATA[Verify Both are Equal]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- CheckBalanceFormProfile -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:44:35 IST" name="beforeMethod" finished-at="2022-08-26T12:44:48 IST" duration-ms="13152" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:44:35 IST" name="tearDown" finished-at="2022-08-26T12:44:35 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=CheckBalanceFormProfile status=SUCCESS method=A2ATransfer.CheckBalanceFormProfile()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Side Menu]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyPerformedA2ATranferFromFootertoUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:44:48 IST" name="verifyPerformedA2ATranferFromFootertoUserPassbook" finished-at="2022-08-26T12:45:30 IST" duration-ms="41436" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Clear Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+            </line>
+            <line>
+              <![CDATA[Select Status Filter: Success]]>
+            </line>
+            <line>
+              <![CDATA[Select Service Filter: A2A Transfer]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Transaction Status in Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Successfully Transaction verify in From User]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyPerformedA2ATranferFromFootertoUserPassbook -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:45:30 IST" name="tearDown" finished-at="2022-08-26T12:45:30 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPerformedA2ATranferFromFootertoUserPassbook status=SUCCESS method=A2ATransfer.verifyPerformedA2ATranferFromFootertoUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Passbook]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:45:30 IST" name="beforeMethod" finished-at="2022-08-26T12:45:43 IST" duration-ms="13217" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyPerformedA2ATransferFromFootertoToUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:45:43 IST" name="verifyPerformedA2ATransferFromFootertoToUserPassbook" finished-at="2022-08-26T12:49:50 IST" duration-ms="246382" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Logout]]>
+            </line>
+            <line>
+              <![CDATA[Click on Sub Agent]]>
+            </line>
+            <line>
+              <![CDATA[Enter user name: 256720000011]]>
+            </line>
+            <line>
+              <![CDATA[Enter password: Agent@123]]>
+            </line>
+            <line>
+              <![CDATA[Click on Login button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Clear Button]]>
+            </line>
+            <line>
+              <![CDATA[Click On Filter Button]]>
+            </line>
+            <line>
+              <![CDATA[Select Duration Filter: Last 5 Transaction]]>
+            </line>
+            <line>
+              <![CDATA[Select Status Filter: Success]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button]]>
+            </line>
+            <line>
+              <![CDATA[Verify Transaction Status in Passbook]]>
+            </line>
+            <line>
+              <![CDATA[Successfully Transaction verify in To User]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyPerformedA2ATransferFromFootertoToUserPassbook -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:49:50 IST" name="tearDown" finished-at="2022-08-26T12:49:50 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyPerformedA2ATransferFromFootertoToUserPassbook status=SUCCESS method=A2ATransfer.verifyPerformedA2ATransferFromFootertoToUserPassbook()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b] output=Click On Logout]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:portals.testCases.Agent.A2ATransfer@3fb1549b]" started-at="2022-08-26T12:49:50 IST" name="closeBrowser" finished-at="2022-08-26T12:49:50 IST" duration-ms="321" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- portals.testCases.Agent.A2ATransfer -->
+    </test> <!-- Agent Transfer -->
+    <test started-at="2022-08-26T12:49:50 IST" name="Common Testcases" finished-at="2022-08-26T12:55:10 IST" duration-ms="319735">
+      <class name="portals.testCases.Common.CommonTestcases">
+        <test-method is-config="true" signature="initializeSetupInit(java.lang.String,org.testng.ITestContext)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:49:50 IST" name="initializeSetupInit" finished-at="2022-08-26T12:50:34 IST" duration-ms="43823" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@7a0de101]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeSetupInit -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:50:34 IST" name="beforeMethod" finished-at="2022-08-26T12:50:47 IST" duration-ms="13538" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="privacyPolicyFromDashboardFooter()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:50:47 IST" name="privacyPolicyFromDashboardFooter" finished-at="2022-08-26T12:50:51 IST" duration-ms="3911" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Privacy Policy]]>
+            </line>
+            <line>
+              <![CDATA[Naviagte To Privacy Policy Page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- privacyPolicyFromDashboardFooter -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:50:51 IST" name="tearDown" finished-at="2022-08-26T12:50:51 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=privacyPolicyFromDashboardFooter status=SUCCESS method=CommonTestcases.privacyPolicyFromDashboardFooter()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=Click On Privacy Policy]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:50:51 IST" name="beforeMethod" finished-at="2022-08-26T12:51:04 IST" duration-ms="12711" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="privacyPolicyFromSideMenuProfile()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:51:04 IST" name="privacyPolicyFromSideMenuProfile" finished-at="2022-08-26T12:51:12 IST" duration-ms="8022" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Side Menu]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Privacy Policy]]>
+            </line>
+            <line>
+              <![CDATA[Naviagte To Privacy Policy Page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- privacyPolicyFromSideMenuProfile -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:51:12 IST" name="beforeMethod" finished-at="2022-08-26T12:51:25 IST" duration-ms="12867" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:51:12 IST" name="tearDown" finished-at="2022-08-26T12:51:12 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=privacyPolicyFromSideMenuProfile status=SUCCESS method=CommonTestcases.privacyPolicyFromSideMenuProfile()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=Click On Side Menu]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="UGX_SignAvailable()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:51:25 IST" name="UGX_SignAvailable" finished-at="2022-08-26T12:51:34 IST" duration-ms="8914" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[UGX doller Sign Are Available in Dashboard]]>
+            </line>
+            <line>
+              <![CDATA[Click On Passbook]]>
+            </line>
+            <line>
+              <![CDATA[UGX doller Sign Are Available in Passbook]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- UGX_SignAvailable -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:51:34 IST" name="beforeMethod" finished-at="2022-08-26T12:51:47 IST" duration-ms="13135" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:51:34 IST" name="tearDown" finished-at="2022-08-26T12:51:34 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=UGX_SignAvailable status=SUCCESS method=CommonTestcases.UGX_SignAvailable()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=UGX doller Sign Are Available in Dashboard]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="termsAndConditionsFromDashboardFooter()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:51:47 IST" name="termsAndConditionsFromDashboardFooter" finished-at="2022-08-26T12:51:51 IST" duration-ms="4594" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Terms And Conditions]]>
+            </line>
+            <line>
+              <![CDATA[Naviagte To Terms & Conditions Page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- termsAndConditionsFromDashboardFooter -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:51:51 IST" name="beforeMethod" finished-at="2022-08-26T12:52:04 IST" duration-ms="12875" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:51:51 IST" name="tearDown" finished-at="2022-08-26T12:51:51 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=termsAndConditionsFromDashboardFooter status=SUCCESS method=CommonTestcases.termsAndConditionsFromDashboardFooter()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=Click On Terms And Conditions]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="termsAndConditionsFromSideMenuProfile()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:52:04 IST" name="termsAndConditionsFromSideMenuProfile" finished-at="2022-08-26T12:52:13 IST" duration-ms="8563" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Side Menu]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Terms And Conditions]]>
+            </line>
+            <line>
+              <![CDATA[Naviagte To Terms & Conditions Page]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- termsAndConditionsFromSideMenuProfile -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:52:13 IST" name="beforeMethod" finished-at="2022-08-26T12:52:26 IST" duration-ms="13167" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:52:13 IST" name="tearDown" finished-at="2022-08-26T12:52:13 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=termsAndConditionsFromSideMenuProfile status=SUCCESS method=CommonTestcases.termsAndConditionsFromSideMenuProfile()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=Click On Side Menu]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="VerifyPasswordPolicyfromChangePassword()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:52:26 IST" name="VerifyPasswordPolicyfromChangePassword" finished-at="2022-08-26T12:52:53 IST" duration-ms="27028" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Side Menu]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On View Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Password Policy]]>
+            </line>
+            <line>
+              <![CDATA[Verify Password Policy Title]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >>  Password must have minimum 8 characters ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >>  Password must have maximum 18 characters ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >>  Password must have at least one lower case alphabet ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >>  Password must have at least one lower case alphabet ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >>  Password must have at least one numeric ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >> Password must have at least one special characters ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >> List of special character allowed are @,$,#,*,& ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >> Password Example]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- VerifyPasswordPolicyfromChangePassword -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:52:53 IST" name="tearDown" finished-at="2022-08-26T12:52:53 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifyPasswordPolicyfromChangePassword status=SUCCESS method=CommonTestcases.VerifyPasswordPolicyfromChangePassword()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=Click On Side Menu]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:52:53 IST" name="beforeMethod" finished-at="2022-08-26T12:53:06 IST" duration-ms="13168" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="VerifyPasswordPolicyfromDashboardFooter()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:53:06 IST" name="VerifyPasswordPolicyfromDashboardFooter" finished-at="2022-08-26T12:53:25 IST" duration-ms="18918" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Password Policy]]>
+            </line>
+            <line>
+              <![CDATA[Verify Password Policy Title]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >>  Password must have minimum 8 characters ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >>  Password must have maximum 18 characters ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >>  Password must have at least one lower case alphabet ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >>  Password must have at least one lower case alphabet ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >>  Password must have at least one numeric ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >> Password must have at least one special characters ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >> List of special character allowed are @,$,#,*,& ]]>
+            </line>
+            <line>
+              <![CDATA[Verify text >> Password Example]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- VerifyPasswordPolicyfromDashboardFooter -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:53:25 IST" name="tearDown" finished-at="2022-08-26T12:53:25 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifyPasswordPolicyfromDashboardFooter status=SUCCESS method=CommonTestcases.VerifyPasswordPolicyfromDashboardFooter()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=Click On Password Policy]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:53:25 IST" name="beforeMethod" finished-at="2022-08-26T12:53:39 IST" duration-ms="13446" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="VerifyPersonalinforeligiousworshipFromProfile()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:53:39 IST" name="VerifyPersonalinforeligiousworshipFromProfile" finished-at="2022-08-26T12:53:51 IST" duration-ms="12384" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Side Menu]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On View Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Personal info Profile]]>
+            </line>
+            <line>
+              <![CDATA[Verify Personal info]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- VerifyPersonalinforeligiousworshipFromProfile -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:53:51 IST" name="tearDown" finished-at="2022-08-26T12:53:51 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifyPersonalinforeligiousworshipFromProfile status=SUCCESS method=CommonTestcases.VerifyPersonalinforeligiousworshipFromProfile()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=Click On Side Menu]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:53:51 IST" name="beforeMethod" finished-at="2022-08-26T12:54:04 IST" duration-ms="13198" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="VerifyDocumentinforeligiousworshipFromProfile()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:54:04 IST" name="VerifyDocumentinforeligiousworshipFromProfile" finished-at="2022-08-26T12:54:16 IST" duration-ms="12282" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Side Menu]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On View Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Personal info Profile]]>
+            </line>
+            <line>
+              <![CDATA[Verify Document info religious worship info ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- VerifyDocumentinforeligiousworshipFromProfile -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:54:16 IST" name="tearDown" finished-at="2022-08-26T12:54:16 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifyDocumentinforeligiousworshipFromProfile status=SUCCESS method=CommonTestcases.VerifyDocumentinforeligiousworshipFromProfile()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=Click On Side Menu]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:54:16 IST" name="beforeMethod" finished-at="2022-08-26T12:54:30 IST" duration-ms="13131" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="VerifyServiceiconsdisplayedFromDashboard()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:54:30 IST" name="VerifyServiceiconsdisplayedFromDashboard" finished-at="2022-08-26T12:54:37 IST" duration-ms="7763" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Verify Agent Assisted Deposit icon in Dashboard ]]>
+            </line>
+            <line>
+              <![CDATA[Verify Agent Assisted Withdraw icon in Dashboard ]]>
+            </line>
+            <line>
+              <![CDATA[Verify Agent Transfer icon in Dashboard ]]>
+            </line>
+            <line>
+              <![CDATA[Verify Financial Services icon in Dashboard ]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- VerifyServiceiconsdisplayedFromDashboard -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:54:37 IST" name="tearDown" finished-at="2022-08-26T12:54:37 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=VerifyServiceiconsdisplayedFromDashboard status=SUCCESS method=CommonTestcases.VerifyServiceiconsdisplayedFromDashboard()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=Verify Agent Assisted Deposit icon in Dashboard ]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:54:37 IST" name="beforeMethod" finished-at="2022-08-26T12:54:50 IST" duration-ms="12810" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="logout()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:54:50 IST" name="logout" finished-at="2022-08-26T12:55:09 IST" duration-ms="19129" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:55:09 IST" name="tearDown" finished-at="2022-08-26T12:55:09 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=logout status=SUCCESS method=CommonTestcases.logout()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375] output=Click On Logout]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:portals.testCases.Common.CommonTestcases@7c711375]" started-at="2022-08-26T12:55:09 IST" name="closeBrowser" finished-at="2022-08-26T12:55:10 IST" duration-ms="344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- portals.testCases.Common.CommonTestcases -->
+    </test> <!-- Common Testcases -->
+    <test started-at="2022-08-26T12:55:10 IST" name="SuperAgent Change MPIN" finished-at="2022-08-26T12:57:06 IST" duration-ms="116670">
+      <class name="portals.testCases.Agent.SuperAgentChangeMPin">
+        <test-method is-config="true" signature="initializeSetupInit(java.lang.String,org.testng.ITestContext)[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:55:10 IST" name="initializeSetupInit" finished-at="2022-08-26T12:55:46 IST" duration-ms="36609" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@311e1c17]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeSetupInit -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:55:46 IST" name="beforeMethod" finished-at="2022-08-26T12:56:00 IST" duration-ms="13355" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyinvalidSuperAgent_ChangeMpinfromSideMenu(java.util.Map)[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:56:00 IST" name="verifyinvalidSuperAgent_ChangeMpinfromSideMenu" data-provider="SuperAgent_ChangeMpin" finished-at="2022-08-26T12:56:24 IST" duration-ms="24334" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{fromportalname=Agent, fromusertype=Super Agent, fromusername=256720000001, frompassword=Agent@123, frommpin=8454, newmpin=8454}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Change Mpin with Wrong Input]]>
+            </line>
+            <line>
+              <![CDATA[Enter Current MPIN : 8454]]>
+            </line>
+            <line>
+              <![CDATA[Enter New MPIN : By.id: frm_text_transactionPinid]]>
+            </line>
+            <line>
+              <![CDATA[Enter Confirm MPIN : By.id: frm_text_confirmTransactionPinid]]>
+            </line>
+            <line>
+              <![CDATA[Click On Submit Button]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyinvalidSuperAgent_ChangeMpinfromSideMenu -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:56:24 IST" name="tearDown" finished-at="2022-08-26T12:56:24 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyinvalidSuperAgent_ChangeMpinfromSideMenu status=SUCCESS method=SuperAgentChangeMPin.verifyinvalidSuperAgent_ChangeMpinfromSideMenu(java.util.Map)[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a] output=Click On Change Mpin with Wrong Input]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:56:24 IST" name="beforeMethod" finished-at="2022-08-26T12:56:37 IST" duration-ms="13113" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="SuperAgent_ChangeMpinfromSideMenu(java.util.Map)[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:56:37 IST" name="SuperAgent_ChangeMpinfromSideMenu" data-provider="SuperAgent_ChangeMpin" finished-at="2022-08-26T12:56:43 IST" duration-ms="6232" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{fromportalname=Agent, fromusertype=Super Agent, fromusername=256720000001, frompassword=Agent@123, frommpin=8454, newmpin=8454}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Change Mpin]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- SuperAgent_ChangeMpinfromSideMenu -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:56:43 IST" name="tearDown" finished-at="2022-08-26T12:56:43 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=SuperAgent_ChangeMpinfromSideMenu status=SUCCESS method=SuperAgentChangeMPin.SuperAgent_ChangeMpinfromSideMenu(java.util.Map)[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a] output=Click On Change Mpin]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:56:43 IST" name="beforeMethod" finished-at="2022-08-26T12:56:56 IST" duration-ms="12757" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Home]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method signature="verifyFAQfromSideMenu()[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:56:56 IST" name="verifyFAQfromSideMenu" finished-at="2022-08-26T12:57:06 IST" duration-ms="9883" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Click On Side Menu]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On Profile]]>
+            </line>
+            <line>
+              <![CDATA[Click On FAQs]]>
+            </line>
+            <line>
+              <![CDATA[Verify Check Title]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyFAQfromSideMenu -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:57:06 IST" name="tearDown" finished-at="2022-08-26T12:57:06 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyFAQfromSideMenu status=SUCCESS method=SuperAgentChangeMPin.verifyFAQfromSideMenu()[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a] output=Click On Side Menu]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:57:06 IST" name="closeBrowser" finished-at="2022-08-26T12:57:06 IST" duration-ms="312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="setAccessMaricesResult()[pri:0, instance:portals.testCases.Agent.SuperAgentChangeMPin@3a44431a]" started-at="2022-08-26T12:57:06 IST" name="setAccessMaricesResult" finished-at="2022-08-26T12:57:07 IST" duration-ms="435" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setAccessMaricesResult -->
+      </class> <!-- portals.testCases.Agent.SuperAgentChangeMPin -->
+    </test> <!-- SuperAgent Change MPIN -->
+  </suite> <!-- Nasswallet Agent WebPortal - Super Agent -->
+</testng-results>

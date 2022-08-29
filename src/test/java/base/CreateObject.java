@@ -13,6 +13,7 @@ import portals.pages.Agent.AirtimeSalePage;
 import portals.pages.Agent.CashInByAgentPage;
 import portals.pages.Agent.CustomerOnboardingPage;
 import portals.pages.Agent.ManageAgentPage;
+import portals.pages.Agent.SuperAgentChangeMPinPage;
 import portals.pages.Agent.UpdateCustomerKYCPage;
 import portals.pages.Common.AboutUsPage;
 import portals.pages.Common.ChangeLanguagePage;
@@ -73,6 +74,7 @@ public class CreateObject extends SetupInit {
 	public ForgotMPinPage forgotMPinPage;
 	public A2ATransferPage a2aTransferPage;
 	public CashInByAgentPage cashInByAgentPage;
+	public SuperAgentChangeMPinPage superagentChangeMpinPage;
 	public portals.pages.Agent.WithdrawMoneyPage agentWithdrawMoneyPage;
 	public UpdateCustomerKYCPage updateCustomerKYCPage;
 	public CustomerOnboardingPage customerOnboardingPage;
@@ -124,6 +126,7 @@ public class CreateObject extends SetupInit {
 		commissionReportPage = new CommissionReportPage(driver, log);
 		forgotMPinPage = new ForgotMPinPage(driver, log);
 		a2aTransferPage = new A2ATransferPage(driver, log);
+		superagentChangeMpinPage = new SuperAgentChangeMPinPage(driver, log);
 		cashInByAgentPage = new CashInByAgentPage(driver, log);
 		agentWithdrawMoneyPage = new portals.pages.Agent.WithdrawMoneyPage(driver, log);
 		updateCustomerKYCPage = new UpdateCustomerKYCPage(driver, log);

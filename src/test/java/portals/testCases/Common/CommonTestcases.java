@@ -23,8 +23,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void checkBalanceFromDashboardViewBalance() {
 		try {
-			setTestParameters(co.datamap,
-					"checkBalanceFromDashboardViewBalance");
+			setTestParameters(co.datamap, "checkBalanceFromDashboardViewBalance");
 			co.dashBoardPageOperations.clickOnCheckBalance();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
@@ -91,10 +90,9 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
-	
+
 	/*
-	 * @Test
-	 * public void verifyContactUsFromDashboard() { try {
+	 * @Test public void verifyContactUsFromDashboard() { try {
 	 * setTestParameters(co.datamap, "verifyContactUsFromDashboard");
 	 * co.navigationPage.clickOnContactUs(); co.contactUsPage.verifyContactUs();
 	 * setSuccessParameters(co.datamap); } catch (Exception e) {
@@ -167,56 +165,70 @@ public class CommonTestcases extends SetupInit {
 	}
 
 	@Test
+	public void privacyPolicyFromSideMenuProfile() {
+		try {
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuePrivacyPolicyFromSettings();
+			co.privacyPolicyPage.verifyPrivacyPolicy();
+		} catch (Exception e) {
+		} finally {
+		}
+	}
+
+	@Test
 	public void privacyPolicyFromSideMenuSettings() {
 		try {
-			setTestParameters(co.datamap, "privacyPolicyFromSideMenuSettings");
 			co.navigationPage.clickOnSideMenuSettings();
 			co.navigationPage.clickOnSideMenuePrivacyPolicyFromSettings();
 			co.privacyPolicyPage.verifyPrivacyPolicy();
-			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
 		} finally {
 			setExcecutionData(co);
+		}
+	}
+
+	public void termsAndConditionsFromSideMenuProfile() {
+		try {
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenueTermsAndConditionsFromProfile();
+			co.termsAndConditionsPage.verifyTermsAndConditions();
+		} catch (Exception e) {
+		} finally {
 		}
 	}
 
 	@Test
 	public void termsAndConditionsFromSideMenuSettings() {
 		try {
-			setTestParameters(co.datamap, "termsAndConditionsFromSideMenuSettings");
-			co.navigationPage.clickOnSideMenuSettings();
 			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSettings();
 			co.termsAndConditionsPage.verifyTermsAndConditions();
-			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
-			setExceptionData(co, e);
 		} finally {
-			setExcecutionData(co);
 		}
 	}
 
-	@Test
-	public void termsAndConditionsFromDashboardFooter() {
-		
-		try {
-			setTestParameters(co.datamap, "termsAndConditionsFromDashboardFooter");
-			co.navigationPage.clickOnDashboardeTermsAndConditions();
-			co.termsAndConditionsPage.verifyTermsAndConditions();
-			setSuccessParameters(co.datamap);
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
-	
 	@Test
 	public void verifyChatOption() {
 		try {
 			setTestParameters(co.datamap, "verifyChatOption");
 			co.navigationPage.clickOnChatOption();
 			co.dashboardPage.verifyChatOption();
+			co.dashboardPage.verifyUGX_SignAvailable();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+
+	@Test
+	public void UGX_SignAvailable() {
+		try {
+			setTestParameters(co.datamap, "UGX_SignAvailable");
+			co.dashboardPage.verifyUGX_SignAvailable();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
@@ -273,8 +285,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionDeatilReportFromDashboard() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionDeatilReportFromDashboard");
+			setTestParameters(co.datamap, "transactionDeatilReportFromDashboard");
 			co.navigationPage.clickOnTransactionDetail();
 			co.transactionDetailPage.verifyTransactionDetailReport();
 			setSuccessParameters(co.datamap);
@@ -288,8 +299,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionDeatilReportFromDashboardFooter() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionDeatilReportFromDashboardFooter");
+			setTestParameters(co.datamap, "transactionDeatilReportFromDashboardFooter");
 			co.navigationPage.clickOnDashboardTransactionDetail();
 			co.transactionDetailPage.verifyTransactionDetailReport();
 			setSuccessParameters(co.datamap);
@@ -303,8 +313,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionDeatilReportFromSideMenuServices() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionDeatilReportFromSideMenuServices");
+			setTestParameters(co.datamap, "transactionDeatilReportFromSideMenuServices");
 			co.navigationPage.clickOnSideMenuServicesTransactionDetail();
 			co.transactionDetailPage.verifyTransactionDetailReport();
 			setSuccessParameters(co.datamap);
@@ -318,8 +327,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionSummaryReportFromDashboard() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionSummaryReportFromDashboard");
+			setTestParameters(co.datamap, "transactionSummaryReportFromDashboard");
 			co.navigationPage.clickOnTransactionSummary();
 			co.transactionSummaryPage.verifyTransactionSummaryReport();
 			setSuccessParameters(co.datamap);
@@ -333,8 +341,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionSummaryReportFromDashboardFooter() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionSummaryReportFromDashboardFooter");
+			setTestParameters(co.datamap, "transactionSummaryReportFromDashboardFooter");
 			co.navigationPage.clickOnDashboardTransactionSummary();
 			co.transactionSummaryPage.verifyTransactionSummaryReport();
 			setSuccessParameters(co.datamap);
@@ -348,8 +355,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionSummaryReportFromSideMenuServices() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionSummaryReportFromSideMenuServices");
+			setTestParameters(co.datamap, "transactionSummaryReportFromSideMenuServices");
 			co.navigationPage.clickOnSideMenuTransactionSummary();
 			co.transactionSummaryPage.verifyTransactionSummaryReport();
 			setSuccessParameters(co.datamap);
@@ -391,8 +397,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void commissionReportFromSideMenuServices() {
 		try {
-			setTestParameters(co.datamap,
-					"commissionReportFromSideMenuServices");
+			setTestParameters(co.datamap, "commissionReportFromSideMenuServices");
 			co.navigationPage.clickOnSideMenuServicesCommissionReport();
 			co.commissionReportPage.verifyCommissionReport();
 			setSuccessParameters(co.datamap);
@@ -462,7 +467,7 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
-	
+
 	@Test
 	public void newUser() {
 		try {
@@ -478,6 +483,57 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
+
+	@Test
+	public void VerifyPasswordPolicyfromChangePassword() {
+		try {
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuProfileViewProfile();
+			co.navigationPage.clickOnPasswordPolicy();
+			co.common.PasswordPolicy(0);
+		} catch (Exception e) {
+		} finally {
+
+		}
+	}
+
+	@Test
+	public void VerifyPasswordPolicyfromDashboardFooter() {
+		try {
+			co.navigationPage.clickOnPasswordPolicy();
+			co.common.PasswordPolicy(0);
+		} catch (Exception e) {
+		} finally {
+		}
+	}
+
+	@Test
+	public void VerifyPersonalinforeligiousworshipFromProfile() {
+		try {
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuProfileViewProfile();
+			co.navigationPage.VerifyPersonalinfo();
+
+		} catch (Exception e) {
+		} finally {
+		}
+	}
+
+	@Test
+	public void VerifyDocumentinforeligiousworshipFromProfile() {
+		try {
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuProfileViewProfile();
+			co.navigationPage.VerifyDocumentinforeligiousworship();
+
+		} catch (Exception e) {
+		} finally {
+		}
+	}
+
 	@Test
 	public void verifyTransactionsInAdmin() {
 		try {
@@ -488,6 +544,16 @@ public class CommonTestcases extends SetupInit {
 			setExceptionData(co, e);
 		} finally {
 			setExcecutionData(co);
+		}
+	}
+
+	@Test
+	public void VerifyServiceiconsdisplayedFromDashboard() {
+		try {
+			co.navigationPage.VerifyServiceiconsdisplayedFromDashboard();
+
+		} catch (Exception e) {
+		} finally {
 		}
 	}
 }

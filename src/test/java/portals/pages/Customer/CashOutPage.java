@@ -100,6 +100,7 @@ public class CashOutPage extends SetupInit {
 		dashboardPageCommon.clickOnCheckBalance(0);
 		dashboardPageCommon.enterSecretPINtocheckbalance(pin, 0);
 		dashboardPageCommon.clickOnChkBalanceSubmitButton(0);
+		dashboardPageCommon.clickOnCheckBalance(0);
 		double currentBalance = Double.parseDouble(dashboardPageCommon.getMainBalance(0).trim());
 		setLogSteps(this.log, "Current Balance is: " + currentBalance);
 		// double latestBalance = 0.0;

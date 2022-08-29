@@ -1,5 +1,8 @@
 package portals.pages.Common;
 
+import static org.testng.Assert.assertEquals;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import base.SetupInit;
@@ -8,6 +11,7 @@ import utils.elasticUtils.elasticwrite;
 
 public class NavigationPage extends SetupInit {
 
+	private static final double current_Balance_Profile = 0;
 	NavigationPageOperations navigationPageOperations;
 	elasticwrite log;
 
@@ -761,8 +765,8 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenuPrivacyPolicyFromSettings(0);
 	}
 
-	public void clickOnSideMenueTermsAndConditionsFromSettings() {
-		navigationPageOperations.clickOnSideMenuTermsAndConditionsFromSettings(0);
+	public void clickOnSideMenueTermsAndConditionsFromProfile() {
+		navigationPageOperations.clickOnSideMenuTermsAndConditionsFromProfile(0);
 	}
 
 	public void clickOnDashboardePrivacyPolicy() {
@@ -804,6 +808,12 @@ public class NavigationPage extends SetupInit {
 	public void clickOnDashboardChangePassword() {
 		navigationPageOperations.clickOnDashboardChangePassword(0);
 	}
+	
+	public void clickOnProfileChangePassword() {
+		navigationPageOperations.clickOnProfileChangePassword(0);
+	}
+	
+	
 
 	public void clickOnNavBarMyTransactions() {
 		navigationPageOperations.clickOnNavBarMyTransactions(0);
@@ -867,6 +877,9 @@ public class NavigationPage extends SetupInit {
 
 	public void clickOnChangeMpinfromSideMenu() {
 		navigationPageOperations.clickOnChangeMpinfromSideMenu(0);
+	}
+	public void clickOnChangeMpinfromSideMenuForWrongMPIN() {
+		navigationPageOperations.clickOnChangeMpinfromSideMenuWorngInput(0);
 	}
 	
 	public void clickOnChangeSecretWordfromSideMenu() {
@@ -1076,6 +1089,10 @@ public class NavigationPage extends SetupInit {
 	public void clickOnSideMenuA2ATransfer() {
 		navigationPageOperations.clickOnSideMenuA2ATransfer(0);
 	}
+	
+	public void clickOnFooterOptionA2ATransfer() {
+		navigationPageOperations.clickOnFooterOptionA2ATransfer(0);
+	}
 
 	public void clickOnCashInByAgent() {
 		navigationPageOperations.clickOnCashInByAgent(0);
@@ -1199,5 +1216,67 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenu(0);
 		navigationPageOperations.clickOnSideMenuAirtimeSale(0);
 	}
+
+	public void clickOnAgentAssistedDeposit() {
+		navigationPageOperations.clickOnA2ATransfer(0);
+		navigationPageOperations.clickOnclickOnAgentAssistedDeposit(0);	
+	}
+
+	public void clickOnSideMenuProfileverifyFAQs(int time) {
+		verifyVisible(navigationPageOperations.faqsTitle, time);
+		setLogSteps(log, "Verify Check Title");
+		
+	}
+
+	public void clickOnPasswordPolicy() {
+		navigationPageOperations.clickOnDashboardPasswordPolicy(0);
+	}
+
+	public void clickOnSideMenueTermsAndConditionsFromSettings() {		
+		navigationPageOperations.clickOnSideMenu(0);
+	}
+	
+
+	public void Verifybalance(double Check_Balance, double Check_Balance_Profile) {
+		navigationPageOperations.clickOnDashboardProfileDetail(0);
+		setLogSteps(log, "Verify Balance for Dashboard:"+Check_Balance+" and Profile:"+Check_Balance_Profile);
+		setLogSteps(log, "Verify Both are Equal");	
+		assertEquals(Check_Balance, Check_Balance_Profile, GENERAL_TIMEOUT);
+		
+	}
+
+	public void VerifyPersonalinfo() {
+		
+		navigationPageOperations.clickOnPersonalinfoProfile(0);
+		verifyVisible(navigationPageOperations.PersonalinfoProfile, 0);
+		setLogSteps(log, "Verify Personal info");
+		
+	}
+
+
+	public void VerifyDocumentinforeligiousworship() {
+		navigationPageOperations.clickOnDocumentinforeligiousworshipProfile(0);
+		verifyVisible(navigationPageOperations.DocumentinforeligiousworshipProfile, 0);
+		setLogSteps(log, "Verify Document info religious worship info ");
+		
+	}
+
+	public void VerifyServiceiconsdisplayedFromDashboard() {
+		
+		verifyVisible(navigationPageOperations.AgentAssistedDepositicon, 0);
+		setLogSteps(log, "Verify Agent Assisted Deposit icon in Dashboard ");
+		
+		verifyVisible(navigationPageOperations.AgentAssistedWithdrawicon, 0);
+		setLogSteps(log, "Verify Agent Assisted Withdraw icon in Dashboard ");
+		
+		verifyVisible(navigationPageOperations.AgentTransfericon, 0);
+		setLogSteps(log, "Verify Agent Transfer icon in Dashboard ");
+		
+		verifyVisible(navigationPageOperations.FinancialServicesicon, 0);
+		setLogSteps(log, "Verify Financial Services icon in Dashboard ");
+		
+	}
+
+	
 
 }

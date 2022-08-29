@@ -1,0 +1,68 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+
+<suite name="Nasswallet Agent WebPortal - Super Agent" verbose="10"
+	parallel="false" thread-count="5">
+
+	<listeners>
+		<listener class-name='listeners.CustomizedEmailableReport' />
+		<listener class-name='listeners.HtmlReport' />
+	</listeners>
+
+	<parameter name="browserType" value="chrome" />
+
+ <test name="Agent Transfer">
+		<classes>
+			<class name="portals.testCases.Agent.A2ATransfer">
+				<methods>			
+					<include name="CheckCommissionBalanceFormDashboard" />
+					<include name="CheckCommissionBalanceFormProfile" />	
+					<include name="a2aTranfer" />
+					<include name="a2aTransferFromSideMenu" />
+					<include name="verifyPerformedA2ATranferFromFromUserPassbook" />
+					<include name="verifyPerformedA2ATransferFromToUserPassbook" />
+					<include name="a2aTransferFromSideMenu" />
+					<include name="verifyPerformedA2ATransferFromSideMenuFromUserPassbook" />
+					<include name="verifyPerformedA2ATransferFromSideMenuFromToUserPassbook" />
+					<include name="a2aTranferFromFooter" />
+ 					<include name="CheckBalanceFormDashboard" />
+					<include name="CheckBalanceFormProfile" />
+					<include name="verifyPerformedA2ATranferFromFootertoUserPassbook" />
+					<include name="verifyPerformedA2ATransferFromFootertoToUserPassbook" /> 
+				</methods>
+			</class>
+		</classes>
+	</test>
+			<test name="Common Testcases">
+		<classes>
+			<class name="portals.testCases.Common.CommonTestcases">
+				<methods>
+					 <include name="privacyPolicyFromDashboardFooter" />
+					<include name="privacyPolicyFromSideMenuProfile" /> 
+					<include name="UGX_SignAvailable" /> 
+					<include name="termsAndConditionsFromDashboardFooter" />
+					<include name="termsAndConditionsFromSideMenuProfile" />
+					<include name="VerifyPasswordPolicyfromChangePassword" />
+					<include name="VerifyPasswordPolicyfromDashboardFooter" />
+					<include name="VerifyPersonalinforeligiousworshipFromProfile" />
+					<include name="VerifyDocumentinforeligiousworshipFromProfile" />
+					<include name="VerifyServiceiconsdisplayedFromDashboard" />
+					<include name="logout" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	
+	 <test name="SuperAgent Change MPIN"> 
+		<classes>
+			<class name="portals.testCases.Agent.SuperAgentChangeMPin">
+				<methods>
+					<include name="verifyinvalidSuperAgent_ChangeMpinfromSideMenu" />
+					<include name="SuperAgent_ChangeMpinfromSideMenu" />
+					<include name="verifyFAQfromSideMenu" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	
+</suite>

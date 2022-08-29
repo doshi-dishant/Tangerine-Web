@@ -20,6 +20,7 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtInviteFriendsSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Invite Friends']");
 	public By txtChangeSecretWordSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Change secret word']");
 	public By txtA2ATransfer = By.xpath("//div[text()='Agent Transfer']");
+	public By txtAgentAssistedDeposit = By.xpath("//div[text()='Agent Assisted Deposit']");
 	public By txtMenuA2ATransfer = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Agent Transfer']");
 	public By txtCashOut = By.xpath("//div[text()='Withdraw Cash']");
 	public By txtWithdrawCashSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Withdraw Cash']");
@@ -27,9 +28,10 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtAgentAssistedWithdraw = By.xpath("(//div[text()='Agent Assisted Withdraw'])[1]");
 	public By txtAgentAssistedWithdrawSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Agent Assisted Withdraw']");
 	public By txtAgentAssistedWithdrawFromFooter = By.xpath("//a[contains(text(),'Agent Assisted Withdraw')]");
-	public By txtDashTermsAndConditions = By.xpath("//a[normalize-space(text())='Terms & Conditions']");
+//	public By txtDashTermsAndConditions = By.xpath("//a[normalize-space(text())='Terms & Conditions']");
 	///////////////  Tangerine end /////////////////////////	
-	
+	public By txtfooterA2ATransfer = By.xpath("//*[@id='footer']//*[text()='Agent Transfer']");
+	///////////////  Tangerine end /////////////////////////
 	public By sideMenu = By.xpath("//*[contains(@class,'humburger') and not(@title)]//i[contains(@class,'moon-menu')]");
 	By sideMenuServices = By.xpath("//*[@class='modal-content']//*[text()='Services']");
 	By sideMenuSettings = By.xpath("//*[@class='modal-content']//*[text()='Settings']");
@@ -55,8 +57,17 @@ public class NavigationPageOperations extends SetupInit {
 	By changePassword = By.xpath("//*[text()='Change Password']");
 	By changeMpin = By.xpath("//*[text()='Change MPIN']");
 	By resetMpin = By.xpath("//*[text()='Reset MPIN']");
-	By faqs = By.xpath("//*[@class='modal-content']//*[text()='FAQS']");
+	By faqs = By.xpath("//*[@class='modal-content']//*[text()='FAQs']");
 	public By checkBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')]");
+	public By faqsTitle = By.xpath("//*[contains(text(),'FAQs')]");
+	public By PersonalinfoProfile  = By.xpath("//p[contains(text(),'Personal info religious worship')]");
+	public By AgentAssistedDepositicon  = By.xpath("//i[@class=\"moon-Agent-Cashin-fill-dual\"]");
+	public By AgentAssistedWithdrawicon  = By.xpath("//i[@class=\"moon-Agent-Cash-Out-fill-dual\"]");
+	public By AgentTransfericon  = By.xpath("//i[@class=\"moon-Cashout-thr-Agent\"]");
+	public By FinancialServicesicon  = By.xpath("//i[@class=\"moon-Internal-Transfer\"]");
+
+	public By DocumentinforeligiousworshipProfile  = By.xpath("//p[contains(text(),'Document info religious worship')]");
+	
 	public By qrCode = By.xpath("//*[text()='QR Code']");
 	public By passbook = By.xpath("//*[text()='Passbook']");
 	public By logOut = By.xpath("//*[@title='Logout']");
@@ -75,7 +86,7 @@ public class NavigationPageOperations extends SetupInit {
 	public By acceptPayments = By.xpath("//*[@class='modal-content']//*[text()='Accept Payments']");
 	public By redeemSubscriberPoints = By.xpath("//*[@class='modal-content']//*[text()='Redeem Subscriber Points']");
 	public By cashIn = By.xpath("//*[@class='modal-content']//*[text()='Cash In']");
-	public By cashTransfer = By.xpath("//*[@class='modal-content']//*[text()='Cash Transfer']");
+	public By cashTransfer = By.xpath("//*[@class='faqsTitlemodal-content']//*[text()='Cash Transfer']");
 	public By callSupport = By.xpath("//*[text()='Call Support']");
 	public By assistantOnboarding = By.xpath("//*[@class='modal-content']//*[text()='Assistant Onboarding']");
 	public By receivePayment = By.xpath("//*[@class='modal-content']//*[text()='Receive Payment']");
@@ -129,21 +140,23 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtWithdrawMoney = By.xpath("//div[text()='Withdraw Money']");
 	public By txtDisbursementReport = By.xpath("//*[contains(@class,'title') and text()='Disbursement Report']");
 	public By txtTransactionDetail = By.xpath("//*[text()='Transactions']//parent::*[@class='card_area']");
-	public By txtDashBulkPayment = By.xpath("//a[normalize-space(text())='Bulk Payment']");
-	public By txtDashDisbursementReport = By.xpath("//a[normalize-space(text())='Disbursement Report']");
-	public By txtDashTransactionDetail = By.xpath("//a[normalize-space(text())='Transactions']");
-	public By txtDashOnboardingReport = By.xpath("//a[normalize-space(text())='Onboarding Report']");
-	public By txtDashMyProfile = By.xpath("//a[normalize-space(text())='My Profile']");
-	public By txtDashMyTransaction = By.xpath("//a[normalize-space(text())='My Transactions']");
-	public By txtDashChangeMPIN = By.xpath("//a[normalize-space(text())='Change MPIN']");
-	public By txtDashChangeLoginPassword = By.xpath("//a[normalize-space(text())='Change Login Password']");
-	public By txtDashChangeLanguage = By.xpath("//a[normalize-space(text())='Change Language']");
-	public By txtDashAboutUs = By.xpath("//a[normalize-space(text())='About Us']");
-	public By txtDashContactUs = By.xpath("//a[normalize-space(text())='Contact Us']");
-	public By txtDashPasswordPolicy = By.xpath("//a[normalize-space(text())='Password Policy']");
-	public By txtDashMPINPolicy = By.xpath("//a[normalize-space(text())='MPIN Policy']");
+	public By txtDashBulkPayment = By.xpath("//a[text()='Bulk Payment']");
+	public By txtDashDisbursementReport = By.xpath("//a[text()='Disbursement Report']");
+	public By txtDashTransactionDetail = By.xpath("//a[text()='Transactions']");
+	public By txtDashOnboardingReport = By.xpath("//a[text()='Onboarding Report']");
+	public By txtDashMyProfile = By.xpath("//a[text()='My Profile']");
+	public By txtDashMyTransaction = By.xpath("//a[text()='My Transactions']");
+	public By txtDashChangeMPIN = By.xpath("//a[text()='Change MPIN']");
+	public By txtDashChangeLoginPassword = By.xpath("//a[text()='Change Login Password']");
+	public By txtProfileLoginPassword = By.xpath("//span[text()='Change Password']");
 	
-	public By txtDashPrivacyPolicy = By.xpath("//a[normalize-space(text())='Privacy Policy']");
+	public By txtDashChangeLanguage = By.xpath("//a[text()='Change Language']");
+	public By txtDashAboutUs = By.xpath("//a[text()='About Us']");
+	public By txtDashContactUs = By.xpath("//a[text()='Contact Us']");
+	public By txtDashPasswordPolicy = By.xpath("//a[text()='Password Policy'][1]");
+	public By txtDashMPINPolicy = By.xpath("//a[text()='MPIN Policy']");
+	public By txtDashTermsAndConditions = By.xpath("//a[text()='Terms & Conditions']");
+	public By txtDashPrivacyPolicy = By.xpath("//a[text()='Privacy Policy']");
 	public By txtMenuSalaryDisbursement = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Salary Disbursement']");
 	public By txtMenuDisbursementRequestList = By
@@ -251,8 +264,7 @@ public class NavigationPageOperations extends SetupInit {
 	public By txteVoucherCustomer = By.xpath("//*[text()='eVoucher Sale']");
 	public By txtAirtimeSale = By.xpath("//*[text()='Airtime Sale']");
 	public By txtMenuAirtimeSale = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Airtime Sale']");
-	public By txtDashAirtimeSale = By.xpath("//a[normalize-space(text())='Airtime Sale']");
-
+	public By txtDashAirtimeSale = By.xpath("//a[text()='Airtime Sale']");
 
 	public void clickOnInviteFriendsfromSideMenu(int... args) {
 		try {
@@ -300,7 +312,6 @@ public class NavigationPageOperations extends SetupInit {
 	}
 
 	public void clickOnSideMenuProfile(int... args) {
-		clickOnSideMenu(args);
 		try {
 			clickOnElement(sideMenuProfile, args);
 			setLogSteps(log, "Click On Profile");
@@ -1238,7 +1249,7 @@ public class NavigationPageOperations extends SetupInit {
 		}
 	}
 
-	public void clickOnSideMenuTermsAndConditionsFromSettings(int... args) {
+	public void clickOnSideMenuTermsAndConditionsFromProfile(int... args) {
 		try {
 			clickOnElement(txtMenuTermsAndConditions, args);
 			setLogSteps(log, "Click On Terms And Conditions");
@@ -1336,6 +1347,20 @@ public class NavigationPageOperations extends SetupInit {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "change password");
 		}
 	}
+	
+	
+	public void clickOnProfileChangePassword(int... args) {
+		try {
+			clickOnElement(txtProfileLoginPassword, args);
+			setLogSteps(log, "Click On Change Login Password");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "change password");
+		}
+	}
+	
+	
+	
+	
 
 	public void clickOnNavBarMyTransactions(int... args) {
 		try {
@@ -1469,6 +1494,16 @@ public class NavigationPageOperations extends SetupInit {
 			clickOnElement(sideMenuSettings, args);
 			clickOnElement(this.log, txtChangeMPINSideMenu, args);
 			setLogSteps(log, "Click On Change Mpin");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Click On Change Mpin");
+		}
+	}
+	public void clickOnChangeMpinfromSideMenuWorngInput(int... args) {
+		try {
+			clickOnElement(sideMenu, args);
+			clickOnElement(sideMenuSettings, args);
+			clickOnElement(this.log, txtChangeMPINSideMenu, args);
+			setLogSteps(log, "Click On Change Mpin with Wrong Input");
 		} catch (Exception e) {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Click On Change Mpin");
 		}
@@ -1956,6 +1991,17 @@ public class NavigationPageOperations extends SetupInit {
 		}
 		setLogSteps(log, "Click On Agent Transfer");
 	}
+	
+	public void clickOnFooterOptionA2ATransfer(int... args) {
+		try {
+			clickOnElement(txtfooterA2ATransfer, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Agent Transfer");
+		}
+		setLogSteps(log, "Click On Agent Transfer");
+	}
+		
+	
 
 	public void clickOnCashInByAgent(int... args) {
 		try {
@@ -2230,5 +2276,34 @@ public class NavigationPageOperations extends SetupInit {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Airtime Sale");
 		}
 		setLogSteps(log, "Click On Airtime Sale");
+	}
+
+	public void clickOnclickOnAgentAssistedDeposit(int... args) {
+		try {
+			clickOnElement(txtAgentAssistedDeposit, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Agent Transfer");
+		}
+		setLogSteps(log, "Click On Agent Transfer");
+		
+	}
+	
+	
+	public void clickOnPersonalinfoProfile(int args) {
+		try {
+			clickOnElement(PersonalinfoProfile, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Personal info Profile");
+		}
+		setLogSteps(log, "Click On Personal info Profile");
+	}
+	
+	public void clickOnDocumentinforeligiousworshipProfile(int args) {
+		try {
+			clickOnElement(DocumentinforeligiousworshipProfile, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Personal info Profile");
+		}
+		setLogSteps(log, "Click On Personal info Profile");
 	}
 }

@@ -117,9 +117,13 @@ public class DashBoardPageOperations extends SetupInit {
 	// Dash board check balance locators
 	By CHECK_BALANACE = By.xpath("//*[contains(text(),'Check Balance')]");
 	By REFRESH_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//i");
-	By viewBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')]");
+	By viewBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')][last()]");
+	By viewBalance_profile = By.xpath("(//*[contains(text(),'Check') and contains(text(),'Balance')][last()])[2]");
+	
 	By refreshBalance = By.xpath("//*[contains(text(),'Wallet Balance')]//i");
 	By MAIN_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//span");
+	By Commission_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//following-sibling::ul//span");
+
 	By POINTS_EARN = By.xpath("//*[contains(text(),'Point') and contains(text(),'Earn')]//span");
 
 	// QR code locators
@@ -270,6 +274,9 @@ public class DashBoardPageOperations extends SetupInit {
 	// = 'submit']
 	By verifyNaviTermsConditions = By.xpath("//*[contains(@class,'graph_area')]//*[text()='Terms Of Service']");
 	By verifyChatOptionHeader = By.id("shortMessage");
+	By UGX_text = By.xpath("//Span[. = 'UGX']");
+	By UGX_passbook = By.xpath("//*[contains(text(),'Amount (UGX)')]");
+	
 	By successOnboardText = By.xpath("//*[contains(text(),'Successfully')]");
 	By drpOnboardUserType = By.id("frm_select_operatingEntityIDid");
 	By txtAgentName = By.id("frm_text_nameid");
@@ -520,6 +527,14 @@ public class DashBoardPageOperations extends SetupInit {
 		}
 		setLogSteps(log, "Click On Check Balance");
 	}
+	public void clickOnCheckBalanceFromProfile(int... args) {
+		try {
+			clickOnElement(log, viewBalance_profile, 2);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "check balance");
+		}
+		setLogSteps(log, "Click On Check Balance");
+	}
 
 	public void clickOnRefreshBalance(int... args) {
 		try {
@@ -535,6 +550,11 @@ public class DashBoardPageOperations extends SetupInit {
 		String mainBalance = getElementText(log, MAIN_BALANCE, args).trim();
 		return mainBalance.split(" ")[0];
 	}
+	public String getCommissionBalance(int... args) {
+		String mainBalance = getElementText(log, Commission_BALANCE, args).trim();
+		return mainBalance.split(" ")[0];
+	}
+	
 
 	public String getPointsEarn(int... args) {
 		// setLogSteps(log, "Getting Earned points");
@@ -1011,6 +1031,14 @@ public class DashBoardPageOperations extends SetupInit {
 	public void isChatOptionsAvailable(int... args) {
 		verifyVisible(verifyChatOptionHeader, args);
 		setLogSteps(log, "Chat Options Are Available");
+	}
+	public void UGX_textSignAvailable(int... args) {
+		verifyVisible(UGX_text, args);
+		setLogSteps(log, "UGX doller Sign Are Available in Dashboard");
+	}
+	public void UGX_InPassbookSignAvailable(int... args) {
+		verifyVisible(UGX_passbook, args);
+		setLogSteps(log, "UGX doller Sign Are Available in Passbook");
 	}
 
 	public String getMainBalanceAfterTransaction(int... args) {

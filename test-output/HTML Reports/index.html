@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>Automation Execution Summary</title>
+
+<!-- Google Font: Source Sans Pro -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback'>
+<!-- Font Awesome -->
+<link rel='stylesheet' href='plugins/fontawesome-free/css/all.min.css'>
+<!-- DataTables -->
+<link rel='stylesheet' href='plugins/datatables-bs4/css/dataTables.bootstrap4.min.css'>
+<link rel='stylesheet' href='plugins/datatables-responsive/css/responsive.bootstrap4.min.css'>
+<link rel='stylesheet' href='plugins/datatables-buttons/css/buttons.bootstrap4.min.css'>
+<!-- Theme style -->
+<link rel='stylesheet' href='dist/css/adminlte.min.css'>
+</head>
+<body class='hold-transition sidebar-mini'>
+<div class='wrapper'>
+<!-- Navbar -->
+<nav class='main-header navbar navbar-expand navbar-white navbar-light'>
+<!-- Left navbar links -->
+<ul class='navbar-nav'>
+<li class='nav-item'>
+<a class='nav-link' data-widget='pushmenu' href='#' role='button'> <img src='dist/img/menu.png' /></a>
+</li>
+
+</ul>
+
+
+
+<!-- Right navbar links -->
+<ul class='navbar-nav ml-auto'>
+<!-- Messages Dropdown Menu -->
+
+<li class='nav-item'>
+<a class='nav-link' data-widget='fullscreen' href='#' role='button'>
+<img src='dist/img/fs.png' />
+</a>
+</li>
+
+</ul>
+</nav>
+<!-- /.navbar -->
+
+<!-- Main Sidebar Container -->
+<aside class='main-sidebar sidebar-dark-primary elevation-4'>
+<!-- Brand Logo -->
+<a href='#' class='brand-link'>
+<img src='dist/img/logo.png' alt='Panamax Logo' class='brand-image img-circle elevation-3' style='opacity: .8'>
+<span class='brand-text font-weight-light'>Panamax Infotech Ltd</span>
+</a>
+
+<!-- Sidebar -->
+<div class='sidebar'>
+<!-- Sidebar user (optional) -->
+
+
+ 
+
+<!-- Sidebar Menu -->
+<nav class='mt-2'>
+<ul class='nav nav-pills nav-sidebar flex-column' data-widget='treeview' role='menu' data-accordion='false'>
+<!-- Add icons to the links using the .nav-icon class
+ with font-awesome or any other icon font library -->
+<li class='nav-item'>
+<a href='Index.html' class='nav-link'>
+ <i class='nav-icon fas fa-tachometer-alt'></i>
+<p>
+Summary
+
+</p>
+</a>
+
+</li>
+
+
+
+<li class='nav-item'>
+<a href='DetailedAnalysisData.html' class='nav-link'>
+<i class='nav-icon fas fa-table'></i>
+<p>
+Detailed Execution Result
+ 
+</p>
+</a>
+</li>
+
+
+</ul>
+</nav>
+<!-- /.sidebar-menu -->
+</div>
+<!-- /.sidebar -->
+</aside>
+
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class='content-wrapper'>
+<!-- Content Header (Page header) -->
+<section class='content-header'>
+<div class='container-fluid'>
+
+
+
+
+<div class='row mb-2'>
+<div class='col-sm-6'>
+<h1 class='m-0'>Automation Execution Summary</h1>
+</div><!-- /.col -->
+<div class='col-sm-6'>
+<ol class='breadcrumb float-sm-right'>
+<li class='breadcrumb-item'>Execution Date</li>
+<li class='breadcrumb-item'>Executor IP</li>
+<li class='breadcrumb-item'>Executor Name</li>
+</ol>
+<ol class='breadcrumb float-sm-right'>
+<li class='breadcrumb-item'>26:08:2022 12:57:07</li>
+<li class='breadcrumb-item'>192.168.1.14</li>
+<li class='breadcrumb-item'>DESKTOP-ELBD4Q4</li>
+</ol>
+</div><!-- /.col -->
+</div><!-- /.row -->
+</div><!-- /.container-fluid -->
+</section>
+
+
+
+<section class='content'>
+<div class='container-fluid'>
+<!-- Info boxes -->
+ <div class='row'>
+<div class='col-12'>
+<div class='card'>
+<div class='card-header'>
+<h3 class='card-title'>Execution entities and details</h3>
+</div>
+<!-- /.card-header -->
+<div class='card-body'>
+<table class='table table-bordered'>
+<thead>
+<tr>
+<th >Project Name</th>
+<th>Access Channel</th>
+<th >User Type</th>
+<th >Access Channel Type</th>
+<th>MR / Build Version</th>
+<th >Execution result (%)</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr>
+<td class='align-middle'>NassWallet</td>
+<td text-align='center'> agent</td>
+<td text-align='center'>superagent</td>
+<td text-align='center'>Web - Portal</td>
+<td class='align-middle'> NA </td>
+<td text-align='center'> 100.0 %</td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</div>
+<!-- /.card -->
+
+ 
+<!-- /.row -->
+
+</div>
+
+</section>
+
+<section class='content'>
+
+<div class='row'>
+<div class='col-md-6'>
+<div class='container-fluid'>
+<!-- PIE CHART -->
+<div class='card card-info'>
+<div class='card-header'>
+<h3 class='card-title'>Record Wise Ratio</h3>
+
+
+</div>
+<div class='card-body'>
+<canvas id='record' style='min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;'></canvas>
+</div>
+<!-- /.card-body -->
+</div>
+</div>
+</div>
+<div class='col-md-6'>
+<div class='container-fluid'>
+<div class='card card-info'>
+<div class='card-header'>
+<h3 class='card-title'>Test Sase Wise Ratio</h3>
+
+
+</div>
+<div class='card-body'>
+<canvas id='testcasewiseRatio' style='min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;'></canvas>
+</div>
+<!-- /.card-body -->
+</div>
+</div>
+</div>
+
+</section>
+
+
+<section class='content'>
+<div class='container-fluid'>
+<div class='row'>
+<div class='col-18'>
+<div class='card'>
+<div class='card-header'>
+<h3 class='card-title'>Nasswallet Agent WebPortal - Super Agent</h3>
+</div>
+<!-- /.card-header -->
+<div class='card-body'>
+<table id='example1' class='table table-bordered table-striped'>
+<thead>
+<tr>
+<th>Test</th>
+<th>Passed Cases</th>
+<th>Failed Cases</th>
+<th>Skipped Cases</th>
+<th>Passed Records</th>
+<th>Failed Record</th>
+<th>Skipped Record</th>
+<th>Start Time</th>
+<th>End Time</th>
+<th>Total Time (hh:mm:ss)</th>
+
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent Transfer</td>
+<td>13
+</td>
+<td>0</td>
+<td>0</td>
+<td>13</td>
+<td>0</td>
+<td>0</td>
+<td>12:30:17</td>
+<td>12:49:50</td>
+<td>00:19:33</td>
+</tr>
+
+
+<tr>
+<td>Common Testcases</td>
+<td>11
+</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>0</td>
+<td>0</td>
+<td>12:49:50</td>
+<td>12:55:10</td>
+<td>00:05:19</td>
+</tr>
+
+
+<tr>
+<td>SuperAgent Change MPIN</td>
+<td>3
+</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>12:55:10</td>
+<td>12:57:06</td>
+<td>00:01:56</td>
+</tr>
+
+
+</table>
+</div>
+<!-- /.card-body -->
+</div>
+<!-- /.card -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container-fluid -->
+</section>
+<section class='content'>
+
+<div class='row'>
+<div class='col-md-12'>
+<div class='card'>
+<div class='card-header'>
+<h5 class='card-title'>Summarised Execution Details</h5>
+
+
+</div>
+<!-- /.card-header -->
+ 
+<!-- ./card-body -->
+<div class='card-footer'>
+<div class='row'>
+<div class='col-sm-3 col-6'>
+<div class='description-block border-right'>
+<h5 class='description-header text-success'>27</h5>
+<span class='description-text'>Total Passed Cases</span>
+</div>
+<!-- /.description-block -->
+</div>
+<!-- /.col -->
+<div class='col-sm-3 col-6'>
+<div class='description-block border-right'>
+<h5 class='description-header text-danger'>0</h5>
+<span class='description-text'>Total Failed Cases</span>
+</div>
+<!-- /.description-block -->
+</div>
+<!-- /.col -->
+<div class='col-sm-3 col-6'>
+<div class='description-block border-right'>
+
+<h5 class='description-header text-warning'>0</h5>
+<span class='description-text'>Total Skipped Cases</span>
+</div>
+<!-- /.description-block -->
+</div>
+<!-- /.col -->
+<div class='col-sm-3 col-6'>
+<div class='description-block border-right'>
+<h5 class='description-header text-success'>27</h5>
+<span class='description-text'>Total Passed Records</span>
+</div>
+<!-- /.description-block -->
+</div>
+<!-- /.col -->
+<div class='col-sm-3 col-6'>
+<div class='description-block border-right'>
+<h5 class='description-header text-danger'>0</h5>
+<span class='description-text'>Total Failed Records</span>
+</div>
+<!-- /.description-block -->
+</div>
+<!-- /.col -->
+<div class='col-sm-3 col-6'>
+<div class='description-block border-right'>
+
+<h5 class='description-header text-warning'>0</h5>
+<span class='description-text'>Total Skipped Records</span>
+</div>
+<!-- /.description-block -->
+</div>
+<!-- /.col -->
+<div class='col-sm-3 col-6'>
+<div class='description-block'>
+ 
+<h5 class='description-header'>00:26:49</h5>
+<span class='description-text'>Total Execution time (hh:mm:ss)</span>
+</div>
+<!-- /.description-block -->
+</div>
+</div>
+<!-- /.row -->
+</div>
+<!-- /.card-footer -->
+</div>
+<!-- /.card -->
+</div>
+<!-- /.col -->
+</div>
+<!-- /.row -->
+
+</section>
+</div>
+<footer class='main-footer'>
+<div class='float-right d-none d-sm-block'>
+<b>Developed by</b> Automation Team
+</div>
+<strong>Copyright &copy;<a href='https://www.panamaxil.com/' target=#>Panamax Infotech Ltd</a>.</strong> All rights reserved.
+</footer>
+
+
+
+
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src='plugins/jquery/jquery.min.js'></script>
+<!-- Bootstrap -->
+<script src='plugins/bootstrap/js/bootstrap.bundle.min.js'></script>
+
+<!-- AdminLTE App -->
+<script src='dist/js/adminlte.js'></script>
+
+<!-- PAGE /plugins -->
+
+
+<!-- AdminLTE for demo purposes -->
+<script src='dist/js/demo.js'></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src='dist/js/pages/dashboard2.js'></script>
+
+
+
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src='plugins/jquery/jquery.min.js'></script>
+<!-- Bootstrap 4 -->
+<script src='plugins/bootstrap/js/bootstrap.bundle.min.js'></script>
+<!-- ChartJS -->
+<script src='plugins/chart.js/Chart.min.js'></script>
+<!-- AdminLTE App -->
+<script src='dist/js/adminlte.min.js'></script>
+<!-- AdminLTE for demo purposes -->
+<script src='dist/js/demo.js'></script>
+
+
+ 
+<!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- DataTables& Plugins -->
+<script src='plugins/datatables/jquery.dataTables.min.js'></script>
+<script src='plugins/datatables-bs4/js/dataTables.bootstrap4.min.js'></script>
+
+<script src='plugins/datatables-responsive/js/dataTables.responsive.min.js'></script>
+<script src='plugins/datatables-responsive/js/responsive.bootstrap4.min.js'></script>
+
+
+
+<script src='plugins/jszip/jszip.min.js'></script>
+
+<script src='plugins/pdfmake/pdfmake.min.js'></script>
+<script src='plugins/pdfmake/vfs_fonts.js'></script>
+
+<script src='plugins/datatables-buttons/js/buttons.html5.min.js'></script>
+<script src='plugins/datatables-buttons/js/buttons.print.min.js'></script>
+<script src='plugins/datatables-buttons/js/buttons.colVis.min.js'></script>
+<script src='plugins/datatables-buttons/js/dataTables.buttons.min.js'></script>
+<script src='plugins/datatables-buttons/js/buttons.bootstrap4.min.js'></script>
+<!-- AdminLTE App -->
+<script src='dist/js/adminlte.min.js'></script>
+<!-- AdminLTE for demo purposes -->
+<script src='dist/js/demo.js'></script>
+<!-- Page specific script -->
+
+
+<script>
+$(function () {
+/* ChartJS
+ * -------
+ * Here we will create a few charts using ChartJS
+ */
+
+var donutData= {
+labels: [
+'Pass',
+'Fail',
+'Skip',
+],
+datasets: [
+{
+data: [27,0,0,],
+backgroundColor : ['#00a65a','#f56954', '#f39c12'],
+}
+]
+}
+
+var testcaseWiseRecords= {
+labels: [
+'Pass',
+'Fail',
+'Skip',
+],
+datasets: [
+{
+data: [27,0,0,],
+backgroundColor : ['#00a65a','#f56954', '#f39c12'],
+}
+]
+}
+ 
+
+
+//-------------
+//- PIE CHART -
+//-------------
+// Get context with jQuery - using jQuery's .get() method.
+var pieChartCanvas = $('#record').get(0).getContext('2d')
+var pieData= donutData;
+var pieOptions = {
+maintainAspectRatio : false,
+responsive : true,
+}
+//Create pie or douhnut chart
+// You can switch between pie and douhnut using the method below.
+var pieChart = new Chart(pieChartCanvas, {
+type: 'pie',
+data: pieData,
+options: pieOptions
+})
+
+//-------------
+//- Test cases -
+//-------------
+// Get context with jQuery - using jQuery's .get() method.
+var pieChartCanvas1 = $('#testcasewiseRatio').get(0).getContext('2d')
+var pieData1= testcaseWiseRecords;
+var pieOptions1 = {
+maintainAspectRatio : false,
+responsive : true,
+}
+//Create pie or douhnut chart
+// You can switch between pie and douhnut using the method below.
+var pieChart = new Chart(pieChartCanvas1, {
+type: 'pie',
+data: pieData1,
+options: pieOptions1
+})
+
+
+ 
+})
+</script>
+<script>
+$(function () {
+$('#example1').DataTable({
+'responsive': true, 'lengthChange': true, 'autoWidth': true,
+'buttons': ['copy', 'csv', 'excel', 'pdf', 'print', 'colvis']
+}).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+
+});
+</script>
+</body>
+</html>
