@@ -27,7 +27,7 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtAgentAssistedWithdraw = By.xpath("(//div[text()='Agent Assisted Withdraw'])[1]");
 	public By txtAgentAssistedWithdrawSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Agent Assisted Withdraw']");
 	public By txtAgentAssistedWithdrawFromFooter = By.xpath("//a[contains(text(),'Agent Assisted Withdraw')]");
-	
+	public By txtDashTermsAndConditions = By.xpath("//a[normalize-space(text())='Terms & Conditions']");
 	///////////////  Tangerine end /////////////////////////	
 	
 	public By sideMenu = By.xpath("//*[contains(@class,'humburger') and not(@title)]//i[contains(@class,'moon-menu')]");
@@ -97,7 +97,7 @@ public class NavigationPageOperations extends SetupInit {
 	public By sellQPowerDashboard = By.xpath("//*[text()='Sell Qpower']");
 	public By agentToAgentTransferDashboard = By.xpath("//*[text()='Agent To Agent Transfer']");
 	public By acceptPaymentsDashboard = By.xpath("//*[text()='Accept Payments']");
-	public By assistantOnboardingDashboard = By.xpath("//a[text()='Assistant Onboarding']");
+	public By assistantOnboardingDashboard = By.xpath("//a[normalize-space(text())='Assistant Onboarding']");
 	public By bLinkForMerchant = By.xpath("//*[@class='modal-content']//*[text()='B-Link']");
 	// public By qrCodeForMerchant = By.xpath("//*[@title='My QR Code']");
 	public By qrCodeForMerchant = By
@@ -129,21 +129,21 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtWithdrawMoney = By.xpath("//div[text()='Withdraw Money']");
 	public By txtDisbursementReport = By.xpath("//*[contains(@class,'title') and text()='Disbursement Report']");
 	public By txtTransactionDetail = By.xpath("//*[text()='Transactions']//parent::*[@class='card_area']");
-	public By txtDashBulkPayment = By.xpath("//a[text()='Bulk Payment']");
-	public By txtDashDisbursementReport = By.xpath("//a[text()='Disbursement Report']");
-	public By txtDashTransactionDetail = By.xpath("//a[text()='Transactions']");
-	public By txtDashOnboardingReport = By.xpath("//a[text()='Onboarding Report']");
-	public By txtDashMyProfile = By.xpath("//a[text()='My Profile']");
-	public By txtDashMyTransaction = By.xpath("//a[text()='My Transactions']");
-	public By txtDashChangeMPIN = By.xpath("//a[text()='Change MPIN']");
-	public By txtDashChangeLoginPassword = By.xpath("//a[text()='Change Login Password']");
-	public By txtDashChangeLanguage = By.xpath("//a[text()='Change Language']");
-	public By txtDashAboutUs = By.xpath("//a[text()='About Us']");
-	public By txtDashContactUs = By.xpath("//a[text()='Contact Us']");
-	public By txtDashPasswordPolicy = By.xpath("//a[text()='Password Policy']");
-	public By txtDashMPINPolicy = By.xpath("//a[text()='MPIN Policy']");
-	public By txtDashTermsAndConditions = By.xpath("//a[text()='Terms & Conditions']");
-	public By txtDashPrivacyPolicy = By.xpath("//a[text()='Privacy Policy']");
+	public By txtDashBulkPayment = By.xpath("//a[normalize-space(text())='Bulk Payment']");
+	public By txtDashDisbursementReport = By.xpath("//a[normalize-space(text())='Disbursement Report']");
+	public By txtDashTransactionDetail = By.xpath("//a[normalize-space(text())='Transactions']");
+	public By txtDashOnboardingReport = By.xpath("//a[normalize-space(text())='Onboarding Report']");
+	public By txtDashMyProfile = By.xpath("//a[normalize-space(text())='My Profile']");
+	public By txtDashMyTransaction = By.xpath("//a[normalize-space(text())='My Transactions']");
+	public By txtDashChangeMPIN = By.xpath("//a[normalize-space(text())='Change MPIN']");
+	public By txtDashChangeLoginPassword = By.xpath("//a[normalize-space(text())='Change Login Password']");
+	public By txtDashChangeLanguage = By.xpath("//a[normalize-space(text())='Change Language']");
+	public By txtDashAboutUs = By.xpath("//a[normalize-space(text())='About Us']");
+	public By txtDashContactUs = By.xpath("//a[normalize-space(text())='Contact Us']");
+	public By txtDashPasswordPolicy = By.xpath("//a[normalize-space(text())='Password Policy']");
+	public By txtDashMPINPolicy = By.xpath("//a[normalize-space(text())='MPIN Policy']");
+	
+	public By txtDashPrivacyPolicy = By.xpath("//a[normalize-space(text())='Privacy Policy']");
 	public By txtMenuSalaryDisbursement = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Salary Disbursement']");
 	public By txtMenuDisbursementRequestList = By
@@ -176,72 +176,72 @@ public class NavigationPageOperations extends SetupInit {
 	
 	public By txtMerchantPayment = By.xpath("//*[text()='Merchant Payment']");
 	public By txtMenuMerchantPayment = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Merchant Payment']");
-	public By txtDashMerchantPayment = By.xpath("//a[text()='Merchant Payment']");
+	public By txtDashMerchantPayment = By.xpath("//a[normalize-space(text())='Merchant Payment']");
 	public By txtEnterprisePayment = By.xpath("//*[text()='Enterprise Payment']");
 	public By txtMenuEnterprisePayment = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Enterprise Payment']");
-	public By txtDashEnterprisePayment = By.xpath("//a[text()='Merchant Payment']");
+	public By txtDashEnterprisePayment = By.xpath("//a[normalize-space(text())='Merchant Payment']");
 	public By txtMobileTopup = By.xpath("//*[text()='Mobile Top up']");
 	public By txtMenuMobileTopup = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Mobile Top up']");
-	public By txtDashMobileTopup = By.xpath("//a[text()='Top Up']");
+	public By txtDashMobileTopup = By.xpath("//a[normalize-space(text())='Top Up']");
 	public By txtMobilePostpaid = By.xpath("//*[text()='Mobile Postpaid']");
 	public By txtMenuMobilePostpaid = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Mobile Postpaid']");
-	public By txtDashMobilePostpaid = By.xpath("//a[text()='Bill Payment']");
+	public By txtDashMobilePostpaid = By.xpath("//a[normalize-space(text())='Bill Payment']");
 	
 	public By txtNasswalletAccountHolder = By.xpath("//*[contains(text(),'NassWallet') and contains(text(),'Account Holder')]");
 	public By txtNasswalletMerchant = By.xpath("(//*[contains(text(),'NassWallet') and contains(text(),'Merchant')])[last()]");
 	By homeLogo = By.xpath("//img[@alt='logo']");
 	By chat = By.id("maximizeChat");
-	public By txtDashB2BTranfer = By.xpath("//a[text()='B2B Transfer']");
-	public By txtDashWithdrawMoney = By.xpath("//a[text()='Withdraw Money']");
+	public By txtDashB2BTranfer = By.xpath("//a[normalize-space(text())='B2B Transfer']");
+	public By txtDashWithdrawMoney = By.xpath("//a[normalize-space(text())='Withdraw Money']");
 	public By txtM2MTransfer = By.xpath("//div[text()='M2M Transfer']");
 	public By txtMenuM2MTransfer = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='M2M Transfer']");
-	public By txtDashM2MTransfer = By.xpath("//a[text()='M2M Transfer']");
+	public By txtDashM2MTransfer = By.xpath("//a[normalize-space(text())='M2M Transfer']");
 	public By txtMerchantRefund = By.xpath("//div[text()='Merchant Refund']");
 	public By txtMenuMerchantRefund = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Merchant Refund']");
-	public By txtDashMerchantRefund = By.xpath("//a[text()='Merchant Refund']");
+	public By txtDashMerchantRefund = By.xpath("//a[normalize-space(text())='Merchant Refund']");
 	public By txtAssistantOnboarding = By.xpath("//div[text()='Assistant Onboarding']");
 	public By txtMenuAssistantOnboarding = By.xpath("//*[@class='modal-content']//*[text()='Assistant Onboarding']");
 	public By txtManageAssistant = By.xpath("//div[text()='Manage Assistant']");
 	public By txtMenuManageAssistant = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Manage Assistant']");
-	public By txtDashManageAssistant = By.xpath("//a[text()='Manage Assistant']");
+	public By txtDashManageAssistant = By.xpath("//a[normalize-space(text())='Manage Assistant']");
 	public By txtTellerOnboarding = By.xpath("//div[text()='Teller Onboarding']");
 	public By txtMenuTellerOnboarding = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Teller Onboarding']");
-	public By txtDashTellerOnboarding = By.xpath("//a[text()='Teller Onboarding']");
+	public By txtDashTellerOnboarding = By.xpath("//a[normalize-space(text())='Teller Onboarding']");
 	public By txtManageTeller = By.xpath("//div[text()='Manage Teller']");
 	public By txtMenuManageTeller = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Manage Teller']");
-	public By txtDashManageTeller = By.xpath("//a[text()='Manage Teller']");
-	public By commissionReport = By.xpath("//a[text()='Commission Report']");
+	public By txtDashManageTeller = By.xpath("//a[normalize-space(text())='Manage Teller']");
+	public By commissionReport = By.xpath("//a[normalize-space(text())='Commission Report']");
 	
 
 	public By txtCashInByAgent = By.xpath("//div[text()='Cash In By Agent']");
 	public By txtMenuCashInByAgent = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Cash In By Agent']");
-	public By txtDashCashInByAgent = By.xpath("//a[text()='Cash In By Agent']");
+	public By txtDashCashInByAgent = By.xpath("//a[normalize-space(text())='Cash In By Agent']");
 	public By txtUpdateCustomerKYC = By.xpath("//div[text()='Update KYC']");
 	public By txtMenuUpdateCustomerKYC = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Update Customer KYC']");
-	public By txtDashUpdateCustomerKYC = By.xpath("//a[text()='Update Customer KYC']");
+	public By txtDashUpdateCustomerKYC = By.xpath("//a[normalize-space(text())='Update Customer KYC']");
 	public By txtCustomerOnboarding = By.xpath("//div[text()='Customer Onboarding']");
 	public By txtMenuCustomerOnboarding = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Customer Onboarding']");
-	public By txtDashCustomerOnboarding = By.xpath("//a[text()='Customer Onboarding']");
+	public By txtDashCustomerOnboarding = By.xpath("//a[normalize-space(text())='Customer Onboarding']");
 	public By txtManageAgent = By.xpath("//div[text()='Manage Agent']");
 	public By txtMenuManageAgent = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Manage Agent']");
-	public By txtDashManageAgent = By.xpath("//a[text()='Manage Agent']");
+	public By txtDashManageAgent = By.xpath("//a[normalize-space(text())='Manage Agent']");
 	public By txtMenuAgentOnboarding = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Agent Onboarding']");
-	public By txtDashAgentOnboarding = By.xpath("//a[text()='Agent Onboarding']");
+	public By txtDashAgentOnboarding = By.xpath("//a[normalize-space(text())='Agent Onboarding']");
 	public By txtMenuCommissionReport = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Commission Report']");
 	public By txtTransactionSummary = By.xpath("//*[text()='Transaction Summary']//parent::*[@class='card_area']");
-	public By txtDashTransactionSummary = By.xpath("//a[text()='Transaction Summary']");
+	public By txtDashTransactionSummary = By.xpath("//a[normalize-space(text())='Transaction Summary']");
 	public By txtMenuTransactionSummary = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Transaction Summary']");
 	elasticwrite log;
 	By forgottenMPIN = By.xpath("//*[text()='Forgotten MPIN ?']");
 	public By txtCommissionReport = By.xpath("//div[text()='Commission Report']");
-	public By txtDashCommissionReport = By.xpath("//a[text()='Commission Report']");
+	public By txtDashCommissionReport = By.xpath("//a[normalize-space(text())='Commission Report']");
 	By forgottenPassword = By.xpath("//*[text()='Forgotten Password?']");
 	By newUser = By.xpath("//*[text()='New User?']");
 	public By txteVoucher = By.xpath("//*[text()='eVoucher']");
@@ -251,7 +251,7 @@ public class NavigationPageOperations extends SetupInit {
 	public By txteVoucherCustomer = By.xpath("//*[text()='eVoucher Sale']");
 	public By txtAirtimeSale = By.xpath("//*[text()='Airtime Sale']");
 	public By txtMenuAirtimeSale = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Airtime Sale']");
-	public By txtDashAirtimeSale = By.xpath("//a[text()='Airtime Sale']");
+	public By txtDashAirtimeSale = By.xpath("//a[normalize-space(text())='Airtime Sale']");
 
 
 	public void clickOnInviteFriendsfromSideMenu(int... args) {
@@ -1203,8 +1203,9 @@ public class NavigationPageOperations extends SetupInit {
 
 	public void clickOnSideMenuMPINPolicyFromSettings(int... args) {
 		try {
-			clickOnElement(txtMenuMPINPolicy, args);
-			setLogSteps(log, "Click On MPIN Policy");
+			clickOnElement(txtMenuChangeMPIN, args);
+			//clickOnElement("", args);
+			setLogSteps(log, "Click On Change MPIN");
 		} catch (Exception e) {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "mpin policy");
 		}

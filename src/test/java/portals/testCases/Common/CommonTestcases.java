@@ -25,7 +25,7 @@ public class CommonTestcases extends SetupInit {
 		try {
 			setTestParameters(co.datamap,
 					"checkBalanceFromDashboardViewBalance");
-			co.dashboardPage.checkBalance();
+			co.dashBoardPageOperations.clickOnCheckBalance();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
@@ -91,64 +91,37 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
-
-	@Test
-	public void verifyContactUsFromDashboard() {
-		try {
-			setTestParameters(co.datamap, "verifyContactUsFromDashboard");
-			co.navigationPage.clickOnContactUs();
-			co.contactUsPage.verifyContactUs();
-			setSuccessParameters(co.datamap);
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
-
-	@Test
-	public void verifyContactUsFromSideMenuProfile() {
-		try {
-			setTestParameters(co.datamap, "verifyContactUsFromSideMenuProfile");
-			co.navigationPage.clickOnSideMenuProfile();
-			co.navigationPage.clickOnSideMenuContactUsFromProfile();
-			co.contactUsPage.verifyContactUs();
-			setSuccessParameters(co.datamap);
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
-
-	@Test
-	public void verifyAboutUsFromDashboard() {
-		try {
-			setTestParameters(co.datamap, "verifyAboutUsFromDashboard");
-			co.navigationPage.clickOnAboutUs();
-			co.aboutUsPage.verifyAboutUs();
-			setSuccessParameters(co.datamap);
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
-
-	@Test
-	public void verifyAboutUsFromSideMenuProfile() {
-		try {
-			setTestParameters(co.datamap, "verifyAboutUsFromSideMenuProfile");
-			co.navigationPage.clickOnSideMenuProfile();
-			co.navigationPage.clickOnSideMenuAboutUsFromProfile();
-			co.aboutUsPage.verifyAboutUs();
-			setSuccessParameters(co.datamap);
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
+	
+	/*
+	 * @Test
+	 * public void verifyContactUsFromDashboard() { try {
+	 * setTestParameters(co.datamap, "verifyContactUsFromDashboard");
+	 * co.navigationPage.clickOnContactUs(); co.contactUsPage.verifyContactUs();
+	 * setSuccessParameters(co.datamap); } catch (Exception e) {
+	 * setExceptionData(co, e); } finally { setExcecutionData(co); } }
+	 * 
+	 * @Test public void verifyContactUsFromSideMenuProfile() { try {
+	 * setTestParameters(co.datamap, "verifyContactUsFromSideMenuProfile");
+	 * co.navigationPage.clickOnSideMenuProfile();
+	 * co.navigationPage.clickOnSideMenuContactUsFromProfile();
+	 * co.contactUsPage.verifyContactUs(); setSuccessParameters(co.datamap); } catch
+	 * (Exception e) { setExceptionData(co, e); } finally { setExcecutionData(co); }
+	 * }
+	 * 
+	 * @Test public void verifyAboutUsFromDashboard() { try {
+	 * setTestParameters(co.datamap, "verifyAboutUsFromDashboard");
+	 * co.navigationPage.clickOnAboutUs(); co.aboutUsPage.verifyAboutUs();
+	 * setSuccessParameters(co.datamap); } catch (Exception e) {
+	 * setExceptionData(co, e); } finally { setExcecutionData(co); } }
+	 * 
+	 * @Test public void verifyAboutUsFromSideMenuProfile() { try {
+	 * setTestParameters(co.datamap, "verifyAboutUsFromSideMenuProfile");
+	 * co.navigationPage.clickOnSideMenuProfile();
+	 * co.navigationPage.clickOnSideMenuAboutUsFromProfile();
+	 * co.aboutUsPage.verifyAboutUs(); setSuccessParameters(co.datamap); } catch
+	 * (Exception e) { setExceptionData(co, e); } finally { setExcecutionData(co); }
+	 * }
+	 */
 
 	@Test
 	public void mpinPolicyFromDashboardFooter() {
@@ -209,10 +182,9 @@ public class CommonTestcases extends SetupInit {
 	}
 
 	@Test
-	public void termsAndConditionsFromDashboardFooter() {
+	public void termsAndConditionsFromSideMenuSettings() {
 		try {
-			setTestParameters(co.datamap,
-					"termsAndConditionsFromDashboardFooter");
+			setTestParameters(co.datamap, "termsAndConditionsFromSideMenuSettings");
 			co.navigationPage.clickOnSideMenuSettings();
 			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSettings();
 			co.termsAndConditionsPage.verifyTermsAndConditions();
@@ -225,10 +197,10 @@ public class CommonTestcases extends SetupInit {
 	}
 
 	@Test
-	public void termsAndConditionsFromSideMenuSettings() {
+	public void termsAndConditionsFromDashboardFooter() {
+		
 		try {
-			setTestParameters(co.datamap,
-					"termsAndConditionsFromSideMenuSettings");
+			setTestParameters(co.datamap, "termsAndConditionsFromDashboardFooter");
 			co.navigationPage.clickOnDashboardeTermsAndConditions();
 			co.termsAndConditionsPage.verifyTermsAndConditions();
 			setSuccessParameters(co.datamap);
@@ -238,7 +210,7 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
-
+	
 	@Test
 	public void verifyChatOption() {
 		try {
