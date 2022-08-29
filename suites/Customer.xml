@@ -36,17 +36,28 @@
 		/> <include name="verifyPerformedp2pOffnetFromFooter_NotificationVerication" 
 		/> </methods> </class> </classes> </test> <test name="Change MPIN"> <classes> 
 		<class name="portals.testCases.Customer.ChangeMpin"> <methods> <include name="changeMpinCustomer" 
+		/> </methods> </class> </classes> </test> <test name="Change Secret Word"> 
+		<classes> <class name="portals.testCases.Customer.ChangeSecretWord"> <methods> 
+		<include name="changeSecretWordCustomer" /> </methods> </class> </classes> 
+		</test> <test name="Invite Freinds"> <classes> <class name="portals.testCases.Customer.InviteFriends"> 
+		<methods> <include name="InvitFriends" /> <include name="InviteFriendsfromDBNotification" 
 		/> </methods> </class> </classes> </test> -->
-	<!-- <test name="Change Secret Word"> -->
-	<!-- <classes> -->
-	<!-- <class name="portals.testCases.Customer.ChangeSecretWord"> -->
-	<!-- <methods> -->
-	<!-- <include name="changeSecretWordCustomer" /> -->
-	<!-- </methods> -->
-	<!-- </class> -->
-	<!-- </classes> -->
-	<!-- </test> -->
-
+	<test name="Cash Out">
+		<classes>
+			<class name="portals.testCases.Customer.CashOut">
+				<methods>
+					<!--<include name="cashOut" /> <include name="verifyPerformedCashOutFromFromUserPassbook" 
+						/> -->
+					<include name="AgentAssistedWithdrawfromSuperAgent" />
+					<!-- <include name="verifyPerformedCashOutFromToUserPassbook" /> <include 
+						name="cashOutFromDashboard" /> <include name="verifyPerformedCashOutFromDashboardFromUserPassbook" 
+						/> <include name="verifyPerformedCashOutFromDashboardFromToUserPassbook" 
+						/> <include name="cashOutFromSideMenu" /> <include name="verifyPerformedCashOutFromSideMenuFromUserPassbook" 
+						/> <include name="verifyPerformedCashOutFromSideMenuFromToUserPassbook" /> -->
+				</methods>
+			</class>
+		</classes>
+	</test>
 	<!-- <test name="Mobile Topup"> <classes> <class name="portals.testCases.Customer.MobileToup"> 
 		<methods> <include name="mobileTopup" /> <include name="verifyPerformedMobileTopupFromFromUserPassbook" 
 		/> <include name="mobileTopupFromDashboard "/> <include name="verifyPerformedMobileTopupFromDashboardFromUserPassbook" 
@@ -61,46 +72,22 @@
 		/> <include name="enterprisePaymentFromSideMenu" /> <include name="verifyPerformedEnterprisePaymentFromSideMenuFromFromUserPassbook" 
 		/> <include name="verifyPerformedEnterprisePaymentFromSideMenuFromToUserPassbook" 
 		/> </methods> </class> </classes> </test> -->
-	<!-- <test name="Cash Out"> <classes> <class name="portals.testCases.Customer.CashOut"> 
-		<methods> <include name="cashOut" /> <include name="verifyPerformedCashOutFromFromUserPassbook" 
-		/> <include name="verifyPerformedCashOutFromToUserPassbook" /> <include name="cashOutFromDashboard" 
-		/> <include name="verifyPerformedCashOutFromDashboardFromUserPassbook" /> 
-		<include name="verifyPerformedCashOutFromDashboardFromToUserPassbook" /> 
-		<include name="cashOutFromSideMenu" /> <include name="verifyPerformedCashOutFromSideMenuFromUserPassbook" 
-		/> <include name="verifyPerformedCashOutFromSideMenuFromToUserPassbook" /> 
-		</methods> </class> </classes> </test> <test name="Admin Verification"> <classes> 
-		<class name="portals.testCases.Common.CommonTestcases"> <methods> <include 
-		name="verifyTransactionsInAdmin" /> </methods> </class> </classes> </test> -->
 
-	<test name="Common Testcases">
-		<classes>
-			<class name="portals.testCases.Common.CommonTestcases">
-				<methods>
-					<include name="checkBalanceFromDashboardViewBalance" />
-					<include name="qrCodeFromDashboard" />
-					<include name="passBookFromDashboard" />
-					<include name="verifyDownloadPassbook" />
-					<include name="recentTransactionFromDashboard" />
-					<include name="verifyContactUsFromDashboard" />
-					<include name="verifyContactUsFromSideMenuProfile" />
-					<include name="verifyAboutUsFromDashboard" />
-					<include name="verifyAboutUsFromSideMenuProfile" />
-					<include name="mpinPolicyFromDashboardFooter" />
-					<include name="mpinPolicyFromSideMenuSettings" />
-					<include name="privacyPolicyFromDashboardFooter" />
-					<include name="privacyPolicyFromSideMenuSettings" />
-					<include name="termsAndConditionsFromDashboardFooter" />
-					<include name="termsAndConditionsFromSideMenuSettings" />
-					<include name="verifyChatOption" />
-					<include name="changeLanguageFromDashboardFooter" />
-					<include name="changeLanguageFromSideMenuProfile" />
-					<include name="transactionDeatilReportFromDashboard" />
-					<include name="transactionDeatilReportFromDashboardFooter" />
-					<include name="transactionDeatilReportFromSideMenuServices" />
-					<include name="logout" />
-<!-- 					<include name="forgotMPin" /> -->
-				</methods>
-			</class>
-		</classes>
-	</test>
+	<!-- <test name="Common Testcases"> <classes> <class name="portals.testCases.Common.CommonTestcases"> 
+		<methods> <include name="checkBalanceFromDashboardViewBalance" /> <include 
+		name="qrCodeFromDashboard" /> <include name="passBookFromDashboard" /> <include 
+		name="verifyDownloadPassbook" /> <include name="recentTransactionFromDashboard" 
+		/> <include name="verifyContactUsFromDashboard" /> <include name="verifyContactUsFromSideMenuProfile" 
+		/> <include name="verifyAboutUsFromDashboard" /> <include name="verifyAboutUsFromSideMenuProfile" 
+		/> <include name="mpinPolicyFromDashboardFooter" /> <include name="mpinPolicyFromSideMenuSettings" 
+		/> <include name="privacyPolicyFromDashboardFooter" /> <include name="privacyPolicyFromSideMenuSettings" 
+		/> <include name="termsAndConditionsFromDashboardFooter" /> <include name="termsAndConditionsFromSideMenuSettings" 
+		/> <include name="verifyChatOption" /> <include name="changeLanguageFromDashboardFooter" 
+		/> <include name="changeLanguageFromSideMenuProfile" /> <include name="transactionDeatilReportFromDashboard" 
+		/> <include name="transactionDeatilReportFromDashboardFooter" /> <include 
+		name="transactionDeatilReportFromSideMenuServices" /> <include name="logout" 
+		/> <include name="forgotMPin" /> </methods> </class> </classes> </test> <test 
+		name="Admin Verification"> <classes> <class name="portals.testCases.Common.CommonTestcases"> 
+		<methods> <include name="verifyTransactionsInAdmin" /> </methods> </class> 
+		</classes> </test> -->
 </suite>

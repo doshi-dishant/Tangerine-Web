@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+
+<suite name="Tangerine Customer WebPortal" verbose="10"
+	parallel="false" thread-count="5">
+
+	<listeners>
+		<listener class-name='listeners.CustomizedEmailableReport' />
+		<listener class-name='listeners.HtmlReport' />
+	</listeners>
+
+	<parameter name="browserType" value="headless" />
+	<test name="Common Testcases">
+		<classes>
+			<class name="portals.testCases.Common.CommonTestcases">
+				<methods>
+					<include name="checkBalanceFromDashboardViewBalance" />
+					<include name="qrCodeFromDashboard" />
+					<include name="passBookFromDashboard" />
+					<include name="verifyDownloadPassbook" />
+					<include name="recentTransactionFromDashboard" />
+					<include name="verifyContactUsFromDashboard" />
+					<include name="verifyContactUsFromSideMenuProfile" />
+					<include name="verifyAboutUsFromDashboard" />
+					<include name="verifyAboutUsFromSideMenuProfile" />
+					<include name="mpinPolicyFromDashboardFooter" />
+					<include name="mpinPolicyFromSideMenuSettings" />
+					<include name="privacyPolicyFromDashboardFooter" />
+					<include name="privacyPolicyFromSideMenuSettings" />
+					<include name="termsAndConditionsFromDashboardFooter" />
+					<include name="termsAndConditionsFromSideMenuSettings" />
+					<include name="verifyChatOption" />
+					<include name="changeLanguageFromDashboardFooter" />
+					<include name="changeLanguageFromSideMenuProfile" />
+					<include name="transactionDeatilReportFromDashboard" />
+					<include name="transactionDeatilReportFromDashboardFooter" />
+					<include name="transactionDeatilReportFromSideMenuServices" />
+					<include name="logout" />
+					<!-- <include name="forgotMPin" /> -->
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

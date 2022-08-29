@@ -77,6 +77,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import portals.interfaces.GetExcelHeaders;
 import portals.pages.Common.LoginPage;
 import utils.DBUtils;
@@ -100,7 +101,7 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		configuaration_folder_path = new File("configuration").getAbsolutePath() + File.separator;
 		configFilePath = configuaration_folder_path + CONFIG_FILE_NAME;
 		elasticIndex = "mobifin_5x";
-		projectName = "NassWallet";
+		projectName = "Tangereine";
 		projectVersion = "Mobifin_5.0.3";
 		logMatrics = new LogMatrics(elasticIndex, indexType);
 		suiteName = testContext.getCurrentXmlTest().getSuite().getName();
@@ -418,17 +419,22 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 	}
 
 	private WebDriver initChromeHeadlessDriver() {
-		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments(new String[] { "headless" });
-		chromeOptions.addArguments(new String[] { "window-size=1200x600" });
+		chromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+		chromeOptions.addArguments("--headless", "window-size=1920,1080", "--no-sandbox");
+		chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200",
+				"--ignore-certificate-errors", "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
 		driver = new ChromeDriver(chromeOptions);
 		return driver;
 	}
 
 	private WebDriver initChromeDriver() {
 		System.out.println("Launching google chrome with new profile..");
-		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		ChromeOptions option = setChromeOptions();
 		if (isRemoteEnable)
 			return new RemoteWebDriver(remote_grid, option);
@@ -468,7 +474,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 
 	private WebDriver initFirefoxDriver() {
 		System.out.println("Launching Firefox browser..");
-		System.setProperty("webdriver.gecko.driver", DEPENDENCIES_FOLDER + "geckodriver.exe");
+//		System.setProperty("webdriver.gecko.driver", DEPENDENCIES_FOLDER + "geckodriver.exe");
+		WebDriverManager.firefoxdriver().setup();
 		FirefoxOptions options = setFireFoxOptions();
 		if (isRemoteEnable)
 			return new RemoteWebDriver(remote_grid, options);
@@ -510,7 +517,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 	private WebDriver initChromeProxyDriver() {
 		proxyIP = xmlUtils.getChildNodeValue(configFilePath, "Proxy", "ProxyIP");
 		proxyPort = xmlUtils.getChildNodeValue(configFilePath, "Proxy", "ProxyPort");
-		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		Proxy proxy = new Proxy();
 		proxy.setHttpProxy(proxyIP + ":" + proxyPort);
@@ -525,12 +533,11 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		chromeOptions.addArguments("disable-infobars");
 		capabilities.setJavascriptEnabled(true);
 		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-		capabilities.setCapability("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+//		capabilities.setCapability("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
 		capabilities.setPlatform(Platform.WINDOWS);
 		capabilities.setBrowserName("chrome");
 		capabilities.setJavascriptEnabled(true);
 		capabilities.setCapability("proxy", proxy);
-
 		chromeOptions.merge(capabilities);
 		if (isRemoteEnable) {
 			driver = new RemoteWebDriver(remote_grid, capabilities);
@@ -544,7 +551,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		FirefoxProfile profile1 = new FirefoxProfile();
 		proxyIP = xmlUtils.getChildNodeValue(configFilePath, "Proxy", "ProxyIP");
 		proxyPort = xmlUtils.getChildNodeValue(configFilePath, "Proxy", "ProxyPort");
-		System.setProperty("webdriver.gecko.driver", DEPENDENCIES_FOLDER + "geckodriver.exe");
+//		System.setProperty("webdriver.gecko.driver", DEPENDENCIES_FOLDER + "geckodriver.exe");
+		WebDriverManager.firefoxdriver().setup();
 		profile1.setPreference("dom.max_chrome_script_run_time", "999");
 		profile1.setPreference("dom.max_script_run_time", "999");
 		profile1.setPreference("browser.download.folderList", 2);

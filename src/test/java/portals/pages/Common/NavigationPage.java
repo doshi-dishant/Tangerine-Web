@@ -20,6 +20,10 @@ public class NavigationPage extends SetupInit {
 	public void clickOnDashboardP2POffnet() {
 		navigationPageOperations.clickOnDashboardP2POffnet(0);
 	}
+	
+	public void clickOnChangeInviteFriendsfromSideMenu() {
+		navigationPageOperations.clickOnInviteFriendsfromSideMenu(0);
+	}
 
 	/////////// tangerine ends //////////////////////// 
 	
@@ -911,6 +915,11 @@ public class NavigationPage extends SetupInit {
 	public void clickOnCashOut() {
 		navigationPageOperations.clickOnCashOut(0);
 	}
+	
+	public void clickOntxtAgentAssistedWithdraw() {
+		navigationPageOperations.clickOntxtAgentAssistedWithdraw(0);
+	}
+	
 
 	public void clickOnContactUs() {
 		navigationPageOperations.clickOnDashboardContactUs(0);

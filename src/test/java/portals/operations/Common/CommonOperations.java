@@ -480,6 +480,13 @@ public class CommonOperations extends SetupInit {
 		setLogSteps(log, "Successfully Transaction verify in From User");
 	}
 	
+	public void verifyTransactionInWebPortalForFromUserwithoutTransactionID(Map<Object, Object> map,DashboardPage dashBoardPageOperations) 
+	{
+		webPortalLogin(map, "from", 0);
+		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),map.get(TransactionID).toString());
+		setLogSteps(log, "Successfully Transaction verify in From User");
+	}
+	
 	public String getCurrentDate() {
 		DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDateTime currentDate = LocalDateTime.now();
