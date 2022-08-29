@@ -21,10 +21,12 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.Set;
 import java.util.logging.Level;
 
 import org.apache.commons.io.FileUtils;
@@ -174,12 +176,12 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 			if (!dir.exists())
 				dir.mkdir();
 			if (userType.equalsIgnoreCase("Customer"))
-				newAccessMatricesFileName = accessMatricesDir + File.separator + "Mobifin_NassWallet_" + userType
+				newAccessMatricesFileName = accessMatricesDir + File.separator + "Mobifin_Tangerine_" + userType
 						+ "_Web_AccessMatrices_"
 						+ Utility.getCurrentDateTime().replaceAll(":", "_").replaceAll("-", "_").replaceAll(" ", "_")
 						+ ".xls";
 			else
-				newAccessMatricesFileName = accessMatricesDir + File.separator + "Mobifin_NassWallet_" + userType + "_"
+				newAccessMatricesFileName = accessMatricesDir + File.separator + "Mobifin_Tangerine_" + userType + "_"
 						+ subUserType + "_Web_AccessMatrices_"
 						+ Utility.getCurrentDateTime().replaceAll(":", "_").replaceAll("-", "_").replaceAll(" ", "_")
 						+ ".xls";
@@ -334,6 +336,7 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 				test_data_file = xmlUtils.getChildNodeValue(configFilePath, "UAT", "CustomerTestData");
 				userName = xmlUtils.getChildNodeValue(configFilePath, "UAT", "CustomerUser");
 				password = xmlUtils.getChildNodeValue(configFilePath, "UAT", "CustomerPassword");
+				pin = xmlUtils.getChildNodeValue(configFilePath, "UAT", "CustomerPin");
 				break;
 			default:
 				throw new RuntimeException("irrelevant user type found");
@@ -1758,6 +1761,34 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 
 	public void openNewTabInBrowser() {
 		((JavascriptExecutor) driver).executeScript("window.open()");
+		
+	}
+	
+	public void switchToMainTab(String Window) {
+		driver.switchTo().window(Window);
+	}
+	
+	public String getMainWindow() {
+		return driver.getWindowHandle();
+	}
+
+	public void switchToTab() {
+		// Get handles of the windows
+		String mainWindowHandle = driver.getWindowHandle();
+		Set<String> allWindowHandles = driver.getWindowHandles();
+		Iterator<String> iterator = allWindowHandles.iterator();
+		while (iterator.hasNext()) {
+			String ChildWindow = iterator.next();
+			if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
+				driver.switchTo().window(ChildWindow);
+			}
+		}	
+
+	}
+	
+	public void closeCurrentTab(String Window){ 
+		driver.close();
+		driver.switchTo().window(Window); 
 	}
 
 	public String setTransactionCalculator(String methodName, String fromNumber, String toNumber, String openingBalance,
@@ -1767,7 +1798,7 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		File file = new File(transactionDir);
 		if (!file.exists())
 			file.mkdir();
-		newTransactionFileName = transactionDir + File.separator + "Mobifin_NassWallet_" + userType + "_" + methodName
+		newTransactionFileName = transactionDir + File.separator + "Tangerine_" + userType + "_" + methodName
 				+ "_" + Utility.getCurrentDateTime().replaceAll(":", "_").replaceAll("-", "_").replaceAll(" ", "_")
 				+ ".xls";
 		if (ExcelUtility.createAnExcel(newTransactionFileName, transactionSheetName)) {

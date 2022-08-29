@@ -22,9 +22,11 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtA2ATransfer = By.xpath("//div[text()='Agent Transfer']");
 	public By txtMenuA2ATransfer = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Agent Transfer']");
 	public By txtCashOut = By.xpath("//div[text()='Withdraw Cash']");
-	public By txtMenuCashOut = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Withdraw Cash']");
-	public By txtDashCashOut = By.xpath("//a[text()='Withdraw Cash']");
+	public By txtWithdrawCashSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Withdraw Cash']");
+	public By txtWithdrawCashFromFooter = By.xpath("//a[contains(text(),'Withdraw Cash')]");
 	public By txtAgentAssistedWithdraw = By.xpath("(//div[text()='Agent Assisted Withdraw'])[1]");
+	public By txtAgentAssistedWithdrawSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Agent Assisted Withdraw']");
+	public By txtAgentAssistedWithdrawFromFooter = By.xpath("//a[contains(text(),'Agent Assisted Withdraw')]");
 	
 	///////////////  Tangerine end /////////////////////////	
 	
@@ -619,14 +621,7 @@ public class NavigationPageOperations extends SetupInit {
 		}
 	}
 
-	public void clickOnDashboardCashOut(int... args) {
-		try {
-			clickOnElement(dashboardCashOut, args);
-			setLogSteps(log, "Click On Withdraw Cash");
-		} catch (Exception e) {
-			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Withdraw Cash");
-		}
-	}
+	
 
 	public void clickOnWalletTopup(int... args) {
 		try {
@@ -1625,6 +1620,25 @@ public class NavigationPageOperations extends SetupInit {
 		}
 	}
 	
+	public void clickOnWithdrawCashFromFooter(int... args) {
+		try {
+			clickOnElement(txtWithdrawCashFromFooter, args);
+			setLogSteps(log, "Click On WithdrawCash From Footer");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Withdraw Cash From Footer");
+		}
+	}
+	
+	public void clickOnWithdrawCashFromSideMenu(int... args) {
+		clickOnSideMenuServices(args);
+		try {
+			clickOnElement(txtWithdrawCashSideMenu, args);
+			setLogSteps(log, "Click On WithdrawCash From Side Menu");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Withdraw Cash From Side Menu");
+		}
+	}
+
 	public void clickOntxtAgentAssistedWithdraw(int... args) {
 		try {
 			clickOnElement(txtAgentAssistedWithdraw, args);
