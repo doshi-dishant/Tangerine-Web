@@ -6,6 +6,7 @@ import java.util.Map;
 import org.openqa.selenium.WebDriver;
 
 import portals.operations.Common.CommonOperations;
+import portals.operations.Common.DashBoardPageOperations;
 import portals.pages.Agent.A2ATransferPage;
 import portals.pages.Agent.AgentOnboardingPage;
 import portals.pages.Agent.AirtimeSalePage;
@@ -29,7 +30,6 @@ import portals.pages.Common.TermsAndConditionsPage;
 import portals.pages.Common.TransactionDetailPage;
 import portals.pages.Common.TransactionSummaryPage;
 import portals.pages.Customer.ArbelaStorePage;
-import portals.pages.Customer.WithdrawCashPage;
 import portals.pages.Customer.ChangeMpinPage;
 import portals.pages.Customer.ChangeSecretWordPage;
 import portals.pages.Customer.InviteFriendsPage;
@@ -38,6 +38,7 @@ import portals.pages.Customer.MobileTopupPage;
 import portals.pages.Customer.MyProfilePage;
 import portals.pages.Customer.P2POffnetPage;
 import portals.pages.Customer.P2PTransferPage;
+import portals.pages.Customer.WithdrawCashPage;
 import portals.pages.Customer.eVoucherPage;
 import utils.elasticUtils.elasticwrite;
 
@@ -54,6 +55,7 @@ public class CreateObject extends SetupInit {
 	public ChangeMpinPage changeMpinPage;
 	public ChangeSecretWordPage changesecretwordpage;
 	public InviteFriendsPage inviteFriendsPage;
+	public DashBoardPageOperations dashBoardPageOperations;
 	//tangerine end //////
 	public WithdrawCashPage withdrawCashPage;
 	public MobileTopupPage mobileTopupPage;
@@ -104,6 +106,7 @@ public class CreateObject extends SetupInit {
 		changesecretwordpage = new ChangeSecretWordPage(driver, log);
 		inviteFriendsPage = new InviteFriendsPage(driver, log);
 		withdrawCashPage = new WithdrawCashPage(driver, log);
+		dashBoardPageOperations = new DashBoardPageOperations(driver, log);
 		// tangerine end //////////
 		
 		common = new CommonOperations(driver, log);

@@ -243,7 +243,6 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenuSettings(0);
 	}
 
-	
 
 	public void clickOnSideMenuServicesReceivePayment() {
 		clickOnSideMenuServices();

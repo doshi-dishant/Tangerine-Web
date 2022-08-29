@@ -193,7 +193,6 @@ public class DashboardPage extends SetupInit {
 		moveToElement(dashboardPageCommon.verifyRecentTransactionLabel);
 		verifyVisible(dashboardPageCommon.verifyRecentTransactionLabel, 0);
 		setLogSteps(log, "Verify Recent Transactions");
-		dashboardPageCommon.clickOnRefreshButton(0);
 		List<WebElement> element = getElementList(dashboardPageCommon.recentTransaction, 0);
 		int total = element.size();
 		for (int i = 1; i <= total; i++) {
@@ -817,12 +816,14 @@ public class DashboardPage extends SetupInit {
 		setLogSteps(log, "Verify Onboarded Successfully message is Present");
 		reloadCurrentPage();
 	}
-
+	
+	/*
 	public String checkBalance() {
 		//dashboardPageCommon.clickOnViewBalance(5);
+		clickOnElement(log, viewBalance, 2);
 		dashboardPageCommon.clickOnRefreshBalance(0);
 		return dashboardPageCommon.getBalance(0);
-	}
+	}*/
 
 	public void verifyChatOption() {
 		dashboardPageCommon.isChatOptionsAvailable(0);
