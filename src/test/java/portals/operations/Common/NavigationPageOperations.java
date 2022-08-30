@@ -56,6 +56,7 @@ public class NavigationPageOperations extends SetupInit {
 	public By faqsTitle = By.xpath("//*[contains(text(),'FAQs')]");
 	public By PersonalinfoProfile  = By.xpath("//p[contains(text(),'Personal info religious worship')]");
 	public By AgentAssistedDepositicon  = By.xpath("//i[@class=\"moon-Agent-Cashin-fill-dual\"]");
+	public By AgentAssistedLastTranfer  = By.xpath("//div[@class='rcnt_image']");
 	public By AgentAssistedWithdrawicon  = By.xpath("//i[@class=\"moon-Agent-Cash-Out-fill-dual\"]");
 	public By AgentTransfericon  = By.xpath("//i[@class=\"moon-Cashout-thr-Agent\"]");
 	public By FinancialServicesicon  = By.xpath("//i[@class=\"moon-Internal-Transfer\"]");

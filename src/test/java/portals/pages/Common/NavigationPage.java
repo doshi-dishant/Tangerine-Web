@@ -1261,6 +1261,9 @@ public class NavigationPage extends SetupInit {
 		verifyVisible(navigationPageOperations.FinancialServicesicon, 0);
 		setLogSteps(log, "Verify Financial Services icon in Dashboard ");
 		
+		verifyVisible(navigationPageOperations.AgentAssistedLastTranfer, 0);
+		setLogSteps(log, "Verify Financial Services icon in Dashboard ");
+		
 	}
 
 	

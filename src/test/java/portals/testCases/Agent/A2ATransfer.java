@@ -46,6 +46,30 @@ public class A2ATransfer extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
+	
+	
+	@Test(dataProvider = "InactiveUser", dataProviderClass = TestDataImport.class)
+	public void LoginwithInactiveUser(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(3);
+				co.navigationPage.clickOnLogOut();
+			}
+			co.loginPage.login(ApproverUserName, ApproverPassword, subUserType);
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "a2aTranfer");
+			map.put(MethodName, "a2aTransfer");
+			co.navigationPage.clickOnA2ATransfer();
+			map = co.a2aTransferPage.a2aTransfer(map);
+			setUseCaseVerificationData("a2aTranfer", verificationData, map);
+			setSuccessParameters(co.datamap);
+			writeVerificationFile(Utility.getJsonStringFromMap(map));
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
 
 	@Test(dataProvider = "AgentAssistedDeposit", dataProviderClass = TestDataImport.class)
 	public void AgentAssistedDeposit(Map<Object, Object> map) {
@@ -111,6 +135,31 @@ public class A2ATransfer extends SetupInit {
 		}
 	}
 
+	@Test
+	public void verifyPerformedA2ATranferFromFromUserPassbookVerifycurrencytypes() {
+		if (verifyMethodIsAvail(verificationData, "a2aTranfer")) {
+			for (Map<Object, Object> map : verificationData.get("a2aTranfer")) {
+				try {
+					co.datamap.putAll(map);
+					setTestParameters(co.datamap, "verifyPerformedA2ATranferFromFromUserPassbook");
+					co.common.verifyTransactionInWebPortalForFromUser(map, co.dashboardPage);
+					setSuccessParameters(co.datamap);
+				} catch (Exception e) {
+					setExceptionData(co, e);
+				} finally {
+					setExcecutionData(co);
+					if (co.navigationPage.isLogoutButtonDislay(3))
+						co.navigationPage.clickOnLogOut();
+				}
+			}
+		} else {
+			throw new RuntimeException("verification failed, due to operation failed");
+		}
+	}
+
+	
+	
+	
 	@Test
 	public void verifyPerformedA2ATransferFromToUserPassbook() {
 		if (verifyMethodIsAvail(verificationData, "a2aTranfer")) {
@@ -206,6 +255,25 @@ public class A2ATransfer extends SetupInit {
 
 	@Test(dataProvider = "A2ATransfer", dataProviderClass = TestDataImport.class)
 	public void a2aTranferFromFooter(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "a2aTranferFromFooter");
+			map.put(MethodName, "a2aTransfer");
+			co.navigationPage.clickOnFooterOptionA2ATransfer();
+			map = co.a2aTransferPage.a2aTransfer(map);
+			setUseCaseVerificationData("a2aTranferFromFooter", verificationData, map);
+			setSuccessParameters(co.datamap);
+			writeVerificationFile(Utility.getJsonStringFromMap(map));
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	
+	@Test(dataProvider = "A2ATransfer", dataProviderClass = TestDataImport.class)
+	public void a2aTranferVerifycurrencytypes (Map<Object, Object> map) {
 		try {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "a2aTranferFromFooter");

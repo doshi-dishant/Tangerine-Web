@@ -15,25 +15,27 @@
 		<classes>
 			<class name="portals.testCases.Agent.A2ATransfer">
 				<methods>			
-					<include name="CheckCommissionBalanceFormDashboard" />
+				<!-- <include name="CheckCommissionBalanceFormDashboard" />
 					<include name="CheckCommissionBalanceFormProfile" />	
 					<include name="a2aTranfer" />
 					<include name="a2aTransferFromSideMenu" />
 					<include name="verifyPerformedA2ATranferFromFromUserPassbook" />
 					<include name="verifyPerformedA2ATransferFromToUserPassbook" />
-					<include name="a2aTransferFromSideMenu" />
+					<include name="a2aTranferFromFooter" />
 					<include name="verifyPerformedA2ATransferFromSideMenuFromUserPassbook" />
 					<include name="verifyPerformedA2ATransferFromSideMenuFromToUserPassbook" />
-					<include name="a2aTranferFromFooter" />
  					<include name="CheckBalanceFormDashboard" />
 					<include name="CheckBalanceFormProfile" />
 					<include name="verifyPerformedA2ATranferFromFootertoUserPassbook" />
-					<include name="verifyPerformedA2ATransferFromFootertoToUserPassbook" /> 
+					<include name="verifyPerformedA2ATransferFromFootertoToUserPassbook" />
+					<include name="a2aTranferVerifycurrencytypes" />
+					<include name="verifyPerformedA2ATranferFromFromUserPassbookVerifycurrencytypes" /> -->	
+					<include name="LoginwithInactiveUser" />					
 				</methods>
 			</class>
 		</classes>
 	</test>
-			<test name="Common Testcases">
+<!-- 			<test name="Common Testcases">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">
 				<methods>
@@ -64,5 +66,5 @@
 			</class>
 		</classes>
 	</test>  
-	
+	-->	
 </suite>

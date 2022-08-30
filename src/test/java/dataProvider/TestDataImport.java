@@ -112,6 +112,11 @@ public class TestDataImport extends SetupInit {
 	public static Object[][] Passbook_Filter() {
 		return readExcelFileTo2D(TEST_DATA, "Passbook_Filter");
 	}
+	
+	@DataProvider(name = "InactiveUser")
+	public static Object[][] InactiveUser() {
+		return readExcelFileTo2D(TEST_DATA, "InactiveUser");
+	}
 
 	@DataProvider(name = "verifyProfileDetails")
 	public static Object[][] verifyProfileDetails() {
