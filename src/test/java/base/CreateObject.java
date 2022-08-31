@@ -19,6 +19,7 @@ import portals.pages.Common.ChangeLanguagePage;
 import portals.pages.Common.CommissionReportPage;
 import portals.pages.Common.ContactUsPage;
 import portals.pages.Common.DashboardPage;
+import portals.pages.Common.FAQsPage;
 import portals.pages.Common.ForgotMPinPage;
 import portals.pages.Common.ForgotPasswordPage;
 import portals.pages.Common.LoginPage;
@@ -66,6 +67,7 @@ public class CreateObject extends SetupInit {
 	public AboutUsPage aboutUsPage;
 	public TermsAndConditionsPage termsAndConditionsPage;
 	public CommonOperations common;
+	public FAQsPage faqsPage;
 	public MobilePostpaidPage mobilePostpaidPage;
 	public TransactionDetailPage transactionDetailPage;
 	public TransactionSummaryPage transactionSummaryPage;
@@ -137,5 +139,6 @@ public class CreateObject extends SetupInit {
 		arbelaStorePage = new ArbelaStorePage(driver, log);
 		eVoucherCustomerPage = new portals.pages.Agent.eVoucherPage(driver, log);
 		airtimeSalePage = new AirtimeSalePage(driver, log);
+		
 	}
 }

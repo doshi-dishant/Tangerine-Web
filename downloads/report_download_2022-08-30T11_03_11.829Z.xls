@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head >
+  <body>
+    
+    <table>
+      <thead>
+        <tr><th><b>Sr No.</b></th><th><b>Transaction ID</b></th><th><b>Date & Time</b></th><th><b>Product</b></th><th><b>Opening Balance</b></th><th><b>Amount (UGX)</b></th><th><b>Closing Balance</b></th><th><b>Transaction Type</b></th><th><b>Status</b></th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>'16618420472696501223'</td><td>2022-08-30 09:47:27</td><td>Withdraw Cash</td><td>221544.00</td><td>500.00</td><td>222044.00</td><td>Credit</td><td>Success</td></tr>
+        <tr><td>2</td><td>'16614979865871721661'</td><td>2022-08-26 10:13:07</td><td>Agent Transfer</td><td>221043.00</td><td>501.00</td><td>221544.00</td><td>Credit</td><td>Success</td></tr>
+        <tr><td>3</td><td>'16614974987312664075'</td><td>2022-08-26 10:04:59</td><td>Agent Transfer</td><td>220542.00</td><td>501.00</td><td>221043.00</td><td>Credit</td><td>Success</td></tr>
+        <tr><td>4</td><td>'16614973957176287966'</td><td>2022-08-26 10:03:16</td><td>Agent Transfer</td><td>220041.00</td><td>501.00</td><td>220542.00</td><td>Credit</td><td>Success</td></tr>
+        <tr><td>5</td><td>'16614936285481198037'</td><td>2022-08-26 09:00:29</td><td>Agent Transfer</td><td>219540.00</td><td>501.00</td><td>220041.00</td><td>Credit</td><td>Success</td></tr>
+      </tbody>
+    </table>
+  
+  </body>
+</html >

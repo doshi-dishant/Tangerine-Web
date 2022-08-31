@@ -55,7 +55,7 @@ public class NavigationPageOperations extends SetupInit {
 	By changePassword = By.xpath("//*[text()='Change Password']");
 	By changeMpin = By.xpath("//*[text()='Change MPIN']");
 	By resetMpin = By.xpath("//*[text()='Reset MPIN']");
-	By faqs = By.xpath("//*[@class='modal-content']//*[text()='FAQS']");
+	By faqs = By.xpath("//*[@class='modal-content']//*[text()='FAQs']");
 	public By checkBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')]");
 	public By qrCode = By.xpath("//*[text()='QR Code']");
 	public By passbook = By.xpath("//*[text()='Passbook']");

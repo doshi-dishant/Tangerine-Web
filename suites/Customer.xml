@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!-- <?xml version="1.0" encoding="UTF-8"?> -->
 
-<suite name="Nasswallet Customer WebPortal" verbose="10" parallel="false" thread-count="5">
+<suite name="Tangereine Customer WebPortal" verbose="10" parallel="false" thread-count="5">
 
 	<listeners>
 		<listener class-name='listeners.CustomizedEmailableReport' />
@@ -22,7 +22,7 @@
 			</class>
 		</classes>
 	</test>  -->
-	<test name="P2P Transfer">
+<!-- 	<test name="P2P Transfer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
@@ -35,7 +35,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test> -->
 
 	<!--
 	<test name="P2P Offnet">
@@ -56,7 +56,7 @@
 		</classes>
 	</test>
 -->
-	<test name="P2P Transfer from Footer">
+<!-- 	<test name="P2P Transfer from Footer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
@@ -87,7 +87,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>  -->
 
 	<test name="Common Testcases">
 		<classes>
@@ -99,13 +99,16 @@
 					<include name="verifyDownloadPassbook" />
 					<include name="recentTransactionFromDashboard" />
 					<include name="mpinPolicyFromDashboardFooter" />
-					<include name="mpinPolicyFromSideMenuSettings" />
-					<include name="logout" /> -->
+					<include name="mpinPolicyFromSideMenuSettings" />-->
+					<include name="FAQsFromSideMenu" />
+					<include name="termsAndConditionsFromSideMenuSettings" />
+					<include name="termsAndConditionsFromDashboardFooter" />
+				<!--	<include name="logout" /> 
 					<include name="privacyPolicyFromDashboardFooter" />
 					<include name="privacyPolicyFromSideMenuSettings" />
 					<include name="termsAndConditionsFromDashboardFooter" />
 					<include name="termsAndConditionsFromSideMenuSettings" /> 
-				<!--	
+					
 					<include name="transactionDeatilReportFromDashboard" />
 					<include name="transactionDeatilReportFromDashboardFooter" />
 					<include name="transactionDeatilReportFromSideMenuServices" />
@@ -116,7 +119,7 @@
 		</classes>
 	</test>
 
-	<test name="WithdrawCash and Agent Assisted Withdraw">
+<!--	<test name="WithdrawCash and Agent Assisted Withdraw">
 		<classes>
 			<class name="portals.testCases.Customer.WithdrawCash">
 				<methods>
@@ -156,7 +159,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>  -->
 
 
 	<!-- 		<test name="Mobile Topup">

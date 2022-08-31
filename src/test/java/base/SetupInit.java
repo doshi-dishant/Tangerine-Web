@@ -362,6 +362,13 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 					password = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SuperAgentPassword");
 					pin = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SuperAgentPin");
 					break;
+					
+				case "subagent":
+					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SubAgentTestData");
+					userName = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SubAgentUser");
+					password = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SubAgentPassword");
+					pin = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SubAgentPin");
+					break;
 				default:
 					throw new RuntimeException("irrelevant sub user type found");
 				}
@@ -1457,9 +1464,15 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		switch (userType.toLowerCase().replaceAll("\\s", "")) {
 		case "agent":
 			switch (subUserType.toLowerCase().replaceAll("\\s", "")) {
+			
+			case "subagent":
+				colNum = 4;
+				break;
+				
 			case "agent":
 				colNum = 3;
 				break;
+				
 			case "superagent":
 				colNum = 2;
 				break;

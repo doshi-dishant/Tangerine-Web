@@ -11,7 +11,7 @@ import base.CreateObject;
 import base.SetupInit;
 import dataProvider.TestDataImport;
 
-public class CommonTestcases extends SetupInit {
+public class CommonTestcasesSubAgent extends SetupInit {
 	protected CreateObject co;
 	Map<String, ArrayList<Map<Object, Object>>> verificationData = new LinkedHashMap<>();
 
@@ -490,19 +490,4 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
-	
-	@Test
-	public void FAQsFromSideMenu() {
-		try {
-			setTestParameters(co.datamap, "FAQsFromSideMenu");
-			co.navigationPage.clickOnSideMenuProfileFAQs();
-			co.faqsPage.verifyFAQs();
-			setSuccessParameters(co.datamap);
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
-
 }
