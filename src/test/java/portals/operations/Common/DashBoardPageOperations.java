@@ -81,6 +81,9 @@ public class DashBoardPageOperations extends SetupInit {
 	public String verifyReceiverIDType = "//*[text()='Receiver ID Type']//following-sibling::*[text()='%s']";
 	public String verifyRemarks = "//*[text()='Reference']//following-sibling::*[text()='%s']";
 	public String verifyAmount = "//*[text()='Amount (UGX)']//following-sibling::*[contains(text(),'%s')]";
+	
+	
+	
 	public By verifyTransaction = By.xpath("(//*[contains(@class,'text-success')])[1]");
 	public By clickOnPassbook = By.xpath("//*[contains(@class,'Passbook')]");
 	public String verifyTransactionStatus = "(//*[text()='%s']//..//parent::tr//span[contains(@class,'sucess')])[1]";
@@ -178,6 +181,11 @@ public class DashBoardPageOperations extends SetupInit {
 			.xpath("//*[contains(text(),'Link') and contains(text(),'Bank') and contains(text(),'Account')]");
 	By textTINNumber = By.id("frm_text_TIN_NUMBERid");
 	public By verifyOTPScreen = By.xpath("//*[text()='Enter OTP']");
+	public By BalanceafterPaymentText = By.xpath("//p[contains(text(),'Balance after Payment (UGX)')]");
+	public By AvailableBalanceText = By.xpath("//p[contains(text(),'Available Balance (UGX)')]");
+	public By Amounttext  = By.xpath("//span[contains(text(),'Amount (UGX)')]");
+	
+	
 	String clickOnBankNameForEdit = "(//*[contains(@class,'edit_link')]//*[text()='%s']//parent::div//parent::div//*[text()='%s'])[1]";
 	By BtnEdit = By.xpath("//*[text()='Edit']");
 	By BtnDelete = By.xpath("//*[text()='Delete']");
@@ -301,9 +309,30 @@ public class DashBoardPageOperations extends SetupInit {
 
 	public void clickOnCloseButton(int... args) {
 		clickOnElement(btnClose, args);
+		
+		verifyVisible(verifyOTPScreen, args);
+
 		setLogSteps(log, "Click On Close Button");
 	}
 
+	public void verifyUGXSign(int... args) {
+		verifyVisible(BalanceafterPaymentText, args);
+		setLogSteps(log, "Verify Balance after Payment with UGX Sign");
+		verifyVisible(Amounttext, args);
+		setLogSteps(log, "Verify Amount with UGX Sign");
+		setLogSteps(log, "Click On Close Button");
+	}
+	
+	
+	public void verifyUGXSignConfirmationScreen(int... args) {
+		verifyVisible(AvailableBalanceText, args);
+		setLogSteps(log, "Verify Balance after Payment with UGX Sign");
+		verifyVisible(Amounttext, args);
+		setLogSteps(log, "Verify Amount with UGX Sign");
+		setLogSteps(log, "Click On Close Button");
+	}
+
+	
 	public void enterMobileNumber(String mobileNumber, int... args) {
 		sendKeys(txtMobileNumber, mobileNumber, 0);
 		setLogSteps(log, "Enter Mobile Number : " + mobileNumber);

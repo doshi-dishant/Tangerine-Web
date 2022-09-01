@@ -47,6 +47,24 @@ public class A2ATransfer extends SetupInit {
 		}
 	}
 	
+	@Test(dataProvider = "A2ATransfer", dataProviderClass = TestDataImport.class)
+	public void a2aTranferVerifycurrencytypes (Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "a2aTranferFromFooter");
+			map.put(MethodName, "a2aTransfer");
+			co.navigationPage.clickOnFooterOptionA2ATransfer();
+			map = co.a2aTransferPage.a2aTransfer(map);
+			setUseCaseVerificationData("a2aTranferFromFooter", verificationData, map);
+			setSuccessParameters(co.datamap);
+			writeVerificationFile(Utility.getJsonStringFromMap(map));
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
 	
 	@Test(dataProvider = "InactiveUser", dataProviderClass = TestDataImport.class)
 	public void LoginwithInactiveUser(Map<Object, Object> map) {
@@ -272,23 +290,7 @@ public class A2ATransfer extends SetupInit {
 	}
 	
 	
-	@Test(dataProvider = "A2ATransfer", dataProviderClass = TestDataImport.class)
-	public void a2aTranferVerifycurrencytypes (Map<Object, Object> map) {
-		try {
-			co.datamap.putAll(map);
-			setTestParameters(co.datamap, "a2aTranferFromFooter");
-			map.put(MethodName, "a2aTransfer");
-			co.navigationPage.clickOnFooterOptionA2ATransfer();
-			map = co.a2aTransferPage.a2aTransfer(map);
-			setUseCaseVerificationData("a2aTranferFromFooter", verificationData, map);
-			setSuccessParameters(co.datamap);
-			writeVerificationFile(Utility.getJsonStringFromMap(map));
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
+	
 
 	@Test
 	public void verifyPerformedA2ATranferFromFootertoUserPassbook() {

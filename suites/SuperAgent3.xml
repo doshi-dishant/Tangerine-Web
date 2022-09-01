@@ -28,9 +28,9 @@
 					<include name="CheckBalanceFormProfile" />
 					<include name="verifyPerformedA2ATranferFromFootertoUserPassbook" />
 					<include name="verifyPerformedA2ATransferFromFootertoToUserPassbook" />
-					<include name="a2aTranferVerifycurrencytypes" />
 					<include name="verifyPerformedA2ATranferFromFromUserPassbookVerifycurrencytypes" /> -->	
-					<include name="LoginwithInactiveUser" />					
+					<include name="CheckCommissionBalanceFormDashboard" />
+					<include name="a2aTranferVerifycurrencytypes" />					
 				</methods>
 			</class>
 		</classes>
