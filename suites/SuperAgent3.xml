@@ -46,7 +46,14 @@
 					<include name="VerifyPasswordPolicyfromDashboardFooter" />
 					<include name="VerifyPersonalinforeligiousworshipFromProfile" />
 					<include name="VerifyDocumentinforeligiousworshipFromProfile" />
-					<include name="VerifyServiceiconsdisplayedFromDashboard" />
+					<include name="VerifyServiceiconsdisplayedFromDashboard" />	
+                    <include name="checkBalanceFromDashboardViewBalance" />
+					<include name="qrCodeFromDashboard" />
+					<include name="passBookFromDashboard" />
+					<include name="verifyDownloadPassbook" />
+					<include name="recentTransactionFromDashboard" />
+					<include name="mpinPolicyFromDashboardFooter" />
+					<include name="mpinPolicyFromSideMenuSettings" />
 					<include name="logout" />
 				</methods>
 			</class>
@@ -64,5 +71,35 @@
 			</class>
 		</classes>
 	</test>  
+		<test name="WithdrawCash and Agent Assisted Withdraw">
+		<classes>
+			<class name="portals.testCases.Customer.WithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromDashboard" />
+					<include name="verifyPerformedAssistedWithDrawFromDashboardToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromDashboardFromUserPassbook" />
+
+					<include name="withdrawCashAndAgentAssistedWithdrawfromFooter" />
+					<include name="verifyPerformedAssistedWithDrawFromFooterToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromFooterFromUserPassbook" />
+
+
+					<include name="withdrawCashAndAgentAssistedWithdrawfromSideMenu" />
+					<include name="verifyPerformedAssistedWithDrawFromSideMenuToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromSideMenuFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test name="Change MPIN">
+		<classes>
+			<class name="portals.testCases.Customer.ChangeMpin">
+				<methods>
+					<include name="changeMpinCustomer" />
+				</methods>
+			</class>
+		</classes>
+	</test>
 	
 </suite>
