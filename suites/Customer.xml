@@ -22,7 +22,7 @@
 			</class>
 		</classes>
 	</test>  -->
-<!-- 	<test name="P2P Transfer">
+	<!-- 	<test name="P2P Transfer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
@@ -56,7 +56,7 @@
 		</classes>
 	</test>
 -->
-<!-- 	<test name="P2P Transfer from Footer">
+	<!-- 	<test name="P2P Transfer from Footer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
@@ -89,11 +89,21 @@
 		</classes>
 	</test>  -->
 
+	<test name="Change MPIN">
+		<classes>
+			<class name="portals.testCases.Customer.ChangeMpin">
+				<methods>
+					<include name="changeMpinCustomer" />
+					<include name="changeMpinFromMyProfileCustomer" />
+				</methods>
+			</class>
+		</classes>
+	</test>
 	<test name="Common Testcases">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">
 				<methods>
-				<!--	<include name="checkBalanceFromDashboardViewBalance" />
+					<!--	<include name="checkBalanceFromDashboardViewBalance" />
 					<include name="qrCodeFromDashboard" />
 					<include name="passBookFromDashboard" />
 					<include name="verifyDownloadPassbook" />
@@ -103,7 +113,7 @@
 					<include name="FAQsFromSideMenu" />
 					<include name="termsAndConditionsFromSideMenuSettings" />
 					<include name="termsAndConditionsFromDashboardFooter" />
-				<!--	<include name="logout" /> 
+					<!--	<include name="logout" /> 
 					<include name="privacyPolicyFromDashboardFooter" />
 					<include name="privacyPolicyFromSideMenuSettings" />
 					<include name="termsAndConditionsFromDashboardFooter" />
@@ -119,7 +129,7 @@
 		</classes>
 	</test>
 
-<!--	<test name="WithdrawCash and Agent Assisted Withdraw">
+	<!--	<test name="WithdrawCash and Agent Assisted Withdraw">
 		<classes>
 			<class name="portals.testCases.Customer.WithdrawCash">
 				<methods>
@@ -141,15 +151,7 @@
 		</classes>
 	</test>
 
-	<test name="Change MPIN">
-		<classes>
-			<class name="portals.testCases.Customer.ChangeMpin">
-				<methods>
-					<include name="changeMpinCustomer" />
-				</methods>
-			</class>
-		</classes>
-	</test>
+	
 
 	<test name="Change Secret Word">
 		<classes>
