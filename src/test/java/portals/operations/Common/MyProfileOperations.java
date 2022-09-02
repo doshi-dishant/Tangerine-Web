@@ -37,6 +37,20 @@ public class MyProfileOperations extends SetupInit {
 	public String verifyHaveBankAccount = "//*[text()='Have Bank Account']//following-sibling::p[text()='%s']";
 	public String verifyBusinessRegistationNumber = "//*[text()='Business Registration Number']//following-sibling::p[text()='%s']";
 	public String verifyAgentTypeOfBusiness = "//*[text()='Agent Type of Business']//following-sibling::p[text()='%s']";
+	public String VerifyEmailPersInfo = "//*[text()='Email ID']//following-sibling::p[text()='%s']";
+	public String VerifyLandlineNoPersInfo = "//*[text()='Landline no']//following-sibling::p[text()='%s']";
+	public String VerifyAlternateNoPersInfo = "//*[text()='Alternate mobile']//following-sibling::p[text()='%s']";
+	public String VerifyCityPersInfo = "//*[text()='City']//following-sibling::p[text()='%s']";
+	public String VerifyMobileNoPersInfo = "//*[text()='Mobile number']//following-sibling::p[text()='%s']";
+	public String VerifyGivenNamePersInfo = "//*[text()='Given name']//following-sibling::p[text()='%s']";
+	public String VerifyPhysicalAddressPersInfo = "//*[text()='Physical address']//following-sibling::p[text()='%s']";
+	public String VerifySurnamePersInfo = "//*[text()='Surname']//following-sibling::p[text()='%s']";
+	public String VerifyNationalIDPersInfo = "//*[text()='National Id']//following-sibling::p[text()='%s']";
+	public String VerifyDocumentIDPersInfo = "//*[text()='Document ID']//following-sibling::p[text()='%s']";
+	public String VerifyDOBPersInfo = "//*[text()='Date of birth']//following-sibling::p[text()='%s']";
+	public String VerifyPostalAddressPersInfo = "//*[text()='Postal address']//following-sibling::p[text()='%s']";
+	public String VerifyNinDocInfo = "//*[text()='Nin']//following-sibling::p[text()='%s']";
+	public String VerifyProfileDocInfo = "//*[text()='Profile']//following-sibling::p[text()='%s']";
 	By txtEmail = By.id("frm_text_EMAIL_IDid");
 	By drpOccupation = By.id("frm_select_OCCUPATIONid");
 	By txtStreetAddress = By.id("frm_text_STREET_ADDRESSid");
@@ -53,6 +67,8 @@ public class MyProfileOperations extends SetupInit {
 	By verifyDocumentInfo = By.xpath("//*[contains(text(),'Document info ugandan users')]");
 	By btnChangeMPINOption = By.xpath("//*[contains(text(),'Change MPIN')]");
 	By viewBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')][last()]");
+	By btnPersonalInf0 = By.xpath("//*[@class='MuiButtonBase-root MuiIconButton-root MuiExpansionPanelSummary-expandIcon MuiIconButton-edgeEnd'][1]");
+	By btnDocumentInf0 = By.xpath("(//*[@class='MuiButtonBase-root MuiIconButton-root MuiExpansionPanelSummary-expandIcon MuiIconButton-edgeEnd'])[last()]");
 	elasticwrite log;
 	CommonOperations common;
 
@@ -233,5 +249,23 @@ public class MyProfileOperations extends SetupInit {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Change MPIN Button");
 		}
 		setLogSteps(log, "Click On Change MPIN Button");
+	}
+	
+	public void clickOnPersonalInfo(int... args) {
+		try {
+			clickOnElement(this.log, btnPersonalInf0, 0);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "PersonalInfo Button");
+		}
+		setLogSteps(log, "Click On PersonalInfo Button");
+	}
+	
+	public void clickOnDocumentInfo(int... args) {
+		try {
+			clickOnElement(this.log, btnDocumentInf0, 0);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "DocumentInfo Button");
+		}
+		setLogSteps(log, "Click On DocumentInfo Button");
 	}
 }

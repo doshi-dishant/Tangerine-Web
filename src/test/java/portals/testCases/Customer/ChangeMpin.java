@@ -41,7 +41,7 @@ public class ChangeMpin extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "changeMpinCustomer");
 			co.navigationPage.clickOnMyProfile();
-			co.customerProfilePage.clickOnChangeMPINFromMyProfile();
+			co.customerMyProfilePage.clickOnChangeMPINFromMyProfile();
 			co.changeMpinPage.setnewMpin(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {

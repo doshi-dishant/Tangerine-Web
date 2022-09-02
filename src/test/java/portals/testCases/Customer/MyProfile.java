@@ -26,7 +26,7 @@ public class MyProfile extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "verifyProfileDetailsFromDashboard");
 			co.navigationPage.clickOnChangeMpinfromSideMenu();
-			co.customerProfilePage.verifyProfileDetails(map);
+			co.customerMyProfilePage.verifyProfileDetails(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
@@ -41,7 +41,7 @@ public class MyProfile extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "verifyProfileDetailsFromSideMenuProfileViewProfile");
 			co.navigationPage.clickOnSideMenuProfileViewProfile();
-			co.customerProfilePage.verifyProfileDetails(map);
+			co.customerMyProfilePage.verifyProfileDetails(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
@@ -56,7 +56,7 @@ public class MyProfile extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "profileEditFromDashboard");
 			//co.navigationPage.clickOnDashboardeMyProfile();
-			if (!co.customerProfilePage.editProfile(map)) {
+			if (!co.customerMyProfilePage.editProfile(map)) {
 				throw new RuntimeException("Profile Edit Failed");
 			}
 			// co.dashboardPage.verifyProfileDetails(map);
@@ -74,7 +74,7 @@ public class MyProfile extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "profileEditFromSideMenuProfileViewProfile");
 			co.navigationPage.clickOnSideMenuProfileViewProfile();
-			if (!co.customerProfilePage.editProfile(map)) {
+			if (!co.customerMyProfilePage.editProfile(map)) {
 				throw new RuntimeException("Profile Edit Failed");
 			}
 			// co.dashboardPage.verifyProfileDetails(map);

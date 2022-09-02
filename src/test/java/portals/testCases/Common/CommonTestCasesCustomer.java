@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import base.CreateObject;
 import base.SetupInit;
+import dataProvider.TestDataImport;
 
 public class CommonTestCasesCustomer extends SetupInit {
 	protected CreateObject co;
@@ -24,7 +25,7 @@ public class CommonTestCasesCustomer extends SetupInit {
 		try {
 			setTestParameters(co.datamap, "MyProfileFromSideMenu");
 			co.navigationPage.clickOnSideMenuProfileMyProfile();
-			co.customerProfilePage.verifyMyProfile();
+			co.customerMyProfilePage.verifyMyProfile();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
@@ -38,7 +39,7 @@ public class CommonTestCasesCustomer extends SetupInit {
 		try {
 			setTestParameters(co.datamap, "MyProfile");
 			co.navigationPage.clickOnMyProfile();
-			co.customerProfilePage.verifyMyProfile();
+			co.customerMyProfilePage.verifyMyProfile();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
@@ -52,7 +53,37 @@ public class CommonTestCasesCustomer extends SetupInit {
 		try {
 			setTestParameters(co.datamap, "Check Balance from My Profile");
 			co.navigationPage.clickOnMyProfile();
-			co.customerProfilePage.checkBalancefromMyProfile();
+			co.customerMyProfilePage.checkBalancefromMyProfile();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test(dataProvider = "verifyProfileDetails", dataProviderClass = TestDataImport.class)
+	public void CheckPersonalInfoFromMyProfile(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "Check Balance from My Profile");
+			co.navigationPage.clickOnMyProfile();
+			co.customerMyProfilePage.verifyPersonalInfoDetails(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test(dataProvider = "verifyProfileDetails", dataProviderClass = TestDataImport.class)
+	public void CheckDocumentInfoFromMyProfile(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "Check Document info From My Profile");
+			co.navigationPage.clickOnMyProfile();
+			co.customerMyProfilePage.verifyDocInfoDetails(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);

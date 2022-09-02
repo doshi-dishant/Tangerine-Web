@@ -119,4 +119,39 @@ public class MyProfilePage extends SetupInit {
 	public void clickOnChangeMPINFromMyProfile() {
 		myProfileCommon.clickOnChangeMPIN(0);
 	}
+	
+	public void verifyPersonalInfoDetails(Map<Object, Object> map) {
+		myProfileCommon.clickOnPersonalInfo(0);
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyEmailPersInfo, map.get(EmailID).toString())),0);
+		setLogSteps(log, "Verify EmailID");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyLandlineNoPersInfo, map.get(LandlineNo).toString())), 0);
+		setLogSteps(log, "Verify Landline No");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyAlternateNoPersInfo, map.get(AlternateMobile).toString())), 0);
+		setLogSteps(log, "Verify Alternate Mobile");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyCityPersInfo, map.get(City).toString())),0);
+		setLogSteps(log, "Verify City");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyMobileNoPersInfo, map.get(MobileNumber).toString())),0);
+		setLogSteps(log, "Verify Mobile Number");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyGivenNamePersInfo, map.get(GivenName).toString())),0);
+		setLogSteps(log, "Verify Given Name");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyPhysicalAddressPersInfo, map.get(PhysicalAddress).toString())),0);
+		setLogSteps(log, "Verify Physical Address");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifySurnamePersInfo, map.get(Surname).toString())),0);
+		setLogSteps(log, "Verify Surname");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyNationalIDPersInfo, map.get(NationalIDNo).toString())),0);
+		setLogSteps(log, "Verify NationalID No");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyDocumentIDPersInfo, map.get(DocumentID).toString())),0);
+		setLogSteps(log, "Verify DocumentID No");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyPostalAddressPersInfo, map.get(PostalAddress).toString())),0);
+		setLogSteps(log, "Verify Postal Address");
+	}
+	
+	public void verifyDocInfoDetails(Map<Object, Object> map) {
+		myProfileCommon.clickOnDocumentInfo(0);
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyNinDocInfo, map.get(Nin).toString())),0);
+		setLogSteps(log, "Verify Nin");
+		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyProfileDocInfo, map.get(Profile).toString())), 0);
+		setLogSteps(log, "Verify Profile");
+	}
+
 }
