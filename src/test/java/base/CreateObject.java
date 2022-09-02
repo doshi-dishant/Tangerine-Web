@@ -49,7 +49,7 @@ public class CreateObject extends SetupInit {
 	public LoginPage loginPage;
 	public NavigationPage navigationPage;
 	public DashboardPage dashboardPage;
-	public MyProfilePage customerProfilePage;
+	public MyProfilePage customerMyProfilePage;
 	//tangerine start //////
 	public P2PTransferPage p2pTransferPage;
 	public P2POffnetPage p2pOffnetPage;
@@ -100,7 +100,7 @@ public class CreateObject extends SetupInit {
 		}
 		navigationPage.goToHome(5);
 		dashboardPage = new DashboardPage(driver, log);
-		customerProfilePage = new MyProfilePage(driver, log);
+//		customerProfilePage = new MyProfilePage(driver, log);
 		// tangerine start ////////
 		p2pTransferPage = new P2PTransferPage(driver, log);
 		p2pOffnetPage = new P2POffnetPage(driver, log);
@@ -109,6 +109,7 @@ public class CreateObject extends SetupInit {
 		inviteFriendsPage = new InviteFriendsPage(driver, log);
 		withdrawCashPage = new WithdrawCashPage(driver, log);
 		dashBoardPageOperations = new DashBoardPageOperations(driver, log);
+		faqsPage = new FAQsPage(driver, log);
 		// tangerine end //////////
 		
 		common = new CommonOperations(driver, log);
@@ -132,7 +133,7 @@ public class CreateObject extends SetupInit {
 		customerOnboardingPage = new CustomerOnboardingPage(driver, log);
 		manageAgentPage = new ManageAgentPage(driver, log);
 		agentProfilePage = new portals.pages.Agent.MyProfilePage(driver, log);
-		customerProfilePage = new  portals.pages.Customer.MyProfilePage(driver, log);
+		customerMyProfilePage = new  portals.pages.Customer.MyProfilePage(driver, log);
 		agentOnboardingPage = new AgentOnboardingPage(driver, log);
 		forgotPasswordPage = new ForgotPasswordPage(driver, log);
 		newUserPage = new NewUserPage(driver, log);

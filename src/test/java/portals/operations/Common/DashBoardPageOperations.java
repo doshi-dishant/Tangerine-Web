@@ -279,6 +279,7 @@ public class DashBoardPageOperations extends SetupInit {
 	public By BalanceafterPaymentText = By.xpath("//p[contains(text(),'Balance after Payment (UGX)')]");
 	public By AvailableBalanceText = By.xpath("//p[contains(text(),'Available Balance (UGX)')]");
 	public By Amounttext  = By.xpath("//span[contains(text(),'Amount (UGX)')]");
+	public By ConfirmationScreen = By.xpath("//*[normalize-space(text())='Confirmation Details']");
 
 	By balance = By.xpath("//span[contains(@class,'main-bal')]");
 
@@ -1071,10 +1072,13 @@ public class DashBoardPageOperations extends SetupInit {
 	}
 	
 	public void verifyUGXSign(int... args) {
+		verifyVisible(ConfirmationScreen, args);
+		setLogSteps(log, "Confirmation Screen is Present");
 		verifyVisible(BalanceafterPaymentText, args);
 		setLogSteps(log, "Verify Balance after Payment with UGX Sign");
 		verifyVisible(Amounttext, args);
 		setLogSteps(log, "Verify Amount with UGX Sign");
+		
 	}
 	
 	
@@ -1083,6 +1087,6 @@ public class DashBoardPageOperations extends SetupInit {
 		setLogSteps(log, "Verify Available Balance with UGX Sign");
 		verifyVisible(Amounttext, args);
 		setLogSteps(log, "Verify Amount with UGX Sign");
-		setLogSteps(log, "Verify Amount with UGX Sign");
+		
 	}
 }

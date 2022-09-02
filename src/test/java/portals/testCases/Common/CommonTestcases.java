@@ -170,7 +170,7 @@ public class CommonTestcases extends SetupInit {
 	public void privacyPolicyFromSideMenuSettings() {
 		try {
 			setTestParameters(co.datamap, "privacyPolicyFromSideMenuSettings");
-			co.navigationPage.clickOnSideMenuSettings();
+			co.navigationPage.clickOnSideMenuProfile();
 			co.navigationPage.clickOnSideMenuePrivacyPolicyFromSettings();
 			co.privacyPolicyPage.verifyPrivacyPolicy();
 			setSuccessParameters(co.datamap);
@@ -185,7 +185,7 @@ public class CommonTestcases extends SetupInit {
 	public void termsAndConditionsFromSideMenuSettings() {
 		try {
 			setTestParameters(co.datamap, "termsAndConditionsFromSideMenuSettings");
-			co.navigationPage.clickOnSideMenuSettings();
+			co.navigationPage.clickOnSideMenuProfile();
 			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSettings();
 			co.termsAndConditionsPage.verifyTermsAndConditions();
 			setSuccessParameters(co.datamap);

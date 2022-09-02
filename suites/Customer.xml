@@ -2,27 +2,13 @@
 <!-- <?xml version="1.0" encoding="UTF-8"?> -->
 
 <suite name="Tangereine Customer WebPortal" verbose="10" parallel="false" thread-count="5">
-
 	<listeners>
 		<listener class-name='listeners.CustomizedEmailableReport' />
 		<listener class-name='listeners.HtmlReport' />
 	</listeners>
-
 	<parameter name="browserType" value="chrome" />
 
-	<!--	<test name="Profile">
-		<classes>
-			<class name="portals.testCases.Customer.MyProfile">
-				<methods>
-					<include name="verifyProfileDetailsFromDashboard" />
-					<include name="verifyProfileDetailsFromSideMenuProfileViewProfile" />
-					<include name="profileEditFromDashboard" />
-					<include name="profileEditFromSideMenuProfileViewProfile" /> -->
-	<!--	</methods>
-			</class>
-		</classes>
-	</test>  -->
-	<!-- 	<test name="P2P Transfer">
+<!--	<test name="P2P Transfer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
@@ -32,6 +18,128 @@
 					<include name="p2pTranferFromSideMenu" />
 					<include name="verifyPerformedp2pTranferFromSideMenuFromUserPassbook" />
 					<include name="verifyPerformedp2pTranferFromSideMenuFromToUserPassbook" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="My Profile">
+		<classes>
+			<class name="portals.testCases.Common.CommonTestCasesCustomer">
+				<methods>
+					<include name="CheckPersonalInfoFromMyProfile" />
+					<include name="CheckDocumentInfoFromMyProfile" />
+					<include name="CheckPersonalInfoFromMyProfileFromSideMenu" />
+					<include name="CheckDocumentInfoFromMyProfileFromSideMenu" />
+					<include name="CheckBalanceFromMyProfile" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="P2P Transfer from Footer">
+		<classes>
+			<class name="portals.testCases.Customer.P2PTransfer">
+				<methods>
+					<include name="p2pTranferfromFooter" />
+					<include name="verifyPerformedp2pTranferFromFooterFromUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromFooterToUserPassbook" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invite Freinds">
+		<classes>
+			<class name="portals.testCases.Customer.InviteFriends">
+				<methods>
+					<include name="InvitFriends" />
+					<include name="InviteFriendsfromDBNotification" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="P2P Transfer from Send">
+		<classes>
+			<class name="portals.testCases.Customer.P2PTransfer">
+				<methods>
+					<include name="p2pTranferFromSend" />
+					<include name="verifyPerformedp2pTranferFromSendFromUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromSendFromToUserPassbook" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="WithdrawCash and Agent Assisted Withdraw">
+		<classes>
+			<class name="portals.testCases.Customer.WithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromDashboard" />
+					<include name="verifyPerformedAssistedWithDrawFromDashboardToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromDashboardFromUserPassbook" />
+
+					<include name="withdrawCashAndAgentAssistedWithdrawfromFooter" />
+					<include name="verifyPerformedAssistedWithDrawFromFooterToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromFooterFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+
+	<test name="Common Testcases">
+		<classes>
+			<class name="portals.testCases.Common.CommonTestcases">
+				<methods>
+					<include name="FAQsFromSideMenu" />
+					<include name="qrCodeFromDashboard" />
+					<include name="passBookFromDashboard" />
+					<include name="verifyDownloadPassbook" />
+					<include name="recentTransactionFromDashboard" />
+					<include name="mpinPolicyFromDashboardFooter" />
+					<include name="mpinPolicyFromSideMenuSettings" />
+					<include name="checkBalanceFromDashboardViewBalance" />
+					<include name="termsAndConditionsFromSideMenuSettings" />
+					<include name="termsAndConditionsFromDashboardFooter" />
+					<include name="privacyPolicyFromDashboardFooter" />
+					<include name="privacyPolicyFromSideMenuSettings" />
+					<include name="logout" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+<!-- 	<test name="WithdrawCash and Agent Assisted Withdraw from Side Menu">
+		<classes>
+			<class name="portals.testCases.Customer.WithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromSideMenu" />
+					<include name="verifyPerformedAssistedWithDrawFromSideMenuToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromSideMenuFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Change Secret Word">
+		<classes>
+			<class name="portals.testCases.Customer.ChangeSecretWord">
+				<methods>
+					<include name="changeSecretWordCustomer" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Change MPIN">
+		<classes>
+			<class name="portals.testCases.Customer.ChangeMpin">
+				<methods>
+					<include name="changeMpinCustomer" />
+					<include name="changeMpinFromMyProfileCustomer" />
 				</methods>
 			</class>
 		</classes>
@@ -56,7 +164,43 @@
 		</classes>
 	</test>
 -->
-	<!-- 	<test name="P2P Transfer from Footer">
+
+</suite>
+
+<!-- ################  Extra from here ########################## -->
+<!--	<test name="Profile">
+		<classes>
+			<class name="portals.testCases.Customer.MyProfile">
+				<methods>
+					<include name="verifyProfileDetailsFromDashboard" />
+					<include name="verifyProfileDetailsFromSideMenuProfileViewProfile" />
+					<include name="profileEditFromDashboard" />
+					<include name="profileEditFromSideMenuProfileViewProfile" /> -->
+<!--	</methods>
+			</class>
+		</classes>
+	</test>  -->
+
+<!--
+	<test name="P2P Offnet">
+		<classes>
+			<class name="portals.testCases.Customer.P2POffnetTransfer">
+				<methods>
+					<include name="p2pOfffnetTranferFromDashboard" />
+					<include name="verifyPerformedp2pOffnetTranferFromDashboardFromUserPassbook" />
+					<include name="verifyPerformedp2pOffnetFromDashboard_NotificationVerication" />
+					<include name="p2pOfffnetFromSideMenu" />
+					<include name="verifyPerformedp2poffnetTranferFromSideMenuFromUserPassbook" />
+					<include name="verifyPerformedp2pOffnetFromSideMenu_NotificationVerication" />
+					<include name="p2pOffnetTranferfromFooter" />
+					<include name="verifyPerformedp2pOffnetTranferFromFromUserPassbook" />
+					<include name="verifyPerformedp2pOffnetFromFooter_NotificationVerication" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+-->
+<!-- 	<test name="P2P Transfer from Footer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
@@ -88,7 +232,7 @@
 			</class>
 		</classes>
 	</test>  -->
-
+<!--
 	<test name="Change MPIN">
 		<classes>
 			<class name="portals.testCases.Customer.ChangeMpin">
@@ -97,23 +241,24 @@
 					<include name="changeMpinFromMyProfileCustomer" />
 				</methods>
 			</class>
-		</classes>
+		</classes> 
 	</test>
 	<test name="Common Testcases">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">
-				<methods>
-					<!--	<include name="checkBalanceFromDashboardViewBalance" />
-					<include name="qrCodeFromDashboard" />
+				<methods> -->
+
+<!--		<include name="qrCodeFromDashboard" />
 					<include name="passBookFromDashboard" />
 					<include name="verifyDownloadPassbook" />
 					<include name="recentTransactionFromDashboard" />
 					<include name="mpinPolicyFromDashboardFooter" />
-					<include name="mpinPolicyFromSideMenuSettings" />-->
+					<include name="mpinPolicyFromSideMenuSettings" />
+					<include name="checkBalanceFromDashboardViewBalance" />
 					<include name="FAQsFromSideMenu" />
 					<include name="termsAndConditionsFromSideMenuSettings" />
 					<include name="termsAndConditionsFromDashboardFooter" />
-					<!--	<include name="logout" /> 
+						<include name="logout" /> 
 					<include name="privacyPolicyFromDashboardFooter" />
 					<include name="privacyPolicyFromSideMenuSettings" />
 					<include name="termsAndConditionsFromDashboardFooter" />
@@ -123,13 +268,13 @@
 					<include name="transactionDeatilReportFromDashboardFooter" />
 					<include name="transactionDeatilReportFromSideMenuServices" />
 					
-					<include name="forgotMPin" /> -->
+					<include name="forgotMPin" /> 
 				</methods>
 			</class>
 		</classes>
 	</test>
 
-	<!--	<test name="WithdrawCash and Agent Assisted Withdraw">
+		<test name="WithdrawCash and Agent Assisted Withdraw">
 		<classes>
 			<class name="portals.testCases.Customer.WithdrawCash">
 				<methods>
@@ -164,7 +309,7 @@
 	</test>  -->
 
 
-	<!-- 		<test name="Mobile Topup">
+<!-- 		<test name="Mobile Topup">
 		<classes>
 			<class name="portals.testCases.Customer.MobileToup">
 				<methods>
@@ -179,30 +324,8 @@
 		</classes>
 	</test> -->
 
-	<!-- <test name="Enterprise Payment">
-		<classes>
-			<class name="portals.testCases.Customer.EnterprisePayment">
-				<methods>
-					<include name="enterprisePayment" />
-					<include name="verifyPerformedEnterprisePaymentFromFromUserPassbook" />
-					<include name="verifyPerformedEnterprisePaymentFromToUserPassbook" />
-					<include name="enterprisePaymentFromDashboard" />
-					<include
-						name="verifyPerformedEnterprisePaymentFromDashboardFromFromUserPassbook" />
-					<include
-						name="verifyPerformedEnterprisePaymentFromDashboardFromToUserPassbook" />
-					<include name="enterprisePaymentFromSideMenu" />
-					<include
-						name="verifyPerformedEnterprisePaymentFromSideMenuFromFromUserPassbook" />
-					<include
-						name="verifyPerformedEnterprisePaymentFromSideMenuFromToUserPassbook" />
-				</methods>
-			</class>
-		</classes>
-	</test> -->
 
-
-	<!--
+<!--
 	<test name="Admin Verification">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">
@@ -213,7 +336,7 @@
 		</classes>
 	</test>  -->
 
-	<!-- extra in common
+<!-- extra in common
 <include name="verifyContactUsFromDashboard" />
 					<include name="verifyContactUsFromSideMenuProfile" />
 					<include name="verifyAboutUsFromDashboard" />
@@ -222,4 +345,3 @@
 					<include name="changeLanguageFromDashboardFooter" />
 					<include name="changeLanguageFromSideMenuProfile" />
  -->
-</suite>

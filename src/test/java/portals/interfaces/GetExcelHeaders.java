@@ -154,4 +154,14 @@ public interface GetExcelHeaders {
 	public String ProofOfAddress = "proofofaddress";
 	public String BusinessDocument = "businessdocument";
 	public String Teller = "teller";
+	public String LandlineNo = "landlineno";
+	public String AlternateMobile = "alternatemobile";
+	public String GivenName = "givenname";
+	public String PhysicalAddress = "physicaladdress";
+	public String Surname = "surname";
+	public String NationalIDNo = "nationalidno";
+	public String DocumentID = "documentid";
+	public String PostalAddress = "postaladdress";
+	public String Nin = "nin";
+	public String Profile = "profile";
 }
