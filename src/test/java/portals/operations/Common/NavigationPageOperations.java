@@ -56,6 +56,8 @@ public class NavigationPageOperations extends SetupInit {
 	By changeMpin = By.xpath("//*[text()='Change MPIN']");
 	By resetMpin = By.xpath("//*[text()='Reset MPIN']");
 	By faqs = By.xpath("//*[@class='modal-content']//*[text()='FAQs']");
+	By myProfile = By.xpath("//*[@class='modal-content']//*[text()='My Profile']");
+	By myProfileDashboard = By.xpath("//a[contains(@href,'/app/profile')]");
 	public By checkBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')]");
 	public By qrCode = By.xpath("//*[text()='QR Code']");
 	public By passbook = By.xpath("//*[text()='Passbook']");
@@ -2230,5 +2232,24 @@ public class NavigationPageOperations extends SetupInit {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Airtime Sale");
 		}
 		setLogSteps(log, "Click On Airtime Sale");
+	}
+	
+	public void clickOnSideMenuProfileMyProfile(int... args) {
+		clickOnSideMenuProfile(args);
+		try {
+			clickOnElement(myProfile, args);
+			setLogSteps(log, "Click On My Profile");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "myProfile");
+		}
+	}
+
+	public void clickOnMyProfile(int ... args) {
+		try {
+			clickOnElement(myProfileDashboard, args);
+			setLogSteps(log, "Click On My Profile");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "myProfile");
+		}
 	}
 }

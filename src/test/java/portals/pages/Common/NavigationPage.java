@@ -1200,4 +1200,12 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenuAirtimeSale(0);
 	}
 
+	public void clickOnSideMenuProfileMyProfile() {
+		navigationPageOperations.clickOnSideMenuProfileMyProfile(0);
+	}
+
+	public void clickOnMyProfile() {
+		navigationPageOperations.clickOnMyProfile(0);
+	}
+	
 }

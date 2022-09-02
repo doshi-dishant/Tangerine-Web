@@ -34,4 +34,20 @@ public class ChangeMpin extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
+	
+	@Test(dataProvider = "ChangeMpin", dataProviderClass = TestDataImport.class)
+	public void changeMpinFromMyProfileCustomer(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "changeMpinCustomer");
+			co.navigationPage.clickOnMyProfile();
+			co.customerProfilePage.clickOnChangeMPINFromMyProfile();
+			co.changeMpinPage.setnewMpin(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
 }

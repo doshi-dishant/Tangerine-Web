@@ -48,6 +48,11 @@ public class MyProfileOperations extends SetupInit {
 	public By alert = By.id("alert-dialog-slide-description");
 	By btnClose = By.xpath("//*[text()='Close']");
 	By btnSubmit = By.name("submit");
+	By verifyNaviMyProfile = By.xpath("//*[contains(text(),'My Profile')]");
+	By verifyAccPersonalInfo = By.xpath("//*[contains(text(),'Ugandan prepaid account personal info')]");
+	By verifyDocumentInfo = By.xpath("//*[contains(text(),'Document info ugandan users')]");
+	By btnChangeMPINOption = By.xpath("//*[contains(text(),'Change MPIN')]");
+	By viewBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')][last()]");
 	elasticwrite log;
 	CommonOperations common;
 
@@ -199,5 +204,34 @@ public class MyProfileOperations extends SetupInit {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Submit Button");
 		}
 		setLogSteps(log, "Click On Submit Button");
+	}
+	
+	public void isNavigateToMyProfilePage(int... args) {
+		verifyVisible(verifyNaviMyProfile, args);
+		setLogSteps(log, "Naviagte To My Profile Page");
+		verifyVisible(verifyAccPersonalInfo, args);
+		setLogSteps(log, "VerifyContent >> Ugandan prepaid account personal info");
+		verifyVisible(verifyDocumentInfo, args);
+		setLogSteps(log, "VerifyContent >> Document info ugandan users");
+		verifyVisible(btnChangeMPINOption, args);
+		setLogSteps(log, "VerifyContent >> Change MPIN Option");
+	}
+
+	public void checkBalance(int... args) {
+		try {
+			clickOnElement(this.log, viewBalance, 0);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Check Balance Button");
+		}
+		setLogSteps(log, "Click On Check Balance");
+	}
+	
+	public void clickOnChangeMPIN(int... args) {
+		try {
+			clickOnElement(this.log, btnChangeMPINOption, 0);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Change MPIN Button");
+		}
+		setLogSteps(log, "Click On Change MPIN Button");
 	}
 }

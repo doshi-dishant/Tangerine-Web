@@ -108,5 +108,15 @@ public class MyProfilePage extends SetupInit {
 		return true;
 	}
 
+	public void verifyMyProfile() {
+		myProfileCommon.isNavigateToMyProfilePage(0);
+	}
 	
+	public void checkBalancefromMyProfile() {
+		myProfileCommon.checkBalance(0);
+	}
+	
+	public void clickOnChangeMPINFromMyProfile() {
+		myProfileCommon.clickOnChangeMPIN(0);
+	}
 }

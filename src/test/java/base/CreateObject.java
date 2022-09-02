@@ -132,6 +132,7 @@ public class CreateObject extends SetupInit {
 		customerOnboardingPage = new CustomerOnboardingPage(driver, log);
 		manageAgentPage = new ManageAgentPage(driver, log);
 		agentProfilePage = new portals.pages.Agent.MyProfilePage(driver, log);
+		customerProfilePage = new  portals.pages.Customer.MyProfilePage(driver, log);
 		agentOnboardingPage = new AgentOnboardingPage(driver, log);
 		forgotPasswordPage = new ForgotPasswordPage(driver, log);
 		newUserPage = new NewUserPage(driver, log);
