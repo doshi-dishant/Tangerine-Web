@@ -49,20 +49,15 @@
 					<include name="VerifyDocumentinforeligiousworshipFromProfile" />
 					<include name="VerifyServiceiconsdisplayedFromDashboard" />	
                     <include name="checkBalanceFromDashboardViewBalance" />
-					
 					<include name="passBookFromDashboard" />
 					<include name="verifyDownloadPassbook" />
 					<include name="recentTransactionFromDashboard" />
 					<include name="mpinPolicyFromDashboardFooter" />
 					<include name="mpinPolicyFromSideMenuSettings" />
 					<include name="changeSecretWord" />
-										<include name="qrCodeFromDashboard" /> 
-					
-					
-					
-										<include name="mpinPolicyFromSideMenuSettings" />
-					
-					
+					<include name="qrCodeFromDashboard" /> 
+					<include name="mpinPolicyFromSideMenuSettings" />
+
 					<include name="logout" />
 				</methods>
 			</class>
