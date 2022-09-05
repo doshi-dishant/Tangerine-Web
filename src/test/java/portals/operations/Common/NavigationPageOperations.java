@@ -1206,7 +1206,7 @@ public class NavigationPageOperations extends SetupInit {
 	public void clickOnSideMenuMPINPolicyFromSettings(int... args) {
 		try {
 			clickOnElement(txtMenuChangeMPIN, args);
-			//clickOnElement("", args);
+			clickOnElement(By.xpath("//*[normalize-space(text())='MPIN Policy']"), args);
 			setLogSteps(log, "Click On Change MPIN");
 		} catch (Exception e) {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "mpin policy");
@@ -2236,6 +2236,7 @@ public class NavigationPageOperations extends SetupInit {
 	
 	public void clickOnSideMenuProfileMyProfile(int... args) {
 		clickOnSideMenuProfile(args);
+		pauseInMilliSeconds(2);
 		try {
 			clickOnElement(myProfile, args);
 			setLogSteps(log, "Click On My Profile");

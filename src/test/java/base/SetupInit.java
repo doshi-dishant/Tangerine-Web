@@ -465,7 +465,12 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		switch (toLowerCase.hashCode()) {
 		case -1361128838:
 			if (toLowerCase.equals("chrome")) {
+				try {
 				this.driver = initChromeDriver();
+				}
+				catch(Exception e) {
+					System.out.println(e);
+				}
 				return;
 			}
 		case -1115062407:

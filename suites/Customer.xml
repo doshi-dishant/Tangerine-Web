@@ -8,7 +8,25 @@
 	</listeners>
 	<parameter name="browserType" value="chrome" />
 
-<!--	<test name="P2P Transfer">
+	<test name="P2P Offnet">
+		<classes>
+			<class name="portals.testCases.Customer.P2POffnetTransfer">
+				<methods>
+					<include name="p2pOfffnetTranferFromDashboard" />
+					<include name="verifyPerformedp2pOffnetTranferFromDashboardFromUserPassbook" />
+					<include name="verifyPerformedp2pOffnetFromDashboard_NotificationVerication" />
+					<include name="p2pOfffnetFromSideMenu" />
+					<include name="verifyPerformedp2poffnetTranferFromSideMenuFromUserPassbook" />
+					<include name="verifyPerformedp2pOffnetFromSideMenu_NotificationVerication" />
+					<include name="p2pOffnetTranferfromFooter" />
+					<include name="verifyPerformedp2pOffnetTranferFromFromUserPassbook" />
+					<include name="verifyPerformedp2pOffnetFromFooter_NotificationVerication" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="P2P Transfer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
@@ -49,7 +67,7 @@
 		</classes>
 	</test>
 
-	<test name="Invite Freinds">
+	<test name="Invite Friends">
 		<classes>
 			<class name="portals.testCases.Customer.InviteFriends">
 				<methods>
@@ -87,13 +105,13 @@
 				</methods>
 			</class>
 		</classes>
-	</test> -->
+	</test>
 
 	<test name="Common Testcases">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">
 				<methods>
-					<include name="FAQsFromSideMenu" />
+				 	<include name="FAQsFromSideMenu" />
 					<include name="qrCodeFromDashboard" />
 					<include name="passBookFromDashboard" />
 					<include name="verifyDownloadPassbook" />
@@ -105,13 +123,13 @@
 					<include name="termsAndConditionsFromDashboardFooter" />
 					<include name="privacyPolicyFromDashboardFooter" />
 					<include name="privacyPolicyFromSideMenuSettings" />
-					<include name="logout" />
-				</methods>
+					<include name="logout" />  
+				</methods> 
 			</class>
 		</classes>
-	</test>
+	</test> 
 
-<!-- 	<test name="WithdrawCash and Agent Assisted Withdraw from Side Menu">
+ 	<test name="WithdrawCash and Agent Assisted Withdraw from Side Menu">
 		<classes>
 			<class name="portals.testCases.Customer.WithdrawCash">
 				<methods>
@@ -143,27 +161,7 @@
 				</methods>
 			</class>
 		</classes>
-	</test> -->
-
-	<!--
-	<test name="P2P Offnet">
-		<classes>
-			<class name="portals.testCases.Customer.P2POffnetTransfer">
-				<methods>
-					<include name="p2pOfffnetTranferFromDashboard" />
-					<include name="verifyPerformedp2pOffnetTranferFromDashboardFromUserPassbook" />
-					<include name="verifyPerformedp2pOffnetFromDashboard_NotificationVerication" />
-					<include name="p2pOfffnetFromSideMenu" />
-					<include name="verifyPerformedp2poffnetTranferFromSideMenuFromUserPassbook" />
-					<include name="verifyPerformedp2pOffnetFromSideMenu_NotificationVerication" />
-					<include name="p2pOffnetTranferfromFooter" />
-					<include name="verifyPerformedp2pOffnetTranferFromFromUserPassbook" />
-					<include name="verifyPerformedp2pOffnetFromFooter_NotificationVerication" />
-				</methods>
-			</class>
-		</classes>
 	</test>
--->
 
 </suite>
 

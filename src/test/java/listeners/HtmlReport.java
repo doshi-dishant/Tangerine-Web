@@ -57,7 +57,7 @@ public class HtmlReport implements IReporter {
 	Map<String, Integer> passedData;
 	Map<String, Integer> failedData;
 	Map<String, Integer> skippedData;
-	private String projectName = "NassWallet";
+	private String projectName = "Tangerine";
 	private String userType = System.getProperty("userType");
 	private String subUserType = System.getProperty("subUserType");
 	private String buildNumber = System.getProperty("latestRelease");
