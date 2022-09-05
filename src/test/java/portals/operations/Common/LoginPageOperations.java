@@ -170,7 +170,7 @@ public class LoginPageOperations extends SetupInit {
 		try {
 			clickOnElement(superAgent, args);
 		} catch (Exception e) {
-			throw new RuntimeException(CLICK_ERROR_MESSAGE + "super agent");
+				throw new RuntimeException(CLICK_ERROR_MESSAGE + "super agent");
 		}
 		if (log != null)
 			setLogSteps(log, "Click on Super Agent");

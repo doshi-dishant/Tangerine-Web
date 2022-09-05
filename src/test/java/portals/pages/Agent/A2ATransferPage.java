@@ -62,6 +62,8 @@ public class A2ATransferPage extends SetupInit {
 				setLogSteps(this.log, "Verify Remarks on Confirmation Screen: " + map.get(Remarks).toString());
 				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyAmount, map.get(Amount).toString())), 0);
 				setLogSteps(this.log, "Verify Amount on Confirmation Screen: " + map.get(Amount).toString());
+				
+				dashboardPageCommon.verifyUGXSign(0);
 				dashboardPageCommon.clickOnConfirmButton(0);
 				verifyVisible(dashboardPageCommon.verifyTransaction, 0);
 				setLogSteps(log, "Verify Transaction is Success");
@@ -74,6 +76,7 @@ public class A2ATransferPage extends SetupInit {
 				setLogSteps(log, "Verify Remarks on Success Screen: " + map.get(Remarks).toString());
 				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyAmount, map.get(Amount).toString())), 0);
 				setLogSteps(log, "Verify Amount on Success Screen: " + map.get(Amount).toString());
+				dashboardPageCommon.verifyUGXSignConfirmationScreen();
 				latestBalance = Double.parseDouble(dashboardPageCommon.getMainBalanceAfterTransaction(0).trim());
 				transactionId = dashboardPageCommon.getTransactionID();
 				setLogSteps(this.log, "Updated Balance is: " + latestBalance);

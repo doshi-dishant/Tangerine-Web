@@ -139,7 +139,10 @@ public class CommonTestcases extends SetupInit {
 	public void mpinPolicyFromSideMenuSettings() {
 		try {
 			setTestParameters(co.datamap, "mpinPolicyFromSideMenuSettings");
-			co.navigationPage.clickOnSideMenuSettings();
+			co.navigationPage.clickOnSideMenu();
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenuProfileViewProfile();
+			co.navigationPage.clickOnSideMenueChangeMPIN();
 			co.navigationPage.clickOnSideMenueMPINPolicyFromSetings();
 			co.mpinPolicyPage.verifyMpinPolicy();
 			setSuccessParameters(co.datamap);
@@ -229,11 +232,10 @@ public class CommonTestcases extends SetupInit {
 		try {
 			setTestParameters(co.datamap, "UGX_SignAvailable");
 			co.dashboardPage.verifyUGX_SignAvailable();
-			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
 		} finally {
-			setExcecutionData(co);
+			
 		}
 	}
 
@@ -554,6 +556,21 @@ public class CommonTestcases extends SetupInit {
 
 		} catch (Exception e) {
 		} finally {
+		}
+	}
+	
+	@Test(dataProvider = "ChangeSecretWord", dataProviderClass = TestDataImport.class)
+	public void changeSecretWord(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "ChangeSecretWord");
+			co.navigationPage.clickOnChangeSecretWordfromSideMenu();
+			co.changesecretwordpage.setnewSecretWord(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
 		}
 	}
 }

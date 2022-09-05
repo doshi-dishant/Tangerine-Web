@@ -37,8 +37,7 @@ public class NavigationPageOperations extends SetupInit {
 	By sideMenuSettings = By.xpath("//*[@class='modal-content']//*[text()='Settings']");
 	By sideMenuWallets = By.xpath("//*[@class='modal-content']//*[text()='Wallets']");
 	public By sideMenuProfile = By.xpath("//*[@class='modal-content']//*[text()='Profile']");
-	public By navBarQRCode = By
-			.xpath("//*[contains(@class,'humburger')]//i[contains(@class,'moon-menu-icon-QR-code')]");
+	public By navBarQRCode = By.xpath("//*[contains(@class,'humburger')]//i[contains(@class,'moon-menu-icon-QR-code')]");
 	public By navBarPassbook = By.xpath("//*[contains(@class,'humburger') ]//i[contains(@class,'moon-Passbook')]");
 	public By navBarLogOut = By.xpath("//*[contains(@class,'humburger') ]//i[contains(@class,'power')]");
 	public By dashBoardCheckBalance = By.xpath("//*[text()='Check Balance']");
@@ -169,6 +168,9 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtMenuOnboardingDetail = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Onboarding Detail']");
 	public By txtMenuChangeMPIN = By.xpath("//*[@class='modal-content']//*[text()='Change MPIN']");
+	public By btnChangeMPIN = By.xpath("//a[contains(text(),'MPIN Policy')]");
+
+	
 	public By txtMenuResetMPIN = By.xpath("//*[@class='modal-content']//*[text()='Reset MPIN']");
 	public By txtMenuChangeLoginPassword = By.xpath("//*[@class='modal-content']//*[text()='Change Login Password']");
 	public By txtMenuPasswordPolicy = By.xpath("//*[@class='modal-content']//*[text()='Password Policy']");
@@ -1178,7 +1180,7 @@ public class NavigationPageOperations extends SetupInit {
 	public void clickOnSideMenuSettingsChangeMPIN(int... args) {
 		clickOnSideMenuSettings(args);
 		try {
-			clickOnElement(txtMenuChangeMPIN, args);
+			clickOnElement(btnChangeMPIN, args);
 			setLogSteps(log, "Click On Change MPIN");
 		} catch (Exception e) {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "change mpin");
@@ -1214,7 +1216,17 @@ public class NavigationPageOperations extends SetupInit {
 
 	public void clickOnSideMenuMPINPolicyFromSettings(int... args) {
 		try {
-			clickOnElement(txtMenuChangeMPIN, args);
+			clickOnElement(btnChangeMPIN, args);
+			//clickOnElement("", args);
+			setLogSteps(log, "Click On Change MPIN");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "mpin policy");
+		}
+	}
+	
+	public void clickOnSideMenuMPINPolicyChangeMPIN(int... args) {
+		try {
+			clickOnElement(btnChangeMPIN, args);
 			//clickOnElement("", args);
 			setLogSteps(log, "Click On Change MPIN");
 		} catch (Exception e) {

@@ -115,7 +115,7 @@ public class TestDataImport extends SetupInit {
 	
 	@DataProvider(name = "QRCode")
 	public static Object[][] QRCode() {
-		return readExcelFileTo2D(TEST_DATA, "AgentAssistedDeposit");
+		return readExcelFileTo2D(TEST_DATA, "QRCode");
 	}
 
 	@DataProvider(name = "Passbook_Filter")

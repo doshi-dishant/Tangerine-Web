@@ -46,6 +46,24 @@ public class A2ATransfer extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
+	
+	@Test(dataProvider = "A2ATransfer", dataProviderClass = TestDataImport.class)
+	public void verifya2aTranfercurrencytypes (Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "a2aTranfer");
+			map.put(MethodName, "a2aTransfer");
+			co.navigationPage.clickOnA2ATransfer();
+			map = co.a2aTransferPage.a2aTransfer(map);
+			setUseCaseVerificationData("a2aTranfer", verificationData, map);
+			setSuccessParameters(co.datamap);
+			writeVerificationFile(Utility.getJsonStringFromMap(map));
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
 
 	@Test(dataProvider = "AgentAssistedDeposit", dataProviderClass = TestDataImport.class)
 	public void AgentAssistedDeposit(Map<Object, Object> map) {

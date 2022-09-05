@@ -752,6 +752,9 @@ public class NavigationPage extends SetupInit {
 	public void clickOnSideMenueMPINPolicyFromSetings() {
 		navigationPageOperations.clickOnSideMenuMPINPolicyFromSettings(0);
 	}
+	public void clickOnSideMenueChangeMPIN() {
+		navigationPageOperations.clickOnSideMenuMPINPolicyChangeMPIN(0);
+	}
 
 	public void clickOnDashboardePasswordPolicy() {
 		navigationPageOperations.clickOnDashboardPasswordPolicy(0);

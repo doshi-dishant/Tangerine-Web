@@ -41,6 +41,9 @@ public class DashBoardPageOperations extends SetupInit {
 	By txtremark = By.id("frm_text_remarksid");
 	public By secretMpin = By.id("frm_text_transactionPinid");
 	public By secretMpintoCheckBalance = By.id("otpid");
+	public By BalanceafterPaymentText = By.xpath("//p[contains(text(),'Balance after Payment (UGX)')]");
+	public By AvailableBalanceText = By.xpath("//p[contains(text(),'Available Balance (UGX)')]");
+	public By Amounttext  = By.xpath("//span[contains(text(),'Amount (UGX)')]");
 	// Reset MPIN locators
 
 	public By resetPinLabel = By.xpath(".//*[text()='Reset Secret PIN']");
@@ -1092,5 +1095,21 @@ public class DashBoardPageOperations extends SetupInit {
 			throw new RuntimeException(SEND_ERROR_MESSAGE + "Agent name");
 		}
 		setLogSteps(log, "Enter Agent Name : " + name);
+	}
+	
+	public void verifyUGXSign(int... args) {
+		verifyVisible(BalanceafterPaymentText, args);
+		setLogSteps(log, "Verify Balance after Payment with UGX Sign");
+		verifyVisible(Amounttext, args);
+		setLogSteps(log, "Verify Amount with UGX Sign");
+	}
+	
+	
+	public void verifyUGXSignConfirmationScreen(int... args) {
+		verifyVisible(AvailableBalanceText, args);
+		setLogSteps(log, "Verify Available Balance with UGX Sign");
+		verifyVisible(Amounttext, args);
+		setLogSteps(log, "Verify Amount with UGX Sign");
+		setLogSteps(log, "Verify Amount with UGX Sign");
 	}
 }
