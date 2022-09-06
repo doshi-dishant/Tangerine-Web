@@ -77,7 +77,7 @@
 	</test> 
 	
 
-	<test name="WithdrawCash and Agent Assisted Withdraw">
+	<test name="WithdrawCash and Agent Assisted Withdraw from Dashboard">
 		<classes>
 			<class name="portals.testCases.Agent.WithdrawCash">
 				<methods>
@@ -93,7 +93,7 @@
 
 
 
-<test name="WithdrawCash and Agent Assisted Withdraw">
+<test name="WithdrawCash and Agent Assisted Withdraw from Footer">
 		<classes>
 			<class name="portals.testCases.Agent.WithdrawCash">
 				<methods>
@@ -107,7 +107,7 @@
 		</classes>
 	</test>
 
-<test name="WithdrawCash and Agent Assisted Withdraw">
+<test name="WithdrawCash and Agent Assisted Withdraw from SideMenu">
 		<classes>
 			<class name="portals.testCases.Agent.WithdrawCash">
 				<methods>
