@@ -87,7 +87,7 @@ public class CashOut extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "cashOutFromDashboard");
 			map.put(MethodName, "cashOut");
-			co.navigationPage.clickOnDashboardCashOut();
+//			co.navigationPage.clickOnDashboardCashOut();
 			map = co.cashOutPage.agentCashOut(map);
 			setUseCaseVerificationData("cashOutFromDashboard", verificationData, map);
 			setSuccessParameters(co.datamap);

@@ -31,6 +31,7 @@ import portals.pages.Common.TermsAndConditionsPage;
 import portals.pages.Common.TransactionDetailPage;
 import portals.pages.Common.TransactionSummaryPage;
 import portals.pages.Customer.ArbelaStorePage;
+import portals.pages.Customer.CashOutPage;
 import portals.pages.Customer.ChangeMpinPage;
 import portals.pages.Customer.ChangeSecretWordPage;
 import portals.pages.Customer.InviteFriendsPage;
@@ -50,14 +51,14 @@ public class CreateObject extends SetupInit {
 	public NavigationPage navigationPage;
 	public DashboardPage dashboardPage;
 	public MyProfilePage customerProfilePage;
-	//tangerine start //////
+	// tangerine start //////
 	public P2PTransferPage p2pTransferPage;
 	public P2POffnetPage p2pOffnetPage;
 	public ChangeMpinPage changeMpinPage;
 	public ChangeSecretWordPage changesecretwordpage;
 	public InviteFriendsPage inviteFriendsPage;
 	public DashBoardPageOperations dashBoardPageOperations;
-	//tangerine end //////
+	// tangerine end //////
 	public WithdrawCashPage withdrawCashPage;
 	public MobileTopupPage mobileTopupPage;
 	public MPINPolicyPage mpinPolicyPage;
@@ -87,6 +88,7 @@ public class CreateObject extends SetupInit {
 	public ArbelaStorePage arbelaStorePage;
 	public portals.pages.Agent.eVoucherPage eVoucherCustomerPage;
 	public AirtimeSalePage airtimeSalePage;
+	public CashOutPage cashOutPage;
 
 	public CreateObject(WebDriver driver) {
 		reloadCurrentPage(driver);
@@ -104,13 +106,13 @@ public class CreateObject extends SetupInit {
 		// tangerine start ////////
 		p2pTransferPage = new P2PTransferPage(driver, log);
 		p2pOffnetPage = new P2POffnetPage(driver, log);
-		changeMpinPage =  new ChangeMpinPage(driver, log);
+		changeMpinPage = new ChangeMpinPage(driver, log);
 		changesecretwordpage = new ChangeSecretWordPage(driver, log);
 		inviteFriendsPage = new InviteFriendsPage(driver, log);
 		withdrawCashPage = new WithdrawCashPage(driver, log);
 		dashBoardPageOperations = new DashBoardPageOperations(driver, log);
 		// tangerine end //////////
-		
+
 		common = new CommonOperations(driver, log);
 		mobileTopupPage = new MobileTopupPage(driver, log);
 		mobilePostpaidPage = new MobilePostpaidPage(driver, log);
@@ -140,5 +142,6 @@ public class CreateObject extends SetupInit {
 		arbelaStorePage = new ArbelaStorePage(driver, log);
 		eVoucherCustomerPage = new portals.pages.Agent.eVoucherPage(driver, log);
 		airtimeSalePage = new AirtimeSalePage(driver, log);
+		cashOutPage = new CashOutPage(driver, log);
 	}
 }
