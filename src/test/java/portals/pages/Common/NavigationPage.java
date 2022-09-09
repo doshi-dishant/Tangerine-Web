@@ -761,8 +761,8 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenuPrivacyPolicyFromSettings(0);
 	}
 
-	public void clickOnSideMenueTermsAndConditionsFromSettings() {
-		navigationPageOperations.clickOnSideMenuTermsAndConditionsFromSettings(0);
+	public void clickOnSideMenueTermsAndConditionsFromSideMenu() {
+		navigationPageOperations.clickOnSideMenuTermsAndConditionsFromSideMenu(0);
 	}
 
 	public void clickOnDashboardePrivacyPolicy() {
@@ -771,6 +771,10 @@ public class NavigationPage extends SetupInit {
 
 	public void clickOnDashboardeTermsAndConditions() {
 		navigationPageOperations.clickOnDashboardTermsAndConditions(0);
+	}
+	
+	public void clickOnPasswordPolicyFromFooter() {
+		navigationPageOperations.clickOnDashboardPasswordPolicy(0);
 	}
 
 	public void clickOnSideMenuChangeLanguageFromProfile() {

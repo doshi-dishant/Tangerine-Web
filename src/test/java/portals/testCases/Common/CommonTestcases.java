@@ -185,8 +185,7 @@ public class CommonTestcases extends SetupInit {
 	public void termsAndConditionsFromSideMenuSettings() {
 		try {
 			setTestParameters(co.datamap, "termsAndConditionsFromSideMenuSettings");
-			co.navigationPage.clickOnSideMenuSettings();
-			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSettings();
+			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSideMenu();
 			co.termsAndConditionsPage.verifyTermsAndConditions();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {

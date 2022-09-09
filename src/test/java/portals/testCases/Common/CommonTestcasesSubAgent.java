@@ -170,7 +170,7 @@ public class CommonTestcasesSubAgent extends SetupInit {
 	public void privacyPolicyFromSideMenuSettings() {
 		try {
 			setTestParameters(co.datamap, "privacyPolicyFromSideMenuSettings");
-			co.navigationPage.clickOnSideMenuSettings();
+			co.navigationPage.clickOnSideMenuProfile();
 			co.navigationPage.clickOnSideMenuePrivacyPolicyFromSettings();
 			co.privacyPolicyPage.verifyPrivacyPolicy();
 			setSuccessParameters(co.datamap);
@@ -185,8 +185,7 @@ public class CommonTestcasesSubAgent extends SetupInit {
 	public void termsAndConditionsFromSideMenuSettings() {
 		try {
 			setTestParameters(co.datamap, "termsAndConditionsFromSideMenuSettings");
-			co.navigationPage.clickOnSideMenuSettings();
-			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSettings();
+			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSideMenu();
 			co.termsAndConditionsPage.verifyTermsAndConditions();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
@@ -483,6 +482,79 @@ public class CommonTestcasesSubAgent extends SetupInit {
 		try {
 			setTestParameters(co.datamap, "verifyTransactionsInAdmin");
 			co.common.verifyTransactionInAdmin();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test
+	public void CheckBalanceFromMyProfile() {
+		try {
+			setTestParameters(co.datamap, "Check Balance from My Profile");
+			co.navigationPage.clickOnMyProfile();
+			co.customerMyProfilePage.checkBalancefromMyProfile();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test(dataProvider = "verifyProfileDetails", dataProviderClass = TestDataImport.class)
+	public void CheckPersonalInfoFromMyProfile(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "Check Balance from My Profile");
+			co.navigationPage.clickOnMyProfile();
+			co.customerMyProfilePage.verifyPersonalInfoDetails(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test(dataProvider = "verifyProfileDetails", dataProviderClass = TestDataImport.class)
+	public void CheckDocumentInfoFromMyProfile(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "Check Document info From My Profile");
+			co.navigationPage.clickOnMyProfile();
+			co.customerMyProfilePage.verifyDocInfoDetails(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test
+	public void FAQsFromSideMenu() {
+		try {
+			setTestParameters(co.datamap, "FAQsFromSideMenu");
+			co.navigationPage.clickOnSideMenuProfileFAQs();
+			co.faqsPage.verifyFAQs();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test
+	public void passwordPolicyFromDashboardFooter() {
+		
+		try {
+			setTestParameters(co.datamap, "passwordPolicyFromDashboardFooter");
+			co.navigationPage.clickOnPasswordPolicyFromFooter();
+			co.passwordPolicyPage.verifyPasswordPolicy();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);

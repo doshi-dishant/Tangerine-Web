@@ -26,6 +26,7 @@ import portals.pages.Common.LoginPage;
 import portals.pages.Common.MPINPolicyPage;
 import portals.pages.Common.NavigationPage;
 import portals.pages.Common.NewUserPage;
+import portals.pages.Common.PasswordPolicyPage;
 import portals.pages.Common.PrivacyPolicyPage;
 import portals.pages.Common.TermsAndConditionsPage;
 import portals.pages.Common.TransactionDetailPage;
@@ -66,6 +67,7 @@ public class CreateObject extends SetupInit {
 	public ContactUsPage contactUsPage;
 	public AboutUsPage aboutUsPage;
 	public TermsAndConditionsPage termsAndConditionsPage;
+	public PasswordPolicyPage passwordPolicyPage;
 	public CommonOperations common;
 	public FAQsPage faqsPage;
 	public MobilePostpaidPage mobilePostpaidPage;
@@ -140,6 +142,7 @@ public class CreateObject extends SetupInit {
 		arbelaStorePage = new ArbelaStorePage(driver, log);
 		eVoucherCustomerPage = new portals.pages.Agent.eVoucherPage(driver, log);
 		airtimeSalePage = new AirtimeSalePage(driver, log);
+		passwordPolicyPage = new PasswordPolicyPage(driver, log);
 		
 	}
 }

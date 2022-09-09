@@ -1240,7 +1240,8 @@ public class NavigationPageOperations extends SetupInit {
 		}
 	}
 
-	public void clickOnSideMenuTermsAndConditionsFromSettings(int... args) {
+	public void clickOnSideMenuTermsAndConditionsFromSideMenu(int... args) {
+		clickOnSideMenuProfile(args);
 		try {
 			clickOnElement(txtMenuTermsAndConditions, args);
 			setLogSteps(log, "Click On Terms And Conditions");
