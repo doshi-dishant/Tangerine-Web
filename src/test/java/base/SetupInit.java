@@ -1111,9 +1111,9 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 	public boolean waitForLoader() {
 		reloadCounter = 0;
 		pauseInMilliSeconds(900);
-		if (isLoderDisplayed(By.xpath("//*[contains(@class,'loader')]"))) {
+		if (isLoderDisplayed(By.xpath("//*[contains(@class,'loader-overlay')]//img"))) {
 			Instant currentTime = getCurrentTime();
-			while (isLoderDisplayed(By.xpath("//*[contains(@class,'loader')]"))) {
+			while (isLoderDisplayed(By.xpath("//*[contains(@class,'loader-overlay')]//img"))) {
 				Instant loopingTime = getCurrentTime();
 				Duration timeElapsed = Duration.between(currentTime, loopingTime);
 				long sec = timeElapsed.toMillis() / 1000;
