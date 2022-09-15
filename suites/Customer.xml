@@ -8,6 +8,16 @@
 	</listeners>
 	<parameter name="browserType" value="chrome" />
 
+	<test name="Customer Onboard">
+		<classes>
+			<class name="portals.testCases.Customer.CustomerOnboard">
+				<methods>
+					<include name="CustomerOnboardFromLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!-- 
 	<test name="P2P Offnet">
 		<classes>
 			<class name="portals.testCases.Customer.P2POffnetTransfer">
@@ -24,8 +34,8 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
-
+	</test> -->
+	<!-- 
 	<test name="P2P Transfer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
@@ -53,8 +63,8 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
-
+	</test>  
+ 
 	<test name="P2P Transfer from Footer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
@@ -65,8 +75,9 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>-->
 
+	<!--
 	<test name="Invite Friends">
 		<classes>
 			<class name="portals.testCases.Customer.InviteFriends">
@@ -98,10 +109,6 @@
 					<include name="verifyPerformedAssistedWithDrawFromDashboardToUserPassbook" />
 					<include name="verifyPerformedWithDrawCashtFromDashboardFromUserPassbook" />
 
-					<include name="withdrawCashAndAgentAssistedWithdrawfromFooter" />
-					<include name="verifyPerformedAssistedWithDrawFromFooterToUserPassbook" />
-					<include name="verifyPerformedWithDrawCashtFromFooterFromUserPassbook" />
-
 				</methods>
 			</class>
 		</classes>
@@ -129,13 +136,14 @@
 		</classes>
 	</test> 
 
- 	<test name="WithdrawCash and Agent Assisted Withdraw from Side Menu">
+ 	<test name="WithdrawCash and Agent Assisted Withdraw from Footer">
 		<classes>
 			<class name="portals.testCases.Customer.WithdrawCash">
 				<methods>
-					<include name="withdrawCashAndAgentAssistedWithdrawfromSideMenu" />
-					<include name="verifyPerformedAssistedWithDrawFromSideMenuToUserPassbook" />
-					<include name="verifyPerformedWithDrawCashtFromSideMenuFromUserPassbook" />
+					
+					<include name="withdrawCashAndAgentAssistedWithdrawfromFooter" />
+					<include name="verifyPerformedAssistedWithDrawFromFooterToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromFooterFromUserPassbook" />
 
 				</methods>
 			</class>
@@ -152,6 +160,19 @@
 		</classes>
 	</test>
 
+	<test name="WithdrawCash and Agent Assisted Withdraw from Side Menu">
+		<classes>
+			<class name="portals.testCases.Customer.WithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromSideMenu" />
+					<include name="verifyPerformedAssistedWithDrawFromSideMenuToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromSideMenuFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
 	<test name="Change MPIN">
 		<classes>
 			<class name="portals.testCases.Customer.ChangeMpin">
@@ -161,10 +182,9 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test> -->
 
 </suite>
-
 <!-- ################  Extra from here ########################## -->
 <!--	<test name="Profile">
 		<classes>

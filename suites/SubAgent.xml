@@ -9,7 +9,46 @@
 	</listeners>
 
 	<parameter name="browserType" value="chrome" />
+ 
+ 	<test name="WithdrawCash and SubAgent Assisted Withdraw">
+		<classes>
+			<class name="portals.testCases.SubAgent.SubAgentAssistedWithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromDashboard" />
+					<include name="verifyPerformedAssistedWithDrawFromDashboardToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromDashboardFromUserPassbook" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
 
+	<test name="WithdrawCash and Agent Assisted Withdraw from Footer">
+		<classes>
+			<class name="portals.testCases.SubAgent.SubAgentAssistedWithdrawCash">
+				<methods>
+
+					<include name="withdrawCashAndAgentAssistedWithdrawfromFooter" />
+					<include name="verifyPerformedAssistedWithDrawFromFooterToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromFooterFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="WithdrawCash and Agent Assisted Withdraw from Side Menu">
+		<classes>
+			<class name="portals.testCases.SubAgent.SubAgentAssistedWithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromSideMenu" />
+					<include name="verifyPerformedAssistedWithDrawFromSideMenuToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromSideMenuFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	<!--	
 	<test name="Common Testcases">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcasesSubAgent">
@@ -19,14 +58,13 @@
 					<include name="verifyDownloadPassbook" />
 					<include name="mpinPolicyFromDashboardFooter" /> 
 
-				<!--
 					<include name="checkBalanceFromDashboardViewBalance" />
-					<include name="recentTransactionFromDashboard" /> -->
+					<include name="recentTransactionFromDashboard" /> 
 					
-					<include name="logout" /> 
+					<include name="logout" />  
 
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test> -->
 </suite>

@@ -39,6 +39,9 @@ public class DashBoardPageOperations extends SetupInit {
 	By btnCancel = By.xpath("//button[text()='Cancel']");
 	By txtRemark = By.id("frm_text_Remarksid");
 	By txtremark = By.id("frm_text_remarksid");
+	By txtRegisteredMobileNumber = By.id("frm_text_usernameid");
+	By txtMPINfromLogin = By.id("frm_text_passwordid");
+	
 	public By secretMpin = By.id("frm_text_transactionPinid");
 	public By secretMpintoCheckBalance = By.id("otpid");
 	// Reset MPIN locators
@@ -53,6 +56,7 @@ public class DashBoardPageOperations extends SetupInit {
 	public By loginBtn = By.xpath("//*[text()='Login']");
 	public By code = By.xpath("//*[text()='Code']//following-sibling::*");
 	By btnClose = By.xpath("//*[text()='Close']");
+	
 	// Verify profile details locators
 	// String closedAggregator =
 	// "//*[text()='%s']/ancestor::*[@aria-expanded='true']";
@@ -324,6 +328,16 @@ public class DashBoardPageOperations extends SetupInit {
 		setLogSteps(log, "Enter Mobile Number : " + mobileNumber);
 	}
 	
+	public void enterRegisteredMobileNumber(String mobileNumber, int... args) {
+		sendKeys(txtRegisteredMobileNumber, mobileNumber, 0);
+		setLogSteps(log, "Enter Registered Mobile Number : " + mobileNumber);
+	}
+	
+	public void enterMPINInLogin(String mpin, int... args) {
+		sendKeys(txtMPINfromLogin, mpin, 0);
+		setLogSteps(log, "Enter MPIN from Login : " + mpin);
+	}
+	
 	public void enterMobileNumberp2poffnet(String mobileNumber, int... args) {
 		sendKeys(txtMobileNumberp2poffnet, mobileNumber, 0);
 		setLogSteps(log, "Enter Mobile Number for p2p offnet : " + mobileNumber);
@@ -367,6 +381,11 @@ public class DashBoardPageOperations extends SetupInit {
 		pauseInSeconds(2);
 		clickOnElement(btnConfirm, args);
 		setLogSteps(log, "Click On Confirm Button");
+	}
+	
+	public void clickOnLoginButton(int... args) {
+		clickOnElement(loginBtn, args);
+		setLogSteps(log, "Click on Login Button");
 	}
 
 	public void clickOnResendOTP(int... args) {
