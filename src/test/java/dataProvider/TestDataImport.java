@@ -112,6 +112,15 @@ public class TestDataImport extends SetupInit {
 	public static Object[][] AgentAssistedDeposit() {
 		return readExcelFileTo2D(TEST_DATA, "AgentAssistedDeposit");
 	}
+	@DataProvider(name = "InActiveUser")
+	public static Object[][] InActiveUser() {
+		return readExcelFileTo2D(TEST_DATA, "InActiveUser");
+	}
+
+	@DataProvider(name = "ReadOnly")
+	public static Object[][] ReadOnly() {
+		return readExcelFileTo2D(TEST_DATA, "ReadOnly");
+	}
 	
 	@DataProvider(name = "QRCode")
 	public static Object[][] QRCode() {

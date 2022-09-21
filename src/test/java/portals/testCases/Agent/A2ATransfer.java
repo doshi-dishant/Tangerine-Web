@@ -47,6 +47,8 @@ public class A2ATransfer extends SetupInit {
 		}
 	}
 	
+	
+	
 	@Test(dataProvider = "A2ATransfer", dataProviderClass = TestDataImport.class)
 	public void verifya2aTranfercurrencytypes (Map<Object, Object> map) {
 		try {
@@ -346,6 +348,45 @@ public class A2ATransfer extends SetupInit {
 		}
 
 	
+	}
+	
+	
+	@Test(dataProvider = "InActiveUser", dataProviderClass = TestDataImport.class)
+	public void LoginWithinvalidLogin(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+			pauseInSeconds(2);
+			co.navigationPage.clickOnLogOut();
+			}
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "InActiveUser");
+			map.put(MethodName, "InActiveUser");
+			co.loginPage.login_With_Invalid(map.get(ToUserName).toString(), map.get(ToPassword).toString(), "super agent");
+				co.navigationPage.verifyUserNotActive();
+			
+			
+		} catch (Exception e) {
+			throw new RuntimeException("verification failed, verify User Not Active Message not Found");
+		} 
+	}
+
+	
+	@Test(dataProvider = "ReadOnly", dataProviderClass = TestDataImport.class)
+	public void LoginWithReadOnlyuser(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+			pauseInSeconds(2);
+			co.navigationPage.clickOnLogOut();
+			}
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "ReadOnly");
+			map.put(MethodName, "ReadOnly");
+			co.loginPage.login_With_Invalid(map.get(ToUserName).toString(), map.get(ToPassword).toString(), "super agent");
+			co.navigationPage.goToHome();
+			
+		} catch (Exception e) {
+			throw new RuntimeException("verification failed, verify User Not Login");
+		} 
 	}
 
 }

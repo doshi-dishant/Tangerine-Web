@@ -21,6 +21,23 @@ public class AgentOnboarding extends SetupInit {
 	}
 
 	@Test(dataProvider = "AgentOnboarding", dataProviderClass = TestDataImport.class)
+	public void agentOnboarding01(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "agentOnboarding");
+			co.navigationPage.clickOnAgentOnboarding();
+			co.agentOnboardingPage.agentOnboarding(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}	
+	
+	
+	
+	@Test(dataProvider = "AgentOnboarding", dataProviderClass = TestDataImport.class)
 	public void agentOnboarding(Map<Object, Object> map) {
 		try {
 			co.datamap.putAll(map);

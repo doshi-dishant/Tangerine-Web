@@ -146,7 +146,11 @@ public class NavigationPage extends SetupInit {
 	public void clickOnPassbook() {
 		navigationPageOperations.clickOnPassbook(0);
 	}
-
+	
+	
+		public void verifyUserNotActive() {
+			navigationPageOperations.verifyUserNotActive(0);
+		}
 	public void clickOnLogOut() {
 		navigationPageOperations.clickOnLogOut(0);
 	}
@@ -1221,10 +1225,22 @@ public class NavigationPage extends SetupInit {
 	}
 
 	public void clickOnAgentAssistedDeposit() {
-		navigationPageOperations.clickOnA2ATransfer(0);
 		navigationPageOperations.clickOnclickOnAgentAssistedDeposit(0);	
 	}
+	public void clickOnAgentAssistedDepositIcon() {
+		navigationPageOperations.clickOnclickOnAgentAssistedDepositIcon(0);	
+	}
+	
+	public void clickOnAgentAssistedDepositFromFooter() {
+		navigationPageOperations.clickOnclickOnAgentAssistedDepositFooter(0);	
+	}
 
+	public void clickOnAgentAssistedDepositFromFooterSidemenu() {
+		navigationPageOperations.clickOnclickOnAgentAssistedDepositFromSidemenu(0);	
+	}
+
+	
+	
 	public void clickOnSideMenuProfileverifyFAQs(int time) {
 		verifyVisible(navigationPageOperations.faqsTitle, time);
 		setLogSteps(log, "Verify Check Title");

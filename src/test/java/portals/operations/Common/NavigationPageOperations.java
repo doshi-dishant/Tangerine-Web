@@ -21,6 +21,11 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtChangeSecretWordSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Change secret word']");
 	public By txtA2ATransfer = By.xpath("//div[text()='Agent Transfer']");
 	public By txtAgentAssistedDeposit = By.xpath("//div[text()='Agent Assisted Deposit']");
+	public By txtAgentAssistedDepositIcon = By.xpath("//div[contains(text(),'Send')]");
+	public By txtAgentAssistedDepositFooter = By.xpath("//a[contains(text(),'Agent Assisted Deposit')]");
+	public By txtAgentAssistedDepositSideMenu = By.xpath("//span[contains(text(),'Agent Assisted Deposit')]");
+	
+	
 	public By txtMenuA2ATransfer = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Agent Transfer']");
 	public By txtCashOut = By.xpath("//div[text()='Withdraw Cash']");
 	public By txtWithdrawCashSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Withdraw Cash']");
@@ -71,6 +76,9 @@ public class NavigationPageOperations extends SetupInit {
 	public By passbook = By.xpath("//*[text()='Passbook']");
 	public By logOut = By.xpath("//*[@title='Logout']");
 	By reccentTransaction = By.xpath("//*[text()='Recent Transaction']");
+	
+
+	public By UserNotActive  = By.xpath("//span[contains(text(),'Transaction not allowed. User is not active.')]");
 	public By checkQMoneyPoints = By.xpath("//*[text()='Check QMoney Points']");
 	public By redeemQMoneyPoints = By.xpath("//*[text()='Redeem QMoney Points']");
 	public By redeemQMoneyPointsMerchant = By.xpath("(//*[text()='Redeem Qmoney Points'])[last()]");
@@ -542,6 +550,7 @@ public class NavigationPageOperations extends SetupInit {
 	}
 
 	public void clickOnLogOut(int... args) {
+		
 		reloadCurrentPage(driver);
 		if (!verifyVisible(logOut, 3)) {
 			reloadCurrentPage(driver);
@@ -2294,11 +2303,45 @@ public class NavigationPageOperations extends SetupInit {
 		try {
 			clickOnElement(txtAgentAssistedDeposit, args);
 		} catch (Exception e) {
-			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Agent Transfer");
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Agent Assisted Deposit");
 		}
-		setLogSteps(log, "Click On Agent Transfer");
+		setLogSteps(log, "Click On Agent Assisted Deposit");
 		
 	}
+	
+	
+	public void clickOnclickOnAgentAssistedDepositIcon(int... args) {
+		try {
+			clickOnElement(txtAgentAssistedDepositIcon, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Agent Assisted Deposit Icon");
+		}
+		setLogSteps(log, "Click On Agent Assisted Deposit Icon");
+		
+	}
+	
+	
+	public void clickOnclickOnAgentAssistedDepositFooter(int... args) {
+		try {
+			clickOnElement(txtAgentAssistedDepositFooter, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Agent Assisted Deposit From Footer");
+		}
+		setLogSteps(log, "Click On Agent Assisted Deposit From Footer");
+		
+	}
+	
+	public void clickOnclickOnAgentAssistedDepositFromSidemenu(int... args) {
+		try {
+			clickOnElement(txtAgentAssistedDepositSideMenu, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Agent Assisted Deposit From Side menu");
+		}
+		setLogSteps(log, "Click On Agent Assisted Deposit From Side menu");
+		
+	}
+	
+	
 	
 	
 	public void clickOnPersonalinfoProfile(int args) {
@@ -2309,6 +2352,16 @@ public class NavigationPageOperations extends SetupInit {
 		}
 		setLogSteps(log, "Click On Personal info Profile");
 	}
+	
+	public void verifyUserNotActive(int args) {
+		try {
+			verifyVisible(UserNotActive, args);
+		} catch (Exception e) {
+			throw new RuntimeException(GET_TEXT_ERROR_MESSAGE + "User Not Active Message Not Found");
+		}
+		setLogSteps(log, "verify User Not Active Message Found");
+	}
+	
 	
 	public void clickOnDocumentinforeligiousworshipProfile(int args) {
 		try {

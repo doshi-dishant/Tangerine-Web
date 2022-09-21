@@ -10,7 +10,37 @@
 	</listeners>
 
 	<parameter name="browserType" value="chrome" />
+	
+	
+	<test name="Agent Assisted Deposit">
+		<classes>
+			<class name="portals.testCases.Agent.AgentAssistedDeposit">
+				<methods>
+				  <include name="AgentAssistedDeposits" />
+				  <include name="verifyPerformedAgentAssistedDepositFromUserPassbook" />
+				  <include name="verifyPerformedAgentAssistedDepositFromToUserPassbook" />
+					
+				  <include name="AgentAssistedDepositsDashboardIcon" />
+				  <include name="verifyPerformedAgentAssistedDepositFromUserPassbookIcon" />
+				  <include name="verifyPerformedAgentAssistedDepositFromToUserPassbookIcon" />
+				  
+				  <include name="AgentAssistedDepositsDashboardFromFooter" />
+				  <include name="verifyPerformedAgentAssistedDepositFromUserPassbookFromFooter" />
+				  <include name="verifyPerformedAgentAssistedDepositFromToUserPassbookFromFooter" />
+				  
+				  <include name="AgentAssistedDepositsDashboardFromSideMenu" />
+				  <include name="verifyPerformedAgentAssistedDepositFromUserPassbookSideMenu" />
+				  <include name="verifyPerformedAgentAssistedDepositFromToUserPassbookSideMenu" />
+				  
+				  
+				</methods>
+			</class>
+		</classes>
+	</test>
 
+<!-- 
+	<include name="verifyPerformedAgentAssistedDepositFromUserPassbook" />
+				
  <test name="Agent Transfer">
 		<classes>
 			<class name="portals.testCases.Agent.A2ATransfer">
@@ -19,7 +49,6 @@
 					<include name="CheckCommissionBalanceFormDashboard" />
 					<include name="CheckCommissionBalanceFormProfile" />
 					<include name="a2aTranfer" />
-					<include name="a2aTransferFromSideMenu" />
 					<include name="verifyPerformedA2ATranferFromFromUserPassbook" />
 					<include name="verifyPerformedA2ATransferFromToUserPassbook" />
 					<include name="a2aTransferFromSideMenu" />
@@ -57,7 +86,6 @@
 					<include name="changeSecretWord" />
 					<include name="qrCodeFromDashboard" /> 
 					<include name="mpinPolicyFromSideMenuSettings" />
-
 					<include name="logout" />
 				</methods>
 			</class>
@@ -75,7 +103,7 @@
 			</class>
 		</classes>
 	</test> 
-	
+	 
 
 	<test name="WithdrawCash and Agent Assisted Withdraw from Dashboard">
 		<classes>
@@ -90,8 +118,6 @@
 			</class>
 		</classes>
 	</test>
-
-
 
 <test name="WithdrawCash and Agent Assisted Withdraw from Footer">
 		<classes>
@@ -120,5 +146,16 @@
 			</class>
 		</classes>
 	</test>
-		
+	
+	<test name="Agent Transfer">
+		<classes>
+			<class name="portals.testCases.Agent.A2ATransfer">
+				<methods>	
+				<include name="LoginWithinvalidLogin" />
+				<include name="LoginWithReadOnlyuser" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	-->
 </suite>

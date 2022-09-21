@@ -28,6 +28,21 @@ public class LoginPage extends SetupInit {
 		loginPageCommon = new LoginPageOperations(this.driver);
 	}
 
+	public void login_With_Invalid(String userNameVal, String passwordVal, String subUserType) {
+		reloadCounter = 0;
+		if (subUserType.equalsIgnoreCase("agent"))
+			loginPageCommon.selectAgent(0);
+		else if (subUserType.equalsIgnoreCase("sub agent"))
+			loginPageCommon.selectSubAgent(0);
+		else if (subUserType.equalsIgnoreCase("super agent"))
+			loginPageCommon.selectSuperAgent(0);
+		loginPageCommon.enterUserName(userNameVal, 0);
+		loginPageCommon.enterPassword(passwordVal, 0);
+		loginPageCommon.clickOnLogin(0);
+	}
+
+	
+	
 	public void login(String userNameVal, String passwordVal, String subUserType) {
 		reloadCounter = 0;
 		if (subUserType.equalsIgnoreCase("agent"))
