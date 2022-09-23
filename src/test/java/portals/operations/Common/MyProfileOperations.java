@@ -280,6 +280,15 @@ public class MyProfileOperations extends SetupInit {
 		setLogSteps(log, "Click On Change MPIN Button");
 	}
 	
+	public void clickOnChangeMPINFromLogin(int... args) {
+		try {
+			clickOnElement(this.log, btnChangeMPINOption, 0);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Change MPIN Button");
+		}
+		setLogSteps(log, "Click On Change MPIN Button");
+	}
+	
 	public void clickOnPersonalInfo(int... args) {
 		try {
 			clickOnElement(this.log, btnPersonalInf0, 0);

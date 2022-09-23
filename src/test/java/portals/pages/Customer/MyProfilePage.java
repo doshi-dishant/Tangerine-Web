@@ -120,6 +120,11 @@ public class MyProfilePage extends SetupInit {
 		myProfileCommon.clickOnChangeMPIN(0);
 	}
 	
+	public void clickOnChangeMPINFromLogin() {
+		myProfileCommon.clickOnChangeMPINFromLogin(0);
+	}
+	
+	
 	public void verifyPersonalInfoDetails(Map<Object, Object> map) {
 		pauseInSeconds(2);
 		myProfileCommon.clickOnPersonalInfo(0);

@@ -23,10 +23,39 @@ public class ChangeSecretWord extends SetupInit {
 	@Test(dataProvider = "ChangeSecretWord", dataProviderClass = TestDataImport.class)
 	public void changeSecretWordCustomer(Map<Object, Object> map) {
 		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(2);
+				co.navigationPage.clickOnLogOut();
+			}
+			co.loginPage.login(map.get(FromUserName).toString(), map.get(FromMpin).toString(), "customer");
 			co.datamap.putAll(map);
-			setTestParameters(co.datamap, "changeMpinCustomer");
+			setTestParameters(co.datamap, "changeSecretWordCustomer");
 			co.navigationPage.clickOnChangeSecretWordfromSideMenu();
 			co.changesecretwordpage.setnewSecretWord(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(2);
+				co.navigationPage.clickOnLogOut();
+			}
+			setExcecutionData(co);
+			
+		}
+	}
+
+	@Test(dataProvider = "ChangeSecretWord", dataProviderClass = TestDataImport.class)	
+	public void changeSecretWordCustomerfromLogin(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(2);
+				co.navigationPage.clickOnLogOut();
+			}
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "changeSecretWordCustomerfromLogin");
+			co.navigationPage.clickOnForgotSecretWordfromLogin();
+			co.changesecretwordpage.setnewSecretWordFromLogin(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
@@ -35,5 +64,3 @@ public class ChangeSecretWord extends SetupInit {
 		}
 	}
 }
-
-

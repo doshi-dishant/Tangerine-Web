@@ -8,15 +8,6 @@
 	</listeners>
 	<parameter name="browserType" value="chrome" />
 
-	<test name="Customer Onboard">
-		<classes>
-			<class name="portals.testCases.Customer.CustomerOnboard">
-				<methods>
-					<include name="CustomerOnboardFromLogin" />
-				</methods>
-			</class>
-		</classes>
-	</test>
 	<!-- 
 	<test name="P2P Offnet">
 		<classes>
@@ -35,7 +26,7 @@
 			</class>
 		</classes>
 	</test> -->
-	<!-- 
+
 	<test name="P2P Transfer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
@@ -60,6 +51,7 @@
 					<include name="CheckPersonalInfoFromMyProfileFromSideMenu" />
 					<include name="CheckDocumentInfoFromMyProfileFromSideMenu" />
 					<include name="CheckBalanceFromMyProfile" />
+					
 				</methods>
 			</class>
 		</classes>
@@ -75,9 +67,8 @@
 				</methods>
 			</class>
 		</classes>
-	</test>-->
+	</test>
 
-	<!--
 	<test name="Invite Friends">
 		<classes>
 			<class name="portals.testCases.Customer.InviteFriends">
@@ -112,13 +103,13 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>  
 
 	<test name="Common Testcases">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">
 				<methods>
-				 	<include name="FAQsFromSideMenu" />
+					<include name="FAQsFromSideMenu" />
 					<include name="qrCodeFromDashboard" />
 					<include name="passBookFromDashboard" />
 					<include name="verifyDownloadPassbook" />
@@ -130,13 +121,17 @@
 					<include name="termsAndConditionsFromDashboardFooter" />
 					<include name="privacyPolicyFromDashboardFooter" />
 					<include name="privacyPolicyFromSideMenuSettings" />
-					<include name="logout" />  
-				</methods> 
+					<include name="VerifyServiceiconsdisplayedFromDashboardCustomer" />
+					<include name="LoginStartwithZero" />
+					<include name="LoginWithinvalidLogin" />
+					<include name="ThreeWrongMPINAttempts" />
+					<include name="logout" />
+				</methods>  
 			</class>
 		</classes>
-	</test> 
+	</test>  
 
- 	<test name="WithdrawCash and Agent Assisted Withdraw from Footer">
+	<test name="WithdrawCash and Agent Assisted Withdraw from Footer">
 		<classes>
 			<class name="portals.testCases.Customer.WithdrawCash">
 				<methods>
@@ -148,18 +143,19 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test> 
 
 	<test name="Change Secret Word">
 		<classes>
 			<class name="portals.testCases.Customer.ChangeSecretWord">
 				<methods>
+					<include name="changeSecretWordCustomerfromLogin" />
 					<include name="changeSecretWordCustomer" />
 				</methods>
 			</class>
 		</classes>
 	</test>
-
+ 
 	<test name="WithdrawCash and Agent Assisted Withdraw from Side Menu">
 		<classes>
 			<class name="portals.testCases.Customer.WithdrawCash">
@@ -171,20 +167,32 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test> 
 
 	<test name="Change MPIN">
 		<classes>
 			<class name="portals.testCases.Customer.ChangeMpin">
 				<methods>
-					<include name="changeMpinCustomer" />
+				    <include name="changeMpinCustomer" />
 					<include name="changeMpinFromMyProfileCustomer" />
+					<include name="changeMpinFromLoginCustomer" />
 				</methods>
 			</class>
 		</classes>
-	</test> -->
+	</test> 
+ 
+	<test name="Customer Onboard">
+		<classes>
+			<class name="portals.testCases.Customer.CustomerOnboard">
+				<methods>
+					<include name="CustomerOnboardFromLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
 
 </suite>
+
 <!-- ################  Extra from here ########################## -->
 <!--	<test name="Profile">
 		<classes>

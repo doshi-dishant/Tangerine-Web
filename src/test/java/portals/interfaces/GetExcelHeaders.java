@@ -4,8 +4,11 @@ public interface GetExcelHeaders {
 	//tanereine start //////////
 	public String FromMpin = "frommpin";
 	public String NewMpin = "newmpin";
+	public String NewMpinfromLogin = "newmpinfromlogin";
+	public String NewMpinfromProfile = "newmpinfromprofile";
 	public String FromSecretWord = "fromsecretword";
 	public String NewSecretWord = "newsecretword";
+	public String NewSecretWordfromLogin = "newsecretwordfromlogin";
 	public String ToMpin = "tompin";
 	//tanereine end //////////
 	
