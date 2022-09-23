@@ -193,6 +193,43 @@ public class CommonOperations extends SetupInit {
 			portalLogin(portalName, user, pass, portalUserType, args);
 		}
 	}
+
+	public void webPortalLoginAfterChangePassword(Map<Object, Object> map, String userType, int... args) {
+		String portalName = null;
+		String user = null;
+		String pass = null;
+		String portalUserType = null;
+		if (userType.toLowerCase().equals("from")) {
+			portalName = map.get(FromPortalName).toString();
+			user = map.get(FromUserName).toString();
+			pass = map.get(FromPassword).toString();
+			portalUserType = map.get(FromUserType).toString();
+		} else if (userType.toLowerCase().equals("to")) {
+			portalName = map.get(ToPortalName).toString();
+			user = map.get(ToUserName).toString();
+			pass = map.get(ToPassword).toString();
+			portalUserType = map.get(ToUserType).toString();
+		} else if (userType.toLowerCase().equals("approver")) {
+			portalName = map.get(ApproverPortalName).toString();
+			user = map.get(ApproverUserName).toString();
+			pass = map.get(ApproverPassword).toString();
+			portalUserType = map.get(ApproverUserType).toString();
+		} else if (userType.toLowerCase().equals("from1")) {
+			portalName = map.get(FromPortalName).toString();
+			user = map.get(FromUserName).toString();
+			pass = map.get(NewPassword).toString();
+			portalUserType = map.get(FromUserType).toString();
+		} else if (userType.toLowerCase().equals("from2")) {
+				portalName = map.get(FromPortalName).toString();
+				user = map.get(FromUserName).toString();
+				pass = map.get(NewPassword1).toString();
+				portalUserType = map.get(FromUserType).toString();
+			}
+		if (!verifyVisible(By.xpath(String.format(verifyUser, user)), 2)) {
+			navigationPageOperations.clickOnLogOut(3);
+			portalLogin(portalName, user, pass, portalUserType, args);
+		}
+	}
 	
 	public void webPortalLoginforNewTab(Map<Object, Object> map, String userType, int... args) {
 		String portalName = null;

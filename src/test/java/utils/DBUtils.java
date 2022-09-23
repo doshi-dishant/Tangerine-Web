@@ -90,6 +90,56 @@ public class DBUtils {
 		conn.getConnection().close();
 		return result;
 	}
+
+	public static String getPasswordforSuperAgentOnboard(String phone) throws SQLException {
+		Map<Object, Object> data = new HashMap<Object, Object>();
+		ConnectionManager conn = new ConnectionManager();
+		conn.connect("MobifinEliteTransactionEngine_Tangerine?characterEncoding=utf8");
+
+		ResultSet rs;
+		rs = conn.getConnection()
+				.prepareStatement("SELECT message FROM TBLVendorTransactionDetail WHERE ReceiverDetail LIKE '%" + phone
+						+ "%'" + " ORDER BY EventTime DESC LIMIT 1")
+				.executeQuery();
+		rs.next();
+		String result = rs.getString("Message");
+		String[] res = result.split("[.]", 0);
+		System.out.println(res[1]);
+		String result1 = getStringBetweenTwoCharacters(res[1],"(",")");
+        String result11 = getStringBetweenTwoCharacters(res[1],"your PASSWORD ",".");
+        String[] res123 = res[1].split("PASSWORD", 0);
+         System.out.println(res123[1]);
+
+		Pattern pattern = Pattern.compile("(\\d{4})");
+		java.util.regex.Matcher matcher = pattern.matcher(res[1]);
+		result = res123[1].replace(" ", "");
+		conn.getConnection().close();
+		return result;
+	}
+	private static String getStringBetweenTwoCharacters(String string, String string2, String string3) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static String getOTPforCustomerOnboard(String phone) throws SQLException {
+		Map<Object, Object> data = new HashMap<Object, Object>();
+		ConnectionManager conn = new ConnectionManager();
+		conn.connect("MobifinEliteTransactionEngine_Tangerine?characterEncoding=utf8");
+		ResultSet rs;
+		rs = conn.getConnection()
+				.prepareStatement("SELECT message FROM TBLVendorTransactionDetail WHERE ReceiverDetail LIKE '%" + phone
+						+ "%'" + " ORDER BY EventTime DESC LIMIT 10")
+				.executeQuery();
+		rs.next();
+		String result = rs.getString("Message");
+		Pattern pattern = Pattern.compile("(\\d{4})");
+		java.util.regex.Matcher matcher = pattern.matcher(result);
+		if (matcher.find()) {
+			result = matcher.group(0);
+		}
+		conn.getConnection().close();
+		return result;
+	}
 }
 
 class ConnectionManager {
@@ -119,4 +169,7 @@ class ConnectionManager {
 	public Connection getConnection() {
 		return connection;
 	}
+	
+	
+
 }

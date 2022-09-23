@@ -12,10 +12,29 @@
 	<parameter name="browserType" value="chrome" />
 	
 	
+	<test name="Agent Onboarding">
+		<classes>
+			<class name="portals.testCases.Agent.AgentOnboarding">
+				<methods>	
+			<!--	<include name="AgentOnboarding" />
+				<include name="ChangeMpinfromSideMenu" />
+				<include name="ChangeMpinfromProfile" />
+				<include name="ChangePasswordfromProfile" />
+				<include name="ChangePasswordfromSetting" />
+				
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+				
+	<!-- 
+
 	<test name="Agent Assisted Deposit">
 		<classes>
 			<class name="portals.testCases.Agent.AgentAssistedDeposit">
 				<methods>
+				
 				  <include name="AgentAssistedDeposits" />
 				  <include name="verifyPerformedAgentAssistedDepositFromUserPassbook" />
 				  <include name="verifyPerformedAgentAssistedDepositFromToUserPassbook" />
@@ -38,7 +57,7 @@
 		</classes>
 	</test>
 
-<!-- 
+
 	<include name="verifyPerformedAgentAssistedDepositFromUserPassbook" />
 				
  <test name="Agent Transfer">

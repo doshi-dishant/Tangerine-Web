@@ -1523,10 +1523,21 @@ public class NavigationPageOperations extends SetupInit {
 		try {
 			clickOnElement(sideMenu, args);
 			clickOnElement(sideMenuSettings, args);
-			clickOnElement(this.log, txtChangeMPINSideMenu, args);
-			setLogSteps(log, "Click On Change Mpin with Wrong Input");
+			clickOnElement(this.log, changePassword, args);
+			setLogSteps(log, "Click On Change Mpin with valid Input");
 		} catch (Exception e) {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Click On Change Mpin");
+		}
+	}
+	
+	public void clickOnChangepasswordfromSideMenu(int... args) {
+		try {
+			clickOnElement(sideMenu, args);
+			clickOnElement(sideMenuSettings, args);
+			clickOnElement(this.log, changePassword, args);
+			setLogSteps(log, "Click On Change password with valid Input");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Click On Change passsword");
 		}
 	}
 	

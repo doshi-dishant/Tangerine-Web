@@ -18,6 +18,7 @@ public class DashBoardPageOperations extends SetupInit {
 	String textData = "(.//label[text()='%s']//following::input[@type='text'])[1]";
 	String uploadFileData = "(.//label[text()='%s']//following::input[@type='file'])[1]";
 	By btnNext = By.xpath("//*[text()='Next']");
+	By btnNEXTforLogin = By.xpath("//*[text()='NEXT' and @name='submit']");
 	String drpArrow = "(.//label[text()='%s']//following::div[@class=' css-tlfecz-indicatorContainer'])[1]";
 	// String txtdrp =
 	// "(//label[text()='%s']//following::input[@id='react-select-3-input'])[1]";
@@ -28,9 +29,9 @@ public class DashBoardPageOperations extends SetupInit {
 	// Change Password Locators
 	By changePassword = By.xpath("//*[text()='Change Password']");
 	By changeMPin = By.xpath("//*[text()='Change MPIN']");
-	By txtCurrentPassword = By.id("frm_text_oldPasswordid");
-	By txtNewPassword = By.id("frm_text_passwordid");
-	By txtConfirmNewPassword = By.id("frm_text_confirmpasswordid");
+	By txtCurrentPassword = By.id("frm_text_oldPasswordid");	
+	By txtNewPassword = By.xpath("//*[@name ='password']");
+	By txtConfirmNewPassword = By.xpath("//*[@name ='confirmPassword']");
 	// Change MPIN locators
 	By txtCurrentMpin = By.id("frm_text_oldTransactionPinid");
 	By txtNewMpin = By.id("frm_text_transactionPinid");
@@ -44,6 +45,14 @@ public class DashBoardPageOperations extends SetupInit {
 	public By BalanceafterPaymentText = By.xpath("//p[contains(text(),'Balance after Payment (UGX)')]");
 	public By AvailableBalanceText = By.xpath("//p[contains(text(),'Available Balance (UGX)')]");
 	public By Amounttext  = By.xpath("//span[contains(text(),'Amount (UGX)')]");
+	By txtRegisteredMobileNumber = By.id("frm_text_usernameid");
+	By txtMPINfromLogin = By.id("frm_text_passwordid");
+	By txtSecretWord = By.id("frm_text_secretWordid");
+	By txtConfirmSecretWord = By.id("frm_text_ConfirmSecretWordid");
+	By txtveriyactivationSuccess = By.xpath("//*[normalize-space(text())='Activation process has been completed successfully']");
+	By txtverifyMPINChangesucess = By.xpath("//*[normalize-space(text())='MPIN has been changed successfully']");
+	By btnBacktoLogin = By.xpath("//*[text()='Back To Login']"); 
+	
 	// Reset MPIN locators
 
 	public By resetPinLabel = By.xpath(".//*[text()='Reset Secret PIN']");
@@ -1111,5 +1120,52 @@ public class DashBoardPageOperations extends SetupInit {
 		verifyVisible(Amounttext, args);
 		setLogSteps(log, "Verify Amount with UGX Sign");
 		setLogSteps(log, "Verify Amount with UGX Sign");
+	}
+	
+	
+	public void enterRegisteredMobileNumber(String mobileNumber, int... args) {
+		sendKeys(txtRegisteredMobileNumber, mobileNumber, 0);
+		setLogSteps(log, "Enter Registered Mobile Number : " + mobileNumber);
+	}
+	
+	public void clickOnLoginButton(int... args) {
+		clickOnElement(loginBtn, args);
+		setLogSteps(log, "Click on Login Button");
+	}
+	
+	public void clickOnNextButtonUserActivation(int... args) {
+		clickOnElement(btnNEXTforLogin, args);
+		setLogSteps(log, "Click On Next button");
+	}
+	
+	public void enterOTPOnScreen(String otp, int... args) {
+		sendKeys(By.xpath("(//*[@type='password'])[1]"), "" + otp.charAt(0), 0);
+		sendKeys(By.xpath("(//*[@type='password'])[2]"), "" + otp.charAt(1), 0);
+		sendKeys(By.xpath("(//*[@type='password'])[3]"), "" + otp.charAt(2), 0);
+		sendKeys(By.xpath("(//*[@type='password'])[4]"), "" + otp.charAt(3), 0);
+		setLogSteps(log, "OTP entered from DB");
+	}
+	public void enterSecretWord(String secretWord, int... args) {
+		sendKeys(txtSecretWord, secretWord, 0);
+		setLogSteps(log, "Enter secretWord from Login : " + secretWord);
+	}
+	public void enterConfirmSecretWord(String secretWord, int... args) {
+		sendKeys(txtConfirmSecretWord, secretWord, 0);
+		setLogSteps(log, "Entered Confirmed secretWord: " + secretWord);
+	}
+	
+	public void verifyActivationSuccessMessage(int... args) {
+		verifyVisible(txtveriyactivationSuccess, 0);
+		setLogSteps(log, "Verify message: Activation of new user is successfully done.");
+	}
+	
+	public void clickonBacktoLoginBtn(int... args) {
+		clickOnElement(btnBacktoLogin, args);
+		setLogSteps(log, "Click on Back to Login button");
+	}
+	
+	public void enterMPINInLogin(String mpin, int... args) {
+		sendKeys(txtMPINfromLogin, mpin, 0);
+		setLogSteps(log, "Enter MPIN from Login : " + mpin);
 	}
 }

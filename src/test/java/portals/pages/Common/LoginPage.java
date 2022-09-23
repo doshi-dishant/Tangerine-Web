@@ -133,4 +133,6 @@ public class LoginPage extends SetupInit {
 	public boolean isUserLoggedIn(int... args) {
 		return !verifyVisible(loginPageCommon.loginBtn, args);
 	}
+
+	
 }

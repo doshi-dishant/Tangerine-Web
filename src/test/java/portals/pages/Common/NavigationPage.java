@@ -148,8 +148,8 @@ public class NavigationPage extends SetupInit {
 	}
 	
 	
-		public void verifyUserNotActive() {
-			navigationPageOperations.verifyUserNotActive(0);
+	public void verifyUserNotActive() {
+		navigationPageOperations.verifyUserNotActive(0);
 		}
 	public void clickOnLogOut() {
 		navigationPageOperations.clickOnLogOut(0);
@@ -887,6 +887,10 @@ public class NavigationPage extends SetupInit {
 	}
 	public void clickOnChangeMpinfromSideMenuForWrongMPIN() {
 		navigationPageOperations.clickOnChangeMpinfromSideMenuWorngInput(0);
+	}
+	
+	public void clickOnChangePasswordfromSideMenuForPassword() {
+		navigationPageOperations.clickOnChangepasswordfromSideMenu(0);
 	}
 	
 	public void clickOnChangeSecretWordfromSideMenu() {
