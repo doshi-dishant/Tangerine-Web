@@ -1,27 +1,32 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <!-- <?xml version="1.0" encoding="UTF-8"?> -->
 
-<suite name="Nasswallet Customer WebPortal" verbose="10" parallel="false" thread-count="5">
-
+<suite name="Tangereine Customer WebPortal" verbose="10" parallel="false" thread-count="5">
 	<listeners>
 		<listener class-name='listeners.CustomizedEmailableReport' />
 		<listener class-name='listeners.HtmlReport' />
 	</listeners>
+	<parameter name="browserType" value="chrome" />
 
-	<parameter name="browserType" value="headless" />
-
-	<!--	<test name="Profile">
+	<!-- 
+	<test name="P2P Offnet">
 		<classes>
-			<class name="portals.testCases.Customer.MyProfile">
+			<class name="portals.testCases.Customer.P2POffnetTransfer">
 				<methods>
-					<include name="verifyProfileDetailsFromDashboard" />
-					<include name="verifyProfileDetailsFromSideMenuProfileViewProfile" />
-					<include name="profileEditFromDashboard" />
-					<include name="profileEditFromSideMenuProfileViewProfile" /> -->
-	<!--	</methods>
+					<include name="p2pOfffnetTranferFromDashboard" />
+					<include name="verifyPerformedp2pOffnetTranferFromDashboardFromUserPassbook" />
+					<include name="verifyPerformedp2pOffnetFromDashboard_NotificationVerication" />
+					<include name="p2pOfffnetFromSideMenu" />
+					<include name="verifyPerformedp2poffnetTranferFromSideMenuFromUserPassbook" />
+					<include name="verifyPerformedp2pOffnetFromSideMenu_NotificationVerication" />
+					<include name="p2pOffnetTranferfromFooter" />
+					<include name="verifyPerformedp2pOffnetTranferFromFromUserPassbook" />
+					<include name="verifyPerformedp2pOffnetFromFooter_NotificationVerication" />
+				</methods>
 			</class>
 		</classes>
-	</test>  -->
+	</test> -->
+
 	<test name="P2P Transfer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
@@ -37,7 +42,172 @@
 		</classes>
 	</test>
 
-	<!--
+	<test name="My Profile">
+		<classes>
+			<class name="portals.testCases.Common.CommonTestCasesCustomer">
+				<methods>
+					<include name="CheckPersonalInfoFromMyProfile" />
+					<include name="CheckDocumentInfoFromMyProfile" />
+					<include name="CheckPersonalInfoFromMyProfileFromSideMenu" />
+					<include name="CheckDocumentInfoFromMyProfileFromSideMenu" />
+					<include name="CheckBalanceFromMyProfile" />
+					
+				</methods>
+			</class>
+		</classes>
+	</test>  
+ 
+	<test name="P2P Transfer from Footer">
+		<classes>
+			<class name="portals.testCases.Customer.P2PTransfer">
+				<methods>
+					<include name="p2pTranferfromFooter" />
+					<include name="verifyPerformedp2pTranferFromFooterFromUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromFooterToUserPassbook" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="Invite Friends">
+		<classes>
+			<class name="portals.testCases.Customer.InviteFriends">
+				<methods>
+					<include name="InvitFriends" />
+					<include name="InviteFriendsfromDBNotification" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="P2P Transfer from Send">
+		<classes>
+			<class name="portals.testCases.Customer.P2PTransfer">
+				<methods>
+					<include name="p2pTranferFromSend" />
+					<include name="verifyPerformedp2pTranferFromSendFromUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromSendFromToUserPassbook" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="WithdrawCash and Agent Assisted Withdraw">
+		<classes>
+			<class name="portals.testCases.Customer.WithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromDashboard" />
+					<include name="verifyPerformedAssistedWithDrawFromDashboardToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromDashboardFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>  
+
+	<test name="Common Testcases">
+		<classes>
+			<class name="portals.testCases.Common.CommonTestcases">
+				<methods>
+					<include name="FAQsFromSideMenu" />
+					<include name="qrCodeFromDashboard" />
+					<include name="passBookFromDashboard" />
+					<include name="verifyDownloadPassbook" />
+					<include name="recentTransactionFromDashboard" />
+					<include name="mpinPolicyFromDashboardFooter" />
+					<include name="mpinPolicyFromSideMenuSettings" />
+					<include name="checkBalanceFromDashboardViewBalance" />
+					<include name="termsAndConditionsFromSideMenuSettings" />
+					<include name="termsAndConditionsFromDashboardFooter" />
+					<include name="privacyPolicyFromDashboardFooter" />
+					<include name="privacyPolicyFromSideMenuSettings" />
+					<include name="VerifyServiceiconsdisplayedFromDashboardCustomer" />
+					<include name="LoginStartwithZero" />
+					<include name="LoginWithinvalidLogin" />
+					<include name="ThreeWrongMPINAttempts" />
+					<include name="logout" />
+				</methods>  
+			</class>
+		</classes>
+	</test>  
+
+	<test name="WithdrawCash and Agent Assisted Withdraw from Footer">
+		<classes>
+			<class name="portals.testCases.Customer.WithdrawCash">
+				<methods>
+					
+					<include name="withdrawCashAndAgentAssistedWithdrawfromFooter" />
+					<include name="verifyPerformedAssistedWithDrawFromFooterToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromFooterFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Change Secret Word">
+		<classes>
+			<class name="portals.testCases.Customer.ChangeSecretWord">
+				<methods>
+					<include name="changeSecretWordCustomerfromLogin" />
+					<include name="changeSecretWordCustomer" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+ 
+	<test name="WithdrawCash and Agent Assisted Withdraw from Side Menu">
+		<classes>
+			<class name="portals.testCases.Customer.WithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromSideMenu" />
+					<include name="verifyPerformedAssistedWithDrawFromSideMenuToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromSideMenuFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="Change MPIN">
+		<classes>
+			<class name="portals.testCases.Customer.ChangeMpin">
+				<methods>
+				    <include name="changeMpinCustomer" />
+					<include name="changeMpinFromMyProfileCustomer" />
+					<include name="changeMpinFromLoginCustomer" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+ 
+	<test name="Customer Onboard">
+		<classes>
+			<class name="portals.testCases.Customer.CustomerOnboard">
+				<methods>
+					<include name="CustomerOnboardFromLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+
+</suite>
+
+<!-- ################  Extra from here ########################## -->
+<!--	<test name="Profile">
+		<classes>
+			<class name="portals.testCases.Customer.MyProfile">
+				<methods>
+					<include name="verifyProfileDetailsFromDashboard" />
+					<include name="verifyProfileDetailsFromSideMenuProfileViewProfile" />
+					<include name="profileEditFromDashboard" />
+					<include name="profileEditFromSideMenuProfileViewProfile" /> -->
+<!--	</methods>
+			</class>
+		</classes>
+	</test>  -->
+
+<!--
 	<test name="P2P Offnet">
 		<classes>
 			<class name="portals.testCases.Customer.P2POffnetTransfer">
@@ -56,7 +226,7 @@
 		</classes>
 	</test>
 -->
-	<test name="P2P Transfer from Footer">
+<!-- 	<test name="P2P Transfer from Footer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
@@ -87,21 +257,35 @@
 				</methods>
 			</class>
 		</classes>
+	</test>  -->
+<!--
+	<test name="Change MPIN">
+		<classes>
+			<class name="portals.testCases.Customer.ChangeMpin">
+				<methods>
+					<include name="changeMpinCustomer" />
+					<include name="changeMpinFromMyProfileCustomer" />
+				</methods>
+			</class>
+		</classes> 
 	</test>
-
 	<test name="Common Testcases">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">
-				<methods>
-					<include name="checkBalanceFromDashboardViewBalance" />
-					<include name="qrCodeFromDashboard" />
+				<methods> -->
+
+<!--		<include name="qrCodeFromDashboard" />
 					<include name="passBookFromDashboard" />
 					<include name="verifyDownloadPassbook" />
 					<include name="recentTransactionFromDashboard" />
 					<include name="mpinPolicyFromDashboardFooter" />
 					<include name="mpinPolicyFromSideMenuSettings" />
-					<include name="logout" /> 
-				<!--	<include name="privacyPolicyFromDashboardFooter" />
+					<include name="checkBalanceFromDashboardViewBalance" />
+					<include name="FAQsFromSideMenu" />
+					<include name="termsAndConditionsFromSideMenuSettings" />
+					<include name="termsAndConditionsFromDashboardFooter" />
+						<include name="logout" /> 
+					<include name="privacyPolicyFromDashboardFooter" />
 					<include name="privacyPolicyFromSideMenuSettings" />
 					<include name="termsAndConditionsFromDashboardFooter" />
 					<include name="termsAndConditionsFromSideMenuSettings" /> 
@@ -110,13 +294,13 @@
 					<include name="transactionDeatilReportFromDashboardFooter" />
 					<include name="transactionDeatilReportFromSideMenuServices" />
 					
-					<include name="forgotMPin" /> -->
+					<include name="forgotMPin" /> 
 				</methods>
 			</class>
 		</classes>
 	</test>
 
-	<test name="WithdrawCash and Agent Assisted Withdraw">
+		<test name="WithdrawCash and Agent Assisted Withdraw">
 		<classes>
 			<class name="portals.testCases.Customer.WithdrawCash">
 				<methods>
@@ -138,15 +322,7 @@
 		</classes>
 	</test>
 
-	<test name="Change MPIN">
-		<classes>
-			<class name="portals.testCases.Customer.ChangeMpin">
-				<methods>
-					<include name="changeMpinCustomer" />
-				</methods>
-			</class>
-		</classes>
-	</test>
+	
 
 	<test name="Change Secret Word">
 		<classes>
@@ -156,10 +332,10 @@
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>  -->
 
 
-	<!-- 		<test name="Mobile Topup">
+<!-- 		<test name="Mobile Topup">
 		<classes>
 			<class name="portals.testCases.Customer.MobileToup">
 				<methods>
@@ -174,30 +350,8 @@
 		</classes>
 	</test> -->
 
-	<!-- <test name="Enterprise Payment">
-		<classes>
-			<class name="portals.testCases.Customer.EnterprisePayment">
-				<methods>
-					<include name="enterprisePayment" />
-					<include name="verifyPerformedEnterprisePaymentFromFromUserPassbook" />
-					<include name="verifyPerformedEnterprisePaymentFromToUserPassbook" />
-					<include name="enterprisePaymentFromDashboard" />
-					<include
-						name="verifyPerformedEnterprisePaymentFromDashboardFromFromUserPassbook" />
-					<include
-						name="verifyPerformedEnterprisePaymentFromDashboardFromToUserPassbook" />
-					<include name="enterprisePaymentFromSideMenu" />
-					<include
-						name="verifyPerformedEnterprisePaymentFromSideMenuFromFromUserPassbook" />
-					<include
-						name="verifyPerformedEnterprisePaymentFromSideMenuFromToUserPassbook" />
-				</methods>
-			</class>
-		</classes>
-	</test> -->
 
-
-	<!--
+<!--
 	<test name="Admin Verification">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcases">
@@ -208,4 +362,12 @@
 		</classes>
 	</test>  -->
 
-</suite>
+<!-- extra in common
+<include name="verifyContactUsFromDashboard" />
+					<include name="verifyContactUsFromSideMenuProfile" />
+					<include name="verifyAboutUsFromDashboard" />
+					<include name="verifyAboutUsFromSideMenuProfile" /> 
+					<include name="verifyChatOption" />
+					<include name="changeLanguageFromDashboardFooter" />
+					<include name="changeLanguageFromSideMenuProfile" />
+ -->

@@ -1,6 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>tangerine_webportals</groupId>
 	<artifactId>tangerine_webportals</artifactId>
@@ -317,7 +315,7 @@
 					<systemPropertyVariables>
 						<environment>UAT</environment>
 						<userType>customer</userType>
-						<subUserType>customer</subUserType> 
+						<subUserType>customer</subUserType>  
 						<latestRelease>NA</latestRelease>
 						<videoRecording>false</videoRecording>
 						<deleteTestOutPut>false</deleteTestOutPut>

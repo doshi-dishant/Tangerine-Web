@@ -31,7 +31,7 @@ public class LoginPage extends SetupInit {
 		reloadCounter = 0;
 		if (subUserType.equalsIgnoreCase("agent"))
 			loginPageCommon.selectAgent(0);
-		else if (subUserType.equalsIgnoreCase("sub agent"))
+		else if (subUserType.equalsIgnoreCase("subagent"))
 			loginPageCommon.selectSubAgent(0);
 		else if (subUserType.equalsIgnoreCase("super agent"))
 			loginPageCommon.selectSuperAgent(0);
@@ -44,6 +44,7 @@ public class LoginPage extends SetupInit {
 				getotp = DBUtils.getOTP(userNameVal).toString();
 				loginPageCommon.enterOTP(getotp, 0);
 				loginPageCommon.clickOnSubmit(0);
+
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -89,6 +90,19 @@ public class LoginPage extends SetupInit {
 				}
 			}
 		}
+	}
+
+	public void login_With_Invalid(String userNameVal, String passwordVal, String subUserType) {
+		reloadCounter = 0;
+		if (subUserType.equalsIgnoreCase("agent"))
+			loginPageCommon.selectAgent(0);
+		else if (subUserType.equalsIgnoreCase("sub agent"))
+			loginPageCommon.selectSubAgent(0);
+		else if (subUserType.equalsIgnoreCase("super agent"))
+			loginPageCommon.selectSuperAgent(0);
+		loginPageCommon.enterUserName(userNameVal, 0);
+		loginPageCommon.enterPassword(passwordVal, 0);
+		loginPageCommon.clickOnLogin(0);
 	}
 
 	public void adminLogin(String userName, String password) {

@@ -40,6 +40,9 @@ public class P2PTransferPage extends SetupInit {
 		dashboardPageCommon.sendTextInRemarks(map.get(Remarks).toString(), 0);
 		dashboardPageCommon.enterSecretPIN(password, 0);
 		dashboardPageCommon.clickOnServiceSubmitButton(0);
+		
+		dashboardPageCommon.verifyUGXSign(0);
+		
 		if (verifyVisible(dashboardPageCommon.insufficientBalanceText, 2)) {
 			String alertMessage = getElementText(this.log, dashboardPageCommon.insufficientBalanceText, 2);
 			setLogSteps(this.log, alertMessage);
@@ -61,7 +64,9 @@ public class P2PTransferPage extends SetupInit {
 				setLogSteps(this.log, "Verify Remarks on Confirmation Screen: " + map.get(Remarks).toString());
 				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyAmount, map.get(Amount).toString())), 0);
 				setLogSteps(this.log, "Verify Amount on Confirmation Screen: " + map.get(Amount).toString());
+			
 				dashboardPageCommon.clickOnConfirmButton(0);
+				dashboardPageCommon.verifyUGXSignConfirmationScreen();
 				verifyVisible(dashboardPageCommon.verifyTransaction, 0);
 				setLogSteps(log, "Verify Transaction is Success");
 				pauseInSeconds(2);

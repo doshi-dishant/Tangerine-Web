@@ -65,6 +65,16 @@ public class CommonTestcases extends SetupInit {
 	}
 
 	@Test
+	public void VerifyServiceiconsdisplayedFromDashboardCustomer() {
+		try {
+			co.navigationPage.VerifyServiceiconsdisplayedFromDashboard();
+
+		} catch (Exception e) {
+		} finally {
+		}
+	}
+
+	@Test
 	public void verifyDownloadPassbook() {
 		try {
 			setTestParameters(co.datamap, "verifyDownloadPassbook");
@@ -91,35 +101,66 @@ public class CommonTestcases extends SetupInit {
 		}
 	}
 
-	/*
-	 * @Test public void verifyContactUsFromDashboard() { try {
-	 * setTestParameters(co.datamap, "verifyContactUsFromDashboard");
-	 * co.navigationPage.clickOnContactUs(); co.contactUsPage.verifyContactUs();
-	 * setSuccessParameters(co.datamap); } catch (Exception e) {
-	 * setExceptionData(co, e); } finally { setExcecutionData(co); } }
-	 * 
-	 * @Test public void verifyContactUsFromSideMenuProfile() { try {
-	 * setTestParameters(co.datamap, "verifyContactUsFromSideMenuProfile");
-	 * co.navigationPage.clickOnSideMenuProfile();
-	 * co.navigationPage.clickOnSideMenuContactUsFromProfile();
-	 * co.contactUsPage.verifyContactUs(); setSuccessParameters(co.datamap); } catch
-	 * (Exception e) { setExceptionData(co, e); } finally { setExcecutionData(co); }
-	 * }
-	 * 
-	 * @Test public void verifyAboutUsFromDashboard() { try {
-	 * setTestParameters(co.datamap, "verifyAboutUsFromDashboard");
-	 * co.navigationPage.clickOnAboutUs(); co.aboutUsPage.verifyAboutUs();
-	 * setSuccessParameters(co.datamap); } catch (Exception e) {
-	 * setExceptionData(co, e); } finally { setExcecutionData(co); } }
-	 * 
-	 * @Test public void verifyAboutUsFromSideMenuProfile() { try {
-	 * setTestParameters(co.datamap, "verifyAboutUsFromSideMenuProfile");
-	 * co.navigationPage.clickOnSideMenuProfile();
-	 * co.navigationPage.clickOnSideMenuAboutUsFromProfile();
-	 * co.aboutUsPage.verifyAboutUs(); setSuccessParameters(co.datamap); } catch
-	 * (Exception e) { setExceptionData(co, e); } finally { setExcecutionData(co); }
-	 * }
-	 */
+	@Test(dataProvider = "LoginStartwithZero", dataProviderClass = TestDataImport.class)
+	public void LoginStartwithZero(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(2);
+				co.navigationPage.clickOnLogOut();
+			}
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "LoginStartwithZero");
+			map.put(MethodName, "LoginStartwithZero");
+			co.loginPage.login_With_Invalid(map.get(FromUserName).toString(), map.get(FromMpin).toString(), "customer");
+
+			co.navigationPage.verifyLoggedIn();
+
+		} catch (Exception e) {
+			throw new RuntimeException("verification failed, verify User Not Active Message not Found");
+		}
+	}
+
+	@Test(dataProvider = "InActiveUser", dataProviderClass = TestDataImport.class)
+	public void LoginWithinvalidLogin(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(2);
+				co.navigationPage.clickOnLogOut();
+			}
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "InActiveUser");
+			map.put(MethodName, "InActiveUser");
+			co.loginPage.login_With_Invalid(map.get(FromUserName).toString(), map.get(FromPassword).toString(),
+					"customer");
+			co.navigationPage.verifyUserNotActive();
+		} catch (Exception e) {
+			throw new RuntimeException("verification failed, verify User Not Active Message not Found");
+		}
+	}
+
+	@Test(dataProvider = "ThreeWrongMPINAttempts", dataProviderClass = TestDataImport.class)
+	public void ThreeWrongMPINAttempts(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(2);
+				co.navigationPage.clickOnLogOut();
+			}
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "ThreeWrongMPINAttempts");
+			map.put(MethodName, "ThreeWrongMPINAttempts");
+			co.loginPage.login_With_Invalid(map.get(FromUserName).toString(), map.get(FromMpin).toString(), "customer");
+			co.navigationPage.verifyInvalidCredentials();
+
+			co.loginPage.login_With_Invalid(map.get(FromUserName).toString(), map.get(FromMpin).toString(), "customer");
+			co.navigationPage.verifyInvalidCredentials();
+
+			co.loginPage.login_With_Invalid(map.get(FromUserName).toString(), map.get(FromMpin).toString(), "customer");
+			co.navigationPage.verifyAccountTempBlocked();
+
+		} catch (Exception e) {
+			throw new RuntimeException("verification failed, verify Three Login should fail not working");
+		}
+	}
 
 	@Test
 	public void mpinPolicyFromDashboardFooter() {
@@ -183,6 +224,8 @@ public class CommonTestcases extends SetupInit {
 	public void privacyPolicyFromSideMenuSettings() {
 		try {
 			co.navigationPage.clickOnSideMenuSettings();
+			setTestParameters(co.datamap, "privacyPolicyFromSideMenuSettings");
+			co.navigationPage.clickOnSideMenuProfile();
 			co.navigationPage.clickOnSideMenuePrivacyPolicyFromSettings();
 			co.privacyPolicyPage.verifyPrivacyPolicy();
 		} catch (Exception e) {
@@ -197,6 +240,9 @@ public class CommonTestcases extends SetupInit {
 			co.navigationPage.clickOnSideMenu();
 			co.navigationPage.clickOnSideMenuProfile();
 			co.navigationPage.clickOnSideMenueTermsAndConditionsFromProfile();
+			setTestParameters(co.datamap, "termsAndConditionsFromSideMenuSettings");
+			co.navigationPage.clickOnSideMenuProfile();
+			co.navigationPage.clickOnSideMenueTermsAndConditionsFromSettings();
 			co.termsAndConditionsPage.verifyTermsAndConditions();
 		} catch (Exception e) {
 		} finally {
@@ -235,7 +281,7 @@ public class CommonTestcases extends SetupInit {
 		} catch (Exception e) {
 			setExceptionData(co, e);
 		} finally {
-			
+
 		}
 	}
 
@@ -553,12 +599,11 @@ public class CommonTestcases extends SetupInit {
 	public void VerifyServiceiconsdisplayedFromDashboard() {
 		try {
 			co.navigationPage.VerifyServiceiconsdisplayedFromDashboard();
-
 		} catch (Exception e) {
 		} finally {
 		}
 	}
-	
+
 	@Test(dataProvider = "ChangeSecretWord", dataProviderClass = TestDataImport.class)
 	public void changeSecretWord(Map<Object, Object> map) {
 		try {
@@ -566,6 +611,19 @@ public class CommonTestcases extends SetupInit {
 			setTestParameters(co.datamap, "ChangeSecretWord");
 			co.navigationPage.clickOnChangeSecretWordfromSideMenu();
 			co.changesecretwordpage.setnewSecretWord(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+
+	public void FAQsFromSideMenu() {
+		try {
+			setTestParameters(co.datamap, "FAQsFromSideMenu");
+			co.navigationPage.clickOnSideMenuProfileFAQs();
+			co.faqsPage.verifyFAQs();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);

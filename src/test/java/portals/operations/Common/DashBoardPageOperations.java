@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -18,12 +17,13 @@ public class DashBoardPageOperations extends SetupInit {
 	String textData = "(.//label[text()='%s']//following::input[@type='text'])[1]";
 	String uploadFileData = "(.//label[text()='%s']//following::input[@type='file'])[1]";
 	By btnNext = By.xpath("//*[text()='Next']");
+	By btnNEXTforLogin = By.xpath("//*[text()='NEXT' and @name='submit']");
 	String drpArrow = "(.//label[text()='%s']//following::div[@class=' css-tlfecz-indicatorContainer'])[1]";
 	// String txtdrp =
 	// "(//label[text()='%s']//following::input[@id='react-select-3-input'])[1]";
 	String txtdrp = "//*[text()='%s']";
 	String inputDate = "(//label[text()='%s']//following::input[@type='date'])[1]";
-	public String verifyLabel = ".//label[text()='%s']";
+	public String verifyLabel = "//label[text()='%s']";
 
 	// Change Password Locators
 	By changePassword = By.xpath("//*[text()='Change Password']");
@@ -35,27 +35,40 @@ public class DashBoardPageOperations extends SetupInit {
 	By txtCurrentMpin = By.id("frm_text_oldTransactionPinid");
 	By txtNewMpin = By.id("frm_text_transactionPinid");
 	By txtConfirmNewMpin = By.id("frm_text_confirmTransactionPinid");
+	By txtenterRegisteredMobileNumber = By.id("frm_text_userIdentifierid");
 	public By btnSubmit = By.xpath("//button[text()='SUBMIT']");
 	By btnCancel = By.xpath("//button[text()='Cancel']");
 	By txtRemark = By.id("frm_text_Remarksid");
 	By txtremark = By.id("frm_text_remarksid");
+	By txtRegisteredMobileNumber = By.id("frm_text_usernameid");
+	By txtMPINfromLogin = By.id("frm_text_passwordid");
+	By txtSecretWord = By.id("frm_text_secretWordid");
+	By txtConfirmSecretWord = By.id("frm_text_ConfirmSecretWordid");
+	By txtveriyactivationSuccess = By
+			.xpath("//*[normalize-space(text())='Activation process has been completed successfully']");
+	By txtverifyMPINChangesucess = By.xpath("//*[normalize-space(text())='MPIN has been changed successfully']");
+	By txtverifySWChangesucess = By.xpath("//*[normalize-space(text())='Secret word has been changed successfully']");
+
+	By btnBacktoLogin = By.xpath("//*[text()='Back To Login']");
+
 	public By secretMpin = By.id("frm_text_transactionPinid");
 	public By secretMpintoCheckBalance = By.id("otpid");
-	public By BalanceafterPaymentText = By.xpath("//p[contains(text(),'Balance after Payment (UGX)')]");
-	public By AvailableBalanceText = By.xpath("//p[contains(text(),'Available Balance (UGX)')]");
-	public By Amounttext  = By.xpath("//span[contains(text(),'Amount (UGX)')]");
+//	public By BalanceafterPaymentText = By.xpath("//p[contains(text(),'Balance after Payment (UGX)')]");
+//	public By AvailableBalanceText = By.xpath("//p[contains(text(),'Available Balance (UGX)')]");
+//	public By Amounttext  = By.xpath("//span[contains(text(),'Amount (UGX)')]");
 	// Reset MPIN locators
 
-	public By resetPinLabel = By.xpath(".//*[text()='Reset Secret PIN']");
+	public By resetPinLabel = By.xpath("//*[text()='Reset Secret PIN']");
 	By resetMpin = By.xpath("//*[text()='Reset MPIN']");
 	By resendOTP = By.xpath("//*[text()='Resend']");
 	String OTPLoc = "//input[@type='tel'][%s]";
 	By pwdTextBox = By.id("frm_text_passwordid");
 	public By successLogo = By.xpath("//img[contains(@src,'Success')]");
 	public By transaction = By.xpath("//div[contains(@class,'trasction-notification-text')]");
-	public By loginBtn = By.xpath("//*[text()='Login']");
+	public By loginBtn = By.xpath("//button[text()='Login']");
 	public By code = By.xpath("//*[text()='Code']//following-sibling::*");
 	By btnClose = By.xpath("//*[text()='Close']");
+
 	// Verify profile details locators
 	// String closedAggregator =
 	// "//*[text()='%s']/ancestor::*[@aria-expanded='true']";
@@ -67,17 +80,17 @@ public class DashBoardPageOperations extends SetupInit {
 	By drpRequestType = By.id("frm_select_requestTypeid");
 	public By successMessage = By.xpath("(//img[contains(@src,'Success')]//parent::div//following-sibling::p)[last()]");
 	public By alert = By.id("alert-dialog-slide-description");
-	
+
 	// P2PTransfer locators tangerine s
 	By txtMobileNumber = By.id("frm_text_toUserid");
 	By txtAmount = By.id("frm_text_amountid");
 	By txtRemarks = By.id("frm_text_remarksid");
 	By txtSeceretPIN = By.id("frm_text_transactionPinid");
-	
+
 	// P2POffnetTransfer locators tangerine s
 	By txtMobileNumberp2poffnet = By.id("frm_text_mobileid");
-	// 
-	
+	//
+
 	// Cash Withdraw Tangereinne
 	public By verifyOTPSent = By.xpath("//*[contains(text(),'OTP sent')]");
 	public By otpPin = By.id("frm_text_otpid");
@@ -85,8 +98,7 @@ public class DashBoardPageOperations extends SetupInit {
 	public String verifyRemarksforWithdrawCash = "//*[text()='Reference']//following-sibling::*[text()='%s']";
 	public String verifyAmountforWithdrawCash = "//*[text()='Amount (UGX)']//following-sibling::*[contains(text(),'%s')]";
 	//
-	
-		
+
 	public By btnConfirm = By.xpath("//*[normalize-space(text())='Confirm']//parent::button");
 	public String verifyMobileNumber = "//*[text()='Mobile Number']//following-sibling::*[text()='%s']";
 	public String verifyReceiverMobileNumber = "//*[text()='Receiver Mobile Number']//following-sibling::*[text()='%s']";
@@ -122,7 +134,7 @@ public class DashBoardPageOperations extends SetupInit {
 	By REFRESH_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//i");
 	By viewBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')][last()]");
 	By viewBalance_profile = By.xpath("(//*[contains(text(),'Check') and contains(text(),'Balance')][last()])[2]");
-	
+
 	By refreshBalance = By.xpath("//*[contains(text(),'Wallet Balance')]//i");
 	By MAIN_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//span");
 	By Commission_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//following-sibling::ul//span");
@@ -279,12 +291,17 @@ public class DashBoardPageOperations extends SetupInit {
 	By verifyChatOptionHeader = By.id("shortMessage");
 	By UGX_text = By.xpath("//Span[. = 'UGX']");
 	By UGX_passbook = By.xpath("//*[contains(text(),'Amount (UGX)')]");
-	
+
 	By successOnboardText = By.xpath("//*[contains(text(),'Successfully')]");
 	By drpOnboardUserType = By.id("frm_select_operatingEntityIDid");
 	By txtAgentName = By.id("frm_text_nameid");
 	elasticwrite log;
 	CommonOperations common;
+
+	public By BalanceafterPaymentText = By.xpath("//p[contains(text(),'Balance after Payment (UGX)')]");
+	public By AvailableBalanceText = By.xpath("//p[contains(text(),'Available Balance (UGX)')]");
+	public By Amounttext = By.xpath("//span[contains(text(),'Amount (UGX)')]");
+	public By ConfirmationScreen = By.xpath("//*[normalize-space(text())='Confirmation Details']");
 
 	By balance = By.xpath("//span[contains(@class,'main-bal')]");
 
@@ -293,7 +310,7 @@ public class DashBoardPageOperations extends SetupInit {
 		this.driver = driver;
 		common = new CommonOperations(driver, log);
 	}
-	
+
 	public void otpPIN(String otp, int... args) {
 		sendKeys(otpPin, otp, 0);
 		setLogSteps(log, "Enter OTP: " + otp);
@@ -328,12 +345,57 @@ public class DashBoardPageOperations extends SetupInit {
 		sendKeys(txtMobileNumber, mobileNumber, 0);
 		setLogSteps(log, "Enter Mobile Number : " + mobileNumber);
 	}
-	
+
+	public void enterRegisteredMobileNumber(String mobileNumber, int... args) {
+		sendKeys(txtRegisteredMobileNumber, mobileNumber, 0);
+		setLogSteps(log, "Enter Registered Mobile Number : " + mobileNumber);
+	}
+
+	public void enterRegisteredMobileNumberForgotMpin(String mobileNumber, int... args) {
+		sendKeys(txtenterRegisteredMobileNumber, mobileNumber, 0);
+		setLogSteps(log, "Enter Registered Mobile Number : " + mobileNumber);
+	}
+
+	public void enterMPINInLogin(String mpin, int... args) {
+		sendKeys(txtMPINfromLogin, mpin, 0);
+		setLogSteps(log, "Enter MPIN from Login : " + mpin);
+	}
+
+	public void enterSecretWord(String secretWord, int... args) {
+		sendKeys(txtSecretWord, secretWord, 0);
+		setLogSteps(log, "Enter secretWord from Login : " + secretWord);
+	}
+
+	public void enterConfirmSecretWord(String secretWord, int... args) {
+		sendKeys(txtConfirmSecretWord, secretWord, 0);
+		setLogSteps(log, "Entered Confirmed secretWord: " + secretWord);
+	}
+
+	public void verifyActivationSuccessMessage(int... args) {
+		verifyVisible(txtveriyactivationSuccess, 0);
+		setLogSteps(log, "Verify message: Activation of new user is successfully done.");
+	}
+
+	public void verifyMPINChangeSuccessMessage(int... args) {
+		verifyVisible(txtverifyMPINChangesucess, 0);
+		setLogSteps(log, "Verify message: MPIN has been changed successfully.");
+	}
+
+	public void verifySWChangeSuccessMessage(int... args) {
+		verifyVisible(txtverifySWChangesucess, 0);
+		setLogSteps(log, "Verify message: Secret word has been changed successfully");
+	}
+
+	public void clickonBacktoLoginBtn(int... args) {
+		clickOnElement(btnBacktoLogin, args);
+		setLogSteps(log, "Click on Back to Login button");
+	}
+
 	public void enterMobileNumberp2poffnet(String mobileNumber, int... args) {
 		sendKeys(txtMobileNumberp2poffnet, mobileNumber, 0);
 		setLogSteps(log, "Enter Mobile Number for p2p offnet : " + mobileNumber);
 	}
-	
+
 	public void enterAmount(String amount, int... args) {
 		sendKeys(txtAmount, amount, 0);
 		setLogSteps(log, "Enter Amount : " + amount);
@@ -343,18 +405,17 @@ public class DashBoardPageOperations extends SetupInit {
 		sendKeys(txtRemark, remark, 0);
 		setLogSteps(log, "Enter Remarks : " + remark);
 	}
-	
+
 	public void enterRemarkfromCashout(String remark, int... args) {
 		sendKeys(txtRemark, remark, 0);
 		setLogSteps(log, "Enter Remarks : " + remark);
 	}
 
-	
 	public void enterSecretPIN(String secretPIN, int... args) {
 		sendKeys(secretMpin, secretPIN, 0);
 		setLogSteps(log, "Enter Secret PIN : " + secretPIN);
 	}
-	
+
 	public void enterSecretPINtocheckbalance(String secretPIN, int... args) {
 		sendKeys(secretMpintoCheckBalance, secretPIN, 0);
 		setLogSteps(log, "Enter Secret PIN : " + secretPIN);
@@ -372,6 +433,11 @@ public class DashBoardPageOperations extends SetupInit {
 		pauseInSeconds(2);
 		clickOnElement(btnConfirm, args);
 		setLogSteps(log, "Click On Confirm Button");
+	}
+
+	public void clickOnLoginButton(int... args) {
+		clickOnElement(loginBtn, args);
+		setLogSteps(log, "Click on Login Button");
 	}
 
 	public void clickOnResendOTP(int... args) {
@@ -530,6 +596,7 @@ public class DashBoardPageOperations extends SetupInit {
 		}
 		setLogSteps(log, "Click On Check Balance");
 	}
+
 	public void clickOnCheckBalanceFromProfile(int... args) {
 		try {
 			clickOnElement(log, viewBalance_profile, 2);
@@ -549,15 +616,16 @@ public class DashBoardPageOperations extends SetupInit {
 	}
 
 	public String getMainBalance(int... args) {
-		pauseInSeconds(3);;
+		pauseInSeconds(3);
+		;
 		String mainBalance = getElementText(log, MAIN_BALANCE, args).trim();
 		return mainBalance.split(" ")[0];
 	}
+
 	public String getCommissionBalance(int... args) {
 		String mainBalance = getElementText(log, Commission_BALANCE, args).trim();
 		return mainBalance.split(" ")[0];
 	}
-	
 
 	public String getPointsEarn(int... args) {
 		// setLogSteps(log, "Getting Earned points");
@@ -597,6 +665,11 @@ public class DashBoardPageOperations extends SetupInit {
 
 	public void clickOnNextButton(int... args) {
 		clickOnElement(btnNext, args);
+		setLogSteps(log, "Click On Next button");
+	}
+
+	public void clickOnNextButtonUserActivation(int... args) {
+		clickOnElement(btnNEXTforLogin, args);
 		setLogSteps(log, "Click On Next button");
 	}
 
@@ -1010,7 +1083,7 @@ public class DashBoardPageOperations extends SetupInit {
 		clickOnElement(btnServiceSubmit, args);
 		setLogSteps(log, "Click On Submit Button");
 	}
-	
+
 	public void clickOnChkBalanceSubmitButton(int... args) {
 		clickOnElement(btnchekbalancesubmit, args);
 		setLogSteps(log, "Click On Submit Button for Check Balance");
@@ -1035,10 +1108,12 @@ public class DashBoardPageOperations extends SetupInit {
 		verifyVisible(verifyChatOptionHeader, args);
 		setLogSteps(log, "Chat Options Are Available");
 	}
+
 	public void UGX_textSignAvailable(int... args) {
 		verifyVisible(UGX_text, args);
 		setLogSteps(log, "UGX doller Sign Are Available in Dashboard");
 	}
+
 	public void UGX_InPassbookSignAvailable(int... args) {
 		verifyVisible(UGX_passbook, args);
 		setLogSteps(log, "UGX doller Sign Are Available in Passbook");
@@ -1079,7 +1154,15 @@ public class DashBoardPageOperations extends SetupInit {
 
 	public void verifyOTPScreen(int... args) {
 		verifyVisible(verifyOTPScreen, args);
-		setLogSteps(log, "Verify OTP Screen Is Present");
+		setLogSteps(log, "Verified that OTP Screen is Present");
+	}
+
+	public void enterOTPOnScreen(String otp, int... args) {
+		sendKeys(By.xpath("(//*[@type='password'])[1]"), "" + otp.charAt(0), 0);
+		sendKeys(By.xpath("(//*[@type='password'])[2]"), "" + otp.charAt(1), 0);
+		sendKeys(By.xpath("(//*[@type='password'])[3]"), "" + otp.charAt(2), 0);
+		sendKeys(By.xpath("(//*[@type='password'])[4]"), "" + otp.charAt(3), 0);
+		setLogSteps(log, "OTP entered from DB");
 	}
 
 	public void selectOnboardUserType(String id, int... args) {
@@ -1096,20 +1179,20 @@ public class DashBoardPageOperations extends SetupInit {
 		}
 		setLogSteps(log, "Enter Agent Name : " + name);
 	}
-	
+
 	public void verifyUGXSign(int... args) {
+		verifyVisible(ConfirmationScreen, args);
+		setLogSteps(log, "Confirmation Screen is Present");
 		verifyVisible(BalanceafterPaymentText, args);
 		setLogSteps(log, "Verify Balance after Payment with UGX Sign");
 		verifyVisible(Amounttext, args);
 		setLogSteps(log, "Verify Amount with UGX Sign");
 	}
-	
-	
+
 	public void verifyUGXSignConfirmationScreen(int... args) {
 		verifyVisible(AvailableBalanceText, args);
 		setLogSteps(log, "Verify Available Balance with UGX Sign");
 		verifyVisible(Amounttext, args);
-		setLogSteps(log, "Verify Amount with UGX Sign");
 		setLogSteps(log, "Verify Amount with UGX Sign");
 	}
 }

@@ -1,21 +1,22 @@
 package portals.pages.Common;
 
-import java.util.Map;
-
 import org.openqa.selenium.WebDriver;
 
-import base.CreateObject;
 import base.SetupInit;
-import portals.operations.Common.PrivacyPolicyOperations;
+import portals.operations.Common.FAQsOperations;
 import utils.elasticUtils.elasticwrite;
 
 public class FAQsPage extends SetupInit {
-	PrivacyPolicyOperations privacyPolicyOperations;
+	FAQsOperations fAQsOperations;
 	elasticwrite log;
 
-	
+	public FAQsPage(WebDriver driver, elasticwrite log) {
+		this.log = log;
+		this.driver = driver;
+		fAQsOperations = new FAQsOperations(this.driver, log);
+	}
 
-	public void FAQsPage() {
-		privacyPolicyOperations.isNavigateToPrivacyPolicyPage(0);
+	public void verifyFAQs() {
+		fAQsOperations.isNavigateToFAQsPage(0);
 	}
 }

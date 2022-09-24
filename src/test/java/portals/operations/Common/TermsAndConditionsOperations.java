@@ -13,7 +13,7 @@ public class TermsAndConditionsOperations extends SetupInit {
 	By verifytextwebsiteLink = By.xpath("//*[contains(text(),'www.lycamobile.ug')]");
 	elasticwrite log;
 
-	public TermsAndConditionsOperations(WebDriver driver, elasticwrite log) {
+	public TermsAndConditionsOperations(WebDriver driver, elasticwrite log) {	
 		this.log = log;
 		this.driver = driver;
 	}
@@ -25,8 +25,8 @@ public class TermsAndConditionsOperations extends SetupInit {
 		setLogSteps(log, "VerifyContent >> APPLICATION FOR ACCOUNT");
 		verifyVisible(verifytxtLycamoneyUganda, args);
 		setLogSteps(log, "VerifyContent >> Lycamoney Uganda");
-		scrollToElement(driver.findElement(By.xpath("")));
-		verifyVisible(verifytextwebsiteLink, args);
-		setLogSteps(log, "VerifyContent >> www.lycamobile.ug");
+//		scrollToElement(driver.findElement(By.xpath("")));
+//		verifyVisible(verifytextwebsiteLink, args);
+//		setLogSteps(log, "VerifyContent >> www.lycamobile.ug");
 	}
 }

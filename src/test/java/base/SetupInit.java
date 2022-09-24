@@ -82,7 +82,6 @@ import org.testng.annotations.Parameters;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import portals.interfaces.GetExcelHeaders;
 import portals.pages.Common.LoginPage;
-import utils.DBUtils;
 import utils.ExcelUtility;
 import utils.ReadProperty;
 import utils.Utility;
@@ -331,6 +330,31 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 					throw new RuntimeException("irrelevant sub user type found");
 				}
 				break;
+			case "merchant":
+				testUrl = xmlUtils.getChildNodeValue(configFilePath, "URL", "MerchantUATUrl");
+				switch (subUserType.toLowerCase().replaceAll("\\s", "")) {
+				case "merchant":
+					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "UAT", "MerchantTestData");
+					userName = xmlUtils.getChildNodeValue(configFilePath, "UAT", "MerchantUser");
+					password = xmlUtils.getChildNodeValue(configFilePath, "UAT", "MerchantPassword");
+					pin = xmlUtils.getChildNodeValue(configFilePath, "UAT", "MerchantPin");
+					break;
+				case "branch":
+					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "UAT", "BranchTestData");
+					userName = xmlUtils.getChildNodeValue(configFilePath, "UAT", "BranchUser");
+					password = xmlUtils.getChildNodeValue(configFilePath, "UAT", "BranchPassword");
+					pin = xmlUtils.getChildNodeValue(configFilePath, "UAT", "BranchPin");
+					break;
+				case "teller":
+					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "UAT", "TellerTestData");
+					userName = xmlUtils.getChildNodeValue(configFilePath, "UAT", "TellerUser");
+					password = xmlUtils.getChildNodeValue(configFilePath, "UAT", "TellerPassword");
+					pin = xmlUtils.getChildNodeValue(configFilePath, "UAT", "TellerPin");
+					break;
+				default:
+					throw new RuntimeException("irrelevant sub user type found");
+				}
+				break;
 			case "customer":
 				testUrl = xmlUtils.getChildNodeValue(configFilePath, "URL", "CustomerUATUrl");
 				test_data_file = xmlUtils.getChildNodeValue(configFilePath, "UAT", "CustomerTestData");
@@ -386,7 +410,11 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		switch (toLowerCase.hashCode()) {
 		case -1361128838:
 			if (toLowerCase.equals("chrome")) {
-				this.driver = initChromeDriver();
+				try {
+					this.driver = initChromeDriver();
+				} catch (Exception e) {
+					System.out.println(e);
+				}
 				return;
 			}
 		case -1115062407:
@@ -1392,14 +1420,14 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		switch (userType.toLowerCase().replaceAll("\\s", "")) {
 		case "agent":
 			switch (subUserType.toLowerCase().replaceAll("\\s", "")) {
+			case "subagent":
+				colNum = 4;
+				break;
 			case "agent":
 				colNum = 3;
 				break;
 			case "superagent":
 				colNum = 2;
-			case "subagent":
-				colNum = 4;
-				break;
 			default:
 				throw new RuntimeException("irrelevant sub user type found");
 			}

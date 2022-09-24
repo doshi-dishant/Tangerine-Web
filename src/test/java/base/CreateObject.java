@@ -20,6 +20,7 @@ import portals.pages.Common.ChangeLanguagePage;
 import portals.pages.Common.CommissionReportPage;
 import portals.pages.Common.ContactUsPage;
 import portals.pages.Common.DashboardPage;
+import portals.pages.Common.FAQsPage;
 import portals.pages.Common.ForgotMPinPage;
 import portals.pages.Common.ForgotPasswordPage;
 import portals.pages.Common.LoginPage;
@@ -40,8 +41,10 @@ import portals.pages.Customer.MobileTopupPage;
 import portals.pages.Customer.MyProfilePage;
 import portals.pages.Customer.P2POffnetPage;
 import portals.pages.Customer.P2PTransferPage;
+import portals.pages.Customer.CustomerOnboardPage;
 import portals.pages.Customer.WithdrawCashPage;
 import portals.pages.Customer.eVoucherPage;
+import portals.testCases.SubAgent.SubAgentAssistedWithdrawCash;
 import utils.elasticUtils.elasticwrite;
 
 public class CreateObject extends SetupInit {
@@ -51,14 +54,15 @@ public class CreateObject extends SetupInit {
 	public NavigationPage navigationPage;
 	public DashboardPage dashboardPage;
 	public MyProfilePage customerProfilePage;
-	// tangerine start //////
+	public MyProfilePage customerMyProfilePage;
 	public P2PTransferPage p2pTransferPage;
+	public CustomerOnboardPage customerOnboardPage;
 	public P2POffnetPage p2pOffnetPage;
 	public ChangeMpinPage changeMpinPage;
 	public ChangeSecretWordPage changesecretwordpage;
 	public InviteFriendsPage inviteFriendsPage;
 	public DashBoardPageOperations dashBoardPageOperations;
-	// tangerine end //////
+	public SubAgentAssistedWithdrawCash subAgentAssistedWithdraw;
 	public WithdrawCashPage withdrawCashPage;
 	public MobileTopupPage mobileTopupPage;
 	public MPINPolicyPage mpinPolicyPage;
@@ -68,6 +72,7 @@ public class CreateObject extends SetupInit {
 	public AboutUsPage aboutUsPage;
 	public TermsAndConditionsPage termsAndConditionsPage;
 	public CommonOperations common;
+	public FAQsPage faqsPage;
 	public MobilePostpaidPage mobilePostpaidPage;
 	public TransactionDetailPage transactionDetailPage;
 	public TransactionSummaryPage transactionSummaryPage;
@@ -102,17 +107,17 @@ public class CreateObject extends SetupInit {
 		}
 		navigationPage.goToHome(5);
 		dashboardPage = new DashboardPage(driver, log);
-		customerProfilePage = new MyProfilePage(driver, log);
-		// tangerine start ////////
+//		customerProfilePage = new MyProfilePage(driver, log);
 		p2pTransferPage = new P2PTransferPage(driver, log);
 		p2pOffnetPage = new P2POffnetPage(driver, log);
 		changeMpinPage = new ChangeMpinPage(driver, log);
 		changesecretwordpage = new ChangeSecretWordPage(driver, log);
 		inviteFriendsPage = new InviteFriendsPage(driver, log);
 		withdrawCashPage = new WithdrawCashPage(driver, log);
+		subAgentAssistedWithdraw = new SubAgentAssistedWithdrawCash();
 		dashBoardPageOperations = new DashBoardPageOperations(driver, log);
-		// tangerine end //////////
-
+		faqsPage = new FAQsPage(driver, log);
+		customerOnboardPage = new CustomerOnboardPage(driver, log);
 		common = new CommonOperations(driver, log);
 		mobileTopupPage = new MobileTopupPage(driver, log);
 		mobilePostpaidPage = new MobilePostpaidPage(driver, log);
@@ -135,6 +140,7 @@ public class CreateObject extends SetupInit {
 		customerOnboardingPage = new CustomerOnboardingPage(driver, log);
 		manageAgentPage = new ManageAgentPage(driver, log);
 		agentProfilePage = new portals.pages.Agent.MyProfilePage(driver, log);
+		customerMyProfilePage = new portals.pages.Customer.MyProfilePage(driver, log);
 		agentOnboardingPage = new AgentOnboardingPage(driver, log);
 		forgotPasswordPage = new ForgotPasswordPage(driver, log);
 		newUserPage = new NewUserPage(driver, log);

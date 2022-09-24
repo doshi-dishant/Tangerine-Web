@@ -34,4 +34,43 @@ public class ChangeMpin extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
+
+
+	@Test(dataProvider = "ChangeMpin", dataProviderClass = TestDataImport.class)
+	public void changeMpinFromMyProfileCustomer(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "changeMpinCustomer");
+			co.navigationPage.clickOnMyProfile();
+			co.customerMyProfilePage.clickOnChangeMPINFromMyProfile();
+			co.changeMpinPage.setnewMpinmyprofile(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test(dataProvider = "ChangeMpin", dataProviderClass = TestDataImport.class)
+	public void changeMpinFromLoginCustomer(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(3);
+				co.navigationPage.clickOnLogOut();
+			}
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "changeMpinCustomer");
+			co.navigationPage.clickOnForgetMpinfromLogin();
+			co.changeMpinPage.forgotMpinfromLogin(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	
+
 }

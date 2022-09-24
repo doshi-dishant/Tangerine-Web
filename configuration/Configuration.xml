@@ -85,8 +85,8 @@
 		<SuperAgentPassword>Agent@123</SuperAgentPassword>
 		<SuperAgentPin>8454</SuperAgentPin>
 
-		<SubAgentTestData>UAT_SuperAgent.xls</SubAgentTestData>
-		<SubAgentUser>256720000001</SubAgentUser>
+		<SubAgentTestData>UAT_SubAgent.xls</SubAgentTestData>
+		<SubAgentUser>256720000011</SubAgentUser>
 		<SubAgentPassword>Agent@123</SubAgentPassword>
 		<SubAgentPin>8454</SubAgentPin>
 

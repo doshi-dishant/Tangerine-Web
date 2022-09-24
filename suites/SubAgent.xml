@@ -1,0 +1,70 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+
+<suite name="Tangereine SubAgent WebPortal - Sub Agent" verbose="10" parallel="false" thread-count="5">
+
+	<listeners>
+		<listener class-name='listeners.CustomizedEmailableReport' />
+		<listener class-name='listeners.HtmlReport' />
+	</listeners>
+
+	<parameter name="browserType" value="chrome" />
+ 
+ 	<test name="WithdrawCash and SubAgent Assisted Withdraw">
+		<classes>
+			<class name="portals.testCases.SubAgent.SubAgentAssistedWithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromDashboard" />
+					<include name="verifyPerformedAssistedWithDrawFromDashboardToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromDashboardFromUserPassbook" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+
+	<test name="WithdrawCash and Agent Assisted Withdraw from Footer">
+		<classes>
+			<class name="portals.testCases.SubAgent.SubAgentAssistedWithdrawCash">
+				<methods>
+
+					<include name="withdrawCashAndAgentAssistedWithdrawfromFooter" />
+					<include name="verifyPerformedAssistedWithDrawFromFooterToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromFooterFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test name="WithdrawCash and Agent Assisted Withdraw from Side Menu">
+		<classes>
+			<class name="portals.testCases.SubAgent.SubAgentAssistedWithdrawCash">
+				<methods>
+					<include name="withdrawCashAndAgentAssistedWithdrawfromSideMenu" />
+					<include name="verifyPerformedAssistedWithDrawFromSideMenuToUserPassbook" />
+					<include name="verifyPerformedWithDrawCashtFromSideMenuFromUserPassbook" />
+
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	<!--	
+	<test name="Common Testcases">
+		<classes>
+			<class name="portals.testCases.Common.CommonTestcasesSubAgent">
+				<methods>
+					<include name="qrCodeFromDashboard" />
+					<include name="passBookFromDashboard" />
+					<include name="verifyDownloadPassbook" />
+					<include name="mpinPolicyFromDashboardFooter" /> 
+
+					<include name="checkBalanceFromDashboardViewBalance" />
+					<include name="recentTransactionFromDashboard" /> 
+					
+					<include name="logout" />  
+
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+</suite>
