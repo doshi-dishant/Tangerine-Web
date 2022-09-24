@@ -24,6 +24,7 @@ public class P2PTransfer extends SetupInit {
 	@Test(dataProvider = "P2PTransfer", dataProviderClass = TestDataImport.class)
 	public void p2pTranferFromDashboard(Map<Object, Object> map) {
 		try {
+			co.common.webPortalLogin(map, "from", 0);
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "p2pTranferFromDashboard");
 			map.put(MethodName, "p2pTranfer");
@@ -36,13 +37,18 @@ public class P2PTransfer extends SetupInit {
 			setExceptionData(co, e);
 		} finally {
 			setExcecutionData(co);
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(3);
+				co.navigationPage.clickOnLogOut();
+			}
 		}
 	}
 
 	@Test
 	public void verifyPerformedp2pTranferFromDashboardFromUserPassbook() {
 		if (verifyMethodIsAvail(verificationData, "p2pTranferFromDashboard")) {
-			for (Map<Object, Object> map : verificationData.get("p2pTranferFromDashboard")) {
+			ArrayList<Map<Object, Object>> temp = verificationData.get("p2pTranferFromDashboard");
+			for (Map<Object, Object> map : temp) {
 				try {
 					co.datamap.putAll(map);
 					setTestParameters(co.datamap, "verifyPerformedp2pTranferFromDashboardFromUserPassbook");
@@ -152,7 +158,7 @@ public class P2PTransfer extends SetupInit {
 			throw new RuntimeException("verification failed, due to operation failed");
 		}
 	}
-	
+
 	@Test(dataProvider = "P2PTransfer", dataProviderClass = TestDataImport.class)
 	public void p2pTranferfromFooter(Map<Object, Object> map) {
 		try {
@@ -186,7 +192,7 @@ public class P2PTransfer extends SetupInit {
 					setExcecutionData(co);
 					if (co.navigationPage.isLogoutButtonDislay(3))
 						co.navigationPage.clickOnLogOut();
-						pauseInSeconds(3);
+					pauseInSeconds(3);
 				}
 			}
 		} else {
@@ -217,8 +223,6 @@ public class P2PTransfer extends SetupInit {
 			throw new RuntimeException("verification failed, due to operation failed");
 		}
 	}
-
-	
 
 	@Test(dataProvider = "P2PTransfer", dataProviderClass = TestDataImport.class)
 	public void p2pTranferFromSend(Map<Object, Object> map) {

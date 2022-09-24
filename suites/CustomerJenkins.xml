@@ -9,34 +9,16 @@
 		<listener class-name='listeners.HtmlReport' />
 	</listeners>
 
-	<parameter name="browserType" value="headless" />
-	<test name="Common Testcases">
+	<parameter name="browserType" value="chrome" />
+	<test name="P2P Transfer">
 		<classes>
-			<class name="portals.testCases.Common.CommonTestcases">
+			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
-					<include name="checkBalanceFromDashboardViewBalance" />
-					<include name="qrCodeFromDashboard" />
-					<include name="passBookFromDashboard" />
-					<include name="verifyDownloadPassbook" />
-					<include name="recentTransactionFromDashboard" />
-					<include name="verifyContactUsFromDashboard" />
-					<include name="verifyContactUsFromSideMenuProfile" />
-					<include name="verifyAboutUsFromDashboard" />
-					<include name="verifyAboutUsFromSideMenuProfile" />
-					<include name="mpinPolicyFromDashboardFooter" />
-					<include name="mpinPolicyFromSideMenuSettings" />
-					<include name="privacyPolicyFromDashboardFooter" />
-					<include name="privacyPolicyFromSideMenuSettings" />
-					<include name="termsAndConditionsFromDashboardFooter" />
-					<include name="termsAndConditionsFromSideMenuSettings" />
-					<include name="verifyChatOption" />
-					<include name="changeLanguageFromDashboardFooter" />
-					<include name="changeLanguageFromSideMenuProfile" />
-					<include name="transactionDeatilReportFromDashboard" />
-					<include name="transactionDeatilReportFromDashboardFooter" />
-					<include name="transactionDeatilReportFromSideMenuServices" />
-					<include name="logout" />
-					<!-- <include name="forgotMPin" /> -->
+					<include name="p2pTranferFromDashboard" />
+					<include
+						name="verifyPerformedp2pTranferFromDashboardFromUserPassbook" />
+<!-- 					<include -->
+<!-- 						name="verifyPerformedp2pTranferFromDashboardFromToUserPassbook" /> -->
 				</methods>
 			</class>
 		</classes>

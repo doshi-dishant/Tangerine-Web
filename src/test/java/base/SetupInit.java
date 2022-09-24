@@ -213,7 +213,7 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 				this.driver.get(testUrl);
 			loginPage = new LoginPage(this.driver);
 			loginPage.login(userName, password, subUserType);
-			DBUtils.getOTP(Phone);
+//			DBUtils.getOTP(Phone);
 
 		} catch (Exception e) {
 			stacktrace = Utility.getStackStrace(e);
@@ -1761,13 +1761,13 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 
 	public void openNewTabInBrowser() {
 		((JavascriptExecutor) driver).executeScript("window.open()");
-		
+
 	}
-	
+
 	public void switchToMainTab(String Window) {
 		driver.switchTo().window(Window);
 	}
-	
+
 	public String getMainWindow() {
 		return driver.getWindowHandle();
 	}
@@ -1782,13 +1782,13 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 			if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
 				driver.switchTo().window(ChildWindow);
 			}
-		}	
+		}
 
 	}
-	
-	public void closeCurrentTab(String Window){ 
+
+	public void closeCurrentTab(String Window) {
 		driver.close();
-		driver.switchTo().window(Window); 
+		driver.switchTo().window(Window);
 	}
 
 	public String setTransactionCalculator(String methodName, String fromNumber, String toNumber, String openingBalance,
@@ -1798,9 +1798,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		File file = new File(transactionDir);
 		if (!file.exists())
 			file.mkdir();
-		newTransactionFileName = transactionDir + File.separator + "Tangerine_" + userType + "_" + methodName
-				+ "_" + Utility.getCurrentDateTime().replaceAll(":", "_").replaceAll("-", "_").replaceAll(" ", "_")
-				+ ".xls";
+		newTransactionFileName = transactionDir + File.separator + "Tangerine_" + userType + "_" + methodName + "_"
+				+ Utility.getCurrentDateTime().replaceAll(":", "_").replaceAll("-", "_").replaceAll(" ", "_") + ".xls";
 		if (ExcelUtility.createAnExcel(newTransactionFileName, transactionSheetName)) {
 			transactionFileName = TESTDATA_FOLDER + File.separator + "Transaction Templates" + File.separator
 					+ "Transaction Templates.xls";
@@ -1940,6 +1939,17 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 
 	public void setUseCaseVerificationData(String methodName, Map<String, ArrayList<Map<Object, Object>>> data,
 			Map<Object, Object> map) {
+		if (data.get(methodName) != null) {
+			data.get(methodName).add(retriveData(map));
+		} else {
+			ArrayList<Map<Object, Object>> al = new ArrayList<>();
+			al.add(retriveData(map));
+			data.put(methodName, al);
+		}
+	}
+
+	public void setUseCaseVerificationDataMultiTransaction(String methodName, String trnId,
+			Map<String, ArrayList<Map<Object, Object>>> data, Map<Object, Object> map) {
 		if (data.get(methodName) != null) {
 			data.get(methodName).add(retriveData(map));
 		} else {

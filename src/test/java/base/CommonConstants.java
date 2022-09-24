@@ -75,7 +75,7 @@ public class CommonConstants {
 	public WebDriver driver;
 	Wait<WebDriver> wait;
 	static URL remote_grid;
-	protected int reloadCounter = 0;
+	protected static int reloadCounter = 0;
 	protected boolean isRemoteEnable;
 	// Selenium hub IP
 	protected String hubUrl;

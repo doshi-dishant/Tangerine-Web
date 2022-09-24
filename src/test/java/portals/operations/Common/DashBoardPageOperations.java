@@ -361,14 +361,14 @@ public class DashBoardPageOperations extends SetupInit {
 	}
 
 	public void clickOnConfirmButton(int... args) {
-		WebElement element = driver.findElement(By.xpath("//*[normalize-space(text())='Confirm']//parent::button"));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
+//		WebElement element = driver.findElement(By.xpath("//*[normalize-space(text())='Confirm']//parent::button"));
+//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+//		try {
+//			Thread.sleep(500);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} 
 		pauseInSeconds(2);
 		clickOnElement(btnConfirm, args);
 		setLogSteps(log, "Click On Confirm Button");

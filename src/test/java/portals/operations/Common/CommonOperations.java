@@ -188,12 +188,12 @@ public class CommonOperations extends SetupInit {
 			pass = map.get(ApproverPassword).toString();
 			portalUserType = map.get(ApproverUserType).toString();
 		}
-		if (!verifyVisible(By.xpath(String.format(verifyUser, user)), 2)) {
+		if (!verifyVisible(By.xpath(String.format(verifyUser, user)), 3)) {
 			navigationPageOperations.clickOnLogOut(3);
 			portalLogin(portalName, user, pass, portalUserType, args);
 		}
 	}
-	
+
 	public void webPortalLoginforNewTab(Map<Object, Object> map, String userType, int... args) {
 		String portalName = null;
 		String user = null;
@@ -215,13 +215,12 @@ public class CommonOperations extends SetupInit {
 			pass = map.get(ApproverPassword).toString();
 			portalUserType = map.get(ApproverUserType).toString();
 		}
-		if (!verifyVisible(By.xpath(String.format(verifyUser, user)), 2)) {
+		if (!verifyVisible(By.xpath(String.format(verifyUser, user)), 3)) {
 			portalLogin(portalName, user, pass, portalUserType, args);
 		}
 	}
-	
 
-	private void portalLogin(String portalName, String user, String pass, String portalUserType, int... args) {
+	public void portalLogin(String portalName, String user, String pass, String portalUserType, int... args) {
 		String url = getportalURL(env, portalName);
 		getDriver().get(url);
 		loginPage.login(user, pass, portalUserType);
@@ -510,39 +509,41 @@ public class CommonOperations extends SetupInit {
 		}
 	}
 
-	public void verifyTransactionInWebPortalForFromUser(Map<Object, Object> map,DashboardPage dashBoardPageOperations) 
-	{
+	public void verifyTransactionInWebPortalForFromUser(Map<Object, Object> map,
+			DashboardPage dashBoardPageOperations) {
 		webPortalLogin(map, "from", 0);
-		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),map.get(TransactionID).toString());
+		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),
+				map.get(TransactionID).toString());
 		setLogSteps(log, "Successfully Transaction verify in From User");
 	}
-	
-	public void verifyTransactionInWebPortalForFromUser_NewTab(Map<Object, Object> map,DashboardPage dashBoardPageOperations) 
-	{
+
+	public void verifyTransactionInWebPortalForFromUser_NewTab(Map<Object, Object> map,
+			DashboardPage dashBoardPageOperations) {
 		webPortalLoginforNewTab(map, "from", 0);
-		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),map.get(TransactionID).toString());
+		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),
+				map.get(TransactionID).toString());
 		setLogSteps(log, "Successfully Transaction verify in From User");
 	}
-	
-	
-	
-	public void verifyTransactionInWebPortalForFromUserwithoutTransactionID(Map<Object, Object> map,DashboardPage dashBoardPageOperations) 
-	{
+
+	public void verifyTransactionInWebPortalForFromUserwithoutTransactionID(Map<Object, Object> map,
+			DashboardPage dashBoardPageOperations) {
 		webPortalLogin(map, "from", 0);
-		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),map.get(TransactionID).toString());
+		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),
+				map.get(TransactionID).toString());
 		setLogSteps(log, "Successfully Transaction verify in From User");
 	}
-	
+
 	public String getCurrentDate() {
 		DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDateTime currentDate = LocalDateTime.now();
 		String date = dateformatter.format(currentDate);
 		return date;
 	}
+
 	public void PasswordPolicy(int... args) {
 		verifyVisible(verifyPasswordPolicyTitle, args);
 		setLogSteps(log, "Verify Password Policy Title");
-		
+
 		verifyVisible(verifyPasswordPolicyText1, args);
 		setLogSteps(log, "Verify text >>  Password must have minimum 8 characters ");
 		verifyVisible(verifyPasswordPolicyText2, args);
@@ -559,11 +560,7 @@ public class CommonOperations extends SetupInit {
 		setLogSteps(log, "Verify text >> List of special character allowed are @,$,#,*,& ");
 		verifyVisible(verifyPasswordPolicyText8, args);
 		setLogSteps(log, "Verify text >> Password Example");
-		
-		
 
-		
-		
 	}
-	
+
 }

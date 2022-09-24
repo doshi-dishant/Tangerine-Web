@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.time.Duration;
 import java.time.Instant;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import base.SetupInit;
@@ -64,7 +63,6 @@ public class LoginPage extends SetupInit {
 					loginPageCommon.clickOnLogin();
 			}
 		}
-
 	}
 
 	public void loginToPortal(String userNameVal, String passwordVal) {
