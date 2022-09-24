@@ -34,7 +34,8 @@ public class ChangeMpin extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
-	
+
+
 	@Test(dataProvider = "ChangeMpin", dataProviderClass = TestDataImport.class)
 	public void changeMpinFromMyProfileCustomer(Map<Object, Object> map) {
 		try {
@@ -50,4 +51,5 @@ public class ChangeMpin extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
+
 }

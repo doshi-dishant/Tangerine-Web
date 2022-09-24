@@ -20,33 +20,6 @@ public class CommonTestCasesCustomer extends SetupInit {
 		co = new CreateObject(getDriver());
 	}
 	
-	@Test
-	public void MyProfileFromSideMenu() {
-		try {
-			setTestParameters(co.datamap, "MyProfileFromSideMenu");
-			co.navigationPage.clickOnSideMenuProfileMyProfile();
-			co.customerMyProfilePage.verifyMyProfile();
-			setSuccessParameters(co.datamap);
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
-	
-	@Test
-	public void MyProfile() {
-		try {
-			setTestParameters(co.datamap, "MyProfile");
-			co.navigationPage.clickOnMyProfile();
-			co.customerMyProfilePage.verifyMyProfile();
-			setSuccessParameters(co.datamap);
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
 	
 	@Test
 	public void CheckBalanceFromMyProfile() {
@@ -65,9 +38,29 @@ public class CommonTestCasesCustomer extends SetupInit {
 	@Test(dataProvider = "verifyProfileDetails", dataProviderClass = TestDataImport.class)
 	public void CheckPersonalInfoFromMyProfile(Map<Object, Object> map) {
 		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				co.navigationPage.clickOnLogOut();
+			pauseInSeconds(3);
+			}
+			co.loginPage.login(map.get(FromUserName).toString(), map.get(FromPassword).toString(),  map.get(FromUserType).toString());
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "Check Balance from My Profile");
 			co.navigationPage.clickOnMyProfile();
+			co.customerMyProfilePage.verifyPersonalInfoDetails(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test(dataProvider = "verifyProfileDetails", dataProviderClass = TestDataImport.class)
+	public void CheckPersonalInfoFromMyProfileFromSideMenu(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "Personal info From My Profile SideMenu");
+			co.navigationPage.clickOnSideMenuProfileMyProfile();
 			co.customerMyProfilePage.verifyPersonalInfoDetails(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
@@ -83,6 +76,21 @@ public class CommonTestCasesCustomer extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "Check Document info From My Profile");
 			co.navigationPage.clickOnMyProfile();
+			co.customerMyProfilePage.verifyDocInfoDetails(map);
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test(dataProvider = "verifyProfileDetails", dataProviderClass = TestDataImport.class)
+	public void CheckDocumentInfoFromMyProfileFromSideMenu(Map<Object, Object> map) {
+		try {
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "Document info From My Profile SideMenu");
+			co.navigationPage.clickOnSideMenuProfileMyProfile();
 			co.customerMyProfilePage.verifyDocInfoDetails(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {

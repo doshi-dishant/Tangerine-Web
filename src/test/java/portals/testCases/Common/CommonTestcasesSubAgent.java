@@ -403,34 +403,6 @@ public class CommonTestcasesSubAgent extends SetupInit {
 	}
 
 	@Test
-	public void changeMPinFromDashboardFooter() {
-		try {
-			setTestParameters(co.datamap, "changeMPinFromDashboardFooter");
-			co.navigationPage.clickOnChangeMPin();
-			co.commissionReportPage.verifyCommissionReport();
-			setSuccessParameters(co.datamap);
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
-
-	@Test
-	public void changeMPinFromSideMenu() {
-		try {
-			setTestParameters(co.datamap, "changeMPinFromSideMenu");
-			co.navigationPage.clickOnSideMenuSettingsChangeMPIN();
-			co.commissionReportPage.verifyCommissionReport();
-			setSuccessParameters(co.datamap);
-		} catch (Exception e) {
-			setExceptionData(co, e);
-		} finally {
-			setExcecutionData(co);
-		}
-	}
-
-	@Test
 	public void forgotMPin() {
 		try {
 			setTestParameters(co.datamap, "forgotMPin");
@@ -554,6 +526,57 @@ public class CommonTestcasesSubAgent extends SetupInit {
 		try {
 			setTestParameters(co.datamap, "passwordPolicyFromDashboardFooter");
 			co.navigationPage.clickOnPasswordPolicyFromFooter();
+			co.passwordPolicyPage.verifyPasswordPolicy();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test
+	public void mpinPolicyFromChangeMpincreenFromMyProfile() {
+		
+		try {
+			setTestParameters(co.datamap, "mpinPolicyFromChangeMpincreenFromMyProfile");
+			co.navigationPage.clickOnMyProfile();
+			co.customerMyProfilePage.clickOnChangeMPINFromMyProfile();
+			co.navigationPage.clickOnMPINPolicyFromMyProfile();
+			co.mpinPolicyPage.verifyMpinPolicy();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test
+	public void passwordPolicyChangePasswordScreenFromMyProfile() {
+		
+		try {
+			setTestParameters(co.datamap, "passwordPolicyChangePasswordFromMyProfile");
+			co.navigationPage.clickOnMyProfile();
+			co.customerMyProfilePage.clickOnChangePasswordFromMyProfile();
+			co.navigationPage.clickOnPasswordPolicy();
+			co.passwordPolicyPage.verifyPasswordPolicy();
+			setSuccessParameters(co.datamap);
+		} catch (Exception e) {
+			setExceptionData(co, e);
+		} finally {
+			setExcecutionData(co);
+		}
+	}
+	
+	@Test
+	public void passwordPolicyChangePasswordScreenFromSideMenuSettings() {
+		
+		try {
+			setTestParameters(co.datamap, "passwordPolicyChangePasswordScreenFromSideMenuSettings");
+			co.navigationPage.clickOnSideMenuSettings();
+			co.navigationPage.clickOnChangePassword();
+			co.navigationPage.clickOnPasswordPolicy();
 			co.passwordPolicyPage.verifyPasswordPolicy();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {

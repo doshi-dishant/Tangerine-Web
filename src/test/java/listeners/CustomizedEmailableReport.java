@@ -80,7 +80,7 @@ public class CustomizedEmailableReport implements IReporter {
 	/** Creates summary of the run */
 	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outdir) {
-		projectName = "NassWallet";
+		projectName = "Tangerine";
 		portalName = System.getProperty("userType");
 		latestRelease = System.getProperty("latestRelease").toLowerCase();
 		defaultTo = "dishant.doshi@panamaxil.com,shivani.patel@panamaxil.com";

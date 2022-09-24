@@ -164,4 +164,5 @@ public interface GetExcelHeaders {
 	public String PostalAddress = "postaladdress";
 	public String Nin = "nin";
 	public String Profile = "profile";
+	public String ConfirmPassword = "confirmpassword";
 }

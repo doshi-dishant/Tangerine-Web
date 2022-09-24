@@ -7,6 +7,8 @@ import base.SetupInit;
 import utils.elasticUtils.elasticwrite;
 
 public class MyProfileOperations extends SetupInit {
+	
+	By MAIN_BALANCE = By.xpath("//*[contains(text(),'Main Balance')]//span");
 	public String VerifyfullnameEnglish = "//*[text()='Full Name in English']//following-sibling::p[text()='%s']";
 	public String VerifyGender = "//*[text()='Gender']//following-sibling::p[text()='%s']";
 	public String VerifyPhone = "//*[text()='Phone']//following-sibling::p[text()='%s']";
@@ -51,6 +53,7 @@ public class MyProfileOperations extends SetupInit {
 	public String VerifyPostalAddressPersInfo = "//*[text()='Postal address']//following-sibling::p[text()='%s']";
 	public String VerifyNinDocInfo = "//*[text()='Nin']//following-sibling::p[text()='%s']";
 	public String VerifyProfileDocInfo = "//*[text()='Profile']//following-sibling::p[text()='%s']";
+	public By secretMpintoCheckBalance = By.id("otpid");
 	By txtEmail = By.id("frm_text_EMAIL_IDid");
 	By drpOccupation = By.id("frm_select_OCCUPATIONid");
 	By txtStreetAddress = By.id("frm_text_STREET_ADDRESSid");
@@ -66,9 +69,12 @@ public class MyProfileOperations extends SetupInit {
 	By verifyAccPersonalInfo = By.xpath("//*[contains(text(),'Ugandan prepaid account personal info')]");
 	By verifyDocumentInfo = By.xpath("//*[contains(text(),'Document info ugandan users')]");
 	By btnChangeMPINOption = By.xpath("//*[contains(text(),'Change MPIN')]");
+	By btnChangePasswordOption = By.xpath("//*[contains(text(),'Change Password')]");
 	By viewBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')][last()]");
+	By viewBalancefromMyProfile = By.xpath("(//*[normalize-space(text())='Check Balance'])[2]");
 	By btnPersonalInf0 = By.xpath("//*[@class='MuiButtonBase-root MuiIconButton-root MuiExpansionPanelSummary-expandIcon MuiIconButton-edgeEnd'][1]");
 	By btnDocumentInf0 = By.xpath("(//*[@class='MuiButtonBase-root MuiIconButton-root MuiExpansionPanelSummary-expandIcon MuiIconButton-edgeEnd'])[last()]");
+	public By btnchekbalancesubmit = By.xpath("//div[@class='input-group']//button[text()='Submit']");
 	elasticwrite log;
 	CommonOperations common;
 
@@ -242,6 +248,30 @@ public class MyProfileOperations extends SetupInit {
 		setLogSteps(log, "Click On Check Balance");
 	}
 	
+	public void checkBalancefromMyprofile(int... args) {
+		try {
+			clickOnElement(this.log, viewBalancefromMyProfile, 0);
+			setLogSteps(log, "Click On Check Balance");
+			enterSecretPINtocheckbalance(password, 0);
+			
+			clickOnElement(btnchekbalancesubmit, args);
+			setLogSteps(log, "Click On Submit Button for Check Balance");
+		
+			pauseInSeconds(3);;
+			String mainBalance = getElementText(log, MAIN_BALANCE, args).trim();
+			setLogSteps(log, "Main Balance is: " + mainBalance);
+			
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Check Balance Button");
+		}
+		
+	}
+	
+	public void enterSecretPINtocheckbalance(String secretPIN, int... args) {
+		sendKeys(secretMpintoCheckBalance, secretPIN, 0);
+		setLogSteps(log, "Enter Secret PIN : " + secretPIN);
+	}
+	
 	public void clickOnChangeMPIN(int... args) {
 		try {
 			clickOnElement(this.log, btnChangeMPINOption, 0);
@@ -267,5 +297,14 @@ public class MyProfileOperations extends SetupInit {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "DocumentInfo Button");
 		}
 		setLogSteps(log, "Click On DocumentInfo Button");
+	}
+	
+	public void clickOnChangePassword(int... args) {
+		try {
+			clickOnElement(this.log, btnChangePasswordOption, 0);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Change Password Button");
+		}
+		setLogSteps(log, "Click On Change Password Button");
 	}
 }

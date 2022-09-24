@@ -1,17 +1,45 @@
-package portals.operations.Agent;
+package portals.operations.SubAgent;
 
 import java.io.File;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import base.SetupInit;
 import portals.operations.Common.CommonOperations;
 import portals.operations.Common.DashBoardPageOperations;
 import utils.elasticUtils.elasticwrite;
 
-public class CustomerOnboardingPageOperations extends SetupInit {
+public class ManageAgentPageOperations extends SetupInit {
+	public String VerifyfullnameEnglish = "//*[text()='Full Name in English']//following-sibling::p[text()='%s']";
+	public String VerifyGender = "//*[text()='Gender']//following-sibling::p[text()='%s']";
+	public String VerifyPhone = "//*[text()='Phone']//following-sibling::p[text()='%s']";
+	public String VerifyEmailID = "//*[text()='Email ID']//following-sibling::p[text()='%s']";
+	public String VerifyOccupation = "//*[text()='Occupation']//following-sibling::p[text()='%s']";
+	public String VerifyOwnershipStatus = "//*[text()='Ownership status']//following-sibling::p[text()='%s']";
+	public String VerifyStreetAddress = "//*[text()='Street Address']//following-sibling::p[text()='%s']";
+	public String VerifyAreaorVilllageOrDistict = "//*[text()='Area/Village/District']//following-sibling::p[text()='%s']";
+	public String VerifyCity = "//*[text()='City']//following-sibling::p[text()='%s']";
+	public String VerifyBranchDetail = "//*[text()='Branch details']//following-sibling::p[text()='%s']";
+	public String VerifyBankAccountNumber = "//*[text()='Bank Account Number']//following-sibling::p[text()='%s']";
+	public String VerifyBankAccountHolderName = "//*[text()='Bank Account holder Name']//following-sibling::p[text()='%s']";
+	public String VerifySwiftCode = "//*[text()='Swift Code']//following-sibling::p[text()='%s']";
+	public String VerifyEntityName = "//*[text()='Entity Name']//following-sibling::p[text()='%s']";
+	public String VerifyNasswalletAccountOpenDate = "//*[text()='Date opened NassWallet account']//following-sibling::p[text()='%s']";
+	public String VerifyNationality = "//*[text()='Nationality']//following-sibling::p[text()='%s']";
+	public String VerifyProofOfIdentityIraqi = "//*[text()='Proof of Identity (Iraqi National)']//following::p[text()='%s']";
+	public String VerifyNationalID = "//*[text()='National ID']//following::p[text()='%s']";
+	public String VerifyCivilID = "//*[text()='Civil ID']//following::p[text()='%s']";
+	public String VerifyProofOfAddressIraqi = "//*[text()='Proof of Address (Iraqi National)']//following::p[text()='%s']";
+	public String VerifyInformationCard = "//*[text()='Information Card']//following::p[text()='%s']";
+	public String VerifySupplyCard = "//*[text()='Supply Card']//following::p[text()='%s']";
+	public String VerifyProofOfIdentityNonIraqi = "//*[text()='Proof of Identity (Iraqi National)']//following::p[text()='%s']";
+	public String VerifyPassport = "//*[text()='Passport']//following-sibling::p[text()='%s']";
+	public String VerifyProofOfAddressNonIraqi = "//*[text()='Proof of Residency (Non Iraqi)']//following-sibling::p[text()='%s']";
+	public String VerifyEntryStemp = "//*[text()='Entry Stamp']//following-sibling::p[text()='%s']";
+	public String VerifyResidencyCard = "//*[text()='Residency Card']//following-sibling::p[text()='%s']";
+	public String verifyHaveBankAccount = "//*[text()='Have Bank Account']//following-sibling::p[text()='%s']";
+	public String verifyBusinessRegistationNumber = "//*[text()='Business Registration Number']//following-sibling::p[text()='%s']";
 	By txtEmail = By.id("frm_text_EMAIL_IDid");
 	By drpOccupation = By.id("frm_select_OCCUPATIONid");
 	By txtStreetAddress = By.id("frm_text_STREET_ADDRESSid");
@@ -22,7 +50,7 @@ public class CustomerOnboardingPageOperations extends SetupInit {
 	public By alert = By.id("alert-dialog-slide-description");
 	By btnClose = By.xpath("//*[text()='Close']");
 	By btnSubmit = By.name("submit");
-	By drpBranch = By.id("frm_select_userIdentifierid");
+	By drpBranch = By.id("frm_select_brachSelectid");
 	By txtFullNameInEnglish = By.id("frm_text_FULL_NAME_IN_ENGLISHid");
 	By txtFullNameInArabic = By.id("frm_text_FULL_NAME_IN_ARABICid");
 	By dateOfBirth = By.id("frm_datepicker_DATE_OF_BIRTHid");
@@ -43,11 +71,13 @@ public class CustomerOnboardingPageOperations extends SetupInit {
 	By drpProofofAddress = By.id("frm_select_PROOF_OF_ADDRESS_IRAQIid");
 	By txtNationalID = By.id("frm_text_NATIONAL_IDid");
 	By txtInformationCard = By.id("frm_text_INFORMATION_CARDid");
+	public String selectType = "//*[text()='%s']//preceding-sibling::*//a[text()='%s']";
+	By drpTeller = By.id("frm_select_tellerSelectid");
 	DashBoardPageOperations dashboardPageCommon;
 	CommonOperations common;
 	elasticwrite log;
 
-	public CustomerOnboardingPageOperations(WebDriver driver, elasticwrite log) {
+	public ManageAgentPageOperations(WebDriver driver, elasticwrite log) {
 		this.log = log;
 		this.driver = driver;
 		dashboardPageCommon = new DashBoardPageOperations(driver, log);
@@ -146,7 +176,7 @@ public class CustomerOnboardingPageOperations extends SetupInit {
 
 	public void selectHaveBankAccount(String account, int... args) {
 		try {
-			clickOnElement(log, By.xpath("//*[text()='" + account + "']"), args);
+			clickOnElement(log, By.xpath("//*[text()='%s']"), args);
 		} catch (Exception e) {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Have Bank Account");
 		}
@@ -236,7 +266,7 @@ public class CustomerOnboardingPageOperations extends SetupInit {
 
 	public void selectDate(String value, int... args) {
 		try {
-			sendKeysWithOutClearWithRemoveReadOnlyProperty(log, dateOfBirth, value, args);
+			sendKeys(log, dateOfBirth, value, args);
 		} catch (Exception e) {
 			throw new RuntimeException(SEND_ERROR_MESSAGE + "Date Of Birth");
 		}
@@ -253,7 +283,7 @@ public class CustomerOnboardingPageOperations extends SetupInit {
 	}
 
 	public void enterFileUploadData(String fileName, int... args) {
-		File file = new File(".\\test-data\\resources\\" + fileName);
+		File file = new File(".\\TestData\\resources\\" + fileName);
 		String absolute = file.getAbsolutePath();
 		sendKeys(uploadFileData, absolute, args);
 		setLogSteps(log, "Upload File in Field: " + absolute);
@@ -332,35 +362,35 @@ public class CustomerOnboardingPageOperations extends SetupInit {
 	}
 
 	public void uploadPersonalPhotoGraph(String fileName, int... args) {
-		File file = new File(".\\test-data\\resources\\" + fileName);
+		File file = new File(".\\TestData\\resources\\" + fileName);
 		String absolute = file.getAbsolutePath();
 		sendKeys(uploadPersonalPhoto, absolute, args);
 		setLogSteps(log, "Upload Personal Photo in Field: " + absolute);
 	}
 
 	public void uploadIdentityProofFromFront(String fileName, int... args) {
-		File file = new File(".\\test-data\\resources\\" + fileName);
+		File file = new File(".\\TestData\\resources\\" + fileName);
 		String absolute = file.getAbsolutePath();
 		sendKeys(uploadIdentityProofFromFront, absolute, args);
 		setLogSteps(log, "Upload Identity Proof From Front in Field: " + absolute);
 	}
 
 	public void uploadIdentityProofFromBack(String fileName, int... args) {
-		File file = new File(".\\test-data\\resources\\" + fileName);
+		File file = new File(".\\TestData\\resources\\" + fileName);
 		String absolute = file.getAbsolutePath();
 		sendKeys(uploadIdentityProofFromBack, absolute, args);
 		setLogSteps(log, "Upload Identity Proof From Back in Field: " + absolute);
 	}
 
 	public void uploadBusinessEntityDoc(String fileName, int... args) {
-		File file = new File(".\\test-data\\resources\\" + fileName);
+		File file = new File(".\\TestData\\resources\\" + fileName);
 		String absolute = file.getAbsolutePath();
 		sendKeys(uploadBusinessEntityDoc, absolute, args);
 		setLogSteps(log, "Upload Business Entity Document in Field: " + absolute);
 	}
 
 	public void uploadProofOfAddress(String fileName, int... args) {
-		File file = new File(".\\test-data\\resources\\" + fileName);
+		File file = new File(".\\TestData\\resources\\" + fileName);
 		String absolute = file.getAbsolutePath();
 		sendKeys(uploadProofofAddress, absolute, args);
 		setLogSteps(log, "Upload Proof Of Address in Field: " + absolute);
@@ -411,23 +441,21 @@ public class CustomerOnboardingPageOperations extends SetupInit {
 		setLogSteps(log, "Enter InformationCard :" + value);
 	}
 
-	public void clickOnsubmitButton() {
+	public void clickOnSearchValue(String mobile, String name, int... args) {
 		try {
-			clickOnElement(this.log, btnSubmit, 0);
+			clickOnElement(this.log, By.xpath(String.format(selectType, mobile, name)), args);
 		} catch (Exception e) {
-			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Submit Button");
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Verify Data");
 		}
-		setLogSteps(log, "Click On Submit Button");
+		setLogSteps(log, "Click On Verify Data: " + name);
 	}
 
-	By txtMobileNumber = By.id("frm_text_PHONEid");
-
-	public void enterMobileNumber(String mobileNumber, int... args) {
+	public void SelectTeller(String teller, int... args) {
 		try {
-			sendKeys(txtMobileNumber, mobileNumber, 0);
+			selectFromDropDown(log, drpTeller, By.xpath(String.format(drpRequestTypeValue, teller)), args);
 		} catch (Exception e) {
-			throw new RuntimeException(SEND_ERROR_MESSAGE + "Nasswallet Sigup Date");
+			throw new RuntimeException(SELECT_ERROR_MESSAGE + "Teller");
 		}
-		setLogSteps(log, "Enter Mobile Number : " + mobileNumber);
+		setLogSteps(log, "Select Teller");
 	}
 }

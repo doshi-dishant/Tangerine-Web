@@ -40,9 +40,13 @@ import portals.pages.Customer.MobileTopupPage;
 import portals.pages.Customer.MyProfilePage;
 import portals.pages.Customer.P2POffnetPage;
 import portals.pages.Customer.P2PTransferPage;
+import portals.pages.Customer.CustomerOnboardPage;
 import portals.pages.Customer.WithdrawCashPage;
 import portals.pages.Customer.eVoucherPage;
+import portals.pages.SubAgent.ChangePasswordPage;
+import portals.testCases.SubAgent.SubAgentAssistedWithdrawCash;
 import utils.elasticUtils.elasticwrite;
+
 
 public class CreateObject extends SetupInit {
 	public elasticwrite log;
@@ -53,11 +57,13 @@ public class CreateObject extends SetupInit {
 	public MyProfilePage customerMyProfilePage;
 	//tangerine start //////
 	public P2PTransferPage p2pTransferPage;
+	public CustomerOnboardPage customerOnboardPage;
 	public P2POffnetPage p2pOffnetPage;
 	public ChangeMpinPage changeMpinPage;
 	public ChangeSecretWordPage changesecretwordpage;
 	public InviteFriendsPage inviteFriendsPage;
 	public DashBoardPageOperations dashBoardPageOperations;
+	public SubAgentAssistedWithdrawCash subAgentAssistedWithdraw;
 	//tangerine end //////
 	public WithdrawCashPage withdrawCashPage;
 	public MobileTopupPage mobileTopupPage;
@@ -89,6 +95,8 @@ public class CreateObject extends SetupInit {
 	public ArbelaStorePage arbelaStorePage;
 	public portals.pages.Agent.eVoucherPage eVoucherCustomerPage;
 	public AirtimeSalePage airtimeSalePage;
+	public portals.pages.SubAgent.ChangeMpinPage subAgentChangeMpinPage;
+	public ChangePasswordPage changePasswordPage;
 
 	public CreateObject(WebDriver driver) {
 		reloadCurrentPage(driver);
@@ -110,7 +118,10 @@ public class CreateObject extends SetupInit {
 		changesecretwordpage = new ChangeSecretWordPage(driver, log);
 		inviteFriendsPage = new InviteFriendsPage(driver, log);
 		withdrawCashPage = new WithdrawCashPage(driver, log);
+		subAgentAssistedWithdraw = new SubAgentAssistedWithdrawCash();
 		dashBoardPageOperations = new DashBoardPageOperations(driver, log);
+		faqsPage = new FAQsPage(driver, log);
+		customerOnboardPage = new CustomerOnboardPage(driver, log);
 		// tangerine end //////////
 		
 		common = new CommonOperations(driver, log);
@@ -143,6 +154,8 @@ public class CreateObject extends SetupInit {
 		eVoucherCustomerPage = new portals.pages.Agent.eVoucherPage(driver, log);
 		airtimeSalePage = new AirtimeSalePage(driver, log);
 		passwordPolicyPage = new PasswordPolicyPage(driver, log);
+		subAgentChangeMpinPage = new portals.pages.SubAgent.ChangeMpinPage(driver, log);
+		changePasswordPage = new ChangePasswordPage(driver, log);
 		
 	}
 }

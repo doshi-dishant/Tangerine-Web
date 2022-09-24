@@ -28,7 +28,7 @@ public class ChangeSecretWordPage extends SetupInit {
 		changeSecretWordPage.entersecretWord(map.get(FromSecretWord).toString(), 0);
 		changeSecretWordPage.clickOnsubmitButton();
 		changeSecretWordPage.enternewSecretWord(map.get(NewSecretWord).toString(), 0);
-		changeSecretWordPage.enterconfirmSecretWord(map.get(NewSecretWord).toString(), 0);
+		changeSecretWordPage.enterconfirmSecretWord(map.get(FromSecretWord).toString(), 0);
 		changeSecretWordPage.clickOnsubmitButton();	
 	}
 	

@@ -170,7 +170,7 @@ public class CommonTestcases extends SetupInit {
 	public void privacyPolicyFromSideMenuSettings() {
 		try {
 			setTestParameters(co.datamap, "privacyPolicyFromSideMenuSettings");
-			co.navigationPage.clickOnSideMenuSettings();
+			co.navigationPage.clickOnSideMenuProfile();
 			co.navigationPage.clickOnSideMenuePrivacyPolicyFromSettings();
 			co.privacyPolicyPage.verifyPrivacyPolicy();
 			setSuccessParameters(co.datamap);

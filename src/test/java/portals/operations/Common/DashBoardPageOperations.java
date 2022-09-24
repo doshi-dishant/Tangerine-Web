@@ -39,6 +39,9 @@ public class DashBoardPageOperations extends SetupInit {
 	By btnCancel = By.xpath("//button[text()='Cancel']");
 	By txtRemark = By.id("frm_text_Remarksid");
 	By txtremark = By.id("frm_text_remarksid");
+	By txtRegisteredMobileNumber = By.id("frm_text_usernameid");
+	By txtMPINfromLogin = By.id("frm_text_passwordid");
+	
 	public By secretMpin = By.id("frm_text_transactionPinid");
 	public By secretMpintoCheckBalance = By.id("otpid");
 	// Reset MPIN locators
@@ -53,6 +56,7 @@ public class DashBoardPageOperations extends SetupInit {
 	public By loginBtn = By.xpath("//*[text()='Login']");
 	public By code = By.xpath("//*[text()='Code']//following-sibling::*");
 	By btnClose = By.xpath("//*[text()='Close']");
+	
 	// Verify profile details locators
 	// String closedAggregator =
 	// "//*[text()='%s']/ancestor::*[@aria-expanded='true']";
@@ -275,6 +279,11 @@ public class DashBoardPageOperations extends SetupInit {
 	By txtAgentName = By.id("frm_text_nameid");
 	elasticwrite log;
 	CommonOperations common;
+	
+	public By BalanceafterPaymentText = By.xpath("//p[contains(text(),'Balance after Payment (UGX)')]");
+	public By AvailableBalanceText = By.xpath("//p[contains(text(),'Available Balance (UGX)')]");
+	public By Amounttext  = By.xpath("//span[contains(text(),'Amount (UGX)')]");
+	public By ConfirmationScreen = By.xpath("//*[normalize-space(text())='Confirmation Details']");
 
 	By balance = By.xpath("//span[contains(@class,'main-bal')]");
 
@@ -317,6 +326,16 @@ public class DashBoardPageOperations extends SetupInit {
 	public void enterMobileNumber(String mobileNumber, int... args) {
 		sendKeys(txtMobileNumber, mobileNumber, 0);
 		setLogSteps(log, "Enter Mobile Number : " + mobileNumber);
+	}
+	
+	public void enterRegisteredMobileNumber(String mobileNumber, int... args) {
+		sendKeys(txtRegisteredMobileNumber, mobileNumber, 0);
+		setLogSteps(log, "Enter Registered Mobile Number : " + mobileNumber);
+	}
+	
+	public void enterMPINInLogin(String mpin, int... args) {
+		sendKeys(txtMPINfromLogin, mpin, 0);
+		setLogSteps(log, "Enter MPIN from Login : " + mpin);
 	}
 	
 	public void enterMobileNumberp2poffnet(String mobileNumber, int... args) {
@@ -362,6 +381,11 @@ public class DashBoardPageOperations extends SetupInit {
 		pauseInSeconds(2);
 		clickOnElement(btnConfirm, args);
 		setLogSteps(log, "Click On Confirm Button");
+	}
+	
+	public void clickOnLoginButton(int... args) {
+		clickOnElement(loginBtn, args);
+		setLogSteps(log, "Click on Login Button");
 	}
 
 	public void clickOnResendOTP(int... args) {
@@ -1064,5 +1088,24 @@ public class DashBoardPageOperations extends SetupInit {
 			throw new RuntimeException(SEND_ERROR_MESSAGE + "Agent name");
 		}
 		setLogSteps(log, "Enter Agent Name : " + name);
+	}
+	
+	public void verifyUGXSign(int... args) {
+		verifyVisible(ConfirmationScreen, args);
+		setLogSteps(log, "Confirmation Screen is Present");
+		verifyVisible(BalanceafterPaymentText, args);
+		setLogSteps(log, "Verify Balance after Payment with UGX Sign");
+		verifyVisible(Amounttext, args);
+		setLogSteps(log, "Verify Amount with UGX Sign");
+		
+	}
+	
+	
+	public void verifyUGXSignConfirmationScreen(int... args) {
+		verifyVisible(AvailableBalanceText, args);
+		setLogSteps(log, "Verify Available Balance with UGX Sign");
+		verifyVisible(Amounttext, args);
+		setLogSteps(log, "Verify Amount with UGX Sign");
+		
 	}
 }

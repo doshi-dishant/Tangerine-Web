@@ -740,7 +740,7 @@ public class NavigationPage extends SetupInit {
 	public void clickOnChangeMPIN() {
 		navigationPageOperations.clickOnChangeMPIN(0);
 	}
-
+	
 	public void clickOnSideMenuePasswordPolicyFromSetings() {
 		navigationPageOperations.clickOnSideMenuPasswordPolicyFromSettings(0);
 	}
@@ -751,6 +751,14 @@ public class NavigationPage extends SetupInit {
 
 	public void clickOnDashboardePasswordPolicy() {
 		navigationPageOperations.clickOnDashboardPasswordPolicy(0);
+	}
+	
+	public void clickOnPasswordPolicy() {
+		navigationPageOperations.clickOPasswordPolicyFromChangePassword(0);
+	}
+	
+	public void clickOnMPINPolicyFromMyProfile() {
+		navigationPageOperations.clickOnSideMenuMPINPolicyFromMyProfile(0);
 	}
 
 	public void clickOnDashboardeMPINPolicy() {

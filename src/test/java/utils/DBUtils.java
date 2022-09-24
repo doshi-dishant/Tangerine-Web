@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class DBUtils {
 	public static void main(String[] args) {
 		try {
-			System.out.println(getOTPforWithdrawCash());
+			System.out.println(getOTPforCustomerOnboard("256710000005"));
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -30,6 +30,27 @@ public class DBUtils {
 		String result = rs.getString("Message");	
 		//System.out.println(result);
 		Pattern pattern = Pattern.compile("(\\d{50})");
+		java.util.regex.Matcher matcher = pattern.matcher(result);
+		if (matcher.find()) {
+			result = matcher.group(0);
+		}
+		conn.getConnection().close();
+		return result;
+	}
+	
+	public static String getOTPforCustomerOnboard(String phone) throws SQLException {
+		Map<Object, Object> data = new HashMap<Object, Object>();	
+		ConnectionManager conn = new ConnectionManager();
+		conn.connect("MobifinEliteTransactionEngine_Tangerine?characterEncoding=utf8");
+		ResultSet rs;
+		rs = conn.getConnection()
+				.prepareStatement("SELECT message FROM TBLVendorTransactionDetail WHERE ReceiverDetail LIKE '%" + phone + "%'"
+						+ " ORDER BY EventTime ASC LIMIT 1")
+				.executeQuery();
+		rs.next();
+		String result = rs.getString("Message");	
+		//System.out.println(result);
+		Pattern pattern = Pattern.compile("(\\d{4})");
 		java.util.regex.Matcher matcher = pattern.matcher(result);
 		if (matcher.find()) {
 			result = matcher.group(0);

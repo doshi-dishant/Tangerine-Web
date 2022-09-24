@@ -144,6 +144,7 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtDashContactUs = By.xpath("//a[normalize-space(text())='Contact Us']");
 	public By txtDashPasswordPolicy = By.xpath("//a[normalize-space(text())='Password Policy']");
 	public By txtDashMPINPolicy = By.xpath("//a[normalize-space(text())='MPIN Policy']");
+	public By txtMyProfilePasswordPolicy = By.xpath("//a[normalize-space(text())='Password Policy']");
 	
 	public By txtDashPrivacyPolicy = By.xpath("//a[normalize-space(text())='Privacy Policy']");
 	public By txtMenuSalaryDisbursement = By
@@ -158,6 +159,7 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtMenuOnboardingDetail = By
 			.xpath("//*[contains(@activeclassname,'active')]//*[text()='Onboarding Detail']");
 	public By txtMenuChangeMPIN = By.xpath("//*[@class='modal-content']//*[text()='Change MPIN']");
+	public By txtMenuChangePassword = By.xpath("//*[@class='modal-content']//*[text()='Change Password']");
 	public By txtMenuResetMPIN = By.xpath("//*[@class='modal-content']//*[text()='Reset MPIN']");
 	public By txtMenuChangeLoginPassword = By.xpath("//*[@class='modal-content']//*[text()='Change Login Password']");
 	public By txtMenuPasswordPolicy = By.xpath("//*[@class='modal-content']//*[text()='Password Policy']");
@@ -1206,7 +1208,7 @@ public class NavigationPageOperations extends SetupInit {
 	public void clickOnSideMenuMPINPolicyFromSettings(int... args) {
 		try {
 			clickOnElement(txtMenuChangeMPIN, args);
-			//clickOnElement("", args);
+			clickOnElement(By.xpath("//*[normalize-space(text())='MPIN Policy']"), args);
 			setLogSteps(log, "Click On Change MPIN");
 		} catch (Exception e) {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "mpin policy");
@@ -2237,6 +2239,7 @@ public class NavigationPageOperations extends SetupInit {
 	
 	public void clickOnSideMenuProfileMyProfile(int... args) {
 		clickOnSideMenuProfile(args);
+		pauseInMilliSeconds(2);
 		try {
 			clickOnElement(myProfile, args);
 			setLogSteps(log, "Click On My Profile");
@@ -2253,4 +2256,23 @@ public class NavigationPageOperations extends SetupInit {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "myProfile");
 		}
 	}
+	
+	public void clickOPasswordPolicyFromChangePassword(int... args) {
+		try {
+			clickOnElement(txtMyProfilePasswordPolicy, args);
+			setLogSteps(log, "Click On Password Policy");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "password policy");
+		}
+	}
+	
+	public void clickOnSideMenuMPINPolicyFromMyProfile(int... args) {
+		try {
+			clickOnElement(By.xpath("//*[normalize-space(text())='MPIN Policy']"), args);
+			setLogSteps(log, "Click On Change MPIN");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "mpin policy");
+		}
+	}
+	
 }

@@ -113,14 +113,19 @@ public class MyProfilePage extends SetupInit {
 	}
 	
 	public void checkBalancefromMyProfile() {
-		myProfileCommon.checkBalance(0);
+		myProfileCommon.checkBalancefromMyprofile(0);
 	}
 	
 	public void clickOnChangeMPINFromMyProfile() {
 		myProfileCommon.clickOnChangeMPIN(0);
 	}
 	
+	public void clickOnChangePasswordFromMyProfile() {
+		myProfileCommon.clickOnChangePassword(0);
+	}
+	
 	public void verifyPersonalInfoDetails(Map<Object, Object> map) {
+		pauseInSeconds(2);
 		myProfileCommon.clickOnPersonalInfo(0);
 		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyEmailPersInfo, map.get(EmailID).toString())),0);
 		setLogSteps(log, "Verify EmailID");
@@ -147,6 +152,7 @@ public class MyProfilePage extends SetupInit {
 	}
 	
 	public void verifyDocInfoDetails(Map<Object, Object> map) {
+		pauseInSeconds(2);
 		myProfileCommon.clickOnDocumentInfo(0);
 		verifyVisible(By.xpath(String.format(myProfileCommon.VerifyNinDocInfo, map.get(Nin).toString())),0);
 		setLogSteps(log, "Verify Nin");
