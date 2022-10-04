@@ -35,6 +35,7 @@ public class AgentAssistedDeposit extends SetupInit {
 		
 		try {
 			co.datamap.putAll(map);
+			co.common.webPortalLogin(map, "from", 0);
 			setTestParameters(co.datamap, "AgentAssistedDeposit");
 			map.put(MethodName, "AgentAssistedDeposit");
 			co.navigationPage.clickOnAgentAssistedDeposit();
@@ -46,6 +47,8 @@ public class AgentAssistedDeposit extends SetupInit {
 			setExceptionData(co, e);
 		} finally {
 			setExcecutionData(co);
+			if (co.navigationPage.isLogoutButtonDislay(3))
+				co.navigationPage.clickOnLogOut();
 		}
 
 	}
