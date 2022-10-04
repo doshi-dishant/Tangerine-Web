@@ -26,7 +26,7 @@ public class CustomerOnboarding extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "customerOnboarding");
 			co.navigationPage.clickOnCustomerOnboarding();
-			co.customerOnboardingPage.customerOnboarding(map);
+//			co.customerOnboardingPage.customerOnboarding(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
@@ -41,7 +41,7 @@ public class CustomerOnboarding extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "customerOnboardingFromDashboard");
 			co.navigationPage.clickOnDashboardCustomerOnboarding();
-			co.customerOnboardingPage.customerOnboarding(map);
+//			co.customerOnboardingPage.customerOnboarding(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);
@@ -56,7 +56,7 @@ public class CustomerOnboarding extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "customerOnboardingFromSideMenu");
 			co.navigationPage.clickOnSideMenuCustomerOnboarding();
-			co.customerOnboardingPage.customerOnboarding(map);
+//			co.customerOnboardingPage.customerOnboarding(map);
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
 			setExceptionData(co, e);

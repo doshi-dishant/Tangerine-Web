@@ -88,10 +88,27 @@ public class TestDataImport extends SetupInit {
 		return readExcelFileTo2D(TEST_DATA, "InviteFriends");
 	}
 	
+	@DataProvider(name = "LoginStartwithZero")
+	public static Object[][] LoginStartwithZero() {
+		return readExcelFileTo2D(TEST_DATA, "LoginStartwithZero");
+	}
+	
 	@DataProvider(name = "CustomerOnboard")
 	public static Object[][] CustomerOnboard() {
 		return readExcelFileTo2D(TEST_DATA, "CustomerOnboard");
 	}
+	
+	@DataProvider(name = "InActiveUser")
+	public static Object[][] InActiveUser() {
+		return readExcelFileTo2D(TEST_DATA, "InActiveUser");
+	}
+	
+	@DataProvider(name = "ThreeWrongMPINAttempts")
+	public static Object[][] ThreeWrongMPINAttempts() {
+		return readExcelFileTo2D(TEST_DATA, "ThreeWrongMPINAttempts");
+	}
+	
+	
 	
 	@DataProvider(name = "WithdrawCash And Agent Assisted Withdraw")
 	public static Object[][] WithdrawCash() {

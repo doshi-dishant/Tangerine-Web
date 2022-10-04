@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -23,8 +24,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void checkBalanceFromDashboardViewBalance() {
 		try {
-			setTestParameters(co.datamap,
-					"checkBalanceFromDashboardViewBalance");
+			setTestParameters(co.datamap, "checkBalanceFromDashboardViewBalance");
 			co.dashBoardPageOperations.clickOnCheckBalance();
 			setSuccessParameters(co.datamap);
 		} catch (Exception e) {
@@ -66,6 +66,18 @@ public class CommonTestcases extends SetupInit {
 	}
 
 	@Test
+	public void VerifyServiceiconsdisplayedFromDashboardCustomer() {
+		try {
+			co.navigationPage.VerifyServiceiconsdisplayedFromDashboard();
+
+		} catch (Exception e) {
+		} finally {
+		}
+	}
+
+	
+
+	@Test
 	public void verifyDownloadPassbook() {
 		try {
 			setTestParameters(co.datamap, "verifyDownloadPassbook");
@@ -92,36 +104,68 @@ public class CommonTestcases extends SetupInit {
 		}
 	}
 	
-	/*
-	 * @Test
-	 * public void verifyContactUsFromDashboard() { try {
-	 * setTestParameters(co.datamap, "verifyContactUsFromDashboard");
-	 * co.navigationPage.clickOnContactUs(); co.contactUsPage.verifyContactUs();
-	 * setSuccessParameters(co.datamap); } catch (Exception e) {
-	 * setExceptionData(co, e); } finally { setExcecutionData(co); } }
-	 * 
-	 * @Test public void verifyContactUsFromSideMenuProfile() { try {
-	 * setTestParameters(co.datamap, "verifyContactUsFromSideMenuProfile");
-	 * co.navigationPage.clickOnSideMenuProfile();
-	 * co.navigationPage.clickOnSideMenuContactUsFromProfile();
-	 * co.contactUsPage.verifyContactUs(); setSuccessParameters(co.datamap); } catch
-	 * (Exception e) { setExceptionData(co, e); } finally { setExcecutionData(co); }
-	 * }
-	 * 
-	 * @Test public void verifyAboutUsFromDashboard() { try {
-	 * setTestParameters(co.datamap, "verifyAboutUsFromDashboard");
-	 * co.navigationPage.clickOnAboutUs(); co.aboutUsPage.verifyAboutUs();
-	 * setSuccessParameters(co.datamap); } catch (Exception e) {
-	 * setExceptionData(co, e); } finally { setExcecutionData(co); } }
-	 * 
-	 * @Test public void verifyAboutUsFromSideMenuProfile() { try {
-	 * setTestParameters(co.datamap, "verifyAboutUsFromSideMenuProfile");
-	 * co.navigationPage.clickOnSideMenuProfile();
-	 * co.navigationPage.clickOnSideMenuAboutUsFromProfile();
-	 * co.aboutUsPage.verifyAboutUs(); setSuccessParameters(co.datamap); } catch
-	 * (Exception e) { setExceptionData(co, e); } finally { setExcecutionData(co); }
-	 * }
-	 */
+	@Test(dataProvider = "LoginStartwithZero", dataProviderClass = TestDataImport.class)
+	public void LoginStartwithZero(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+			pauseInSeconds(2);
+			co.navigationPage.clickOnLogOut();
+			}
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "LoginStartwithZero");
+			map.put(MethodName, "LoginStartwithZero");
+			co.loginPage.login_With_Invalid(map.get(FromUserName).toString(), map.get(FromMpin).toString(), "customer");
+			
+			co.navigationPage.verifyLoggedIn();
+			
+			
+		} catch (Exception e) {
+			throw new RuntimeException("verification failed, verify User Not Active Message not Found");
+		} 
+	}
+	
+	@Test(dataProvider = "InActiveUser", dataProviderClass = TestDataImport.class)
+	public void LoginWithinvalidLogin(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+			pauseInSeconds(2);
+			co.navigationPage.clickOnLogOut();
+			}
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "InActiveUser");
+			map.put(MethodName, "InActiveUser");
+			co.loginPage.login_With_Invalid(map.get(FromUserName).toString(), map.get(FromPassword).toString(), "customer");
+			co.navigationPage.verifyUserNotActive();	
+		} catch (Exception e) {
+			throw new RuntimeException("verification failed, verify User Not Active Message not Found");
+		} 
+	}
+
+	@Test(dataProvider = "ThreeWrongMPINAttempts", dataProviderClass = TestDataImport.class)
+	public void ThreeWrongMPINAttempts(Map<Object, Object> map) {
+		try {
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+			pauseInSeconds(2);
+			co.navigationPage.clickOnLogOut();
+			}
+			co.datamap.putAll(map);
+			setTestParameters(co.datamap, "ThreeWrongMPINAttempts");
+			map.put(MethodName, "ThreeWrongMPINAttempts");
+			co.loginPage.login_With_Invalid(map.get(FromUserName).toString(), map.get(FromMpin).toString(), "customer");
+			co.navigationPage.verifyInvalidCredentials();
+			
+			
+			co.loginPage.login_With_Invalid(map.get(FromUserName).toString(), map.get(FromMpin).toString(), "customer");
+			co.navigationPage.verifyInvalidCredentials();
+			
+			co.loginPage.login_With_Invalid(map.get(FromUserName).toString(), map.get(FromMpin).toString(), "customer");
+			co.navigationPage.verifyAccountTempBlocked();
+			
+		
+		} catch (Exception e) {
+			throw new RuntimeException("verification failed, verify Three Login should fail not working");
+		} 
+	}
 
 	@Test
 	public void mpinPolicyFromDashboardFooter() {
@@ -197,7 +241,7 @@ public class CommonTestcases extends SetupInit {
 
 	@Test
 	public void termsAndConditionsFromDashboardFooter() {
-		
+
 		try {
 			setTestParameters(co.datamap, "termsAndConditionsFromDashboardFooter");
 			co.navigationPage.clickOnDashboardeTermsAndConditions();
@@ -209,7 +253,7 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
-	
+
 	@Test
 	public void verifyChatOption() {
 		try {
@@ -272,8 +316,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionDeatilReportFromDashboard() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionDeatilReportFromDashboard");
+			setTestParameters(co.datamap, "transactionDeatilReportFromDashboard");
 			co.navigationPage.clickOnTransactionDetail();
 			co.transactionDetailPage.verifyTransactionDetailReport();
 			setSuccessParameters(co.datamap);
@@ -287,8 +330,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionDeatilReportFromDashboardFooter() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionDeatilReportFromDashboardFooter");
+			setTestParameters(co.datamap, "transactionDeatilReportFromDashboardFooter");
 			co.navigationPage.clickOnDashboardTransactionDetail();
 			co.transactionDetailPage.verifyTransactionDetailReport();
 			setSuccessParameters(co.datamap);
@@ -302,8 +344,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionDeatilReportFromSideMenuServices() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionDeatilReportFromSideMenuServices");
+			setTestParameters(co.datamap, "transactionDeatilReportFromSideMenuServices");
 			co.navigationPage.clickOnSideMenuServicesTransactionDetail();
 			co.transactionDetailPage.verifyTransactionDetailReport();
 			setSuccessParameters(co.datamap);
@@ -317,8 +358,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionSummaryReportFromDashboard() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionSummaryReportFromDashboard");
+			setTestParameters(co.datamap, "transactionSummaryReportFromDashboard");
 			co.navigationPage.clickOnTransactionSummary();
 			co.transactionSummaryPage.verifyTransactionSummaryReport();
 			setSuccessParameters(co.datamap);
@@ -332,8 +372,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionSummaryReportFromDashboardFooter() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionSummaryReportFromDashboardFooter");
+			setTestParameters(co.datamap, "transactionSummaryReportFromDashboardFooter");
 			co.navigationPage.clickOnDashboardTransactionSummary();
 			co.transactionSummaryPage.verifyTransactionSummaryReport();
 			setSuccessParameters(co.datamap);
@@ -347,8 +386,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void transactionSummaryReportFromSideMenuServices() {
 		try {
-			setTestParameters(co.datamap,
-					"transactionSummaryReportFromSideMenuServices");
+			setTestParameters(co.datamap, "transactionSummaryReportFromSideMenuServices");
 			co.navigationPage.clickOnSideMenuTransactionSummary();
 			co.transactionSummaryPage.verifyTransactionSummaryReport();
 			setSuccessParameters(co.datamap);
@@ -390,8 +428,7 @@ public class CommonTestcases extends SetupInit {
 	@Test
 	public void commissionReportFromSideMenuServices() {
 		try {
-			setTestParameters(co.datamap,
-					"commissionReportFromSideMenuServices");
+			setTestParameters(co.datamap, "commissionReportFromSideMenuServices");
 			co.navigationPage.clickOnSideMenuServicesCommissionReport();
 			co.commissionReportPage.verifyCommissionReport();
 			setSuccessParameters(co.datamap);
@@ -461,7 +498,7 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
-	
+
 	@Test
 	public void newUser() {
 		try {
@@ -477,6 +514,7 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
+
 	@Test
 	public void verifyTransactionsInAdmin() {
 		try {
@@ -489,7 +527,7 @@ public class CommonTestcases extends SetupInit {
 			setExcecutionData(co);
 		}
 	}
-	
+
 	@Test
 	public void FAQsFromSideMenu() {
 		try {

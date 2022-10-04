@@ -17,6 +17,22 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnDashboardP2PTransfer(0);
 	}
 	
+	public void verifyUserNotActive() {
+		navigationPageOperations.verifyUserNotActive(0);
+	}
+	
+	public void verifyLoggedIn() {
+		navigationPageOperations.verifyLoggedIn(0);
+	}
+	
+	public void verifyInvalidCredentials() {
+		navigationPageOperations.verifyInvalidCredentials(0);
+	}
+	
+	public void verifyAccountTempBlocked() {
+		navigationPageOperations.verifyAccountTempBlocked(0);
+	}
+	
 	public void clickOnDashboardP2POffnet() {
 		navigationPageOperations.clickOnDashboardP2POffnet(0);
 	}
@@ -885,6 +901,11 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnChangeSecretWordfromSideMenu(0);
 	}
 	
+	public void clickOnForgotSecretWordfromLogin() {
+		navigationPageOperations.clickOnChangeSecretWordfromLogin(0);
+	}
+	
+	
 	public void clickOnLogOutForNass() {
 		navigationPageOperations.clickOnLogOutForNass(0);
 	}
@@ -1219,5 +1240,40 @@ public class NavigationPage extends SetupInit {
 	public void clickOnMyProfile() {
 		navigationPageOperations.clickOnMyProfile(0);
 	}
+	
+	public void clickOnForgetMpinfromLogin() {
+		navigationPageOperations.clickOnForgetMpinfromLogin(0);
+	}
+	
+	public void VerifyServiceiconsdisplayedFromDashboard() {
+
+		verifyVisible(navigationPageOperations.CustomerCashinicon, 0);
+		setLogSteps(log, "Verify Cash in icon in Dashboard ");
+
+		verifyVisible(navigationPageOperations.CustomerP2PTransfericon, 0);
+		setLogSteps(log, "Verify P2P Transfer icon in Dashboard ");
+
+		verifyVisible(navigationPageOperations.CustomerWithdrawCashicon, 0);
+		setLogSteps(log, "Verify Withdraw Cash icon in Dashboard ");
+
+		verifyVisible(navigationPageOperations.CustomerTopUpBundleicon, 0);
+		setLogSteps(log, "Verify TopUp Bundle icon in Dashboard ");
+		
+		verifyVisible(navigationPageOperations.CustomerBillPaymenticon, 0);
+		setLogSteps(log, "Verify Bll Payment icon in Dashboard ");
+	
+		verifyVisible(navigationPageOperations.CustomerTopUpAirtimeicon, 0);
+		setLogSteps(log, "VerifyTopUp Airtime icon in Dashboard ");
+	
+		verifyVisible(navigationPageOperations.CustomerP2pOffneticon, 0);
+		setLogSteps(log, "Verify P2P Offnet icon in Dashboard ");
+		
+		verifyVisible(navigationPageOperations.CustomerFinancialServiceicon, 0);
+		setLogSteps(log, "Verify Financial Services icon in Dashboard ");
+
+
+	}
+	
+	
 	
 }

@@ -17,7 +17,7 @@ public class CustomerOnboardPage extends SetupInit {
 	DashBoardPageOperations dashboardPageCommon;
 	CommonOperations common;
 	elasticwrite log;
-	String mpin;
+	String mpin, OTP;
 
 	public CustomerOnboardPage(WebDriver driver, elasticwrite log) {
 		this.log = log;
@@ -30,7 +30,7 @@ public class CustomerOnboardPage extends SetupInit {
 	public Map<Object, Object> CustomerOnboard(Map<Object, Object> map) {
 		Map<Object, Object> data = new HashMap<Object, Object>();
 		try {
-			mpin = DBUtils.getOTPforCustomerOnboard(map.get(FromUserName).toString());
+			mpin = DBUtils.getMpinforCustomerOnboard(map.get(FromUserName).toString());
 		}
 		catch(Exception e) {
 			System.out.println(e);
@@ -38,6 +38,32 @@ public class CustomerOnboardPage extends SetupInit {
 		dashboardPageCommon.enterRegisteredMobileNumber(map.get(FromUserName).toString(), 0);
 		dashboardPageCommon.enterMPINInLogin(mpin, 0);
 		dashboardPageCommon.clickOnLoginButton(0);
+		dashboardPageCommon.clickOnNextButtonUserActivation(0);
+		dashboardPageCommon.verifyOTPScreen(0);
+		try {
+			OTP = DBUtils.getOTPforCustomerOnboard(map.get(FromUserName).toString());
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		dashboardPageCommon.enterOTPOnScreen(OTP, 0);
+		dashboardPageCommon.clickOnNextButtonUserActivation(0);
+		dashboardPageCommon.enterSecretWord(map.get(FromSecretWord).toString(), 0);
+		dashboardPageCommon.enterConfirmSecretWord(map.get(FromSecretWord).toString(), 0);
+		dashboardPageCommon.clickOnNextButtonUserActivation(0);
+		
+		dashboardPageCommon.enterNewMpin(map.get(FromMpin).toString(), 0);
+		dashboardPageCommon.enterConfirmNewMpin(map.get(FromMpin).toString(), 0);
+		dashboardPageCommon.clickOnSubmitButton(0);
+		
+		dashboardPageCommon.verifyActivationSuccessMessage();
+		dashboardPageCommon.clickonBacktoLoginBtn();
+		
+		dashboardPageCommon.enterRegisteredMobileNumber(map.get(FromUserName).toString(), 0);
+		dashboardPageCommon.enterMPINInLogin(map.get(FromMpin).toString(), 0);
+		dashboardPageCommon.clickOnLoginButton(0);
+		setLogSteps(this.log, "Activation sucessfull of new customer onboard : " + map.get(FromUserName).toString());
+		
 		data.putAll(map);
 		data.put(ServiceName, "Customer Onboard");
 		return data;

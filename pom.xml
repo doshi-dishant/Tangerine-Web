@@ -309,13 +309,8 @@
 				<configuration>
 					<systemPropertyVariables>
 						<environment>UAT</environment>
-						<!--	<userType>agent</userType>
-						<subUserType>superagent</subUserType> -->
 						 <userType>agent</userType>
 						<subUserType>subagent</subUserType> 
-					<!-- <userType>customer</userType>
-						<subUserType>customer</subUserType>-->
-
 						<latestRelease>NA</latestRelease>
 						<videoRecording>false</videoRecording>
 						<deleteTestOutPut>false</deleteTestOutPut>

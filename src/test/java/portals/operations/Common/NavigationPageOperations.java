@@ -28,6 +28,19 @@ public class NavigationPageOperations extends SetupInit {
 	public By txtAgentAssistedWithdrawSideMenu = By.xpath("//*[contains(@activeclassname,'active')]//*[text()='Agent Assisted Withdraw']");
 	public By txtAgentAssistedWithdrawFromFooter = By.xpath("//a[contains(text(),'Agent Assisted Withdraw')]");
 	public By txtDashTermsAndConditions = By.xpath("//a[normalize-space(text())='Terms & Conditions']");
+	public By CustomerCashinicon  = By.xpath("//i[@class=\"moon-Agent-Cashin-fill-dual\"]");
+	public By CustomerP2PTransfericon  = By.xpath("//i[@class=\"moon-p2nr-transfer\"]");
+	public By CustomerWithdrawCashicon  = By.xpath("//i[@class=\"moon-Withdraw-Money\"]");
+	public By CustomerTopUpBundleicon  = By.xpath("(//i[@class=\" moon-Mobile-Topup\"])[1]");
+	public By CustomerBillPaymenticon  = By.xpath("//i[@class=\"moon-Bill-Payment2\"]");
+	public By CustomerTopUpAirtimeicon  = By.xpath("(//i[@class=\" moon-Mobile-Topup\"])[2]");
+	public By CustomerP2pOffneticon  = By.xpath("(//i[@class=\"moon-p2p-transfer\"])");
+	public By CustomerFinancialServiceicon  = By.xpath("(//i[@class=\"moon-Internal-Transfer\"])");
+	By ForgotMpinfromLogin = By.xpath("//a[text()='Forgot MPIN?']");
+	public By UserNotActive  = By.xpath("//span[contains(text(),'Transaction not allowed. User is not active.')]");
+
+
+
 	///////////////  Tangerine end /////////////////////////	
 	
 	public By sideMenu = By.xpath("//*[contains(@class,'humburger') and not(@title)]//i[contains(@class,'moon-menu')]");
@@ -58,6 +71,8 @@ public class NavigationPageOperations extends SetupInit {
 	By faqs = By.xpath("//*[@class='modal-content']//*[text()='FAQs']");
 	By myProfile = By.xpath("//*[@class='modal-content']//*[text()='My Profile']");
 	By myProfileDashboard = By.xpath("//a[contains(@href,'/app/profile')]");
+	
+	
 	public By checkBalance = By.xpath("//*[contains(text(),'Check') and contains(text(),'Balance')]");
 	public By qrCode = By.xpath("//*[text()='QR Code']");
 	public By passbook = By.xpath("//*[text()='Passbook']");
@@ -1490,6 +1505,15 @@ public class NavigationPageOperations extends SetupInit {
 		}
 	}
 	
+	public void clickOnChangeSecretWordfromLogin(int... args) {
+		try {
+			clickOnElement(By.xpath("//*[text()='Forgot Secret Word?']"), args);
+			setLogSteps(log, "Click On Change SecretWord");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Click On Change SecretWord");
+		}
+	}
+	
 	public void clickOnLogOutForNass(int... args) {
 		if (!verifyVisible(logOutForNass, 3)) {
 			reloadCurrentPage(driver);
@@ -1549,6 +1573,45 @@ public class NavigationPageOperations extends SetupInit {
 		}
 	}
 	
+	public void verifyUserNotActive(int args) {
+		try {
+			verifyVisible(UserNotActive, args);
+		} catch (Exception e) {
+			throw new RuntimeException(GET_TEXT_ERROR_MESSAGE + "User Not Active Message Not Found");
+		}
+		setLogSteps(log, "verify User Not Active Message Found");
+	}
+	
+	public void verifyLoggedIn(int args) {
+		try {
+			verifyVisible(logOut, args);
+		} catch (Exception e) {
+			throw new RuntimeException(GET_TEXT_ERROR_MESSAGE + "LoggedIn successfull with username starting with zero.");
+		}
+		setLogSteps(log, "LoggedIn successfull with username starting with zero.");
+	}
+	
+	
+	
+	public void verifyInvalidCredentials(int args) {
+		try {
+			verifyVisible(By.xpath("//span[contains(text(),'Invalid Credentials')]"), args);
+		} catch (Exception e) {
+			throw new RuntimeException(GET_TEXT_ERROR_MESSAGE + "Message verified: Invalid Credentials");
+		}
+		setLogSteps(log, "Message verified: Invalid Credentials");
+	}
+	
+	public void verifyAccountTempBlocked(int args) {
+		try {
+			verifyVisible(By.xpath("//span[contains(text(),'Your account has been temporary blocked due to multiple failure login attempts')]"), args);
+		} catch (Exception e) {
+			throw new RuntimeException(GET_TEXT_ERROR_MESSAGE + "FAILED: Your account has been temporary blocked due to multiple failure login attempts");
+		}
+		setLogSteps(log, "Message verified: Your account has been temporary blocked due to multiple failure login attempts");
+	}
+	
+
 	public void clickOnDashboardP2POffnet(int... args) {
 		try {
 			clickOnElement(txtDashP2POffnet, args);
@@ -2272,6 +2335,14 @@ public class NavigationPageOperations extends SetupInit {
 			setLogSteps(log, "Click On Change MPIN");
 		} catch (Exception e) {
 			throw new RuntimeException(CLICK_ERROR_MESSAGE + "mpin policy");
+		}
+	}
+	public void clickOnForgetMpinfromLogin(int ... args) {
+		try {
+			clickOnElement(ForgotMpinfromLogin, args);
+			setLogSteps(log, "Click On Forgot Mpin");
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Forgot Mpin");
 		}
 	}
 	

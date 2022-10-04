@@ -31,15 +31,14 @@ public class ChangeMpinPageOperations extends SetupInit {
 	
 	public void enternewMpin(String currentmpin, int... args) {
 		sendKeys(newMpin, currentmpin, 0);
-		setLogSteps(log, "Enter New MPIN : " + newMpin);
+		setLogSteps(log, "Enter New MPIN : " + currentmpin);
 	}
 	
 	public void enterconfirmMpin(String currentmpin, int... args) {
 		sendKeys(confirmMpin, currentmpin, 0);
-		setLogSteps(log, "Enter Confirm MPIN : " + confirmMpin);
+		setLogSteps(log, "Enter Confirm MPIN : " + currentmpin);
 	}
 
-	
 
 	public void clickOnsubmitButton() {
 		try {
