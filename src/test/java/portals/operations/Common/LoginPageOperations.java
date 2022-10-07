@@ -17,6 +17,7 @@ public class LoginPageOperations extends SetupInit {
 	public By btnAdminLogin = By.id("btnLoginLogin");
 	By agent = By.xpath("//*[text()='Agent']");
 	By subagent = By.xpath("//*[text()='Sub Agent']");
+	By Retailer = By.xpath("//*[text()='Retailer']");
 	By branch = By.xpath("//*[text()='Branch']");
 	By merchant = By.xpath("//*[text()='Merchant']");
 	By superAgent = By.xpath("//*[text()='Super Agent']");
@@ -166,6 +167,15 @@ public class LoginPageOperations extends SetupInit {
 			setLogSteps(log, "Click on Sub Agent");
 	}
 
+	public void selectRetailer(int... args) {
+		try {
+			clickOnElement(Retailer, args);
+		} catch (Exception e) {
+			throw new RuntimeException(CLICK_ERROR_MESSAGE + "Retailer");
+		}
+		if (log != null)
+			setLogSteps(log, "Click on Retailer");
+	}
 	public void selectSuperAgent(int... args) {
 		try {
 			clickOnElement(superAgent, args);

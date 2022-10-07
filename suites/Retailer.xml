@@ -1,0 +1,57 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+
+<suite name="Nasswallet Agent WebPortal - Retailer" verbose="10"
+	parallel="false" thread-count="5">
+
+	<listeners>
+		<listener class-name='listeners.CustomizedEmailableReport' />
+		<listener class-name='listeners.HtmlReport' />
+	</listeners>
+
+	<parameter name="browserType" value="chrome" />
+
+		<test name="Agent Assisted Deposit">
+		<classes>
+			<class name="portals.testCases.Agent.AgentAssistedDepositRetailer">
+				<methods>
+				
+				  <include name="AgentAssistedDeposits" />
+				  <include name="verifyPerformedAgentAssistedDepositFromUserPassbook" />
+				  <include name="verifyPerformedAgentAssistedDepositFromToUserPassbook" />
+				 	
+				  <include name="AgentAssistedDepositsDashboardIcon" />
+				  <include name="verifyPerformedAgentAssistedDepositFromUserPassbookIcon" />
+				  <include name="verifyPerformedAgentAssistedDepositFromToUserPassbookIcon" />
+				  
+				  <include name="AgentAssistedDepositsDashboardFromFooter" />
+				  <include name="verifyPerformedAgentAssistedDepositFromUserPassbookFromFooter" />
+				  <include name="verifyPerformedAgentAssistedDepositFromToUserPassbookFromFooter" />
+				  
+				  <include name="AgentAssistedDepositsDashboardFromSideMenu" />
+				  <include name="verifyPerformedAgentAssistedDepositFromUserPassbookSideMenu" />
+				  <include name="verifyPerformedAgentAssistedDepositFromToUserPassbookSideMenu" />
+				   
+				</methods>
+			</class>
+		</classes>
+	</test>
+ <test name="Common Testcases">
+		<classes>
+			<class name="portals.testCases.Common.CommonTestcases">
+				<methods>
+					 <include name="privacyPolicyFromDashboardFooter" />
+					 <include name="privacyPolicyFromSideMenuProfile" /> 
+					 <include name="termsAndConditionsFromDashboardFooter" />
+					 <include name="termsAndConditionsFromSideMenuProfile" />
+					 <include name="VerifyPersonalinforeligiousworshipFromProfile" />
+					 <include name="VerifyDocumentinforeligiousworshipFromProfile" />
+					 <include name="mpinPolicyFromDashboardFooter" />
+					 <include name="mpinPolicyFromSideMenuSettings" />
+					 <include name="changeSecretWord" />
+					<include name="logout" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+</suite>

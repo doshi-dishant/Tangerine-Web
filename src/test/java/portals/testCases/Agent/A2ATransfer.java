@@ -239,6 +239,7 @@ public class A2ATransfer extends SetupInit {
 			setExceptionData(co, e);
 		} finally {
 			setExcecutionData(co);
+			
 		}
 	}
 

@@ -47,6 +47,8 @@ public class LoginPage extends SetupInit {
 		reloadCounter = 0;
 		if (subUserType.equalsIgnoreCase("agent"))
 			loginPageCommon.selectAgent(0);
+		else if (subUserType.equalsIgnoreCase("Retailer"))
+			loginPageCommon.selectRetailer(0);
 		else if (subUserType.equalsIgnoreCase("sub agent"))
 			loginPageCommon.selectSubAgent(0);
 		else if (subUserType.equalsIgnoreCase("super agent"))

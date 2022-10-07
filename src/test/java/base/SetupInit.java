@@ -300,6 +300,7 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 				userName = xmlUtils.getChildNodeValue(configFilePath, "Dev", "CustomerUser");
 				password = xmlUtils.getChildNodeValue(configFilePath, "Dev", "CustomerPassword");
 				break;
+			
 			default:
 				throw new RuntimeException("irrelevant user type found");
 			}
@@ -326,6 +327,12 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 					userName = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SubAgentUser");
 					password = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SubAgentPassword");
 					pin = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SubAgentPin");
+					break;
+				case "retailer":
+					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "UAT", "RetailerTestData");
+					userName = xmlUtils.getChildNodeValue(configFilePath, "UAT", "RetailerUser");
+					password = xmlUtils.getChildNodeValue(configFilePath, "UAT", "RetailerPassword");
+					pin = xmlUtils.getChildNodeValue(configFilePath, "UAT", "RetailerPin");
 					break;
 				default:
 					throw new RuntimeException("irrelevant sub user type found");
@@ -1399,6 +1406,9 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 				colNum = 2;
 			case "subagent":
 				colNum = 4;
+				break;
+			case "retailer":
+				colNum = 5;
 				break;
 			default:
 				throw new RuntimeException("irrelevant sub user type found");

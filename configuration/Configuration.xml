@@ -95,6 +95,11 @@
 		<CustomerPassword>8454</CustomerPassword>
 		<CustomerPin>8454</CustomerPin>
 
+		<RetailerTestData>UAT_Retailer.xls</RetailerTestData>
+		<RetailerUser>256720000112</RetailerUser>
+		<RetailerPassword>8454</RetailerPassword>
+		<RetailerPin>8454</RetailerPin>
+
 		<AdminUser>shrikant.bhavsar</AdminUser>
 		<AdminPassword>$qA@123#</AdminPassword>
 	</UAT>
