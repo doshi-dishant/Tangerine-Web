@@ -24,9 +24,10 @@ public class P2PTransfer extends SetupInit {
 	@Test(dataProvider = "P2PTransfer", dataProviderClass = TestDataImport.class)
 	public void p2pTranferFromDashboard(Map<Object, Object> map) {
 		try {
+			co.common.webPortalLogin(map, "from", 0);
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "p2pTranferFromDashboard");
-			map.put(MethodName, "p2pTranfer");
+			map.put(MethodName, "p2pTranferFromDashboard");
 			co.navigationPage.clickOnDashboardP2PTransfer();
 			map = co.p2pTransferPage.P2PTransfer(map);
 			setUseCaseVerificationData("p2pTranferFromDashboard", verificationData, map);
@@ -36,26 +37,28 @@ public class P2PTransfer extends SetupInit {
 			setExceptionData(co, e);
 		} finally {
 			setExcecutionData(co);
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(3);
+				co.navigationPage.clickOnLogOut();
+			}
 		}
 	}
 
 	@Test
 	public void verifyPerformedp2pTranferFromDashboardFromUserPassbook() {
 		if (verifyMethodIsAvail(verificationData, "p2pTranferFromDashboard")) {
-			for (Map<Object, Object> map : verificationData.get("p2pTranferFromDashboard")) {
+			ArrayList<Map<Object, Object>> temp = verificationData.get("p2pTranferFromDashboard");
+			for (Map<Object, Object> map : temp) {
 				try {
 					co.datamap.putAll(map);
 					setTestParameters(co.datamap, "verifyPerformedp2pTranferFromDashboardFromUserPassbook");
-					co.common.verifyTransactionInWebPortalForFromUser(map, co.dashboardPage);
+					co.common.verifyTransactionInWebPortalForFromUserTangereine(map, co.dashboardPage);
 					setSuccessParameters(co.datamap);
 				} catch (Exception e) {
 					setExceptionData(co, e);
 				} finally {
 					setExcecutionData(co);
-					if (co.navigationPage.isLogoutButtonDislay(3)) {
-						pauseInSeconds(3);
-						co.navigationPage.clickOnLogOut();
-					}
+					
 				}
 			}
 		} else {
@@ -70,14 +73,12 @@ public class P2PTransfer extends SetupInit {
 				try {
 					co.datamap.putAll(map);
 					setTestParameters(co.datamap, "verifyPerformedp2pTranferFromDashboardFromToUserPassbook");
-					co.common.verifyTransactionInWebPortalForToUser(map, co.dashboardPage);
+					co.common.verifyTransactionInWebPortalForToUserTangereine(map, co.dashboardPage);
 					setSuccessParameters(co.datamap);
 				} catch (Exception e) {
 					setExceptionData(co, e);
 				} finally {
 					setExcecutionData(co);
-					if (co.navigationPage.isLogoutButtonDislay(3))
-						co.navigationPage.clickOnLogOut();
 					pauseInSeconds(3);
 				}
 			}
@@ -89,9 +90,11 @@ public class P2PTransfer extends SetupInit {
 	@Test(dataProvider = "P2PTransfer", dataProviderClass = TestDataImport.class)
 	public void p2pTranferFromSideMenu(Map<Object, Object> map) {
 		try {
+			
 			co.datamap.putAll(map);
+			co.common.webPortalLogin(map, "from", 0);
 			setTestParameters(co.datamap, "p2pTranferFromSideMenu");
-			map.put(MethodName, "p2pTranfer");
+			map.put(MethodName, "p2pTranferFromSideMenu");
 			co.navigationPage.clickOnSideP2PTransfer();
 			map = co.p2pTransferPage.P2PTransfer(map);
 			setUseCaseVerificationData("p2pTranferFromSideMenu", verificationData, map);
@@ -101,6 +104,10 @@ public class P2PTransfer extends SetupInit {
 			setExceptionData(co, e);
 		} finally {
 			setExcecutionData(co);
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(3);
+				co.navigationPage.clickOnLogOut();
+			}
 		}
 	}
 
@@ -111,7 +118,7 @@ public class P2PTransfer extends SetupInit {
 				try {
 					co.datamap.putAll(map);
 					setTestParameters(co.datamap, "verifyPerformedp2pTranferFromSideMenuFromUserPassbook");
-					co.common.verifyTransactionInWebPortalForFromUser(map, co.dashboardPage);
+					co.common.verifyTransactionInWebPortalForFromUserTangereine(map, co.dashboardPage);
 					setSuccessParameters(co.datamap);
 				} catch (Exception e) {
 					setExceptionData(co, e);
@@ -135,7 +142,7 @@ public class P2PTransfer extends SetupInit {
 				try {
 					co.datamap.putAll(map);
 					setTestParameters(co.datamap, "verifyPerformedp2pTranferFromSideMenuFromToUserPassbook");
-					co.common.verifyTransactionInWebPortalForToUser(map, co.dashboardPage);
+					co.common.verifyTransactionInWebPortalForToUserTangereine(map, co.dashboardPage);
 					setSuccessParameters(co.datamap);
 				} catch (Exception e) {
 					setExceptionData(co, e);
@@ -152,7 +159,7 @@ public class P2PTransfer extends SetupInit {
 			throw new RuntimeException("verification failed, due to operation failed");
 		}
 	}
-	
+
 	@Test(dataProvider = "P2PTransfer", dataProviderClass = TestDataImport.class)
 	public void p2pTranferfromFooter(Map<Object, Object> map) {
 		try {
@@ -178,7 +185,7 @@ public class P2PTransfer extends SetupInit {
 				try {
 					co.datamap.putAll(map);
 					setTestParameters(co.datamap, "verifyPerformedp2pTranferFromFromUserPassbook");
-					co.common.verifyTransactionInWebPortalForFromUser(map, co.dashboardPage);
+					co.common.verifyTransactionInWebPortalForFromUserTangereine(map, co.dashboardPage);
 					setSuccessParameters(co.datamap);
 				} catch (Exception e) {
 					setExceptionData(co, e);
@@ -186,7 +193,7 @@ public class P2PTransfer extends SetupInit {
 					setExcecutionData(co);
 					if (co.navigationPage.isLogoutButtonDislay(3))
 						co.navigationPage.clickOnLogOut();
-						pauseInSeconds(3);
+					pauseInSeconds(3);
 				}
 			}
 		} else {
@@ -201,7 +208,7 @@ public class P2PTransfer extends SetupInit {
 				try {
 					co.datamap.putAll(map);
 					setTestParameters(co.datamap, "verifyPerformedp2pTranferToUserPassbook");
-					co.common.verifyTransactionInWebPortalForToUser(map, co.dashboardPage);
+					co.common.verifyTransactionInWebPortalForToUserTangereine(map, co.dashboardPage);
 					setSuccessParameters(co.datamap);
 				} catch (Exception e) {
 					setExceptionData(co, e);
@@ -218,11 +225,10 @@ public class P2PTransfer extends SetupInit {
 		}
 	}
 
-	
-
 	@Test(dataProvider = "P2PTransfer", dataProviderClass = TestDataImport.class)
 	public void p2pTranferFromSend(Map<Object, Object> map) {
 		try {
+			pauseInSeconds(5);
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "p2pTranferFromSend");
 			map.put(MethodName, "p2pTranfer");
@@ -235,6 +241,10 @@ public class P2PTransfer extends SetupInit {
 			setExceptionData(co, e);
 		} finally {
 			setExcecutionData(co);
+			if (co.navigationPage.isLogoutButtonDislay(3)) {
+				pauseInSeconds(3);
+				co.navigationPage.clickOnLogOut();
+			}
 		}
 	}
 
@@ -245,7 +255,7 @@ public class P2PTransfer extends SetupInit {
 				try {
 					co.datamap.putAll(map);
 					setTestParameters(co.datamap, "verifyPerformedp2pTranferFromSendFromUserPassbook");
-					co.common.verifyTransactionInWebPortalForFromUser(map, co.dashboardPage);
+					co.common.verifyTransactionInWebPortalForFromUserTangereine(map, co.dashboardPage);
 					setSuccessParameters(co.datamap);
 				} catch (Exception e) {
 					setExceptionData(co, e);
@@ -267,7 +277,7 @@ public class P2PTransfer extends SetupInit {
 				try {
 					co.datamap.putAll(map);
 					setTestParameters(co.datamap, "verifyPerformedp2pTranferFromSideMenuFromToUserPassbook");
-					co.common.verifyTransactionInWebPortalForToUser(map, co.dashboardPage);
+					co.common.verifyTransactionInWebPortalForToUserTangereine(map, co.dashboardPage);
 					setSuccessParameters(co.datamap);
 				} catch (Exception e) {
 					setExceptionData(co, e);
@@ -280,5 +290,9 @@ public class P2PTransfer extends SetupInit {
 		} else {
 			throw new RuntimeException("verification failed, due to operation failed");
 		}
+	}
+	
+	public void waitForMin() {
+		pauseInSeconds(10);
 	}
 }

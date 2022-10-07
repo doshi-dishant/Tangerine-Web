@@ -26,23 +26,69 @@
 			</class>
 		</classes>
 	</test> -->
+	<!-- <test name="Customer Onboard">
+		<classes>
+			<class name="portals.testCases.Customer.CustomerOnboard">
+				<methods>
+					<include name="CustomerOnboardFromLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test>  -->
 
-	<test name="P2P Transfer">
+	<!-- <test name="P2P Transfer Transactions">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
 				<methods>
 					<include name="p2pTranferFromDashboard" />
 					<include name="verifyPerformedp2pTranferFromDashboardFromUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromDashboardFromUserPassbook" />
+					<include name="waitForMin" />
+					<include name="verifyPerformedp2pTranferFromDashboardFromToUserPassbook" />
 					<include name="verifyPerformedp2pTranferFromDashboardFromToUserPassbook" />
 					<include name="p2pTranferFromSideMenu" />
 					<include name="verifyPerformedp2pTranferFromSideMenuFromUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromSideMenuFromUserPassbook" />
+					<include name="waitForMin" />
 					<include name="verifyPerformedp2pTranferFromSideMenuFromToUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromDashboardFromToUserPassbook" />
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test> -->
 
-	<test name="My Profile">
+<!--
+	<test name="P2P Transfer Transactions">
+		<classes>
+			<class name="portals.testCases.Customer.P2PTransfer">
+				<methods>
+					<include name="p2pTranferFromDashboard" />
+					<!-- <include name="waitForMin" />
+					<include name="p2pTranferFromSideMenu" /> -->
+					<include name="verifyPerformedp2pTranferFromDashboardFromUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromDashboardFromUserPassbook" />
+				<!--	<include name="verifyPerformedp2pTranferFromSideMenuFromUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromSideMenuFromUserPassbook" /> -->
+
+					<include name="verifyPerformedp2pTranferFromDashboardFromToUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromDashboardFromToUserPassbook" />
+				<!--	<include name="verifyPerformedp2pTranferFromSideMenuFromToUserPassbook" />
+					<include name="verifyPerformedp2pTranferFromSideMenuFromToUserPassbook" /> -->
+
+				
+					
+					<!-- <include name="waitForMin" />
+					
+					<include name="p2pTranferfromFooter" /> 
+
+				</methods>
+			</class>
+		</classes>
+	</test> -->
+
+
+	<!-- 
+<test name="My Profile">	
 		<classes>
 			<class name="portals.testCases.Common.CommonTestCasesCustomer">
 				<methods>
@@ -56,7 +102,7 @@
 			</class>
 		</classes>
 	</test>  
- 
+
 	<test name="P2P Transfer from Footer">
 		<classes>
 			<class name="portals.testCases.Customer.P2PTransfer">
@@ -131,6 +177,7 @@
 		</classes>
 	</test>  
 
+
 	<test name="WithdrawCash and Agent Assisted Withdraw from Footer">
 		<classes>
 			<class name="portals.testCases.Customer.WithdrawCash">
@@ -156,6 +203,18 @@
 		</classes>
 	</test>
  
+	<test name="Change MPIN">
+		<classes>
+			<class name="portals.testCases.Customer.ChangeMpin">
+				<methods>
+				    <include name="changeMpinCustomer" />
+					<include name="changeMpinFromMyProfileCustomer" />
+					<include name="changeMpinFromLoginCustomer" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
 	<test name="WithdrawCash and Agent Assisted Withdraw from Side Menu">
 		<classes>
 			<class name="portals.testCases.Customer.WithdrawCash">
@@ -168,31 +227,10 @@
 			</class>
 		</classes>
 	</test> 
+-->
 
-	<test name="Change MPIN">
-		<classes>
-			<class name="portals.testCases.Customer.ChangeMpin">
-				<methods>
-				    <include name="changeMpinCustomer" />
-					<include name="changeMpinFromMyProfileCustomer" />
-					<include name="changeMpinFromLoginCustomer" />
-				</methods>
-			</class>
-		</classes>
-	</test> 
- 
-	<test name="Customer Onboard">
-		<classes>
-			<class name="portals.testCases.Customer.CustomerOnboard">
-				<methods>
-					<include name="CustomerOnboardFromLogin" />
-				</methods>
-			</class>
-		</classes>
-	</test>  
 
 </suite>
-
 <!-- ################  Extra from here ########################## -->
 <!--	<test name="Profile">
 		<classes>

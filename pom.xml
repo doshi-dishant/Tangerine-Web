@@ -199,7 +199,7 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>3.0.0</version>
+			<version>4.4.3</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -208,6 +208,9 @@
 			<artifactId>java-client</artifactId>
 			<version>6.0.0</version>
 		</dependency>
+
+		
+
 
 		<dependency>
 			<groupId>velocity</groupId>
@@ -314,7 +317,7 @@
 						<!-- <userType>agent</userType>
 						<subUserType>subagent</subUserType>  -->
 						<userType>customer</userType>
-						<subUserType>customer</subUserType>  
+						<subUserType>customer</subUserType>
 
 						<latestRelease>NA</latestRelease>
 						<videoRecording>false</videoRecording>

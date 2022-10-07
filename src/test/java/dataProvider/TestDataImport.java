@@ -130,6 +130,16 @@ public class TestDataImport extends SetupInit {
 		return readExcelFileTo2D(TEST_DATA, "ChangeSecretWord");
 	}
 	
+	@DataProvider(name = "SuperAgent_ChangeMpin")
+	public static Object[][] SuperAgent_ChangeMpin() {
+		return readExcelFileTo2D(TEST_DATA, "SuperAgent_ChangeMpin");
+	}
+	
+	@DataProvider(name = "AgentAssistedDeposit")
+	public static Object[][] AgentAssistedDeposit() {
+		return readExcelFileTo2D(TEST_DATA, "AgentAssistedDeposit");
+	}
+	
 	@DataProvider(name = "QRCode")
 	public static Object[][] QRCode() {
 		return readExcelFileTo2D(TEST_DATA, "QRCode");

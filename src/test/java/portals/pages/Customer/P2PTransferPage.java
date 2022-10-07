@@ -35,7 +35,6 @@ public class P2PTransferPage extends SetupInit {
 		setLogSteps(this.log, "Current Balance is: " + currentBalance);
 		double latestBalance = 0.0;
 		String transactionId = null;
-		
 		dashboardPageCommon.enterMobileNumber(map.get(ToUserName).toString(), 0);
 		dashboardPageCommon.enterAmount(map.get(Amount).toString(), 0);
 		dashboardPageCommon.sendTextInRemarks(map.get(Remarks).toString(), 0);
@@ -56,9 +55,12 @@ public class P2PTransferPage extends SetupInit {
 				throw new RuntimeException(alertMessage);
 			} else {
 				pauseInSeconds(2);
-				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyMobileNumber, map.get(ToUserName).toString())),0);
+				verifyVisible(
+						By.xpath(String.format(dashboardPageCommon.verifyMobileNumber, map.get(ToUserName).toString())),
+						0);
 				setLogSteps(this.log, "Verify Mobile Number on Confirmation Screen: " + map.get(ToUserName).toString());
-				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyRemarks, map.get(Remarks).toString())),0);
+				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyRemarks, map.get(Remarks).toString())),
+						0);
 				setLogSteps(this.log, "Verify Remarks on Confirmation Screen: " + map.get(Remarks).toString());
 				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyAmount, map.get(Amount).toString())), 0);
 				setLogSteps(this.log, "Verify Amount on Confirmation Screen: " + map.get(Amount).toString());
@@ -68,13 +70,15 @@ public class P2PTransferPage extends SetupInit {
 				verifyVisible(dashboardPageCommon.verifyTransaction, 0);
 				setLogSteps(log, "Verify Transaction is Success");
 				pauseInSeconds(2);
-				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyMobileNumber, map.get(ToUserName).toString())),0);
+				verifyVisible(
+						By.xpath(String.format(dashboardPageCommon.verifyMobileNumber, map.get(ToUserName).toString())),
+						0);
 				setLogSteps(log, "Verify Mobile Number on Success Screen: " + map.get(ToUserName).toString());
-				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyRemarks, map.get(Remarks).toString())),0);
+				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyRemarks, map.get(Remarks).toString())),
+						0);
 				setLogSteps(log, "Verify Remarks on Success Screen: " + map.get(Remarks).toString());
 				verifyVisible(By.xpath(String.format(dashboardPageCommon.verifyAmount, map.get(Amount).toString())), 0);
 				setLogSteps(log, "Verify Amount on Success Screen: " + map.get(Amount).toString());
-		
 				latestBalance = Double.parseDouble(dashboardPageCommon.getMainBalanceAfterTransaction(0).trim());
 				transactionId = dashboardPageCommon.getTransactionID();
 				setLogSteps(this.log, "Updated Balance is: " + latestBalance);

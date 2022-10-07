@@ -317,5 +317,10 @@ public class WithdrawCashPage extends SetupInit {
 		
 	}
 
+	public void Logout(Map<Object, Object> map) {
+		common.webPortalLogin(map, "From", 0);
+		
+	}
+
 	
 }

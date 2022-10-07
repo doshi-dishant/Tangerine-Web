@@ -55,7 +55,8 @@ public class MyProfile extends SetupInit {
 		try {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "profileEditFromDashboard");
-			//co.navigationPage.clickOnDashboardeMyProfile();
+			co.navigationPage.clickOnEditProfile();
+			// co.navigationPage.clickOnDashboardeMyProfile();
 			if (!co.customerMyProfilePage.editProfile(map)) {
 				throw new RuntimeException("Profile Edit Failed");
 			}

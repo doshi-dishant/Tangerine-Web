@@ -9,7 +9,7 @@
 	</listeners>
 
 	<parameter name="browserType" value="chrome" />
- 
+ <!--
  	<test name="WithdrawCash and SubAgent Assisted Withdraw">
 		<classes>
 			<class name="portals.testCases.SubAgent.SubAgentAssistedWithdrawCash">
@@ -48,7 +48,7 @@
 			</class>
 		</classes>
 	</test>  
-	<!--	
+		
 	<test name="Common Testcases">
 		<classes>
 			<class name="portals.testCases.Common.CommonTestcasesSubAgent">

@@ -30,6 +30,16 @@ public class CommonOperations extends SetupInit {
 	By btnSubmit = By.xpath("//button[text()='Submit']");
 	By btnCancel = By.xpath("//button[text()='Cancel']");
 	public By verifyLogo = By.xpath("//*[@class='logo-main']");
+	By verifyPasswordPolicyTitle = By.xpath("(//*[text()='Password Policy'])[1]");
+	By verifyPasswordPolicyText1 = By.xpath("(//*[text()='Password must have minimum 8 characters.'])");
+	By verifyPasswordPolicyText2 = By.xpath("(//*[text()='Password must have maximum 18 characters.'])");
+	By verifyPasswordPolicyText3 = By.xpath("(//*[text()='Password must have at least one lower case alphabet.'])");
+	By verifyPasswordPolicyText4 = By.xpath("(//*[text()='Password must have at least one upper case alphabet.'])");
+	By verifyPasswordPolicyText5 = By.xpath("(//*[text()='Password must have at least one numeric.'])");
+	By verifyPasswordPolicyText6 = By.xpath("(//*[text()='Password must have at least one special characters.'])");
+	By verifyPasswordPolicyText7 = By.xpath("(//*[text()='List of special character allowed are @,$,#,*,&'])");
+	By verifyPasswordPolicyText8 = By.xpath("//*[text()='Password Example']");
+
 	String verifyUser = "(//*[text()='%s'])[last()]";
 	By merchant = By.xpath("//*[text()='Merchant']");
 	By branch = By.xpath("//*[text()='Branch']");
@@ -178,12 +188,12 @@ public class CommonOperations extends SetupInit {
 			pass = map.get(ApproverPassword).toString();
 			portalUserType = map.get(ApproverUserType).toString();
 		}
-		if (!verifyVisible(By.xpath(String.format(verifyUser, user)), 2)) {
+		if (!verifyVisible(By.xpath(String.format(verifyUser, user)), 3)) {
 			navigationPageOperations.clickOnLogOut(3);
 			portalLogin(portalName, user, pass, portalUserType, args);
 		}
 	}
-	
+
 	public void webPortalLoginforNewTab(Map<Object, Object> map, String userType, int... args) {
 		String portalName = null;
 		String user = null;
@@ -205,13 +215,12 @@ public class CommonOperations extends SetupInit {
 			pass = map.get(ApproverPassword).toString();
 			portalUserType = map.get(ApproverUserType).toString();
 		}
-		if (!verifyVisible(By.xpath(String.format(verifyUser, user)), 2)) {
+		if (!verifyVisible(By.xpath(String.format(verifyUser, user)), 3)) {
 			portalLogin(portalName, user, pass, portalUserType, args);
 		}
 	}
-	
 
-	private void portalLogin(String portalName, String user, String pass, String portalUserType, int... args) {
+	public void portalLogin(String portalName, String user, String pass, String portalUserType, int... args) {
 		String url = getportalURL(env, portalName);
 		getDriver().get(url);
 		loginPage.login(user, pass, portalUserType);
@@ -500,33 +509,119 @@ public class CommonOperations extends SetupInit {
 		}
 	}
 
-	public void verifyTransactionInWebPortalForFromUser(Map<Object, Object> map,DashboardPage dashBoardPageOperations) 
-	{
+	public void verifyTransactionInWebPortalForFromUser(Map<Object, Object> map,
+			DashboardPage dashBoardPageOperations) {
 		webPortalLogin(map, "from", 0);
-		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),map.get(TransactionID).toString());
+		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),
+				map.get(TransactionID).toString());
 		setLogSteps(log, "Successfully Transaction verify in From User");
 	}
-	
-	public void verifyTransactionInWebPortalForFromUser_NewTab(Map<Object, Object> map,DashboardPage dashBoardPageOperations) 
-	{
+
+	public void verifyTransactionInWebPortalForToUserTangereine(Map<Object, Object> map,
+			DashboardPage dashBoardPageOperations) {
+		if (!map.get(ToUserType).toString().replaceAll("\\s", "").equalsIgnoreCase("ta")
+				&& !map.get(ToUserType).toString().replaceAll("\\s", "").equalsIgnoreCase("trustaccount")) {
+			
+				webPortalLogin(map, "to", 0);
+
+				dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),
+						map.get(TransactionID).toString());
+				clickOnElement(By.xpath("//*[contains(text(),'" + map.get(TransactionID).toString() + "']"), 0);
+				setLogSteps(log, "Clicked on transaction ID:" + map.get(TransactionID).toString());
+				verifyVisible(By.xpath("//*[contains(text(),'" + map.get(TransactionID).toString() + "']"), 0);
+				if (map.get(FromUserName).toString().startsWith("0")) {
+					String fromuname = map.get(FromUserName).toString().replace("0", "256");
+					String touname = map.get(ToUserName).toString().replace("0", "256");
+					verifyVisible(By.xpath("//*[contains(text(),'" + fromuname + "']"), 0);
+					setLogSteps(log, "From User verified sucessfully in passbook.");
+					verifyVisible(By.xpath("//*[contains(text(),'" + touname + "')]"), 0);
+					setLogSteps(log, "To User verified sucessfully in passbook.");
+				} else {
+					verifyVisible(By.xpath("//*[contains(text(),'" + map.get(FromUserName).toString() + "']"), 0);
+					setLogSteps(log, "From User verified sucessfully in passbook.");
+					verifyVisible(By.xpath("//*[contains(text(),'" + map.get(ToUserName).toString() + "')]"), 0);
+					setLogSteps(log, "To User verified sucessfully in passbook.");
+				}
+			}
+			setLogSteps(log, "Successfully Transaction verify in To User");
+		
+	}
+
+	public void verifyTransactionInWebPortalForFromUserTangereine(Map<Object, Object> map,
+			DashboardPage dashBoardPageOperations) {
+
+		if (isPresent(navigationPageOperations.logOut, 3)) {
+			//webPortalLogin(map, "from", 0);
+			dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),
+					map.get(TransactionID).toString());
+			clickOnElement(By.xpath("//*[text()='" + map.get(TransactionID).toString() + "']"), 0);
+			setLogSteps(log, "Clicked on transaction ID:" + map.get(TransactionID).toString());
+			verifyVisible(By.xpath("//*[text()='" + map.get(TransactionID).toString() + "']"), 0);
+			if (map.get(FromUserName).toString().startsWith("0")) {
+				String fromuname = map.get(FromUserName).toString().replace("0", "256");
+				String touname = map.get(ToUserName).toString().replace("0", "256");
+				verifyVisible(By.xpath("//*[text()='" + fromuname + "']"), 0);
+				setLogSteps(log, "From User verified sucessfully in passbook.");
+				verifyVisible(By.xpath("//*[contains(text(),'" + touname + "')]"), 0);
+				setLogSteps(log, "To User verified sucessfully in passbook.");
+			} else {
+				verifyVisible(By.xpath("//*[text()='" + map.get(FromUserName).toString() + "']"), 0);
+				setLogSteps(log, "From User verified sucessfully in passbook.");
+				verifyVisible(By.xpath("//*[contains(text(),'" + map.get(ToUserName).toString() + "')]"), 0);
+				setLogSteps(log, "To User verified sucessfully in passbook.");
+			}
+			setLogSteps(log, "Successfully Transaction verify in From User");
+		}
+
+		else {
+			webPortalLogin(map, "from", 0);
+		}
+	}
+
+	public void verifyTransactionInWebPortalForFromUser_NewTab(Map<Object, Object> map,
+			DashboardPage dashBoardPageOperations) {
 		webPortalLoginforNewTab(map, "from", 0);
-		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),map.get(TransactionID).toString());
+		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),
+				map.get(TransactionID).toString());
 		setLogSteps(log, "Successfully Transaction verify in From User");
 	}
-	
-	
-	
-	public void verifyTransactionInWebPortalForFromUserwithoutTransactionID(Map<Object, Object> map,DashboardPage dashBoardPageOperations) 
-	{
+
+	public void verifyTransactionInWebPortalForFromUserwithoutTransactionID(Map<Object, Object> map,
+			DashboardPage dashBoardPageOperations) {
 		webPortalLogin(map, "from", 0);
-		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),map.get(TransactionID).toString());
+		dashBoardPageOperations.passbookVerification(map.get(ServiceName).toString(),
+				map.get(TransactionID).toString());
 		setLogSteps(log, "Successfully Transaction verify in From User");
 	}
-	
+
 	public String getCurrentDate() {
 		DateTimeFormatter dateformatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		LocalDateTime currentDate = LocalDateTime.now();
 		String date = dateformatter.format(currentDate);
 		return date;
 	}
+
+	public void PasswordPolicy(int... args) {
+		verifyVisible(verifyPasswordPolicyTitle, args);
+		setLogSteps(log, "Verify Password Policy Title");
+
+		verifyVisible(verifyPasswordPolicyText1, args);
+		setLogSteps(log, "Verify text >>  Password must have minimum 8 characters ");
+		verifyVisible(verifyPasswordPolicyText2, args);
+		setLogSteps(log, "Verify text >>  Password must have maximum 18 characters ");
+		verifyVisible(verifyPasswordPolicyText3, args);
+		setLogSteps(log, "Verify text >>  Password must have at least one lower case alphabet ");
+		verifyVisible(verifyPasswordPolicyText4, args);
+		setLogSteps(log, "Verify text >>  Password must have at least one lower case alphabet ");
+		verifyVisible(verifyPasswordPolicyText5, args);
+		setLogSteps(log, "Verify text >>  Password must have at least one numeric ");
+		verifyVisible(verifyPasswordPolicyText6, args);
+		setLogSteps(log, "Verify text >> Password must have at least one special characters ");
+		verifyVisible(verifyPasswordPolicyText7, args);
+		setLogSteps(log, "Verify text >> List of special character allowed are @,$,#,*,& ");
+		verifyVisible(verifyPasswordPolicyText8, args);
+		setLogSteps(log, "Verify text >> Password Example");
+
+	}
+
 }

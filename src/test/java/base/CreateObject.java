@@ -13,6 +13,7 @@ import portals.pages.Agent.AirtimeSalePage;
 import portals.pages.Agent.CashInByAgentPage;
 import portals.pages.Agent.CustomerOnboardingPage;
 import portals.pages.Agent.ManageAgentPage;
+import portals.pages.Agent.SuperAgentChangeMPinPage;
 import portals.pages.Agent.UpdateCustomerKYCPage;
 import portals.pages.Common.AboutUsPage;
 import portals.pages.Common.ChangeLanguagePage;
@@ -31,6 +32,7 @@ import portals.pages.Common.TermsAndConditionsPage;
 import portals.pages.Common.TransactionDetailPage;
 import portals.pages.Common.TransactionSummaryPage;
 import portals.pages.Customer.ArbelaStorePage;
+import portals.pages.Customer.CashOutPage;
 import portals.pages.Customer.ChangeMpinPage;
 import portals.pages.Customer.ChangeSecretWordPage;
 import portals.pages.Customer.InviteFriendsPage;
@@ -51,8 +53,8 @@ public class CreateObject extends SetupInit {
 	public LoginPage loginPage;
 	public NavigationPage navigationPage;
 	public DashboardPage dashboardPage;
+	public MyProfilePage customerProfilePage;
 	public MyProfilePage customerMyProfilePage;
-	//tangerine start //////
 	public P2PTransferPage p2pTransferPage;
 	public CustomerOnboardPage customerOnboardPage;
 	public P2POffnetPage p2pOffnetPage;
@@ -61,7 +63,6 @@ public class CreateObject extends SetupInit {
 	public InviteFriendsPage inviteFriendsPage;
 	public DashBoardPageOperations dashBoardPageOperations;
 	public SubAgentAssistedWithdrawCash subAgentAssistedWithdraw;
-	//tangerine end //////
 	public WithdrawCashPage withdrawCashPage;
 	public MobileTopupPage mobileTopupPage;
 	public MPINPolicyPage mpinPolicyPage;
@@ -79,6 +80,7 @@ public class CreateObject extends SetupInit {
 	public ForgotMPinPage forgotMPinPage;
 	public A2ATransferPage a2aTransferPage;
 	public CashInByAgentPage cashInByAgentPage;
+	public SuperAgentChangeMPinPage superagentChangeMpinPage;
 	public portals.pages.Agent.WithdrawMoneyPage agentWithdrawMoneyPage;
 	public UpdateCustomerKYCPage updateCustomerKYCPage;
 	public CustomerOnboardingPage customerOnboardingPage;
@@ -91,6 +93,7 @@ public class CreateObject extends SetupInit {
 	public ArbelaStorePage arbelaStorePage;
 	public portals.pages.Agent.eVoucherPage eVoucherCustomerPage;
 	public AirtimeSalePage airtimeSalePage;
+	public CashOutPage cashOutPage;
 
 	public CreateObject(WebDriver driver) {
 		reloadCurrentPage(driver);
@@ -105,10 +108,9 @@ public class CreateObject extends SetupInit {
 		navigationPage.goToHome(5);
 		dashboardPage = new DashboardPage(driver, log);
 //		customerProfilePage = new MyProfilePage(driver, log);
-		// tangerine start ////////
 		p2pTransferPage = new P2PTransferPage(driver, log);
 		p2pOffnetPage = new P2POffnetPage(driver, log);
-		changeMpinPage =  new ChangeMpinPage(driver, log);
+		changeMpinPage = new ChangeMpinPage(driver, log);
 		changesecretwordpage = new ChangeSecretWordPage(driver, log);
 		inviteFriendsPage = new InviteFriendsPage(driver, log);
 		withdrawCashPage = new WithdrawCashPage(driver, log);
@@ -116,8 +118,6 @@ public class CreateObject extends SetupInit {
 		dashBoardPageOperations = new DashBoardPageOperations(driver, log);
 		faqsPage = new FAQsPage(driver, log);
 		customerOnboardPage = new CustomerOnboardPage(driver, log);
-		// tangerine end //////////
-		
 		common = new CommonOperations(driver, log);
 		mobileTopupPage = new MobileTopupPage(driver, log);
 		mobilePostpaidPage = new MobilePostpaidPage(driver, log);
@@ -133,13 +133,14 @@ public class CreateObject extends SetupInit {
 		commissionReportPage = new CommissionReportPage(driver, log);
 		forgotMPinPage = new ForgotMPinPage(driver, log);
 		a2aTransferPage = new A2ATransferPage(driver, log);
+		superagentChangeMpinPage = new SuperAgentChangeMPinPage(driver, log);
 		cashInByAgentPage = new CashInByAgentPage(driver, log);
 		agentWithdrawMoneyPage = new portals.pages.Agent.WithdrawMoneyPage(driver, log);
 		updateCustomerKYCPage = new UpdateCustomerKYCPage(driver, log);
 		customerOnboardingPage = new CustomerOnboardingPage(driver, log);
 		manageAgentPage = new ManageAgentPage(driver, log);
 		agentProfilePage = new portals.pages.Agent.MyProfilePage(driver, log);
-		customerMyProfilePage = new  portals.pages.Customer.MyProfilePage(driver, log);
+		customerMyProfilePage = new portals.pages.Customer.MyProfilePage(driver, log);
 		agentOnboardingPage = new AgentOnboardingPage(driver, log);
 		forgotPasswordPage = new ForgotPasswordPage(driver, log);
 		newUserPage = new NewUserPage(driver, log);
@@ -147,6 +148,6 @@ public class CreateObject extends SetupInit {
 		arbelaStorePage = new ArbelaStorePage(driver, log);
 		eVoucherCustomerPage = new portals.pages.Agent.eVoucherPage(driver, log);
 		airtimeSalePage = new AirtimeSalePage(driver, log);
-		
+		cashOutPage = new CashOutPage(driver, log);
 	}
 }

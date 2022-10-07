@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.time.Duration;
 import java.time.Instant;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import base.SetupInit;
@@ -15,7 +14,8 @@ import utils.elasticUtils.elasticwrite;
 public class LoginPage extends SetupInit {
 	LoginPageOperations loginPageCommon;
 	elasticwrite log;
-	public	String getotp = null;
+	public String getotp = null;
+
 	public LoginPage(WebDriver driver, elasticwrite log) {
 		this.log = log;
 		this.driver = driver;
@@ -33,29 +33,20 @@ public class LoginPage extends SetupInit {
 			loginPageCommon.selectAgent(0);
 		else if (subUserType.equalsIgnoreCase("subagent"))
 			loginPageCommon.selectSubAgent(0);
-		else if (subUserType.equalsIgnoreCase("branch"))
-			loginPageCommon.selectBranch(0);
-		else if (subUserType.equalsIgnoreCase("merchant"))
-			loginPageCommon.selectMerchant(0);
 		else if (subUserType.equalsIgnoreCase("super agent"))
 			loginPageCommon.selectSuperAgent(0);
-		else if (subUserType.equalsIgnoreCase("teller"))
-			loginPageCommon.selectTeller(0);
 		loginPageCommon.enterUserName(userNameVal, 0);
 		loginPageCommon.enterPassword(passwordVal, 0);
-		loginPageCommon.clickOnLogin(0);	
+		loginPageCommon.clickOnLogin(0);
 		pauseInSeconds(2);
-		
 		try {
 			if (loginPageCommon.isOTPScreenPresent()) {
 				getotp = DBUtils.getOTP(userNameVal).toString();
 				loginPageCommon.enterOTP(getotp, 0);
 				loginPageCommon.clickOnSubmit(0);
-				
-			}
 
+			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Instant currentTime = getCurrentTime();
@@ -73,8 +64,6 @@ public class LoginPage extends SetupInit {
 					loginPageCommon.clickOnLogin();
 			}
 		}
-
-		
 	}
 
 	public void loginToPortal(String userNameVal, String passwordVal) {
@@ -102,7 +91,7 @@ public class LoginPage extends SetupInit {
 			}
 		}
 	}
-	
+
 	public void login_With_Invalid(String userNameVal, String passwordVal, String subUserType) {
 		reloadCounter = 0;
 		if (subUserType.equalsIgnoreCase("agent"))
@@ -115,8 +104,7 @@ public class LoginPage extends SetupInit {
 		loginPageCommon.enterPassword(passwordVal, 0);
 		loginPageCommon.clickOnLogin(0);
 	}
-	
-	
+
 	public void adminLogin(String userName, String password) {
 		reloadCounter = 0;
 		loginPageCommon.enterUserNameInAdmin(userName, 0);

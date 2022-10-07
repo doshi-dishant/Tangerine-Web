@@ -36,8 +36,8 @@ public class CommonConstants {
 	static final String RESOURCES_FOLDER = TESTDATA_FOLDER + "/" + ReadProperty.getPropertyValue("RESOURCES_FOLDER")
 			+ "/";
 	static final String DOWNLOADS_FOLDER = ReadProperty.getPropertyValue("DOWNLOADS_FOLDER");
-	static final String DEPENDENCIES_FOLDER = (currentDir + File.separator
-			+ ReadProperty.getPropertyValue("DEPENDENCIES_FOLDER")) + File.separator;
+//	static final String DEPENDENCIES_FOLDER = (currentDir + File.separator
+//			+ ReadProperty.getPropertyValue("DEPENDENCIES_FOLDER")) + File.separator;
 	static final String APPLICATIONS_FOLDER = (currentDir + File.separator
 			+ ReadProperty.getPropertyValue("APPLICATIONS_FOLDER"));
 	protected static String userName;
@@ -75,7 +75,7 @@ public class CommonConstants {
 	public WebDriver driver;
 	Wait<WebDriver> wait;
 	static URL remote_grid;
-	protected int reloadCounter = 0;
+	protected static int reloadCounter = 0;
 	protected boolean isRemoteEnable;
 	// Selenium hub IP
 	protected String hubUrl;

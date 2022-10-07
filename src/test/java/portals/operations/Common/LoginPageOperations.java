@@ -2,7 +2,6 @@ package portals.operations.Common;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import base.SetupInit;
 import utils.elasticUtils.elasticwrite;
@@ -205,4 +204,5 @@ public class LoginPageOperations extends SetupInit {
 		if (log != null)
 			setLogSteps(log, "Click on Merchant");
 	}
+
 }

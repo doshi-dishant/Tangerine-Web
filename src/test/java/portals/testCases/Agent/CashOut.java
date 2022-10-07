@@ -28,7 +28,7 @@ public class CashOut extends SetupInit {
 			setTestParameters(co.datamap, "cashOut");
 			map.put(MethodName, "cashOut");
 			co.navigationPage.clickOnCashOut();
-			//map = co.cashOutPage.agentCashOut(map);
+			// map = co.cashOutPage.agentCashOut(map);
 			setUseCaseVerificationData("cashOut", verificationData, map);
 			setSuccessParameters(co.datamap);
 			writeVerificationFile(Utility.getJsonStringFromMap(map));
@@ -87,8 +87,10 @@ public class CashOut extends SetupInit {
 			co.datamap.putAll(map);
 			setTestParameters(co.datamap, "cashOutFromDashboard");
 			map.put(MethodName, "cashOut");
-		//	co.navigationPage.clickOnDashboardCashOut();
-			//map = co.cashOutPage.agentCashOut(map);
+//			co.navigationPage.clickOnDashboardCashOut();
+			map = co.cashOutPage.agentCashOut(map);
+			// co.navigationPage.clickOnDashboardCashOut();
+			// map = co.cashOutPage.agentCashOut(map);
 			setUseCaseVerificationData("cashOutFromDashboard", verificationData, map);
 			setSuccessParameters(co.datamap);
 			writeVerificationFile(Utility.getJsonStringFromMap(map));
@@ -148,7 +150,7 @@ public class CashOut extends SetupInit {
 			setTestParameters(co.datamap, "cashOutFromSideMenu");
 			map.put(MethodName, "cashOut");
 			co.navigationPage.clickOnSideMenuCashOut();
-			//map = co.cashOutPage.agentCashOut(map);
+			// map = co.cashOutPage.agentCashOut(map);
 			setUseCaseVerificationData("cashOutFromSideMenu", verificationData, map);
 			setSuccessParameters(co.datamap);
 			writeVerificationFile(Utility.getJsonStringFromMap(map));

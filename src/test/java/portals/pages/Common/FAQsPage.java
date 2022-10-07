@@ -20,4 +20,3 @@ public class FAQsPage extends SetupInit {
 		fAQsOperations.isNavigateToFAQsPage(0);
 	}
 }
-

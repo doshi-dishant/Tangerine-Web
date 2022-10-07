@@ -79,9 +79,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import portals.interfaces.GetExcelHeaders;
 import portals.pages.Common.LoginPage;
-import utils.DBUtils;
 import utils.ExcelUtility;
 import utils.ReadProperty;
 import utils.Utility;
@@ -165,10 +165,6 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 			accessMatricesFileName = TESTDATA_FOLDER + File.separator + "access-matrices" + File.separator
 					+ ReadProperty.getPropertyValue("CUSTOMER_ACCESS_MATRICES_FILE");
 			break;
-		case "merchant":
-			accessMatricesFileName = TESTDATA_FOLDER + File.separator + "access-matrices" + File.separator
-					+ ReadProperty.getPropertyValue("MERCHANT_ACCESS_MATRICES_FILE");
-			break;
 		default:
 			throw new RuntimeException("Unable to find access matrices file");
 		}
@@ -216,7 +212,7 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 				this.driver.get(testUrl);
 			loginPage = new LoginPage(this.driver);
 			loginPage.login(userName, password, subUserType);
-			DBUtils.getOTP(Phone);
+//			DBUtils.getOTP(Phone);
 
 		} catch (Exception e) {
 			stacktrace = Utility.getStackStrace(e);
@@ -250,30 +246,11 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 					password = xmlUtils.getChildNodeValue(configFilePath, "QA", "SuperAgentPassword");
 					pin = xmlUtils.getChildNodeValue(configFilePath, "QA", "SuperAgentPin");
 					break;
-				default:
-					throw new RuntimeException("irrelevant sub user type found");
-				}
-				break;
-			case "merchant":
-				testUrl = xmlUtils.getChildNodeValue(configFilePath, "URL", "MerchantQAUrl");
-				switch (subUserType.toLowerCase().replaceAll("\\s", "")) {
-				case "merchant":
-					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "QA", "MerchantTestData");
-					userName = xmlUtils.getChildNodeValue(configFilePath, "QA", "MerchantUser");
-					password = xmlUtils.getChildNodeValue(configFilePath, "QA", "MerchantPassword");
-					pin = xmlUtils.getChildNodeValue(configFilePath, "QA", "MerchantPin");
-					break;
-				case "branch":
-					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "QA", "BranchTestData");
-					userName = xmlUtils.getChildNodeValue(configFilePath, "QA", "BranchUser");
-					password = xmlUtils.getChildNodeValue(configFilePath, "QA", "BranchPassword");
-					pin = xmlUtils.getChildNodeValue(configFilePath, "QA", "BranchPin");
-					break;
-				case "teller":
-					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "QA", "TellerTestData");
-					userName = xmlUtils.getChildNodeValue(configFilePath, "QA", "TellerUser");
-					password = xmlUtils.getChildNodeValue(configFilePath, "QA", "TellerPassword");
-					pin = xmlUtils.getChildNodeValue(configFilePath, "QA", "TellerPin");
+				case "subagent":
+					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "QA", "SubAgentTestData");
+					userName = xmlUtils.getChildNodeValue(configFilePath, "QA", "SubAgentUser");
+					password = xmlUtils.getChildNodeValue(configFilePath, "QA", "SubAgentPassword");
+					pin = xmlUtils.getChildNodeValue(configFilePath, "QA", "SubAgentPin");
 					break;
 				default:
 					throw new RuntimeException("irrelevant sub user type found");
@@ -306,30 +283,11 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 					password = xmlUtils.getChildNodeValue(configFilePath, "Dev", "SuperAgentPassword");
 					pin = xmlUtils.getChildNodeValue(configFilePath, "Dev", "SuperAgentPassword");
 					break;
-				default:
-					throw new RuntimeException("irrelevant sub user type found");
-				}
-				break;
-			case "merchant":
-				testUrl = xmlUtils.getChildNodeValue(configFilePath, "URL", "MerchantDEVUrl");
-				switch (subUserType.toLowerCase().replaceAll("\\s", "")) {
-				case "merchant":
-					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "Dev", "MerchantTestData");
-					userName = xmlUtils.getChildNodeValue(configFilePath, "Dev", "MerchantUser");
-					password = xmlUtils.getChildNodeValue(configFilePath, "Dev", "MerchantPassword");
-					pin = xmlUtils.getChildNodeValue(configFilePath, "Dev", "MerchantPin");
-					break;
-				case "branch":
-					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "Dev", "BranchTestData");
-					userName = xmlUtils.getChildNodeValue(configFilePath, "Dev", "BranchUser");
-					password = xmlUtils.getChildNodeValue(configFilePath, "Dev", "BranchPassword");
-					pin = xmlUtils.getChildNodeValue(configFilePath, "Dev", "BranchPin");
-					break;
-				case "teller":
-					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "Dev", "TellerTestData");
-					userName = xmlUtils.getChildNodeValue(configFilePath, "Dev", "TellerUser");
-					password = xmlUtils.getChildNodeValue(configFilePath, "Dev", "TellerPassword");
-					pin = xmlUtils.getChildNodeValue(configFilePath, "Dev", "TellerPin");
+				case "subagent":
+					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "Dev", "SubAgentTestData");
+					userName = xmlUtils.getChildNodeValue(configFilePath, "Dev", "SubAgentUser");
+					password = xmlUtils.getChildNodeValue(configFilePath, "Dev", "SubAgentPassword");
+					pin = xmlUtils.getChildNodeValue(configFilePath, "Dev", "SubAgentPin");
 					break;
 				default:
 					throw new RuntimeException("irrelevant sub user type found");
@@ -362,7 +320,6 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 					password = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SuperAgentPassword");
 					pin = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SuperAgentPin");
 					break;
-					
 				case "subagent":
 					test_data_file = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SubAgentTestData");
 					userName = xmlUtils.getChildNodeValue(configFilePath, "UAT", "SubAgentUser");
@@ -420,12 +377,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 			switch (userType.toLowerCase().replaceAll("\\s", "")) {
 			case "agent":
 				return xmlUtils.getChildNodeValue(configFilePath, "URL", "AgentQAUrl");
-			case "merchant":
-				return xmlUtils.getChildNodeValue(configFilePath, "URL", "MerchantQAUrl");
 			case "customer":
 				return xmlUtils.getChildNodeValue(configFilePath, "URL", "CustomerQAUrl");
-			case "enterprise":
-				return xmlUtils.getChildNodeValue(configFilePath, "URL", "EnterpriseQAUrl");
 			default:
 				throw new RuntimeException("irrelevant user type found");
 			}
@@ -433,12 +386,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 			switch (userType.toLowerCase().replaceAll("\\s", "")) {
 			case "agent":
 				return xmlUtils.getChildNodeValue(configFilePath, "URL", "AgentDEVUrl");
-			case "merchant":
-				return xmlUtils.getChildNodeValue(configFilePath, "URL", "MerchantDEVUrl");
 			case "customer":
 				return xmlUtils.getChildNodeValue(configFilePath, "URL", "CustomerDEVUrl");
-			case "enterprise":
-				return xmlUtils.getChildNodeValue(configFilePath, "URL", "EnterpriseDEVUrl");
 			default:
 				throw new RuntimeException("irrelevant user type found");
 			}
@@ -446,12 +395,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 			switch (userType.toLowerCase().replaceAll("\\s", "")) {
 			case "agent":
 				return xmlUtils.getChildNodeValue(configFilePath, "URL", "AgentUATUrl");
-			case "merchant":
-				return xmlUtils.getChildNodeValue(configFilePath, "URL", "MerchantUATUrl");
 			case "customer":
 				return xmlUtils.getChildNodeValue(configFilePath, "URL", "CustomerUATUrl");
-			case "enterprise":
-				return xmlUtils.getChildNodeValue(configFilePath, "URL", "EnterpriseUATUrl");
 			default:
 				throw new RuntimeException("irrelevant user type found");
 			}
@@ -466,9 +411,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		case -1361128838:
 			if (toLowerCase.equals("chrome")) {
 				try {
-				this.driver = initChromeDriver();
-				}
-				catch(Exception e) {
+					this.driver = initChromeDriver();
+				} catch (Exception e) {
 					System.out.println(e);
 				}
 				return;
@@ -506,17 +450,22 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 	}
 
 	private WebDriver initChromeHeadlessDriver() {
-		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments(new String[] { "headless" });
-		chromeOptions.addArguments(new String[] { "window-size=1200x600" });
+		chromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+		chromeOptions.addArguments("--headless", "window-size=1920,1080", "--no-sandbox");
+		chromeOptions.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200",
+				"--ignore-certificate-errors", "--disable-extensions", "--no-sandbox", "--disable-dev-shm-usage");
 		driver = new ChromeDriver(chromeOptions);
 		return driver;
 	}
 
 	private WebDriver initChromeDriver() {
 		System.out.println("Launching google chrome with new profile..");
-		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		ChromeOptions option = setChromeOptions();
 		if (isRemoteEnable)
 			return new RemoteWebDriver(remote_grid, option);
@@ -556,7 +505,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 
 	private WebDriver initFirefoxDriver() {
 		System.out.println("Launching Firefox browser..");
-		System.setProperty("webdriver.gecko.driver", DEPENDENCIES_FOLDER + "geckodriver.exe");
+//		System.setProperty("webdriver.gecko.driver", DEPENDENCIES_FOLDER + "geckodriver.exe");
+		WebDriverManager.firefoxdriver().setup();
 		FirefoxOptions options = setFireFoxOptions();
 		if (isRemoteEnable)
 			return new RemoteWebDriver(remote_grid, options);
@@ -598,7 +548,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 	private WebDriver initChromeProxyDriver() {
 		proxyIP = xmlUtils.getChildNodeValue(configFilePath, "Proxy", "ProxyIP");
 		proxyPort = xmlUtils.getChildNodeValue(configFilePath, "Proxy", "ProxyPort");
-		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+		WebDriverManager.chromedriver().setup();
 		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 		Proxy proxy = new Proxy();
 		proxy.setHttpProxy(proxyIP + ":" + proxyPort);
@@ -613,12 +564,11 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		chromeOptions.addArguments("disable-infobars");
 		capabilities.setJavascriptEnabled(true);
 		capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-		capabilities.setCapability("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
+//		capabilities.setCapability("webdriver.chrome.driver", DEPENDENCIES_FOLDER + "chromedriver.exe");
 		capabilities.setPlatform(Platform.WINDOWS);
 		capabilities.setBrowserName("chrome");
 		capabilities.setJavascriptEnabled(true);
 		capabilities.setCapability("proxy", proxy);
-
 		chromeOptions.merge(capabilities);
 		if (isRemoteEnable) {
 			driver = new RemoteWebDriver(remote_grid, capabilities);
@@ -632,7 +582,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		FirefoxProfile profile1 = new FirefoxProfile();
 		proxyIP = xmlUtils.getChildNodeValue(configFilePath, "Proxy", "ProxyIP");
 		proxyPort = xmlUtils.getChildNodeValue(configFilePath, "Proxy", "ProxyPort");
-		System.setProperty("webdriver.gecko.driver", DEPENDENCIES_FOLDER + "geckodriver.exe");
+//		System.setProperty("webdriver.gecko.driver", DEPENDENCIES_FOLDER + "geckodriver.exe");
+		WebDriverManager.firefoxdriver().setup();
 		profile1.setPreference("dom.max_chrome_script_run_time", "999");
 		profile1.setPreference("dom.max_script_run_time", "999");
 		profile1.setPreference("browser.download.folderList", 2);
@@ -1188,9 +1139,9 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 	public boolean waitForLoader() {
 		reloadCounter = 0;
 		pauseInMilliSeconds(900);
-		if (isLoderDisplayed(By.xpath("//*[contains(@class,'loader')]"))) {
+		if (isLoderDisplayed(By.xpath("//*[contains(@src,'Lycamobile-GIF-loader')]"))) {
 			Instant currentTime = getCurrentTime();
-			while (isLoderDisplayed(By.xpath("//*[contains(@class,'loader')]"))) {
+			while (isLoderDisplayed(By.xpath("//*[contains(@src,'Lycamobile-GIF-loader')]"))) {
 				Instant loopingTime = getCurrentTime();
 				Duration timeElapsed = Duration.between(currentTime, loopingTime);
 				long sec = timeElapsed.toMillis() / 1000;
@@ -1204,37 +1155,7 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 			}
 		}
 		pauseInMilliSeconds(900);
-		if (isLoderDisplayed(By.xpath("//div[contains(@class,'loader-sec')]"))) {
-			Instant currentTime = getCurrentTime();
-			while (isLoderDisplayed(By.xpath("//div[contains(@class,'loader-sec')]"))) {
-				Instant loopingTime = getCurrentTime();
-				Duration timeElapsed = Duration.between(currentTime, loopingTime);
-				long sec = timeElapsed.toMillis() / 1000;
-				int durDiff = (int) sec;
-				if (durDiff >= LOADER_WAIT) {
-					reloadCurrentPage();
-					reloadCounter++;
-					if (reloadCounter == 6)
-						assertTrue(false, "Continuous Loader Displaying");
-				}
-			}
-		}
-		if (isLoderDisplayed(By.xpath("//div[contains(text(),'Loading')]"))) {
-			Instant currentTime = getCurrentTime();
-			while (isLoderDisplayed(By.xpath("//div[contains(text(),'Loading')]"))) {
-				Instant loopingTime = getCurrentTime();
-				Duration timeElapsed = Duration.between(currentTime, loopingTime);
-				long sec = timeElapsed.toMillis() / 1000;
-				int durDiff = (int) sec;
-				if (durDiff >= LOADER_WAIT) {
-					reloadCurrentPage();
-					reloadCounter++;
-					if (reloadCounter == 6)
-						assertTrue(false, "Continuous Loading Displaying");
-				}
-				pauseInMilliSeconds(400);
-			}
-		}
+		
 		return true;
 	}
 
@@ -1469,34 +1390,14 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		switch (userType.toLowerCase().replaceAll("\\s", "")) {
 		case "agent":
 			switch (subUserType.toLowerCase().replaceAll("\\s", "")) {
-			
 			case "subagent":
 				colNum = 4;
 				break;
-				
 			case "agent":
 				colNum = 3;
 				break;
-				
 			case "superagent":
 				colNum = 2;
-				break;
-			default:
-				throw new RuntimeException("irrelevant sub user type found");
-			}
-			break;
-		case "merchant":
-			testUrl = xmlUtils.getChildNodeValue(configFilePath, "URL", "MerchantQAUrl");
-			switch (subUserType.toLowerCase().replaceAll("\\s", "")) {
-			case "merchant":
-				colNum = 4;
-				break;
-			case "branch":
-				colNum = 2;
-				break;
-			case "teller":
-				colNum = 3;
-				break;
 			default:
 				throw new RuntimeException("irrelevant sub user type found");
 			}
@@ -1858,13 +1759,13 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 
 	public void openNewTabInBrowser() {
 		((JavascriptExecutor) driver).executeScript("window.open()");
-		
+
 	}
-	
+
 	public void switchToMainTab(String Window) {
 		driver.switchTo().window(Window);
 	}
-	
+
 	public String getMainWindow() {
 		return driver.getWindowHandle();
 	}
@@ -1879,13 +1780,13 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 			if (!mainWindowHandle.equalsIgnoreCase(ChildWindow)) {
 				driver.switchTo().window(ChildWindow);
 			}
-		}	
+		}
 
 	}
-	
-	public void closeCurrentTab(String Window){ 
+
+	public void closeCurrentTab(String Window) {
 		driver.close();
-		driver.switchTo().window(Window); 
+		driver.switchTo().window(Window);
 	}
 
 	public String setTransactionCalculator(String methodName, String fromNumber, String toNumber, String openingBalance,
@@ -1895,9 +1796,8 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 		File file = new File(transactionDir);
 		if (!file.exists())
 			file.mkdir();
-		newTransactionFileName = transactionDir + File.separator + "Tangerine_" + userType + "_" + methodName
-				+ "_" + Utility.getCurrentDateTime().replaceAll(":", "_").replaceAll("-", "_").replaceAll(" ", "_")
-				+ ".xls";
+		newTransactionFileName = transactionDir + File.separator + "Tangerine_" + userType + "_" + methodName + "_"
+				+ Utility.getCurrentDateTime().replaceAll(":", "_").replaceAll("-", "_").replaceAll(" ", "_") + ".xls";
 		if (ExcelUtility.createAnExcel(newTransactionFileName, transactionSheetName)) {
 			transactionFileName = TESTDATA_FOLDER + File.separator + "Transaction Templates" + File.separator
 					+ "Transaction Templates.xls";
@@ -2037,6 +1937,17 @@ public class SetupInit extends CommonConstants implements GetExcelHeaders {
 
 	public void setUseCaseVerificationData(String methodName, Map<String, ArrayList<Map<Object, Object>>> data,
 			Map<Object, Object> map) {
+		if (data.get(methodName) != null) {
+			data.get(methodName).add(retriveData(map));
+		} else {
+			ArrayList<Map<Object, Object>> al = new ArrayList<>();
+			al.add(retriveData(map));
+			data.put(methodName, al);
+		}
+	}
+
+	public void setUseCaseVerificationDataMultiTransaction(String methodName, String trnId,
+			Map<String, ArrayList<Map<Object, Object>>> data, Map<Object, Object> map) {
 		if (data.get(methodName) != null) {
 			data.get(methodName).add(retriveData(map));
 		} else {

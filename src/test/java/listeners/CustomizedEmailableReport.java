@@ -347,8 +347,8 @@ public class CustomizedEmailableReport implements IReporter {
 					Throwable exception = testResult.getThrowable();
 					boolean hasThrowable = exception != null;
 					if (hasThrowable) {
-						String str = Utils.stackTrace(exception, true)[0];
-						scanner = new Scanner(str);
+//						String str = Utils.stackTrace(exception, true)[0];
+						scanner = new Scanner(exception.toString());
 						firstLine = scanner.nextLine();
 					}
 				}
@@ -525,7 +525,7 @@ public class CustomizedEmailableReport implements IReporter {
 
 	protected void generateExceptionReport(Throwable exception, ITestNGMethod method) {
 		out.print("<div class=\"stacktrace\">");
-		out.print(Utils.stackTrace(exception, true)[0]);
+		out.print(exception.toString());
 		out.println("</div>");
 	}
 

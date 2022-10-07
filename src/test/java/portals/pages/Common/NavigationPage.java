@@ -1,5 +1,7 @@
 package portals.pages.Common;
 
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.WebDriver;
 
 import base.SetupInit;
@@ -16,35 +18,35 @@ public class NavigationPage extends SetupInit {
 	public void clickOnDashboardP2PTransfer() {
 		navigationPageOperations.clickOnDashboardP2PTransfer(0);
 	}
-	
+
 	public void verifyUserNotActive() {
 		navigationPageOperations.verifyUserNotActive(0);
 	}
-	
+
 	public void verifyLoggedIn() {
 		navigationPageOperations.verifyLoggedIn(0);
 	}
-	
+
 	public void verifyInvalidCredentials() {
 		navigationPageOperations.verifyInvalidCredentials(0);
 	}
-	
+
 	public void verifyAccountTempBlocked() {
 		navigationPageOperations.verifyAccountTempBlocked(0);
 	}
-	
+
 	public void clickOnDashboardP2POffnet() {
 		navigationPageOperations.clickOnDashboardP2POffnet(0);
 	}
-	
+
 	public void clickOnChangeInviteFriendsfromSideMenu() {
 		navigationPageOperations.clickOnInviteFriendsfromSideMenu(0);
 	}
-	
+
 	public void clickOnWithdrawCashFroomFooter() {
 		navigationPageOperations.clickOnWithdrawCashFromFooter(0);
 	}
-	
+
 	public void clickOnWithdrawCashFromSideMenu() {
 		navigationPageOperations.clickOnWithdrawCashFromSideMenu(0);
 	}
@@ -53,9 +55,8 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenuCashOut(0);
 	}
 
-	/////////// tangerine ends //////////////////////// 
-	
-	
+	/////////// tangerine ends ////////////////////////
+
 	public NavigationPage(WebDriver driver, elasticwrite log) {
 		this.log = log;
 		this.driver = driver;
@@ -258,7 +259,6 @@ public class NavigationPage extends SetupInit {
 	public void clickOnSideMenuSettings() {
 		navigationPageOperations.clickOnSideMenuSettings(0);
 	}
-
 
 	public void clickOnSideMenuServicesReceivePayment() {
 		clickOnSideMenuServices();
@@ -765,6 +765,10 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenuMPINPolicyFromSettings(0);
 	}
 
+	public void clickOnSideMenueChangeMPIN() {
+		navigationPageOperations.clickOnSideMenuMPINPolicyChangeMPIN(0);
+	}
+
 	public void clickOnDashboardePasswordPolicy() {
 		navigationPageOperations.clickOnDashboardPasswordPolicy(0);
 	}
@@ -777,8 +781,8 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenuPrivacyPolicyFromSettings(0);
 	}
 
-	public void clickOnSideMenueTermsAndConditionsFromSettings() {
-		navigationPageOperations.clickOnSideMenuTermsAndConditionsFromSettings(0);
+	public void clickOnSideMenueTermsAndConditionsFromProfile() {
+		navigationPageOperations.clickOnSideMenuTermsAndConditionsFromProfile(0);
 	}
 
 	public void clickOnDashboardePrivacyPolicy() {
@@ -819,6 +823,10 @@ public class NavigationPage extends SetupInit {
 
 	public void clickOnDashboardChangePassword() {
 		navigationPageOperations.clickOnDashboardChangePassword(0);
+	}
+
+	public void clickOnProfileChangePassword() {
+		navigationPageOperations.clickOnProfileChangePassword(0);
 	}
 
 	public void clickOnNavBarMyTransactions() {
@@ -884,24 +892,27 @@ public class NavigationPage extends SetupInit {
 	public void clickOnChangeMpinfromSideMenu() {
 		navigationPageOperations.clickOnChangeMpinfromSideMenu(0);
 	}
-	
+
+	public void clickOnChangeMpinfromSideMenuForWrongMPIN() {
+		navigationPageOperations.clickOnChangeMpinfromSideMenuWorngInput(0);
+	}
+
 	public void clickOnChangeSecretWordfromSideMenu() {
 		navigationPageOperations.clickOnChangeSecretWordfromSideMenu(0);
 	}
-	
+
 	public void clickOnForgotSecretWordfromLogin() {
 		navigationPageOperations.clickOnChangeSecretWordfromLogin(0);
 	}
-	
-	
+
 	public void clickOnLogOutForNass() {
 		navigationPageOperations.clickOnLogOutForNass(0);
 	}
-	
+
 	public void clickOnP2PTransferfromFooter() {
 		navigationPageOperations.clickOnP2PTransferfromFooter(0);
 	}
-	
+
 	public void clickOnSideP2PTransfer() {
 		navigationPageOperations.clickOnSideP2PTransfer(0);
 	}
@@ -913,7 +924,7 @@ public class NavigationPage extends SetupInit {
 	public void clickOnP2POffnetTransferfromFooter() {
 		navigationPageOperations.clickOnP2POffnetTransferfromFooter(0);
 	}
-	
+
 	public void clickOnMerchantPayment() {
 		navigationPageOperations.clickOnMerchantPayment(0);
 	}
@@ -941,11 +952,10 @@ public class NavigationPage extends SetupInit {
 	public void clickOnCashOut() {
 		navigationPageOperations.clickOnCashOut(0);
 	}
-	
+
 	public void clickOntxtAgentAssistedWithdraw() {
 		navigationPageOperations.clickOntxtAgentAssistedWithdraw(0);
 	}
-	
 
 	public void clickOnContactUs() {
 		navigationPageOperations.clickOnDashboardContactUs(0);
@@ -1098,6 +1108,10 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenuA2ATransfer(0);
 	}
 
+	public void clickOnFooterOptionA2ATransfer() {
+		navigationPageOperations.clickOnFooterOptionA2ATransfer(0);
+	}
+
 	public void clickOnCashInByAgent() {
 		navigationPageOperations.clickOnCashInByAgent(0);
 	}
@@ -1221,6 +1235,48 @@ public class NavigationPage extends SetupInit {
 		navigationPageOperations.clickOnSideMenuAirtimeSale(0);
 	}
 
+	public void clickOnAgentAssistedDeposit() {
+		navigationPageOperations.clickOnA2ATransfer(0);
+		navigationPageOperations.clickOnclickOnAgentAssistedDeposit(0);
+	}
+
+	public void clickOnSideMenuProfileverifyFAQs(int time) {
+		verifyVisible(navigationPageOperations.faqsTitle, time);
+		setLogSteps(log, "Verify Check Title");
+
+	}
+
+	public void clickOnPasswordPolicy() {
+		navigationPageOperations.clickOnDashboardPasswordPolicy(0);
+	}
+
+	public void clickOnSideMenueTermsAndConditionsFromSettings() {
+		navigationPageOperations.clickOnSideMenu(0);
+	}
+
+	public void Verifybalance(double Check_Balance, double Check_Balance_Profile) {
+		navigationPageOperations.clickOnDashboardProfileDetail(0);
+		setLogSteps(log, "Verify Balance for Dashboard:" + Check_Balance + " and Profile:" + Check_Balance_Profile);
+		setLogSteps(log, "Verify Both are Equal");
+		assertEquals(Check_Balance, Check_Balance_Profile, GENERAL_TIMEOUT);
+
+	}
+
+	public void VerifyPersonalinfo() {
+
+		navigationPageOperations.clickOnPersonalinfoProfile(0);
+		verifyVisible(navigationPageOperations.PersonalinfoProfile, 0);
+		setLogSteps(log, "Verify Personal info");
+
+	}
+
+	public void VerifyDocumentinforeligiousworship() {
+		navigationPageOperations.clickOnDocumentinforeligiousworshipProfile(0);
+		verifyVisible(navigationPageOperations.DocumentinforeligiousworshipProfile, 0);
+		setLogSteps(log, "Verify Document info religious worship info ");
+
+	}
+
 	public void clickOnSideMenuProfileMyProfile() {
 		navigationPageOperations.clickOnSideMenuProfileMyProfile(0);
 	}
@@ -1228,40 +1284,28 @@ public class NavigationPage extends SetupInit {
 	public void clickOnMyProfile() {
 		navigationPageOperations.clickOnMyProfile(0);
 	}
-	
+
 	public void clickOnForgetMpinfromLogin() {
 		navigationPageOperations.clickOnForgetMpinfromLogin(0);
 	}
-	
-	public void VerifyServiceiconsdisplayedFromDashboard() {
 
+	public void VerifyServiceiconsdisplayedFromDashboard() {
 		verifyVisible(navigationPageOperations.CustomerCashinicon, 0);
 		setLogSteps(log, "Verify Cash in icon in Dashboard ");
-
 		verifyVisible(navigationPageOperations.CustomerP2PTransfericon, 0);
 		setLogSteps(log, "Verify P2P Transfer icon in Dashboard ");
-
 		verifyVisible(navigationPageOperations.CustomerWithdrawCashicon, 0);
 		setLogSteps(log, "Verify Withdraw Cash icon in Dashboard ");
-
 		verifyVisible(navigationPageOperations.CustomerTopUpBundleicon, 0);
 		setLogSteps(log, "Verify TopUp Bundle icon in Dashboard ");
-		
 		verifyVisible(navigationPageOperations.CustomerBillPaymenticon, 0);
 		setLogSteps(log, "Verify Bll Payment icon in Dashboard ");
-	
 		verifyVisible(navigationPageOperations.CustomerTopUpAirtimeicon, 0);
 		setLogSteps(log, "VerifyTopUp Airtime icon in Dashboard ");
-	
 		verifyVisible(navigationPageOperations.CustomerP2pOffneticon, 0);
 		setLogSteps(log, "Verify P2P Offnet icon in Dashboard ");
-		
 		verifyVisible(navigationPageOperations.CustomerFinancialServiceicon, 0);
 		setLogSteps(log, "Verify Financial Services icon in Dashboard ");
-
-
 	}
-	
-	
-	
+
 }
